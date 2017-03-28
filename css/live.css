@@ -1,0 +1,401 @@
+*{
+    margin:0;
+    padding: 0;
+    font-family: "微软雅黑";
+    font-weight: lighter;
+}
+a{
+    text-decoration: none;
+    color: #ffffff;
+}
+@font-face {
+    font-family: ziti;
+    src: url('../font/Microsoft-Yahei-UI-Light.7z');
+}
+li{
+    list-style-type: none;
+}
+article .join{
+    padding-left: 2%;
+}
+/*固定头部*/
+header .head{
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /*  overflow: hidden;*/
+    background-color: black;
+    z-index: 2;
+}
+header .logo{
+    float: left;
+    margin-top: 4px;
+    margin-left: 15%;
+    width: 180px;
+    height:56px;
+    display: table-cell;
+    vertical-align: middle;
+    cursor: pointer;
+}
+header .nav_span{
+    width: 60%;
+    height: 70px;
+    float: right;
+    margin-right:6%;
+}
+header span {
+    color: #161616;
+    font-size:16px;
+    line-height: 70px;
+    margin-left: 10%;
+}
+/*header .orange{
+    color: #ffa21c;
+}*/
+header .nav_span div{
+    display: inline-block;
+    /*display: none;*/
+    width: 50px;
+    height: 24px;
+    border-radius:4px;
+    text-align: center;
+    line-height: 22px;
+    cursor: pointer;
+}
+header .log{
+    margin-left: 8%;
+    color: white;
+    border: 1px solid white;
+}
+header .reg{
+    margin-left: 10px;
+    color: white;
+    border: 1px solid white;
+}
+header .nav_span .user_icon{
+    position: relative;
+    top: 8%;
+}
+header .add_icon{
+    display: none;
+    /* display: inline;*/
+    position: relative;
+    z-index: 200;
+}
+header  .add_icon  a{
+    border-bottom: 2px solid white;
+
+}
+header .nav_span .setting{
+    position: absolute;
+    left:24%;
+    top: 38%;
+}
+
+header .org{
+    background-color: #f5a517;
+    border: 1px solid #f5a517;
+}
+header .set_icon{
+    position: relative;
+    top: 8%;
+}
+header .nav_span .angle{
+    width:82px;
+    height:90px;
+    display: none;
+    position: absolute;
+    top:25px;
+    right: -22px;
+    background: url("../images/login_reg/drop_down_box.png");
+    z-index:199;
+}
+header .angle p{
+    font-size: 12px;
+    color: #161616;
+    text-align: center;
+}
+header .angle  .safe{
+    padding: 24px 0 0 0 ;
+    cursor: pointer;
+}
+header .angle  .safe a{
+    border-bottom: none;
+    color: #000000;
+}
+header .angle .grey_line_short{
+    width: 72px;
+    height: 1px;
+    background: #e6e6e6;
+    margin: 0 auto;
+    position: relative;
+    top: -10px;
+}
+header .angle  .exit{
+    /* padding-top: 10px;*/
+    cursor: pointer;
+    position: relative;
+    top: -5px;
+}
+header .angle  .exit a{
+    border-bottom: none;
+    color: #000000;
+}
+header .angle img{
+    width: 100%;
+    height: 100%;
+}
+/*登录 注册 修改密码 公共部分*/
+.slider .add{
+    width: 400px;
+    height: 330px;
+    position: absolute;
+    top: 30%;
+    left: 38%;
+    background: url(../images/login_reg/Popup.png) no-repeat;
+}
+.slider input{
+    vertical-align: middle;
+    line-height: 28px;
+}
+.slider  .close{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top:14px;
+    left: 10px;
+    text-align: center;
+}
+.slider form{
+    height: 100%;
+}
+.slider p{
+    font-size: 20px;
+    color: #161616;
+    margin-top: 16px;
+    /*text-align: center;*/
+}
+.slider  input[type='submit']{
+    background: url(../images/login_reg/submit_btn.png) no-repeat;
+    border: none;
+    color: white;
+    text-align: center;
+}
+/*登录*/
+.login .red{
+    color: red;
+    font-size: 12px;
+    text-align: center;
+    margin: 0 auto;
+    display: none;
+}
+.slider .login  input{
+    width: 78%;
+    height: 10%;
+    border-radius: 4px;
+    margin: 8% auto auto 10%;
+    border: 1px solid #d6d6d6;
+    color: #161616;
+    font-family: "微软雅黑";
+    text-indent: 3%;
+}
+.slider .login p a{
+    font-size: 12px;
+    color: #161616;
+    display: inline-block;
+    float: right;
+    margin-right: 12%;
+}
+/*注册*/
+.slider .register .red{
+    color: red;
+    font-size: 12px;
+    text-align: center;
+    margin:-0.5% auto auto auto;
+    display: none;
+}
+.slider .register .notchk{
+    width: 78%;
+    height: 10%;
+    border-radius: 4px;
+    margin: 4.6% auto auto 10%;
+    border: 1px solid #d6d6d6;
+    color: #161616;
+    font-family: "微软雅黑";
+    text-indent: 3%;
+}
+.slider .register input[type='checkbox']{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin:2.6% 0.8% auto auto ;
+    z-index: 200;
+    float: left;
+}
+.slider .register.chk{
+    margin-left: 2%;
+    width: 10px;
+    height: 10px;
+    background: url(../images/login_reg/choose.png) no-repeat 32px 7px;
+    z-index: 1;
+}
+.slider .register p a{
+    font-size: 12px;
+    color: #161616;
+    display: inline-block;
+}
+.slider .register span{
+    display: inline-block;
+    font-size: 12px;
+    color: #161616;
+    text-align: left;
+}
+.slider .register span a{
+    color: #161616;
+}
+.slider .register .protocol1 a:hover{
+    text-decoration: underline;
+    color: deepskyblue;
+}
+.slider .register .rit_reg a:hover{
+    text-decoration: underline;
+}
+/*修改密码*/
+.slider .change_pass input{
+    width: 78%;
+    height: 10%;
+    border-radius: 4px;
+    margin: 8% auto auto 10%;
+    border: 1px solid #d6d6d6;
+    color: #161616;
+    font-family: "微软雅黑";
+    text-indent: 3%;
+}
+.slider .change_pass .red{
+    display: block;
+    color: red;
+    font-size: 12px;
+    text-align: center;
+    margin:2% auto auto auto;
+    /* display: none;*/
+}
+.slider .change_pass .again{
+    display: block;
+    color: red;
+    font-size: 12px;
+    text-align: center;
+    margin:2% auto auto auto;
+    display: none;
+}
+article .bg{
+    width: 100%;
+    height: 1260px;
+    background-color: #dfdfdf;
+    padding-top: 70px;
+}
+article .bg .white_bg{
+    width: 1200px;
+    height: 1118px;
+    margin:60px auto 140px auto;
+    background-color: white;
+
+}
+article .bg .white_bg h1{
+    padding: 48px 0 24px 0;
+    text-align: center;
+    font-size: 22px;
+}
+article .bg .white_bg .underline{
+    width: 140px;
+    height: 2px;
+    background-color: #575757;
+    margin: 0 auto;
+}
+article .bg .white_bg p{
+    /*padding: 50px 0 0 0 ;*/
+    margin-left: 15%;
+    font-size: 14px;
+    color: #161616;
+    line-height: 30px;
+}
+article .bg .white_bg .img_q{
+    width: 880px;
+    height: auto;
+    margin: 30px auto 0;
+}
+article .bg .white_bg .img_q div{
+    float: left;
+    margin-top: 20px;
+}
+footer .foot{
+    width: 100%;
+    background-color: #000;
+}
+footer .foot .foot1{
+    width: 100%;
+    height: 180px;
+    background-color: #303030;
+}
+footer .foot .foot1 .contact{
+    width:50%;
+    height:100%;
+    margin: 0 auto;
+
+}
+footer .foot .foot1 .contact .con_left{
+    width:40%;
+    height:180px;
+    float: left;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+}
+footer .foot .foot1 .contact .con_left img{
+    margin-top: 30px;
+    vertical-align: middle;
+}
+footer .foot .foot1 .contact .con_left ul{
+    margin-top:30px;
+    vertical-align: middle;
+    text-align: left;
+}
+footer .foot .foot1 .contact .con_left li{
+    padding: 5px 0;
+    margin-left: 16px;
+}
+
+footer .foot .foot1 .contact .con_right{
+    display: inline-block;
+    width: 44%;
+    height:auto;
+    margin-top: 5%;
+    float: right;
+    color: white;
+    font-size: 12px;
+    line-height: 30px;
+
+}
+
+footer .foot .foot1 .contact .con_right div{
+    float: right;
+}
+.foot2{
+    width: 100%;
+    height: 40px;
+    background-color: #000;
+    font-size: 14px;
+    color: #a7a6a7;
+    text-align: center;
+    line-height: 40px;
+}
+.foot2 a{
+    font-size: 12px;
+    color: #a7a6a7;
+    line-height: 40px;
+}
+.foot2 img{
+    line-height: 40px;
+    vertical-align: middle;
+}

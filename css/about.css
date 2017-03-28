@@ -1,0 +1,169 @@
+
+article .yd_ad{
+    width:65%;
+    height: auto;
+    margin:40px auto 178px;
+    color: #161616;
+    overflow: hidden;
+    padding-left: 4.6%;
+}
+article .yd_ad h1{
+    font-size: 22px;
+    font-family: 微软雅黑;
+    font-weight: 600;
+    /*padding: 10px 25px 0;*/
+    letter-spacing: 0px;
+
+}
+article .yd_ad p{
+    font-size: 18px;
+    font-family: 微软雅黑;
+    /*padding-left: 25px;*/
+}
+article .yd_ad .introduce{
+    margin-top: 50px;
+   /* margin-left: 40px;*/
+    font-size: 20px;
+}
+article .yd_ad .environment{
+    width: 100%;
+    height: auto;
+    margin:70px auto 2% 0;
+}
+article .yd_ad .environment .lft{
+    float: left;
+    width: 50%;
+    height: auto;
+}
+article .yd_ad .environment .lft  .img_up{
+    width: 100%;
+    height:70%;
+}
+article .yd_ad .environment .lft  .img_up img{
+    display: block;
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+article .yd_ad .environment .lft  .img_down{
+    width: 100%;
+    height:30%;
+}
+article .yd_ad .environment .lft .img_down img{
+    display: block;
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+article .yd_ad .environment .rit{
+    float: left;
+    width: 50%;
+    height: auto;
+   /* background: url(../images/about_us/introduce/introdure_pic2.jpg);*/
+}
+article .yd_ad .environment .rit img{
+    width: 100%;
+    height: 100%;
+}
+/*流程图*/
+article .yd_ad .bg_img{
+    width: 100%;
+    height:auto;
+    position: relative;
+    /*margin:-5.2% auto 0 2%;*/
+}
+article .yd_ad .bg_img img{
+    width: 100%;
+    height: 100%;
+}
+article .yd_ad .bg_img h2{
+    color: white;
+}
+/*产品体系*/
+article .yd_ad .pro{
+    margin: 50px auto 100px;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+article .yd_ad .pro img{
+    max-width: 100%;
+    height: 100%;
+}
+/*团队介绍*/
+article .yd_ad .img_person{
+    width:100%;
+    height: auto;
+    margin: 60px auto 0 0 ;
+}
+article .yd_ad .img_person .portrait{
+    display: inline-block;
+    width:100%;
+    height: auto;
+    /*margin-right: 8px;*/
+    position: relative;
+    float: left;
+}
+article .yd_ad .img_person .portrait img{
+    width: 100%;
+    height: 100%;
+}
+article .yd_ad .img_person .name{
+    position: absolute;
+    width:100%;
+    height: 30%;
+    bottom: 0;
+    left: 0;
+    background: #e9e9e9;
+    text-align: center;
+}
+article .yd_ad .img_person .name .big{
+    font-size: 30px;
+    color: #000000;
+    margin-top: 10%;
+    padding-left: 0;
+}
+article .yd_ad .img_person .name .small{
+    font-size: 20px;
+    color: #000000;
+    padding-left: 0;
+    line-height: 40px;
+}
+article .yd_ad .fade{
+    width:100%;
+    height: auto;
+}
+article .yd_ad .fade .up{
+    display: inline-block;
+    width: 100%;
+    height:auto;
+    margin-right: 8px;
+    background-color: #f5a517;
+    float: left;
+    opacity: 0.64;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+}
+article .yd_ad .fade .up .big{
+    font-size: 30px;
+    color: #fff;
+    margin-top: 10%;
+    padding-left: 0;
+    line-height: 40px;
+}
+article .yd_ad .fade .up .small{
+    font-size: 20px;
+    color: #fff;
+    padding-left: 0;
+    line-height: 50px;
+}
+article .yd_ad .fade .up .normal{
+    font-size: 18px;
+    color: #fff;
+    padding-left: 0;
+    line-height: 40px;
+}
+
+article .yd_ad .fade .up .pa{
+    margin-left: 20px;
+    margin-top: 20%;
+}

@@ -1,0 +1,6 @@
+[2017-03-20 17:54:31]{"mpd":"api","action":"getUserInfo","mod":"api"}
+[2017-03-20 17:55:24]{"mpd":"api","action":"getUserInfo","mod":"api"}
+[2017-03-20 18:01:33]{"mpd":"api","action":"userLogin","userName":"zz","userPass":"zzzzz","mod":"api"}
+[2017-03-20 18:01:42]{"mpd":"api","action":"getUserInfo","mod":"api"}
+[2017-03-20 18:03:12]{"mpd":"api","action":"logout","mod":"api"}
+[2017-03-20 18:06:38]{"mpd":"api","action":"userLogin","userName":"zz","userPass":"zzzzz","mod":"api"}

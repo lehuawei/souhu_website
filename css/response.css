@@ -1,0 +1,151 @@
+/*1280-1680*/
+@media (min-width: 1280px) and (max-width: 1680px){
+    /*案例*/
+    article .yd_ad .line_one div {
+        height: 28%;
+    }
+
+}
+/*1681-1920*/
+@media (min-width: 1681px) and (max-width: 1920px){
+    /*案例*/
+    article .yd_ad .line_one{
+        margin-top: 6.6%;
+    }
+    article .yd_ad .first{
+        margin-top: 4.5%;
+    }
+    /*案例*/
+    article .yd_ad .line_one div {
+        height: 28%;
+    }
+
+}
+/*1880-1920*/
+@media (min-width: 1880px) and (max-width: 1920px){
+    /*关于我们 发展历程字体*/
+    article .yd_ad .bg_img .year{
+        font-size: 24px;
+        color: white;
+    }
+    article .yd_ad .bg_img .txt{
+        font-size: 14px;
+        color: #161616;
+    }
+    /*加入我们 福利文字*/
+    article .yd_ad .welfare .like .low p{
+        line-height:84px;
+    }
+    article .yd_ad .welfare .work_day p{
+        line-height:40px;
+
+    }
+
+}
+@media (min-width: 1680px) and (max-width: 1879px){
+    /*关于我们 发展历程字体*/
+    article .yd_ad .bg_img .year{
+        font-size: 24px;
+        color: white;
+    }
+    article .yd_ad .bg_img .txt{
+        font-size:13px;
+        color: #161616;
+    }
+    /*加入我们 福利文字*/
+    article .yd_ad .welfare .like .low p{
+        line-height:74px;
+    }
+    article .yd_ad .welfare .work_day p{
+        line-height: 42px;
+    }
+}
+@media (min-width: 1440px) and (max-width: 1679px){
+    /*关于我们 发展历程字体*/
+    article .yd_ad .bg_img .year{
+        font-size: 24px;
+        color: white;
+    }
+    article .yd_ad .bg_img .txt{
+        font-size:11.4px;
+        color: #161616;
+    }
+    /*加入我们 福利文字*/
+    article .yd_ad .welfare .like .low p{
+        line-height:68px;
+    }
+    article .yd_ad .welfare .work_day p{
+        line-height: 32px;
+    }
+    /*注册底部文字间距*/
+    .add .rit_reg{
+        margin-left: 7%;
+    }
+}
+@media (min-width: 1440px) and (max-width: 1500px){
+    /*注册底部文字间距*/
+   /* .add .rit_reg{
+        margin-left: 3%;
+    }*/
+}
+@media (min-width: 1440px) and (max-width: 1500px){
+    /*注册底部文字间距*/
+    /*.add .rit_reg{
+        margin-left: 3%;
+    }*/
+}
+@media (min-width: 1280px) and (max-width: 1439px){
+    /*关于我们 发展历程字体*/
+    article .yd_ad .bg_img .year{
+        font-size: 22px;
+        color: white;
+    }
+    article .yd_ad .bg_img .txt{
+        font-size:10px;
+        color: #161616;
+    }
+    /*加入我们 福利文字*/
+    article .yd_ad .welfare .like .low p{
+        line-height:30px;
+    }
+    article .yd_ad .welfare .like .sgz p{
+        line-height:60px;
+    }
+    article .yd_ad .welfare .work_day p{
+        line-height: 26px;
+    }
+    /*注册底部文字间距*/
+   /* .add .rit_reg{
+       margin-left: 2%;
+    }*/
+}
+@media screen and (max-width: 1279px) {
+    /*关于我们 发展历程字体*/
+    article .yd_ad .bg_img .year{
+        font-size: 12px;
+        color: white;
+    }
+    article .yd_ad .bg_img .txt{
+        font-size:8px;
+        color: #161616;
+    }
+    /*加入我们 福利文字*/
+    article .yd_ad .welfare .like .low p{
+        line-height:50px;
+    }
+    article .yd_ad .welfare .like .sgz p{
+        line-height:50px;
+    }
+    article .yd_ad .welfare .work_day p{
+        line-height: 26px;
+    }
+}
+@media (min-width: 1280px) and (max-width: 1680px){
+    /*案例*/
+    article .yd_ad .line_one{
+        margin-top: 4.0%;
+    }
+    article .yd_ad .first{
+        margin-top: 3.5%;
+    }
+}
