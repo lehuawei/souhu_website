@@ -125,6 +125,14 @@ $(function () {
             $(this).addClass("sure").siblings().removeClass("sure").addClass("edit");
         }
     });
+
+    //checkbox样式
+  $(".che_a").click(function () {
+      $(".che_a").toggleClass('active_a');
+     var check=$(".che_a").is(".active_a");
+     $(".che_ipt").attr("checked",check);
+  });
+
     //首页 图片轮播
     //除了第一张图片 其他图片都隐藏
     $(".banner_pic li:gt(0)").hide();

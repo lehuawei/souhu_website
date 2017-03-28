@@ -419,32 +419,34 @@ table.detail tr td.five{
     border-right: none;
 }
 /*我的消息*/
-.my_Mess .checkbox{
-    width: 20px;
-    height: 20px;
-    margin: 4% auto auto auto;
-    box-sizing: content-box;
-    appearance: none;
-    -moz-appearance: none;
-    /**/-webkit-appearance: none;
-    background: url(../images/my_Message/icon-kuang.png) no-repeat 2% center;
-    border:0px solid #dddddd;
-   /* position:absolute;
-    clip: rect(6px 15px 15px 6px);*/
-    box-shadow: none;
+/*系统消息*/
+.clearfix{
+    clear: both;
 }
-a,label {
-    display:block;
-    width:25px;
-    height:25px;
-    overflow:hidden
+.sys_mess{
+    width: 30%;
+    height: auto;
+    margin: 20px auto auto 30px;
+    display: inline-block;
+    float: left;
 }
-a {
-    background:url(../images/recharge_Manage/orange.jpg) no-repeat;
+.ver_line{
+    display: inline-block;
+    width: 1px;
+    min-height: 700px;
+    background-color: #d6d7dc;
+    float: left;
 }
-a:hover {
-    background:url(../images/recharge_Manage/orange.jpg) no-repeat;
+span.che_a{
+    display:inline-block;
+    width:16px;
+    height:16px;
+    overflow:hidden;
 }
-a#b {
-    background:url(../images/recharge_Manage/white.jpg) no-repeat;
+.che_a {
+    background:url(../images/my_Message/icon-kuang.png) no-repeat;
+    vertical-align: middle;
+}
+.active_a {
+    background:url(../images/my_Message/icon-checked.png) no-repeat;
 }
