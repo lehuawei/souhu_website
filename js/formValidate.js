@@ -1,6 +1,4 @@
-/**
- * Created by Administrator on 2017/2/21.
- */
+//定义全局变量
 var url = "index.php?mpd=api";
 $(function(){
   $(".form_one").submit(function(event){

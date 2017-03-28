@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户中心</title>
+    <link rel="stylesheet" href="css/reg_log.css">
+    <link rel="stylesheet" href="css/acc_recharge.css">
+    <link rel="stylesheet" href="css/user_Center.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-1.9.1.js"></script>
+    <script src="js/placeholderfriend.js"></script>
+    <!--if it IE 8--><!--兼容h5-->
+    <script src="js/respond.min.js"></script>
+    <script src="js/html5shiv.min.js"></script>
+    <!--end if -->
+</head>
+<body>
+<!--顶部导航-->
+<header>
+    <div class="head bs">
+        <div class="logo"><img src="images/logo.png" alt="" class="logo"></div>
+        <div class="nav_span">
+            <span class="nav_a"><a href="#"  class="first" title="index.html">首页</a></span>
+            <span class="nav_a"><a href="#" class="accountRecharge" title="acc_recharge.html">账户充值</a></span>
+            <span class="nav_a"><a href="#" class="case" title="case.html">案例</a></span>
+            <span class="nav_a"><a href="#" class="about" title="about.html">关于我们</a></span>
+            <span class="nav_a"><a href="#" class="join" title="join.html">加入我们</a></span>
+            <div class="log org"><a href="javascript:void(0)" title="reg_log.html" style="color: white">登录/注册</a></div>
+            <span class="add_icon" >
+                <img src="images/login_reg/person_icon1.png" alt="" class="user_icon">&nbsp;&nbsp;
+                <a href="user_Center.html" target="_blank" class="yhm">用户名</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;<img src="images/login_reg/setup_icon.png" alt=""  class="set_icon">
+                <div class="angle">
+                    <p class="safe"><a class="person_safe" href="modify_pass.html" target="_blank">账户安全</a></p>
+                    <div  class="grey_line_short"></div>
+                    <p class="exit"><a class="back">退出</a></p>
+                </div>
+            </span>
+        </div>
+    </div>
+</header>
+<!--充值中心-->
+<article>
+<div class="recharge_bg">
+    <div class="recharge_wh">
+        <!--顶部导航-->
+        <ul class="user_ul">
+            <li class="active_t"><span>个人信息</span></li>
+            <li><span>产品管理</span></li>
+            <li><span>账号安全</span></li>
+            <li><span>搜虎币</span></li>
+            <li><span>我的消息</span></li>
+        </ul>
+        <!--导航内容-->
+        <!--1 个人信息-->
+        <div class="user_info user_ul_div"  style="display:none">
+            <div class="info_one">
+                <img src="images/recharge_Manage/girl.jpg" alt="" width="132px" height="132px">
+                <table>
+                    <tr>
+                        <td style="font-size: 20px">Muse</td>
+                    </tr>
+                    <tr>
+                        <td>飞虎账号</td>
+                    </tr>
+                    <tr>
+                        <td>账户余额: <em>10</em>元 <a href="acc_recharge.html"><img src="images/person_Info/icon-top-up.png" alt=""> </a></td>
+                    </tr>
+                    <tr>
+                        <td>今天天气好晴朗</td>
+                    </tr>
+                </table>
+                <span class="edit_datum"><img src="images/person_Info/icon-modification.png" alt="">编辑资料</span>
+            </div>
+            <div class="info_two">
+                <h4>个人资料</h4>
+                <table cellspacing="0" cellpadding="0"  class="table_two">
+                    <tr>
+                        <td class="td_one">真实姓名: <input type="text" value="乐花薇" disabled> <em ></em></td>
+                        <td class="td_two">性别: <input type="text" value="保密" disabled> <em></em> </td>
+                        <td class="td_three">身份证号:<input type="text" value="200122455941235561" disabled><em></em></td>
+                    </tr>
+                    <tr>
+                        <td class="td_one">所在地区:<input type="text" value="深圳" disabled><em></em></td>
+                        <td class="td_two">地址:<input type="text" value="深圳宝安区智恒产业园" disabled><em></em></td>
+                        <td class="td_three"><input type="text" value="" disabled><em></em></td>
+                    </tr>
+                </table>
+            </div>
+            <div style="text-align: center;margin-bottom: 200px" class="btn_div"><button type="submit" class="cancel">取消</button>
+            <button type="submit" class="save">保存</button>
+            </div>
+        </div>
+
+        <!--2产品管理-->
+        <div class="pro_Man user_ul_div" style="display: none">
+            <ul class="game_ul">
+                <li class="active_g">飞虎直播</li>
+                <li>游戏二</li>
+                <li>游戏三</li>
+                <li>游戏四</li>
+            </ul>
+        <div class="game_one game">
+            <div class="live_game">
+                <img src="images/product_Manage/live_girl.jpg" alt=""  class="live_girl">
+                <table>
+                    <tr>
+                        <td> <h3>快来聊天吧</h3></td>
+                    </tr>
+                    <tr>
+                        <td><h3> Romantic</h3></td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/product_Manage/icon-time.png" alt="">已开播120分钟 <img src="images/product_Manage/icon-audience.png" alt="">1248934 </td>
+                    </tr>
+                    <tr>
+                        <td><a href=""><img src="images/product_Manage/icon-watch.png" alt=""></a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="live_game" >
+                <img src="images/product_Manage/live_girl.jpg" alt="" class="live_girl">
+                <table>
+                    <tr>
+                        <td> <h3>快来聊天吧</h3></td>
+                    </tr>
+                    <tr>
+                        <td><h3>Eric</h3></td>
+                    </tr>
+                    <tr>
+                        <td><img src="images/product_Manage/icon-time.png" alt="">已开播120分钟 <img src="images/product_Manage/icon-audience.png" alt="">322553 </td>
+                    </tr>
+                    <tr>
+                        <td><a href=""><img src="images/product_Manage/icon-watch.png" alt=""></a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="game" style="display: none">游戏2</div>
+        <div class="game" style="display: none">游戏3</div>
+        <div class="game" style="display: none">游戏4</div>
+        </div>
+
+    <!--3账号安全-->
+        <div class="acc_save user_ul_div"  style="display:none">
+             <!--安全指数-->
+            <div class="reliable_index">
+                <p>安全指数: <span class="orange_span"></span> <span class="orange_span"></span> <span class="grey_span"></span>
+                    <a href="modify_pass.html" target="_blank"><i>修改密码</i></a>
+                </p>
+            </div>
+            <!--设置隐私-->
+            <div class="reliable_index set_secret">
+                <h3>设置隐私</h3>
+            </div>
+            <ul class="secret_ul">
+                <li><img src="images/account_Safe/icon-weixin.png" alt=""><h4>绑定微信账号</h4></li>
+                <li><img src="images/account_Safe/icon-weibo.png" alt=""><h4>绑定微博账号</h4></li>
+                <li><img src="images/account_Safe/icon-qq-selected.png" alt=""><h4><em>Muse </em>[解绑]</h4></li>
+            </ul>
+            <!--付款方式-->
+            <div class="reliable_index pay_way">
+                <h3>付款方式</h3>
+            </div>
+            <ul class="payway_ul">
+                <li class="active_p">
+                    <span class="icon"></span><!--<img src="images/account_Safe/icon-selected.png" alt="" class="icon_img">-->
+                    <span class="alipay"></span><!--<img class="pay_img"src="images/account_Safe/icon-zhifubao.png" alt="">-->
+                </li>
+                <li>
+                    <span class="icon"></span>
+                    <span class="weixin"></span>
+                </li>
+                <li>
+                    <span class="icon"></span>
+                    <span class="yinlian"></span>
+                </li>
+                <h3>设置默认方式</h3>
+            </ul>
+        </div>
+      <!--4搜币-->
+        <div class="coin user_ul_div"  style="display:none">
+            <div class="reliable_index ">
+                <p>搜虎币</p>
+            </div>
+            <h1>500</h1>
+            <h3 class="sh_b">
+                <span style="margin-left: 10px">搜币</span>
+                <span class="coin_cz">
+                        <a href="acc_recharge.html"><button>搜虎币充值</button></a>
+                        <a href="acc_recharge.html"><button>飞虎币充值</button></a>
+                        <a href="acc_recharge.html"><button>游戏充值</button></a>
+                </span>
+            </h3>
+            <!--交易明细-->
+            <div class="reliable_index ">
+                <p>最近十笔搜虎币交易明细</span>
+                    <a href=""><i>查看全部订单</i></a>
+                </p>
+            </div>
+            <!--充值历史-->
+            <h3 class="rec_his"><span style="margin-right: 20px">充值历史</span>
+                <select name="" id="year">
+                    <option value="2017">2017</option>
+                </select> 年
+                <select name="" id="mouth">
+                    <option value="1">1</option>
+                </select> 月
+                <button class="seek"> <img src="images/souhu_Coin/icon-seek.png" alt="" style="margin-right: 10px">查询</button>
+                <button class="del">批量删除</button>
+            </h3>
+            <table class="detail" cellpadding="0" cellspacing="0">
+                <tr>
+                    <th class="one">流水号</th>
+                    <th class="two">时间</th>
+                    <th class="three">类型</th>
+                    <th class="four">金额</th>
+                    <th class="five"></th>
+                </tr>
+                <tr>
+                    <td class="one">234134</td>
+                    <td class="two">2017/1/20 20:00:00</td>
+                    <td class="three">虎币</td>
+                    <td class="four">520.00</td>
+                    <td class="five"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td  class="five"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td  class="five"></td>
+                </tr>
+            </table>
+        </div>
+        <!--5我的消息-->
+        <div class="my_Mess user_ul_div"  style="display: block">
+            <ul class="game_ul">
+                <li class="active_g">系统消息</li>
+                <li>私信</li>
+            </ul>
+            <label for="cc">
+                <a href="#b" _fcksavedurl="#b" id="a" onclick="cc.checked=true"></a>
+                <a href="#a" _fcksavedurl="#a" id="b" onclick="cc.checked=false"></a>
+                <input type="checkbox" id="cc" />
+            </label>
+        </div>
+    </div>
+</div>
+</article>
+<footer>
+    <div class="foot">
+        <div class="foot1">
+            <div class="contact">
+                <div class="con_left">
+                    <span><img src="images/image_wechat.png" alt="" style="width: 120px;height: 120px"></span>
+                    <ul style="display: inline-block">
+                        <li>扫一扫</li>
+                        <li>关注搜虎微信平台</li>
+                    </ul>
+                </div>
+                <div class="con_right">
+                    <div>
+                        <p style="font-size: 16px" >联系方式:</p>
+                        <p><img src="images/footer_icon1.png" alt=""style="width: 14px;height: 14px"><span>&nbsp;&nbsp;0755-26651181</span></p>
+                        <p><img src="images/footer_icon2.png" alt=""style="width: 14px;height: 14px"><span>&nbsp;&nbsp;深圳市南山区南头检查站智恒产业园22栋3楼</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="foot2">
+            <p>Copyright &nbsp; @ &nbsp; 搜虎网络   &nbsp;&nbsp;   &nbsp;&nbsp;备案号：粤ICP备16109808号-1&nbsp;&nbsp;   &nbsp;&nbsp;
+                <img src="images/wenhuajingying.png" alt="" style="width: 28px;height: 28px">&nbsp;&nbsp;
+                <a  href="http://sq.ccm.gov.cn/ccnt/sczr/service/business/emark/toDetail/3c3a59aa6a6740c3b47e88290db02c3b" target="_ blank">粤网文〔2017〕1079-007号</a>
+            </p>
+        </div>
+    </div>
+</footer>
+<script src="js/common.js"></script>
+<script src="js/formValidate.js"></script>
+</body>
+</html>

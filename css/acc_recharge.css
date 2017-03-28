@@ -1,0 +1,361 @@
+/*背景部分*/
+article .recharge_bg{
+    width: 100%;
+    height: 930px;
+    background-color: #f7f7f7;
+    padding-top: 70px;
+    overflow: hidden;
+}
+article .recharge_wh{
+    width: 70%;
+    height:auto;
+    margin:30px auto 80px auto;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+/*内容部分*/
+article .recharge_wh .tit_rc{
+    margin-left: 2%;
+}
+article .recharge_wh .tit_rc strong{
+    font-weight: bolder;
+    font-size: 24px;
+}
+article .recharge_wh .tit_rc tt{
+    color: #f5a517;
+    font-size: 24px;
+}
+article .recharge_wh .full_gl{
+    height: 1px;
+    width: 100%;
+    background-color: #d6d7dc;
+    margin-top: 20px;
+}
+/*账户信息部分*/
+article .recharge_wh .acc_head{
+    width: 100%;
+    height:auto;
+    overflow: hidden;
+
+}
+article .recharge_wh .acc_head .person_ul{
+    width: 70%;
+    margin: 20px auto 10px 2%;
+}
+article .recharge_wh .acc_head .person_ul li{
+    width: 264px;
+    height: 86px;
+    border: 1px solid  #d6d7dc;
+    border-radius: 5px;
+    cursor: pointer;
+    float: left;
+    margin-right: 20px;
+}
+article .recharge_wh .acc_head .person_ul li span{
+    display: inline-block;
+    float: left;
+}
+article .recharge_wh .acc_head .person_ul li .pro_span img{
+    margin-left:5px;
+}
+article .recharge_wh .acc_head .person_ul li .pro_span{
+    margin: 20px auto auto 20px;
+}
+article .recharge_wh .acc_head .person_ul li .che_img{
+    float: right;
+    margin-top: 22.4%;
+}
+article .recharge_wh .acc_head  .add_img{
+    float: right;
+    margin-right:45px;
+    position: relative;
+    margin-top:4%;
+    color: #f5a517;
+    cursor: pointer;
+
+}
+article .recharge_wh .acc_head  .add_img  img{
+    vertical-align:text-top;
+}
+/*弹出框的背景*/
+.opacity_color{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color:#000;
+    width:100%;  /*宽度设置为100%，这样才能使隐藏背景层覆盖原页面*/
+    height: 100%;
+    filter:alpha(opacity=20);  /*设置透明度为60%*/
+    opacity:0.2;  /*非IE浏览器下设置透明度为60%*/
+    display:none; /* http://www.jb51.net */
+    z-index:101;
+}
+/*弹出账户选择框部分*/
+.pop_cho{
+    width: 520px;
+    height: 480px;
+    background-color: white;
+    border: 1px solid #d6d7dc;
+    border-radius: 10px;
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    z-index: 102;
+    transition:border linear .2s,box-shadow linear .5s;
+    -moz-transition:border linear .2s,-moz-box-shadow linear .5s;
+    -webkit-transition:border linear .2s,-webkit-box-shadow linear .5s;
+    outline:none;border-color: rgba(208, 208, 210, 0.75);
+    box-shadow:0 0 10px rgba(208, 208, 210, 0.5);
+    -moz-box-shadow:0 0 10px rgba(208, 208, 210, 0.5);
+    -webkit-box-shadow:0 0 10px rgba(208, 208, 210,1);
+    display: none;
+}
+.close {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-align: center;
+    line-height: 30px;
+}
+.pop_cho ul{
+    text-align: center;
+    border-bottom: 1px solid #b6b6b6;
+    height: 38px;
+    margin-top: 30px;
+}
+.pop_cho ul li{
+        display:inline-block;
+        font-size: 20px;
+        color: #181818;
+        line-height: 37px;
+}
+.txt_sty{
+    border-bottom:2px solid #f5a517;
+    font-size: 22px;
+}
+.cho_user{
+     width: 70%;
+     margin: 0 auto;
+
+ }
+.cho_user .phone_txt{
+    display:inline-block;
+    font-size: 16px;
+    color: #646464;
+    margin: 5% 0 0 0;
+}
+.cho_user select{
+    width: 100%;
+    height:40px;
+    margin:4% auto auto auto;
+    border: 1px solid #d6d7dc;
+    border-radius: 5px;
+    color: #c1c1c1;
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    background: url(../images/recharge_Manage/icon-select.png) no-repeat scroll 97% center #ffffff;
+
+}
+
+select::-ms-expand { display: none; }
+.cho_user input{
+    width: 100%;
+    height:40px;
+    margin:4% auto auto auto;
+    border: 1px solid #d6d7dc;
+    border-radius: 5px;
+    background-color: #ffffff;
+    text-indent: 2%;
+}
+.another_log span{
+    display: inline-block;
+    color: #cbcbcb;
+    font-size: 14px;
+    margin-top:30px;
+}
+.another_log img{
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+/*充值金额*/
+.recharge_money{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.recharge_money h4{
+    padding-left: 30px;
+    color: #181818;
+    padding-top: 40px;
+}
+.no_full_line{
+    height: 1px;
+    width: 96%;
+    background-color: #d6d7dc;
+    margin: 20px auto 10px auto;
+}
+.clearfix_ul{
+    width:800px;
+    height: auto;
+    overflow: hidden;
+}
+.clearfix_ul::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+.clearfix_ul li{
+    position: relative;
+    display: inline-block;
+    width: 152px;
+    height: 90px;
+    float: left;
+    background-image: url("../images/recharge_Manage/white.jpg");
+    text-align: center;
+    margin: 20px 30px 10px 30px;
+    cursor: pointer;
+    color: #f3a80f;
+    font-size: 22px;
+}
+.clearfix_ul li .sou_coin{
+    height: 52px;
+    line-height: 52px;
+}
+.clearfix_ul li .money{
+    height:40px;
+    line-height:40px;
+}
+.clearfix_ul .active_m{
+    background-image: url("../images/recharge_Manage/orange.jpg");
+    color: white;
+    font-size: 22px;
+}
+.clearfix_ul li .sou_coin_input{
+    width: 150px;
+    height: 40px;
+    line-height:40px;
+    border: none;
+    margin-top: 5px;
+    color: #f3a80f;
+    font-size: 22px;
+    text-align: center;
+}
+.clearfix_ul li .money_input{
+    width: 150px;
+    height: 20px;
+    line-height: 20px;
+    border: none;
+    margin-top: 15px;
+    color: #f3a80f;
+    font-size: 22px;
+    text-align: center;
+    z-index: 200;
+}
+/*placeholder的样式处理*/
+.clearfix_ul ::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: #f3a80f;
+
+}
+.clearfix_ul:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #f3a80f;
+}
+.user_sel ::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #f3a80f;
+    opacity: 1;
+}
+.clearfix_ul:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
+    color:#f3a80f;
+}
+.clearfix_ul .active_sel{
+    background-image: url("../images/recharge_Manage/orange.jpg");
+    color: white;
+}
+.clearfix_ul .active_sel input{
+    background-color: #f3a80f;
+    color: white;
+}
+/*支付方式*/
+.pay_way h4{
+    padding-left: 30px;
+    color: #181818;
+    padding-top: 30px;
+}
+.pay_img{
+    margin-left: 2%;
+    margin-top: 1.2%;
+}
+.pay_img ul{
+    width: 80%;
+    height: auto;
+    clear: both;
+}
+.pay_img ul li{
+    display: inline-block;
+    float: left;
+    width: 142px;
+    height:48px;
+    line-height: 48px;
+    margin-right: 20px;
+}
+.pay_img ul li span{
+    display:block;
+    height:48px;
+    cursor: pointer;
+}
+.pay_img ul li .aliPay{
+    background-image: url(../images/recharge_Manage/icon-zhifubao.png);
+}
+.pay_img ul li .weChatpay{
+    background-image: url(../images/recharge_Manage/icon-weixin.png);
+}
+.pay_img ul li .unionPay{
+    background-image: url(../images/recharge_Manage/icon-yinlian.png);
+}
+.pay_img ul li.active .aliPay{
+    background-image: url(../images/recharge_Manage/icon-zhifubao-selected.png);
+}
+.pay_img ul li.active .weChatpay{
+    background-image: url(../images/recharge_Manage/icon-weixin-selected.png);
+}
+.pay_img ul li.active .unionPay{
+    background-image: url(../images/recharge_Manage/icon-yinlian_select.png);
+}
+/*支付金额与确认支付*/
+.pay_money{
+    width: 350px;
+    float: right;
+    height: auto;
+    margin: 100px 0 80px auto;
+}
+.pay_money h4{
+    display: inline-block;
+}
+.pay_money h4 em{
+    color: #f5a517;
+    font-size: 22px;
+    font-style: normal;
+    line-height: 48px;
+}
+.pay_money .surePay{
+    display: inline-block;
+    float: right;
+    width: 152px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 22px;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #f5a517;
+    margin-right: 20px;
+}

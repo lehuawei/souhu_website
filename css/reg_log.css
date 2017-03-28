@@ -1,0 +1,218 @@
+/*登录注册部分*/
+.acc_bg{
+    width: 100%;
+    height: 100%;
+    margin-top: 70px;
+    background: #f9f9f9;
+    overflow: hidden;
+}
+.acc_bg .acc_pic{
+    width: 60%;
+    height: 100%;
+    display: block;
+    float: left;
+}
+.acc_bg .acc_pic img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.acc_bg .acc_reg_log{
+    float: right;
+    width: 40%;
+    height: 100%;
+
+}
+.acc_bg .acc_con{
+    margin: 20% auto auto 12%;
+    width:70%;
+    height:50%;
+   /* background-color: #ffd39c;*/
+}
+.acc_bg .acc_con ul{
+    text-align: center;
+    border-bottom: 1px solid #b6b6b6;
+    height: 38px;
+}
+.acc_bg .acc_con li{
+    display:inline-block;
+    font-size: 20px;
+    color: #181818;
+    line-height: 37px;
+}
+.acc_bg .acc_con li span{
+    cursor:pointer;
+}
+.acc_bg .acc_con ul li:last-child{
+    margin-left: 8%;
+}
+.acc_bg .acc_con  .txt_sty{
+    border-bottom:2px solid #f5a517;
+    font-size: 22px;
+}
+.acc_bg .acc_con  .phone_txt{
+    display:inline-block;
+    font-size: 16px;
+    color: #646464;
+    margin: 5% 0 0 15%;
+}
+.acc_bg .acc_con form{
+    width: 70%;
+    height:auto;
+    margin: 0 auto;
+}
+.acc_bg .acc_con input{
+    width: 100%;
+    height:40px;
+    margin:4% auto auto auto;
+    border: 1px solid #b6b6b6;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-indent: 2%;
+}
+.acc_bg .acc_con .btn_fu{
+    color: white;
+    background-color: #f0a414;
+    border: 1px solid #e09300;
+    width:96px;
+    height: 38px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    float: right;
+    margin-top: -40px;
+    clear: both;
+}
+ .btn_sub{
+    margin-top: 4%;
+    color: white;
+    background-color: #f0a414;
+    border: 1px solid #e09300;
+    width:100%;
+    height: 40px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    font-size: 16px;
+}
+.acc_bg .acc_con .btm_txt{
+    margin-top: 4%;
+    height: auto;
+}
+.acc_bg .acc_con .btm_txt a{
+    font-size: 12px;
+    color: #b6b6b6;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/*注册*/
+.acc_bg .acc_con .btm_txt .color_a img{
+    display: inline-block;
+}
+.acc_bg .acc_con .btm_txt .color_a a{
+    float: left;
+}
+.acc_bg .acc_con .btm_txt .color_a a:hover{
+    text-decoration: underline  lightblue;
+    color: lightblue;
+}
+.acc_bg .acc_con .has_a a{
+    float: right;
+    color: #f0a414 ;
+}
+.acc_bg .acc_con .has_a a:hover{
+    text-decoration: underline #f0a414;
+}
+/*登录*/
+.div_log_none{
+    display: none;
+}
+
+.acc_bg .acc_con .btm_txt .fgt_pass a{
+    float: left;
+    color: #f0a414 ;
+}
+.acc_bg .acc_con .btm_txt .cli_reg a{
+    float:right;
+    color: #f0a414 ;
+}
+.acc_bg .acc_con .btm_txt .cli_reg{
+    font-size: 12px;
+    color:black;
+    float:right;
+}
+.acc_bg .acc_con .log_txt a:hover{
+    text-decoration: underline #f0a414;
+}
+/*底部*/
+footer .foot{
+    width: 100%;
+    background-color: #000;
+}
+footer .foot .foot1{
+    width: 100%;
+    height: 180px;
+    background-color: #303030;
+}
+footer .foot .foot1 .contact{
+    width:50%;
+    height:100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+footer .foot .foot1 .contact .con_left{
+    width:40%;
+    height:180px;
+    float: left;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+
+}
+footer .foot .foot1 .contact .con_left img{
+    margin-top: 30px;
+    vertical-align: middle;
+}
+footer .foot .foot1 .contact .con_left ul{
+    margin-top:30px;
+    vertical-align: middle;
+    text-align: left;
+}
+footer .foot .foot1 .contact .con_left li{
+    padding: 5px 0;
+    margin-left: 16px;
+}
+
+footer .foot .foot1 .contact .con_right{
+    display: inline-block;
+    width: 44%;
+    height:auto;
+    margin-top: 5%;
+    float: right;
+    color: white;
+    font-size: 12px;
+    line-height: 30px;
+
+}
+footer .foot .foot1 .contact .con_right div{
+    float: right;
+}
+.foot2{
+    width: 100%;
+    height: 40px;
+    background-color: #000;
+    font-size: 14px;
+    color: #a7a6a7;
+    text-align: center;
+    line-height: 40px;
+}
+.foot2 a{
+    font-size: 12px;
+    color: #a7a6a7;
+    line-height: 40px;
+}
+.foot2 img{
+    line-height: 40px;
+    vertical-align: middle;
+}

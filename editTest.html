@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style type="text/css">
+        table td {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tbody>
+    <tr>
+        <td>双击</td>
+        <td>可以</td>
+        <td>编辑</td>
+    </tr>
+    </tbody>
+    <input type="button" value="保存编辑"/>
+</table>
+<script type="text/javascript">
+    $("table td").dblclick(function () {
+        $(this).attr("contenteditable", "true")
+    });
+    $("input").click(function () {
+        $("table td").attr("contenteditable", "false")
+    })
+</script>
+</body>
+</html>

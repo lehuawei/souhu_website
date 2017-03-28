@@ -8,64 +8,123 @@ $(function () {
             var url=$(this).attr("title");
             window.location.replace(url);
         });
-       //登录注册
-        $(".log").click(function(){
-            if(!$(this).hasClass("org")){
-                $(this).addClass("org").siblings().removeClass("org");
-            }
-           $(".register").css("display","none");
-           $(".login").css("display","block");
-           //跳转指定位置
-            var scroll_offset = $("#denglu").offset();  //得到pos这个div层的offset，包含两个值，top和left
-            /*var index = $(this).parent().index();*/
-           // scrollPage($('.fp-section').eq(0));
-        });
-        $(".reg").click(function(){
-            if(!$(this).hasClass("org")){
-                $(this).addClass("org").siblings().removeClass("org");
-            }
-            $(".login").css("display","none");
-            $(".register").css("display","block");
+       //点击账户充值m没有登录直接进入登录注册页面部分
+       $(".acc_reg_log .acc_con ul li ").on("click","span",function () {
+           var index_rl=$(this).parent().index();
+           $(this).parent().addClass("txt_sty").siblings().removeClass("txt_sty");
+           $(".div_rl ").eq(index_rl).css("display","block").siblings(".div_rl").hide();
+       });
+       //点击选框改变图片
+       $(".check_img").click(function () {
+           var flag=(this.getAttribute("src")=="images/register_Page/checkbox_no.png");
+           this.src=flag?"images/register_Page/icon-dagou.png":"images/register_Page/checkbox_no.png";
+       });
+       //点击注册
+     $(".cli_zhuce").click(function () {
+        $(".div_rl ").eq(1).css("display","block").siblings(".div_rl").css("display","none");
+         $(".acc_reg_log .acc_con ul li").eq(1).addClass("txt_sty").siblings().removeClass("txt_sty");
+     });
+      //前往登录
+    $(".has_log").click(function (){
+        $(".div_rl ").eq(0).css("display","block").siblings(".div_rl").css("display","none");
+        $(".acc_reg_log .acc_con ul li").eq(0).addClass("txt_sty").siblings().removeClass("txt_sty");
+    });
 
-        });
-        //已有账号点击
-        $(".has_acc").click(function(){
-            $(".register").css("display","none");
-            $(".login").css("display","block");
-            $(".reg").removeClass("org");
-            $(".log").addClass("org");
-        });
-       //点击关闭
-        $(".close").click(function(){
-            $(this).parent().css("display","none");
-            $(".log").removeClass("org");
-            $(".reg").removeClass("org");
-        });
-    //点击设置图标会显示对应的弹出框div
-    $(".set_icon").click(function () {
-        if ($(".angle").is(":hidden")) {
-            $(".angle").show();
-        } else if($(".angle").is(":visible")){
-            $(".angle").hide();
+    //点击登录注册按钮进入登录注册部分
+    $("header .nav_span .log").click(function(e){
+        if(!$(this).hasClass("org")){
+            $(this).addClass("org").siblings().removeClass("org");
         }
-
+        var url=$(this).children().attr("title");
+        window.location.replace(url);
+        $(this).addClass("org").siblings().removeClass("org");
     });
-    /*console.log(top);
-    console.log(left);*/
-    /*$(".angle").css("top", top);
-    $(".angle").css("left", left);*/
-    //点击账户安全
-    $(".person_safe").click(function(){
-        $(".change_pass").css("display","block");
+    $("header .nav_span .reg").click(function(e){
+        if(!$(this).hasClass("org")){
+            $(this).addClass("org").siblings().removeClass("org");
+        }
+        var url=$(this).children().attr("title");
+        window.location.replace(url);
+    });
+    //忘记密码？
+    $(".fgt_pass a").click(function () {
+        $(".acc_con ul").empty();
+        var add_li=$("<li class=' txt_sty' style='margin-left: 0'><span>找回密码</span></li>");
+        $(".acc_con ul").append(add_li);
+        $(".div_log_none").css("display","none");
+        $(".div_fgt").css({"display":"block","margin-top":"20px"});
     });
 
-    //给项目导航添加类名
-        $("#fp-nav ul").each(function(){
-            $(this).find("li").each(function(i){
-                $(this).addClass("ajx" + (i+1));
-            });
-        });
+    //个人中心部分
+    //个人中心选项卡效果
+    $(".user_ul li").click(function () {
+        if(!$(this).hasClass("active_t")){
+            $(this).addClass("active_t").siblings().removeClass("active_t");
+        }
+        var index=$(this).index();
+        $(".user_ul_div").eq(index).show().siblings('.user_ul_div').hide();
+    });
+    //点击编辑资料
+    var input_edit=$(".table_two input")
+    input_edit.focus(function () {
+        $(this).select();
+    });
+    $(".edit_datum").click(function(){
+        console.log($(input_edit).attr("disabled"))
+        input_edit.removeAttr("disabled");
+    });
+    //点击个人中心保存
+    $(".user_info button.save").click(function () {
+        console.log($(input_edit).attr("disabled"))
+        input_edit.attr("disabled",'disabled');
+    });
+    //按钮 取消和保存
+    $(".btn_div button").click(function () {
+        input_edit.attr("disabled",'disabled');
+        if(!$(this).hasClass("save")){
+            $(this).addClass("save").siblings().removeClass("save").addClass("cancel");
+        }
+    });
 
+    //产品管理
+    //游戏选项卡效果
+    $(".game_ul li").click(function () {
+        if(!$(this).hasClass("active_g")){
+            $(this).addClass("active_g").siblings().removeClass("active_g");
+        }
+        var index=$(this).index();
+        $(".pro_Man .game").eq(index).show().siblings('.game').hide();
+    });
+    //账户安全 点击图片
+    $(".secret_ul li img").click(function (e) {
+        var sel="-selected";
+        var img_src=$(this).attr("src");
+        var c=img_src.replace(".png","");
+        var d=c+sel+".png";
+        if(img_src.indexOf(sel)<0){
+            $(this).attr("src",d);
+        }else{
+            var e=img_src.replace(sel,"");
+            $(this).attr("src",e);
+        }
+    });
+    //付款方式
+    $(".payway_ul li").click(function () {
+        $(this).addClass("active_p").siblings("li").removeClass("active_p");
+    });
+     //充值明细选择框
+    var opt='';
+    for(var i=2;i<5;i++){
+        opt+="<option value=" + i + "> " + i + "</option>";
+    }
+    $("#mouth").append(opt);
+
+    //修改密码
+    $('.btn_se button').click(function (){
+        if(!$(this).hasClass("sure")){
+            $(this).addClass("sure").siblings().removeClass("sure").addClass("edit");
+        }
+    });
     //首页 图片轮播
     //除了第一张图片 其他图片都隐藏
     $(".banner_pic li:gt(0)").hide();
@@ -91,7 +150,6 @@ $(function () {
         $(".banner_pic li").eq(num+1).fadeIn("slow").siblings("li").fadeOut("slow");
         num++;
     }
-
     //第二屏圆圈hover效果
     $(".core_good .good_text :gt(0)").hide();
     $(".circle_ul").on("mouseover","li",function(){
@@ -123,13 +181,7 @@ $(function () {
     $(".cont5_one .pic_in").children().hide();
 
     $(" .pic_in").mouseenter(function(){
-        /*遮罩方法一：给父亲根元素设置背景颜色 hover的时候就改变当前子元素的透明度  但是效果与预期效果不一样*/
-        /*$(this).children().fadeIn("slow");
-        $(this).css({"opacity":"0.16"});
-        $(this).siblings(":not(.cc)").children().fadeOut("fast");
-        $(this).siblings().css({"opacity":"1"});*/
-        //鼠标移入的时候就停止计时器
-        //clearInterval(timer);
+
         /*遮罩方法二*/
         $(this).css({"opacity":"0.9"});
         $(this).children().fadeIn("slow");
@@ -140,30 +192,7 @@ $(function () {
         $(this).children().hide();
     });
 
-    //第五屏圆点点击效果  暂时去掉
-    /*$(".cont5_one ul li img").click(function(event){
-       $(this).parent().parent().parent().fadeOut().siblings().fadeIn();
-    });
-*/
-    //定时器方法暂时注释掉
-    /*$(".cont5_one :gt(0)").hide();
-    var number=0;
-    var timer=null;
-    function changeDiv() {
-        timer=setInterval(function () {
-           //3s就换一次图 函数
-            changePic();
-        },3600);
-    }
-    changeDiv();
-    function changePic() {
-        if(number==1){
-            number=-1;
-        }
-         $(".cont5_one").eq(number).hide().siblings().show();
-         number++;
 
-    }*/
 
    //案例页面 点击选项卡效果
     $(".black_bar ul").on("click","li",function(){
@@ -193,13 +222,7 @@ $(function () {
             $(".black_bar ul .img3").hide();
         }
     });
-    //团队介绍hover效果 暂时注释掉
-    /* $(".img_person .portrait").hover(function(){
-         $(this).children(".img_person .portrait .name").hide();
-         $(this).siblings().children(".img_person .portrait .name").show();
-         var index=$(this).attr("title");
-         $(".fade .up").eq(index).css("display","block").parent().siblings().children(".up").hide();
-     });*/
+
 
     //加入我们 招聘效果
     $(".android_ul li").click(function(){
@@ -210,25 +233,22 @@ $(function () {
         }
         else if($(".post_detail").eq(sort).is(":visible")){
             $(".post_detail").eq(sort).hide();
-
         }
     });
+    //点击设置图标会显示对应的弹出框div
+    $(".set_icon").click(function () {
+        if ($(".angle").is(":hidden")) {
+            $(".angle").show();
+        } else if($(".angle").is(":visible")){
+            $(".angle").hide();
+        }
 
-     //首页第五屏 案例 进入天天酷跑案例详情页面 暂时没有该业务注释掉
-    /*  $(" .kupao").click(function(){
-          var detail_url=$(this).attr("title");
-          window.open(detail_url);
-      });*/
+    });
     //进入直播页面
     $(" .live").click(function(){
         var detail_url=$(this).attr("title");
         window.open(detail_url);
-    })
-    //案例页面点击进入案例详情页面
-   /* $(".yd_ad .line_one img").click(function(){
-        var detail_url=$(this).attr("title");
-        window.open(detail_url);
-    });*/
+    });
 
     //请求用户的登录信息
     var data = {};
@@ -239,8 +259,7 @@ $(function () {
         if(code != 0){
             //失败
             //alert(obj.DATA.ERRMSG);
-            /* $(".form_two")[0].reset();
-             $(".form_three")[0].reset();*/
+
         }
         else{
             //成功
@@ -249,7 +268,7 @@ $(function () {
             $(".reg").css("display","none");
             $(".log").css("display","none");
             $("header .add_icon").css("display","inline");
-           /* $(".form_three")[0].reset();*/
+
         }
     });
 
@@ -271,14 +290,70 @@ $(function () {
             }
         });
     });
+     //账户管理部分
+    //点击添加账户
+    $(".add_img").click(function () {
+        $(".pop_cho").css("display","block");
+        $(".opacity_color").css("display",'block');
+        var h=$(document.body).height()+"px";
+        $(".opacity_color").css("height",'h');
+    });
+    //点击关闭
+    $(".close").click(function(){
+        $(this).parent().css("display","none");
+        $(".opacity_color").css("display",'none');
+    });
+    //点击选择账户部分
+    $(".person_ul li").click(function () {
+        var add_img=$('<img class="che_img" src="images/recharge_Manage/has_che.png" alt="" value="1" >');
+        var has_img=$(this).find(".che_img").length;
+        var img_li_index=$(this).index();
+        if(has_img==1){
+           $(".person_ul li").eq(img_li_index).children('.che_img').remove();
+        }
+        if(has_img==0){
+            $(this).append(add_img);
+        }
+    });
 
+    //点击不同充值金额
+    $(".clearfix_ul .active_li").click(function () {
+        if(!$(this).hasClass("active_m")){
+            $(this).addClass("active_m").siblings().removeClass("active_m");
+        }
+        $(".user_sel").removeClass("active_sel");
+        var rmb=$(this).children(".money").attr("value");
+        $(".pay_money em").html(rmb);
+    });
+    //点击自行输入充值金额
+    $(".user_sel .sou_coin_input").focus(function () {
+        $(".sou_coin_input").val("");
+        $(".user_sel").addClass("active_sel");
+        $(".clearfix_ul li").removeClass("active_m");
+    });
+    $(".user_sel .sou_coin_input").blur(function () {
+        var user_coin=$(".sou_coin_input").val();
+        $(".sou_coin_input").val(user_coin+'搜币');
+        result_money=user_coin*0.01;
+        $(".user_sel .money_input").val(result_money+'元');
+        $(".pay_money em").html(result_money);
+    });
+    //点击选择不同的支付方式
+    $(".pay_img ul li").on("click",function () {
+        $(this).addClass('active');
+        $(this).siblings().removeClass("active");
+    });
+     //获取屏幕宽度
+    var screenWidth=$(document.body).outerWidth(true);
+    if(screenWidth<1280){
+        $("footer .foot .foot1 .contact").css("width","60%");
+        $(".clearfix_ul").css("width","70%");
+    }
     //如果是ie
-    if ((navigator.userAgent.indexOf('MSIE') >= 0) && (navigator.userAgent.indexOf('Opera') < 0)){
+     if ((navigator.userAgent.indexOf('MSIE') >= 0) && (navigator.userAgent.indexOf('Opera') < 0)){
         $("*").css("font-family","微软雅黑");
         $(".bs").css("background-color","white");
         $(".cont5_one .pic_in").css("opacity","0");
         $("header .nav_span .angle").css("right","-28px")
     }
-
 });
-

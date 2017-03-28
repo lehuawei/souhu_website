@@ -54,7 +54,7 @@ header span {
     color: #161616;
     font-size:16px;
     line-height: 70px;
-    margin-left: 8%;
+    margin-left:6%;
 }
 header .orange{
     color: #f5a517;
@@ -63,17 +63,18 @@ header .orange{
 header .nav_span div{
     display: inline-block;
     /*display: none;*/
-    width: 50px;
+    width: 100px;
     height: 24px;
     border-radius:4px;
     text-align: center;
     line-height: 22px;
     cursor: pointer;
 }
-header .log{
+header .nav_span  .log{
     margin-left: 8%;
     color: #161616;
     border: 1px solid black;
+    display: none;
 }
 header .reg{
     margin-left: 10px;
@@ -81,26 +82,21 @@ header .reg{
     border: 1px solid black;
 }
 header .add_icon{
-    display: none;
+    display: inline-block;
     position: relative;
     clear: both;
     z-index: 300;
 }
-header .nav_span .user_icon{
-     position: relative;
-     top: 9%;
- }
-header  .add_icon  a{
-    border-bottom: 2px solid black;
+header .add_icon img{
+    vertical-align: text-bottom;
 }
-header .set_icon{
-     position: relative;
-     top: 9%;
- }
-
-header .org{
+header .nav_span .org{
     background-color: #f5a517;
     border: 1px solid #f5a517;
+    color: white;
+}
+.yhm{
+    cursor: pointer;
 }
 /*带尖角的弹出框*/
 header .nav_span .angle{
@@ -108,8 +104,8 @@ header .nav_span .angle{
     height:90px;
     display: none;
     position: absolute;
-    top:25px;
-    right: -22px;
+    top:46px;
+    right: -28px;
     background: url("../images/login_reg/drop_down_box.png");
     z-index:400;
 }

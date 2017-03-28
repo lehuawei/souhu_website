@@ -1,0 +1,450 @@
+/*顶部ul导航*/
+.user_ul{
+    width: 100%;
+    height: auto;
+    border-bottom:1px solid  #d6d7dc;
+    margin-top: 10px;
+}
+.user_ul li{
+    display: inline-block;
+    margin-left: 30px;
+    margin-right: 54px;
+    font-size: 16px;
+    line-height:54px;
+    cursor: pointer;
+}
+.active_t,.yhm{
+    color: #f5a517;
+    border-bottom:2px solid  #f5a517;
+}
+/*个人信息*/
+.user_info .info_one{
+    width: 90%;
+    height: auto;
+    margin-top: 66px;
+    margin-left:2%;
+}
+.user_info .info_one table{
+    display: inline-block;
+
+}
+.user_info .info_one table tr{
+    height: 30px;
+}
+.user_info .info_one table em{
+    color: #f5a517;
+    font-size: 14px;
+    font-style: normal;
+}
+.user_info .info_one table img{
+    vertical-align: text-bottom;
+}
+.edit_datum{
+    display: inline-block;
+    float: right;
+    color: #f5a517;
+    font-size: 16px;
+    cursor: pointer;
+}
+/*编辑信息*/
+.user_info .info_two{
+    margin-top: 38px;
+    margin-left: 2%;
+}
+.user_info .info_two table{
+    width: 90%;
+    border-left: 1px solid #dddddd;
+    border-top: 1px solid #dddddd;
+    margin-top: 20px;
+
+}
+.user_info .info_two table td{
+   border-right: 1px solid #dddddd;
+   border-bottom: 1px solid #dddddd;
+   text-indent: 2%;
+   height:40px;
+   color: #646464;
+   font-size: 14px;
+}
+.user_info .info_two table td input{
+    height:20px;
+    color: #181818;
+    font-size: 16px;
+    border: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+    background-color: white;
+    text-indent: 2%;
+}
+
+.user_info .info_two table tr .td_one{
+    width: 20%;
+}
+.user_info .info_two table tr .td_two{
+    width: 30%;
+}
+.user_info .info_two table tr .td_three{
+    width: 50%;
+}
+.user_info .info_two table tr td input{
+    width: 50%;
+}
+.user_info button{
+    display: inline-block;
+    margin:40px auto;
+    width: 60px;
+    height:30px;
+    border-radius:5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.user_info button.cancel{
+    border: 1px solid #f5a517;
+    background-color: white;
+}
+.user_info button.save{
+    border: 1px solid white;
+    background-color: #f5a517;
+    color: white;
+}
+/*产品管理*/
+.game_ul{
+    width: 96%;
+    height: auto;
+    border-bottom:1px solid  #d6d7dc;
+    margin: 20px auto auto auto;
+}
+.game_ul li{
+    display: inline-block;
+    margin-right: 54px;
+    font-size: 15px;
+    line-height:54px;
+    cursor: pointer;
+}
+.active_g{
+    color: #f5a517;
+    border-bottom:2px solid  #f5a517;
+}
+.game_one{
+    width: 90%;
+    margin: 0 auto;
+}
+.live_game{
+    width: 45%;
+    /*height:216px;*/
+    border:1px solid  #d6d7dc;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    margin: 30px 0px 370px 3%;
+    float: left;
+}
+.live_game img.live_girl{
+    margin: 10px ;
+    width: 40%;
+    height: 100%;
+    float: left;
+}
+.live_game table{
+    display: inline-block;
+    height: 60%;
+    margin-left: 16px;
+    float: left;
+    width: 50%;
+    margin-top: 2.5%;
+}
+.live_game table tr{
+    text-align: left;
+    height: 32px;
+
+}
+.live_game table tr img{
+    vertical-align: middle;
+    margin-left: 0;
+    margin-right: 6px;
+}
+/*账户安全*/
+.reliable_index{
+   width: 95%;
+   margin: 0 auto;
+   border-bottom: 1px solid #d6d7dc;
+}
+ .reliable_index p{
+    font-size: 20px;
+    margin: 50px auto 20px 0;
+}
+ .reliable_index p span{
+    display: inline-block;
+    width: 54px;
+    height: 10px;
+    background-color: #d6d7dc;
+}
+.acc_save .reliable_index p .orange_span{
+    background-color: #f1a30f;
+}
+ .reliable_index p i{
+    font-style: normal;
+    float: right;
+    margin-right:10px;
+    font-size: 18px;
+    color: #f5a517;
+}
+.acc_save .reliable_index h3{
+    margin: 100px auto 20px 0px;
+}
+.secret_ul{
+    margin: 30px auto auto 0;
+}
+.secret_ul li{
+    display: inline-block;
+    margin-left:6%;
+    cursor: pointer;
+}
+.secret_ul li img{
+    padding: 10px;
+}
+.secret_ul li h4{
+    color: #f5a517;
+    text-align: center;
+    font-size: 18px;
+}
+.secret_ul li h4 em{
+    font-style: normal;
+    color: black;
+}
+/*修改密码css*/
+.recharge_wh .acc_bg{
+    background-color: white;
+    margin-top: 0;
+}
+.recharge_wh .acc_bg form input{
+    background-color: white;
+
+}
+.recharge_wh .acc_bg .acc_con{
+    margin:7% auto auto 24%;
+    width:50%;
+    height:50%;
+}
+.btn_se{
+    float: right;
+    margin: 3% 15% 100px auto;
+}
+.btn_se button{
+    display: inline-block;
+    margin: 40px auto;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.btn_se  .edit{
+    border: 1px solid #f5a517;
+    background-color: white;
+}
+.btn_se  .sure{
+    border: 1px solid white;
+    background-color: #f5a517;
+    color: white;
+}
+/*付款方式*/
+.payway_ul{
+    display: inline-block;
+     margin: 20px 0 110px 32px;
+     width: 98%;
+
+}
+.payway_ul li{
+    display: inline-block;
+    width:20%;
+    height: 48px;
+    padding-right: 20px;
+}
+.payway_ul li span{
+    vertical-align: middle;
+    cursor: pointer;
+}
+.payway_ul li img.icon_img{
+    padding-right: 14px;
+
+}
+img.pay_img{
+    width: 62%;
+    height:100%;
+
+}
+.payway_ul h3{
+    float: right;
+    margin-right: 50px;
+    margin-top: 10px;
+    color: #f5a517;
+    text-align: center;
+    font-size: 18px;
+}
+.payway_ul .icon{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/account_Safe/icon.png);
+    margin-right: 15px;
+}
+.payway_ul .alipay{
+    display: inline-block;
+    width:142px;
+    height: 48px;
+    background-image: url(../images/account_Safe/icon-zhifubao.png);
+}
+.payway_ul .weixin{
+    display: inline-block;
+    width:142px;
+    height: 48px;
+    background-image: url(../images/recharge_Manage/icon-weixin.png);
+}
+.payway_ul .yinlian{
+    display: inline-block;
+    width:142px;
+    height: 48px;
+    background-image: url(../images/recharge_Manage/icon-yinlian.png);
+}
+.payway_ul .active_p .icon{
+    background-image: url(../images/account_Safe/icon-selected.png);
+}
+.payway_ul .active_p .alipay{
+    background-image: url(../images/account_Safe/icon-zhifubao--selected.png);
+}
+.payway_ul .active_p .weixin{
+    background-image: url(../images/recharge_Manage/icon-weixin-selected.png);
+}.payway_ul .active_p .yinlian{
+     background-image: url(../images/recharge_Manage/icon-yinlian_select.png);
+ }
+ /*搜虎币*/
+.coin h1{
+   font-size: 32px;
+    padding-left: 30px;
+    margin-top: 30px;
+    color: #f5a517;
+}
+.sh_b{
+    margin-bottom: 100px;
+    margin-left: 30px;
+}
+.sh_b  .coin_cz{
+   float: right;
+    margin-right: 30px;
+}
+.sh_b .coin_cz button{
+    margin-right: 10px;
+    width: 112px;
+    height: 36px;
+    border: 1px solid #f5a517;
+    color: #f5a517;
+    border-radius: 3px;
+    font-size:16px;
+    background-color: white;
+}
+/*充值历史*/
+.rec_his{
+   margin: 30px 20px 20px 30px;
+}
+.rec_his select{
+    width: 94px;
+    height: 30px;
+    text-indent: 0.6%;
+}
+button{
+    cursor:pointer ;
+}
+.seek{
+    display: inline-block;
+    font-size:18px;
+    border: 1px solid #f5a517;
+    width: 94px;
+    height: 30px;
+    border-radius: 3px;
+    text-align: center;
+    line-height:26px;
+    color: #f5a517;
+    cursor: pointer;
+    background-color: white;
+}
+.del{
+    display: inline-block;
+    float: right;
+    font-size:18px;
+    border: 1px solid #b6b6b6;
+    width: 94px;
+    height: 30px;
+    border-radius: 3px;
+    text-align: center;
+    line-height:26px;
+    color: #b6b6b6;
+    margin-right: 20px;
+    background-color: white;
+}
+/*交易明细表格*/
+table.detail{
+    width: 98%;
+    margin: 20px auto 140px auto;
+    text-align: center;
+
+}
+table.detail tr .one{
+    width: 10%;
+}
+table.detail tr .two{
+    width: 30%;
+}
+table.detail tr .three{
+    width: 20%;
+}
+table.detail tr .four{
+    width: 10%;
+}
+table.detail tr .five{
+    width: 10%;
+}
+table.detail th{
+    border-bottom: 1px solid #dddddd;
+    border-top: 1px solid #dddddd;
+    height: 40px;
+}
+table.detail tr td{
+    height: 40px;
+    border-right: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+}
+table.detail tr td.five{
+    border-right: none;
+}
+/*我的消息*/
+.my_Mess .checkbox{
+    width: 20px;
+    height: 20px;
+    margin: 4% auto auto auto;
+    box-sizing: content-box;
+    appearance: none;
+    -moz-appearance: none;
+    /**/-webkit-appearance: none;
+    background: url(../images/my_Message/icon-kuang.png) no-repeat 2% center;
+    border:0px solid #dddddd;
+   /* position:absolute;
+    clip: rect(6px 15px 15px 6px);*/
+    box-shadow: none;
+}
+a,label {
+    display:block;
+    width:25px;
+    height:25px;
+    overflow:hidden
+}
+a {
+    background:url(../images/recharge_Manage/orange.jpg) no-repeat;
+}
+a:hover {
+    background:url(../images/recharge_Manage/orange.jpg) no-repeat;
+}
+a#b {
+    background:url(../images/recharge_Manage/white.jpg) no-repeat;
+}
