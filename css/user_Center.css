@@ -426,10 +426,11 @@ table.detail tr td.five{
 .sys_mess{
     width: 30%;
     height: auto;
-    margin: 20px auto auto 30px;
+    margin: 20px auto auto 0px;
     display: inline-block;
     float: left;
 }
+/*中间竖线*/
 .ver_line{
     display: inline-block;
     width: 1px;
@@ -449,4 +450,62 @@ span.che_a{
 }
 .active_a {
     background:url(../images/my_Message/icon-checked.png) no-repeat;
+}
+.active_a_a {
+    background:url(../images/my_Message/icon-checked.png) no-repeat;
+}
+.mess_ul{
+    margin-top: 20px;
+    color: #646464;
+}
+.mess_ul .active_x{
+    background-color: #f7f7f7;
+}
+.mess_ul li{
+    cursor: pointer;
+   padding: 10px 0 20px 30px;
+
+}
+.mess_ul li h4{
+    display: inline-block;
+    margin: 10px auto auto auto;
+}
+.mess_ul li em{
+    float: right;
+    font-style: normal;
+    margin-right: 20px;
+}
+.mess_ul li p{
+    margin:20px 20px auto auto;
+    font-size: 14px;
+}
+.mess_detail{
+    width: 68%;
+    float:left;
+    color: #646464;
+    background-color: #f7f7f7;
+}
+.mess{
+    margin: 26px auto auto 48px;
+}
+.mess img{
+    vertical-align:middle;
+}
+.mess p.fh_tit span{
+    font-size: 18px;
+    color: #181818;
+}
+.mess p.fh_tit em{
+   float: right;
+    margin: 20px 20px auto auto;
+}
+.mess p.main{
+    width: 70%;
+    margin-top: 20px;
+    line-height: 24px;
+    margin-bottom: 30px;
+}
+.mess p.main strong{
+    font-size: 16px;
+    font-weight: bold;
 }

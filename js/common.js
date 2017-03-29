@@ -8,7 +8,7 @@ $(function () {
             var url=$(this).attr("title");
             window.location.replace(url);
         });
-       //点击账户充值m没有登录直接进入登录注册页面部分
+       //点击账户充值没有登录直接进入登录注册页面部分
        $(".acc_reg_log .acc_con ul li ").on("click","span",function () {
            var index_rl=$(this).parent().index();
            $(this).parent().addClass("txt_sty").siblings().removeClass("txt_sty");
@@ -55,7 +55,7 @@ $(function () {
         $(".div_fgt").css({"display":"block","margin-top":"20px"});
     });
 
-    //个人中心部分
+    /*个人中心*/
     //个人中心选项卡效果
     $(".user_ul li").click(function () {
         if(!$(this).hasClass("active_t")){
@@ -65,17 +65,17 @@ $(function () {
         $(".user_ul_div").eq(index).show().siblings('.user_ul_div').hide();
     });
     //点击编辑资料
-    var input_edit=$(".table_two input")
+    var input_edit=$(".table_two input");
     input_edit.focus(function () {
         $(this).select();
     });
     $(".edit_datum").click(function(){
-        console.log($(input_edit).attr("disabled"))
+        console.log($(input_edit).attr("disabled"));
         input_edit.removeAttr("disabled");
     });
     //点击个人中心保存
     $(".user_info button.save").click(function () {
-        console.log($(input_edit).attr("disabled"))
+        console.log($(input_edit).attr("disabled"));
         input_edit.attr("disabled",'disabled');
     });
     //按钮 取消和保存
@@ -86,7 +86,7 @@ $(function () {
         }
     });
 
-    //产品管理
+   /*产品管理*/
     //游戏选项卡效果
     $(".game_ul li").click(function () {
         if(!$(this).hasClass("active_g")){
@@ -94,8 +94,10 @@ $(function () {
         }
         var index=$(this).index();
         $(".pro_Man .game").eq(index).show().siblings('.game').hide();
+        $(".sys_mess").eq(index).show().siblings(".sys_mess").hide();
     });
-    //账户安全 点击图片
+    /*账户安全 */
+    // 点击图片
     $(".secret_ul li img").click(function (e) {
         var sel="-selected";
         var img_src=$(this).attr("src");
@@ -125,13 +127,84 @@ $(function () {
             $(this).addClass("sure").siblings().removeClass("sure").addClass("edit");
         }
     });
+     /*我的消息*/
+    //checkbox样式全选
+      $(".all_sel").click(function () {
+          console.log($(this).children(".che_ipt"))
+          $(this).children(".che_ipt").attr("checked",true);
+          //$(".all").html("全选");
+          var check=$(".che_a").is(".active_a");
+          var chk_if= $(".one .mess_ul li .che_a");
+          //var bol_chk=chk_if.hasClass('active_a');
+         // var double_bol=chk_if.hasClass('che_a active_a');
 
-    //checkbox样式
-  $(".che_a").click(function () {
-      $(".che_a").toggleClass('active_a');
-     var check=$(".che_a").is(".active_a");
-     $(".che_ipt").attr("checked",check);
-  });
+          //console.log(bol_chk);
+          var self_if=$(this).hasClass('active_a');
+          !self_if?$(this).addClass("active_a"):$(this).removeClass("active_a");//全选框打钩
+          //!bol_chk?chk_if.addClass("active_a"):chk_if.removeClass("active_a");
+         /* $.each(chk_if,function (index,arr) {
+                 var ipt_bol=$(arr).is('.active_a');
+                 ipt_bol==true?$(this).children(".che_ipt").attr("checked",true):$(this).children(".che_ipt").attr("checked",false);
+
+              var bol=$(chk_if[index]).is('.active_a');
+              //console.log("bol", bol);
+              //如果不打勾添加打勾样式
+             /!* if(!bol){
+                $(chk_if).addClass('active_a');
+                  //!bol_chk?chk_if.addClass("active_a"):chk_if.removeClass("active_a");
+
+              }*!/
+              !bol?chk_if.addClass("active_a"):chk_if.removeClass("active_a");
+          });*/
+          var bol_arr=[];
+          for(var i=0;i<chk_if.length;i++){
+              bol_arr[i]=($(chk_if[i]).hasClass('active_a'));
+
+          }
+         console.log(bol_arr);
+          var sum=0;
+          for(var j=0;j<bol_arr.length;j++){
+             // $(chk_if[j]).addClass('active_a');
+              //console.log(bol_arr[j]);
+              //console.log(Number(bol_arr[j]));
+              sum+=Number(bol_arr[j])
+              if(!bol_arr[j]){
+                  console.log(chk_if[j]);
+                  $(chk_if[j]).addClass('active_a');
+              }
+              else {
+                  console.log(chk_if[j]);
+                 // if($(".all_sel").children(".che_ipt").attr("checked")){
+                     // $(chk_if[j]).addClass('active_a');
+                      //$(".all_sel").children(".che_ipt").attr("checked",false);
+                 // }else {
+                      $(chk_if[j]).removeClass('active_a');
+                 // }
+
+              }
+              //console.log(sum);
+          }
+
+      });
+    //自行选择
+    $(".mess_ul li .che_a").click(function () {
+        $(this).toggleClass('active_a');
+        var check=$(this).is(".active_a");
+        $(this).children(".che_ipt").attr("checked",check);
+        /*var bol_chk=$(this).hasClass('active_a');
+        !bol_chk?$(this).addClass("active_a"):$(this).removeClass("active_a");*/
+        // $(".all").html("反选");
+    });
+    //选项卡效果
+    $(".mess_ul li").click(function () {
+        if(!$(this).hasClass("active_x")){
+            $(this).addClass("active_x").siblings("li").removeClass("active_x");
+        }
+        var name=$(this).children("p").children('.user_n').text();
+        $(".mess .main strong").text(name+":");
+       /* var txt=$(this).children("p").children(".welcome").text();
+        $(".mess .main span").text(txt);*/
+    });
 
     //首页 图片轮播
     //除了第一张图片 其他图片都隐藏
@@ -200,8 +273,6 @@ $(function () {
         $(this).children().hide();
     });
 
-
-
    //案例页面 点击选项卡效果
     $(".black_bar ul").on("click","li",function(){
         $(this).addClass("orange").siblings().removeClass("orange");
@@ -230,7 +301,6 @@ $(function () {
             $(".black_bar ul .img3").hide();
         }
     });
-
 
     //加入我们 招聘效果
     $(".android_ul li").click(function(){
@@ -298,7 +368,7 @@ $(function () {
             }
         });
     });
-     //账户管理部分
+    /*充值管理部分*/
     //点击添加账户
     $(".add_img").click(function () {
         $(".pop_cho").css("display","block");
@@ -317,7 +387,7 @@ $(function () {
         var has_img=$(this).find(".che_img").length;
         var img_li_index=$(this).index();
         if(has_img==1){
-           $(".person_ul li").eq(img_li_index).children('.che_img').remove();
+            $(".person_ul li").eq(img_li_index).children('.che_img').remove();
         }
         if(has_img==0){
             $(this).append(add_img);
