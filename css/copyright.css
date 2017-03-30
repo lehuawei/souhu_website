@@ -8,10 +8,6 @@ a{
     text-decoration: none;
     color: #ffffff;
 }
-@font-face {
-    font-family: ziti;
-    src: url('../font/Microsoft-Yahei-UI-Light.7z');
-}
 li{
     list-style-type: none;
 }
@@ -50,15 +46,11 @@ header span {
     color: #161616;
     font-size:16px;
     line-height: 70px;
-    margin-left: 10%;
+    margin-left:6%;
 }
-/*header .orange{
-    color: #ffa21c;
-}*/
 header .nav_span div{
     display: inline-block;
-    /*display: none;*/
-    width: 50px;
+    width: 100px;
     height: 24px;
     border-radius:4px;
     text-align: center;

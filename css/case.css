@@ -8,10 +8,7 @@ a{
     text-decoration: none;
     color: black;
 }
-@font-face {
-    font-family: ziti;
-    src: url('../font/Microsoft-Yahei-UI-Light.7z');
-}
+
 img{
     border-style: none;
 }

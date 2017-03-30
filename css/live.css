@@ -8,10 +8,6 @@ a{
     text-decoration: none;
     color: #ffffff;
 }
-@font-face {
-    font-family: ziti;
-    src: url('../font/Microsoft-Yahei-UI-Light.7z');
-}
 li{
     list-style-type: none;
 }

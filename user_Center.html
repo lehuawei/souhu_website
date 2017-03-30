@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/index.css">
     <script src="js/jquery-1.9.1.js"></script>
     <script src="js/placeholderfriend.js"></script>
+    <script type="text/javascript" src="js/jquery.cityselect.js"></script>
     <!--if it IE 8--><!--兼容h5-->
     <script src="js/respond.min.js"></script>
     <script src="js/html5shiv.min.js"></script>
@@ -53,9 +54,9 @@
         </ul>
         <!--导航内容-->
         <!--1 个人信息-->
-        <div class="user_info user_ul_div"  style="display:none">
+        <div class="user_info user_ul_div"  style="display:block">
             <div class="info_one">
-                <img src="images/recharge_Manage/girl.jpg" alt="" width="132px" height="132px">
+                <img class="tx_img" src="images/recharge_Manage/girl.jpg" alt="" width="132px" height="132px" >
                 <table>
                     <tr>
                         <td style="font-size: 20px">Muse</td>
@@ -81,7 +82,11 @@
                         <td class="td_three">身份证号:<input type="text" value="200122455941235561" disabled><em></em></td>
                     </tr>
                     <tr>
-                        <td class="td_one">所在地区:<input type="text" value="深圳" disabled><em></em></td>
+                        <td class="td_one" id="city">所在地区:
+                            <!--<input type="text" value="深圳" disabled><em></em>-->
+                            <select class="prov" disabled></select>
+                            <select class="city" disabled="disabled"></select>
+                        </td>
                         <td class="td_two">地址:<input type="text" value="深圳宝安区智恒产业园" disabled><em></em></td>
                         <td class="td_three"><input type="text" value="" disabled><em></em></td>
                     </tr>
@@ -207,7 +212,7 @@
                     <option value="1">1</option>
                 </select> 月
                 <button class="seek"> <img src="images/souhu_Coin/icon-seek.png" alt="" style="margin-right: 10px">查询</button>
-                <button class="del">批量删除</button>
+                <button class="del">批量管理</button>
             </h3>
             <table class="detail" cellpadding="0" cellspacing="0">
                 <tr>
@@ -215,21 +220,30 @@
                     <th class="two">时间</th>
                     <th class="three">类型</th>
                     <th class="four">金额</th>
-                    <th class="five"></th>
+                    <th class="five" style="text-align: center" >
+                        <span  class="che_a all_sel"><input hidden type="checkbox"  class="che_ipt" style="" checked/></span>
+                        <span style="color: #b6b6b6;font-size: 14px" class="all">全选</span>
+                    </th>
                 </tr>
                 <tr>
                     <td class="one">234134</td>
                     <td class="two">2017/1/20 20:00:00</td>
                     <td class="three">虎币</td>
                     <td class="four">520.00</td>
-                    <td class="five"></td>
+                    <td class="five" >
+                        <span  class="che_a">
+                        <input hidden type="checkbox"  class="che_ipt" checked /></span>
+                    </td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td  class="five"></td>
+                    <td>234134</td>
+                    <td>2017/1/20 20:00:00</td>
+                    <td>虎币</td>
+                    <td>520.00</td>
+                    <td  class="five">
+                         <span  class="che_a">
+                        <input hidden type="checkbox"  class="che_ipt" checked /></span>
+                    </td>
                 </tr>
                 <tr>
                     <td></td>
@@ -241,14 +255,14 @@
             </table>
         </div>
         <!--5我的消息-->
-        <div class="my_Mess user_ul_div clearfix"  style="display: block">
+        <div class="my_Mess user_ul_div clearfix"  style="display: none">
             <ul class="game_ul">
                 <li class="active_g">系统消息</li>
                 <li>私信</li>
             </ul>
             <!--系统消息-->
             <div class="sys_mess one">
-                <div style="margin-left: 30px">
+                <div style="margin-left: 30px;height: 26px">
                 <span  class="che_a all_sel"><input hidden type="checkbox"  class="che_ipt" style="" checked/></span>
                 <span style="color: #b6b6b6;font-size: 14px" class="all">全选</span>
                 <button class="del">批量管理</button>
@@ -282,9 +296,9 @@
             </div>
             <!--私信-->
             <div class="sys_mess pri_letter" style="display: none">
-                <div style="margin-left: 30px">
-                    <span  class="che_a"><input hidden type="checkbox"  class="che_ipt" style="" checked/></span>
-                    <span style="color: #b6b6b6;font-size: 14px">全选</span>
+                <div style="margin-left: 30px;height: 26px">
+                    <span  class="che_a all_sel"><input hidden type="checkbox"  class="che_ipt" style="" checked/></span>
+                    <span style="color: #b6b6b6;font-size: 14px" class="all">全选</span>
                     <button class="del">批量管理</button>
                 </div>
                 <ul class="mess_ul">

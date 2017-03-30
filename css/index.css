@@ -12,15 +12,29 @@ a{
 a:active{
     text-decoration: none;
 }
-@font-face {
-    font-family: ziti;
-    src: url('../font/Microsoft-Yahei-UI-Light.7z');
-}
 em{
     font-style: normal;
 }
 li{
     list-style-type: none;
+}
+img{
+    border: none;
+}
+input{
+    line-height: 40px;
+}
+select{
+
+   /* line-height:18px;
+    padding:-2px 0;*/
+    text-indent:0.8%;
+    /*height:40px;
+    font-size: 14px;
+    padding-bottom:8px;*/
+}
+option{
+    vertical-align: middle;
 }
 /*固定头部*/
 header .head{
@@ -73,7 +87,7 @@ header .nav_span div{
     line-height: 22px;
     cursor: pointer;
 }
-header .nav_span  .log{
+header .nav_span .log{
     margin-left: 8%;
     color: #161616;
     border: 1px solid black;

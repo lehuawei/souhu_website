@@ -54,7 +54,15 @@ $(function () {
         $(".div_log_none").css("display","none");
         $(".div_fgt").css({"display":"block","margin-top":"20px"});
     });
-
+    //前往登录
+    $(".go_log").click(function () {
+       /* $(".acc_con ul").empty();
+        var rl_li=$("<li class='txt_sty'><span>登录</span></li> <li><span>注册</span></li>");
+        $(".acc_con ul").append(rl_li);
+        $(".div_log_none").css("display","block");
+        $(".div_fgt").css("display","none");*/
+       location.reload();
+    });
     /*个人中心*/
     //个人中心选项卡效果
     $(".user_ul li").click(function () {
@@ -70,17 +78,21 @@ $(function () {
         $(this).select();
     });
     $(".edit_datum").click(function(){
-        console.log($(input_edit).attr("disabled"));
+        //省级城市联动调用
+        $("#city").citySelect();
         input_edit.removeAttr("disabled");
+        $("#city select").removeAttr("disabled");
     });
     //点击个人中心保存
     $(".user_info button.save").click(function () {
-        console.log($(input_edit).attr("disabled"));
+        //console.log($(input_edit).attr("disabled"));
         input_edit.attr("disabled",'disabled');
+        $("#city select").attr("disabled",'disabled');
     });
-    //按钮 取消和保存
+    //按钮 取消和保存样式
     $(".btn_div button").click(function () {
         input_edit.attr("disabled",'disabled');
+        $("#city select").attr("disabled",'disabled');
         if(!$(this).hasClass("save")){
             $(this).addClass("save").siblings().removeClass("save").addClass("cancel");
         }
@@ -127,73 +139,99 @@ $(function () {
             $(this).addClass("sure").siblings().removeClass("sure").addClass("edit");
         }
     });
-     /*我的消息*/
-    //checkbox样式全选
-      $(".all_sel").click(function () {
-          console.log($(this).children(".che_ipt"))
-          $(this).children(".che_ipt").attr("checked",true);
-          //$(".all").html("全选");
-          var check=$(".che_a").is(".active_a");
-          var chk_if= $(".one .mess_ul li .che_a");
-          //var bol_chk=chk_if.hasClass('active_a');
-         // var double_bol=chk_if.hasClass('che_a active_a');
 
-          //console.log(bol_chk);
+     /*批量管理可删除*/
+     //搜虎币
+    var coin_chk_a= $('.coin .che_a');
+    var coin_all= $('.coin .all');
+    coin_chk_a.css("display",'none');
+    coin_all.css("display",'none');
+    $(".coin .del").click(function () {
+        var txt_bol= $(this).text()=='批量管理';
+        !txt_bol?$(this).text("批量管理"):$(this).text("删除");
+        if($(this).text()=='批量管理'){
+            coin_chk_a.css("display",'none');
+            coin_all.css("display",'none');
+        }
+        if($(this).text()=='删除'){
+            coin_chk_a.css("display",'inline-block');
+            coin_all.css("display",'inline-block');
+        }
+    });
+    // 我的消息
+    var sys_chk_a= $('.sys_mess .che_a');
+    var sys_all= $('.sys_mess .all');
+    sys_chk_a.css("display",'none');
+    sys_all.css("display",'none');
+    $(".sys_mess .del").click(function () {
+           var txt_bol= $(this).text()=='批量管理';
+           !txt_bol?$(this).text("批量管理"):$(this).text("删除");
+            if($(this).text()=='批量管理'){
+                sys_chk_a.css("display",'none');
+                sys_all.css("display",'none');
+            }
+            if($(this).text()=='删除'){
+                sys_chk_a.css("display",'inline-block');
+                sys_all.css("display",'inline-block');
+            }
+    });
+    /*checkbox样式全选*/
+    // 搜虎币
+    $(".coin .all_sel").click(function ()  {
+        var td_a=$("table.detail tr td .che_a")
+        var td_bol=td_a.hasClass('active_a');
+        !td_bol?td_a.addClass('active_a'):td_a.removeClass('active_a');
+        var self_if=$(this).hasClass('active_a');
+        !self_if?$(this).addClass("active_a"):$(this).removeClass("active_a");//全选框打钩
+        var arr=[];
+        for(var i=0;i<td_a.length;i++){
+            arr[i]=($(td_a[i]).hasClass('active_a'));
+        }
+        for(var j=0;j<arr.length;j++){
+            if(!arr[j]){
+                td_a.children(".che_ipt").attr("checked",false);
+            }
+            else {
+                td_a.children(".che_ipt").attr("checked",true);
+            }
+        }
+    });
+
+    //我的消息
+      $(".sys_mess .all_sel").click(function ()  {
+          var chk_if= $(".mess_ul li .che_a");
+          var bol_chk=chk_if.hasClass('active_a');
+          $(this).children(".che_ipt").attr("checked",true);
           var self_if=$(this).hasClass('active_a');
           !self_if?$(this).addClass("active_a"):$(this).removeClass("active_a");//全选框打钩
-          //!bol_chk?chk_if.addClass("active_a"):chk_if.removeClass("active_a");
-         /* $.each(chk_if,function (index,arr) {
-                 var ipt_bol=$(arr).is('.active_a');
-                 ipt_bol==true?$(this).children(".che_ipt").attr("checked",true):$(this).children(".che_ipt").attr("checked",false);
-
-              var bol=$(chk_if[index]).is('.active_a');
-              //console.log("bol", bol);
-              //如果不打勾添加打勾样式
-             /!* if(!bol){
-                $(chk_if).addClass('active_a');
-                  //!bol_chk?chk_if.addClass("active_a"):chk_if.removeClass("active_a");
-
-              }*!/
-              !bol?chk_if.addClass("active_a"):chk_if.removeClass("active_a");
-          });*/
           var bol_arr=[];
           for(var i=0;i<chk_if.length;i++){
               bol_arr[i]=($(chk_if[i]).hasClass('active_a'));
-
           }
-         console.log(bol_arr);
-          var sum=0;
           for(var j=0;j<bol_arr.length;j++){
-             // $(chk_if[j]).addClass('active_a');
-              //console.log(bol_arr[j]);
-              //console.log(Number(bol_arr[j]));
-              sum+=Number(bol_arr[j])
               if(!bol_arr[j]){
-                  console.log(chk_if[j]);
                   $(chk_if[j]).addClass('active_a');
+                  chk_if.children(".che_ipt").attr("checked",true);
               }
               else {
-                  console.log(chk_if[j]);
-                 // if($(".all_sel").children(".che_ipt").attr("checked")){
-                     // $(chk_if[j]).addClass('active_a');
-                      //$(".all_sel").children(".che_ipt").attr("checked",false);
-                 // }else {
                       $(chk_if[j]).removeClass('active_a');
-                 // }
-
+                     chk_if.children(".che_ipt").attr("checked",false);
               }
-              //console.log(sum);
           }
-
       });
     //自行选择
-    $(".mess_ul li .che_a").click(function () {
+    $(".mess_ul li .che_a").click(function (){
         $(this).toggleClass('active_a');
         var check=$(this).is(".active_a");
         $(this).children(".che_ipt").attr("checked",check);
         /*var bol_chk=$(this).hasClass('active_a');
         !bol_chk?$(this).addClass("active_a"):$(this).removeClass("active_a");*/
         // $(".all").html("反选");
+    });
+    $("table.detail tr td .che_a").click(function (){
+        $(this).toggleClass('active_a');
+        var check=$(this).is(".active_a");
+        $(this).children(".che_ipt").attr("checked",check);
     });
     //选项卡效果
     $(".mess_ul li").click(function () {
@@ -314,14 +352,23 @@ $(function () {
         }
     });
     //点击设置图标会显示对应的弹出框div
-    $(".set_icon").click(function () {
+    $(".set_icon").click(function (e) {
+        e.stopPropagation();//阻止冒泡
         if ($(".angle").is(":hidden")) {
             $(".angle").show();
         } else if($(".angle").is(":visible")){
             $(".angle").hide();
+
         }
 
     });
+    //点击外部弹出框消失
+   /* $(document).click(function (e) {
+        if($(".angle").is(":visible")){
+            $(".angle").hide();
+        }
+        e.stopPropagation();
+    });*/
     //进入直播页面
     $(" .live").click(function(){
         var detail_url=$(this).attr("title");
@@ -368,6 +415,7 @@ $(function () {
             }
         });
     });
+
     /*充值管理部分*/
     //点击添加账户
     $(".add_img").click(function () {
@@ -429,9 +477,10 @@ $(function () {
     }
     //如果是ie
      if ((navigator.userAgent.indexOf('MSIE') >= 0) && (navigator.userAgent.indexOf('Opera') < 0)){
-        $("*").css("font-family","微软雅黑");
         $(".bs").css("background-color","white");
         $(".cont5_one .pic_in").css("opacity","0");
-        $("header .nav_span .angle").css("right","-28px")
+        $("header .nav_span .angle").css("right","-28px");
+         //充值管理select样式
+         $(".cho_user select").css("background","none");
     }
 });

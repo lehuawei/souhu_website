@@ -126,9 +126,11 @@
 }
 /*登录*/
 .div_log_none{
+   /* display: none;*/
+}
+.div_reg{
     display: none;
 }
-
 .acc_bg .acc_con .btm_txt .fgt_pass a{
     float: left;
     color: #f0a414 ;
@@ -144,6 +146,14 @@
 }
 .acc_bg .acc_con .log_txt a:hover{
     text-decoration: underline #f0a414;
+}
+/*忘记密码*/
+.go_log{
+    color: #f5a517;font-size: 12px;text-align: right;width: 70%;margin: 10px auto;
+}
+.go_log span:hover{
+    text-decoration:underline #f5a517;
+    cursor: pointer;
 }
 /*底部*/
 footer .foot{
