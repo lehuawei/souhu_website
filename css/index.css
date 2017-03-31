@@ -71,7 +71,7 @@ header span {
     color: #161616;
     font-size:16px;
     line-height: 70px;
-    margin-left:6%;
+    margin-left:5%;
 }
 header .orange{
     color: #f5a517;
@@ -113,6 +113,9 @@ header .nav_span .org{
     color: white;
 }
 .yhm{
+    cursor: pointer;
+}
+.set_icon{
     cursor: pointer;
 }
 /*带尖角的弹出框*/

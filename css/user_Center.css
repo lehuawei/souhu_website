@@ -60,6 +60,7 @@
 }
 .user_info .info_two table{
     min-width: 92%;
+    max-width: 98%;
     border-left: 1px solid #dddddd;
     border-top: 1px solid #dddddd;
     margin-top: 20px;
@@ -83,6 +84,7 @@
     user-select: none;
     background-color: white;
     text-indent: 2%;
+    line-height: 20px;
 }
 
 .user_info .info_two table tr .td_one{
@@ -95,7 +97,11 @@
     width: 35%;
 }
 .user_info .info_two table tr td input{
-    width: 50%;
+    width: 60%;
+}
+.user_info .info_two table tr td select{
+   min-width: 28%;
+   max-width: 100%;
 }
 .user_info button{
     display: inline-block;
@@ -170,6 +176,11 @@
     vertical-align: middle;
     margin-left: 0;
     margin-right: 6px;
+}
+.game span{
+   display: inline-block;
+    margin-bottom: 400px;
+    margin-left: 30px;
 }
 /*账户安全*/
 .reliable_index{
@@ -351,6 +362,16 @@ img.pay_img{
     font-size:16px;
     background-color: white;
 }
+.sh_b .coin_cz .cz_a{
+    margin-right: 10px;
+    width: 112px;
+    height: 36px;
+    border: 1px solid #f5a517;
+    color: #f5a517;
+    border-radius: 3px;
+    font-size:16px;
+    background-color: white;
+}
 /*充值历史*/
 .rec_his{
    margin: 30px 20px 20px 30px;
@@ -359,6 +380,7 @@ img.pay_img{
     width: 94px;
     height: 30px;
     text-indent: 0.6%;
+    line-height: 30px;
 }
 button{
     cursor:pointer ;

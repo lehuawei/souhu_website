@@ -3,33 +3,19 @@
 <head profile="http://www.w3.org/2000/08/w3c-synd/#">
     <meta http-equiv="content-language" content="zh-cn" />
     <meta http-equiv="content-type" content="text/html;charset=gb2312" />
+    <script src="js/jquery-1.9.1.js"></script>
     <title>51css</title>
     <style type="text/css">
-        /*<![CDATA[*/
-        a,label {
-            display:block;
-            width:25px;
-            height:25px;
-            overflow:hidden;
-            margin: 100px;
-        }
-        a.che_a {
-            background:url(images/my_Message/icon-kuang.png) no-repeat;
-        }
-        a.che_a:active {
-            background:url(images/my_Message/icon-checked.png) no-repeat;
-        }
-        a.che_a#b {
-            background:url(images/my_Message/icon-checked.png) no-repeat;
-        }
-        /*]]>*/
+
     </style>
 </head>
 <body>
-<label for="cc">
-    <!--<a href="#b" _fcksavedurl="#b" id="a" onclick="cc.checked=true" class="che_a"></a>
-    <a href="#a" _fcksavedurl="#a" id="b" onclick="cc.checked=false" class="che_a"></a>-->
-    <a href=""class="che_a"><input type="checkbox" id="cc" style="apperance:none" /></a>
-</label>
+
+
 </body>
+<script>
+    $("a").click(function (e) {
+        e.stopPropagation();
+    })
+</script>
 </html>

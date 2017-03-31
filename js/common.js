@@ -180,7 +180,7 @@ $(function () {
     $(".coin .all_sel").click(function ()  {
         var td_a=$("table.detail tr td .che_a")
         var td_bol=td_a.hasClass('active_a');
-        !td_bol?td_a.addClass('active_a'):td_a.removeClass('active_a');
+       // !td_bol?td_a.addClass('active_a'):td_a.removeClass('active_a');
         var self_if=$(this).hasClass('active_a');
         !self_if?$(this).addClass("active_a"):$(this).removeClass("active_a");//全选框打钩
         var arr=[];
@@ -189,10 +189,12 @@ $(function () {
         }
         for(var j=0;j<arr.length;j++){
             if(!arr[j]){
-                td_a.children(".che_ipt").attr("checked",false);
+                $(td_a[j]).addClass('active_a');
+                td_a.children(".che_ipt").attr("checked",true);
             }
             else {
-                td_a.children(".che_ipt").attr("checked",true);
+                $(td_a[j]).removeClass('active_a');
+                td_a.children(".che_ipt").attr("checked",false);
             }
         }
     });
@@ -352,23 +354,23 @@ $(function () {
         }
     });
     //点击设置图标会显示对应的弹出框div
-    $(".set_icon").click(function (e) {
-        e.stopPropagation();//阻止冒泡
+   /* $(".set_icon").click(function (e) {
+        //e.stopPropagation();//阻止冒泡
         if ($(".angle").is(":hidden")) {
             $(".angle").show();
         } else if($(".angle").is(":visible")){
             $(".angle").hide();
 
         }
-
+    });*/
+    $(".set_icon").click(function (e) {
+           e.stopPropagation();//阻止冒泡
+            $(".angle").show();
     });
     //点击外部弹出框消失
-   /* $(document).click(function (e) {
-        if($(".angle").is(":visible")){
+    $(document).click(function (e) {
             $(".angle").hide();
-        }
-        e.stopPropagation();
-    });*/
+    });
     //进入直播页面
     $(" .live").click(function(){
         var detail_url=$(this).attr("title");
@@ -421,8 +423,8 @@ $(function () {
     $(".add_img").click(function () {
         $(".pop_cho").css("display","block");
         $(".opacity_color").css("display",'block');
-        var h=$(document.body).height()+"px";
-        $(".opacity_color").css("height",'h');
+       /* var h=$(document.body).height()+"px";
+        $(".opacity_color").css("height",'h');*/
     });
     //点击关闭
     $(".close").click(function(){
@@ -441,7 +443,6 @@ $(function () {
             $(this).append(add_img);
         }
     });
-
     //点击不同充值金额
     $(".clearfix_ul .active_li").click(function () {
         if(!$(this).hasClass("active_m")){
@@ -482,5 +483,12 @@ $(function () {
         $("header .nav_span .angle").css("right","-28px");
          //充值管理select样式
          $(".cho_user select").css("background","none");
+         //批量管理样式
+         $(".coin .detail input").css("display",'none');
+         $(".sys_mess input").css("display",'none');
+         //搜虎币充值button处理
+         $(".coin_cz ").empty();
+         var a_nob=$("<a href='acc_recharge.html' class='cz_a'>搜虎币充值</a> <a href='acc_recharge.html' class='cz_a'>飞虎币充值</a> <a href='acc_recharge.html' class='cz_a'>游戏充值</a>")
+         $('.coin_cz').append(a_nob);
     }
 });
