@@ -4,6 +4,7 @@ class C_Com
 {
 	public static function apiResult($code,$data='')
 	{
+		//实例化一个类
 		$result = new stdClass;
 		$result->CODE = $code;
 		$result->DATA = new stdClass;
@@ -44,6 +45,7 @@ class C_Com
 		// $arr = array ('a'=>1,'b'=>2,'c'=>3,'d'=>4,'e'=>5);
 		
 		$result = array();
+		
 		$result['CODE'] = $code;
 		if(self::isError($code))
 			$result['DATA'] 	= self::getErrorMessage($code);
@@ -94,10 +96,12 @@ class C_Com
 		}
 		return $errorMsg;
 	}
+	//调试日志
 	public static function debugLog($filename,$content)
 	{
 		$nowDate = date('Y-m-d');
 		$filename = $filename."_".$nowDate;
+		//把字符串写入文件中
 		file_put_contents(ROOT_PATH.'log/'.$filename,'['.date('Y-m-d H:i:s').']'.$content."\r\n",FILE_APPEND);
 	}
 	public static function varExport_old($name,$value)

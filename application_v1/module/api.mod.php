@@ -2,9 +2,9 @@
 $_REQUEST = (object)$_REQUEST;
 //var_dump($_REQUEST);
 //生成当前用户对象
-
 C_Com::debugLog("request.log",json_encode($_REQUEST));
 $apiMethod = $_REQUEST->action;
+//判断是否有某个方法没有则返回接口不存在
 $result = in_array($apiMethod,get_class_methods('API')) ? API::$apiMethod($_REQUEST) : C_Com::apiResult(-1);
 C_Com::apiResponse($result);
 class API
