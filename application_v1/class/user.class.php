@@ -26,7 +26,7 @@ class C_User
 	*修改用户的基本信息
 	**/
 	public function modUserInfo($param){
-		
+		$sql = "UPDATE userInfo SET nickName =  WHERE userId = ".$this->userId;
 	}
 
 
