@@ -11,10 +11,16 @@ class API
 {
 	public static $currUser;
     public static function createUser($param){
-        $userName = $param->userName;
+        $mobileNo = $param->mobileNo;
+        $smsCode = $param->smsCode;
         $nickName = $param->nickName;
         $userPass = $param->userPass;
-        if(empty($userName) || empty($nickName) || empty($userPass)) return C_Com::apiResult(-2);
+        if(empty($smsCode) || empty($mobileNo) || empty($nickName) || empty($userPass)) return C_Com::apiResult(-2);
+        //验证验证码是否正确
+        $code = getRedisMain()->getet('Sys/Sms/'.$mobileNo);
+        if($code != $smsCode){
+            return C_Com::apiResult(-1008);
+        }
         $userInfo = C_CurrUser::createUser($userName,$userPass,$nickName);
         return C_Com::apiResult(0,$userInfo);
     }
@@ -40,6 +46,18 @@ class API
     }
     public static function logout(){
         return C_Com::apiResult(0,C_CurrUser::userLogout());
+    }
+    public static function addGold($param){
+        if(!isset($param->addCnt)) return C_Com::apiResult(-2);
+        $addCnt = $param->addCnt;
+        $currUser = new C_User(C_CurrUser::userId);
+        $result = $currUser->userGold()->addGold($addCnt);
+        return C_Com::apiResult(0,$result);
+    }
+    public static function sendRegSms($param){
+        if(!isset($param->mobileNo))  return C_Com::apiResult(-2);
+        $result = C_CurrUser::sendRegSms($param->mobileNo);
+        return C_Com::apiResult(0,$result);
     }
 }
 

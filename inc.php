@@ -26,5 +26,21 @@ require(APP_PATH.'common/log.com.php');
 require(APP_PATH.'common/common.com.php');
 //应用开始时间
 define('APP_START_MTIME',C_Com::microtime_float());
+require(APP_PATH.'/common/Predis/Autoloader.php');
+Predis\Autoloader::register();
+require(APP_PATH.'common/redis.com.php');
+
+//应用开始时间
+define('APP_START_MTIME',C_Com::microtime_float());
+class Clean {
+	function __destruct() {
+		global $redisCache;
+		foreach ($redisCache as $redis) {
+			$redis->quit();
+		}
+	}
+}
+
+$c = new Clean();
 
 ?>
