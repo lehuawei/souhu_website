@@ -77,20 +77,11 @@ class C_Com
 			case -1005:$errorMsg= '账号已禁用';break;
 			case -1006:$errorMsg= '未找到用户信息';break;
 			case -1007:$errorMsg= '两次密码输入不一致';break;
-			//权限
-			case -1101:$errorMsg='无任何权限';break;
-			case -1102:$errorMsg='无权限';break;
-			case -1111:$errorMsg='角色名称已存在';break;
-			case -2000:$errorMsg='uuid为空';break;
-			case -2001:$errorMsg='渠道未找到';break;
-			case -2002:$errorMsg='渠道非正常状态';break;
-			case -2003:$errorMsg='渠道开启了新用户注册数限制，不符合要求';break;
-			case -2005:$errorMsg='不在允许下载时间范围内';break;
-			case -2006:$errorMsg='下载请求时间超过了设定的时间范围';break;
-			case -2007:$errorMsg='该渠道的下载应用库为空';break;
-			case -2008:$errorMsg='已经下载完所有应用';break;
-			case -2009:$errorMsg='未达到请求下载次数';break;
-			case -2010:$errorMsg='白名单用户';break;
+			case -1008:$errorMsg= '验证码错误';break;
+			case -1022:$errorMsg = '业务短信日下发条数超过设定的上限';break;
+			case -1023:$errorMsg = '单个手机号30秒内下发短信条数超过设定的上限';break;
+			case -1025:$errorMsg='单个手机号日下发短信条数超过设定的上限';break;
+		
 		}
 		return $errorMsg;
 	}

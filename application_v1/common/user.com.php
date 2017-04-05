@@ -1,6 +1,9 @@
 <?php
 if(!defined('ACCESS_KEY')){header("HTTP/1.1 404 Not Found");die;}
 define('COOKIE_PREFIX','souhu_');
+require_once(APP_PATH."class/SmsSender.php");
+use Qcloud\Sms\SmsSingleSender;
+use Qcloud\Sms\SmsMultiSender;
 class C_CurrUser
 {
 	public static $userId;
@@ -48,8 +51,8 @@ class C_CurrUser
 		self::$userId = 0;
 		return true;
 	}
-	public static function createUser($userName,$userPass,$nickName){
-		$sql = "SELECT * FROM souhu_userInfo WHERE userName = '".$userName."'";
+	public static function createUser($mobileNo,$userPass,$nickName){
+		$sql = "SELECT * FROM userInfo WHERE mobileNo = ".$mobileNo."";
 		$db = DB::connect('DB_USR');
 		$userInfo = $db->fetch($sql);
 		if(!empty($userInfo)){
@@ -57,14 +60,14 @@ class C_CurrUser
 			return;
 		}
 		$passwd = strtolower(md5($userPass.PwdSecret));
-		$sql = "INSERT INTO souhu_userInfo(userName,userPass,nickName,createTime)VALUES('".$userName."','".$passwd."','".$nickName."',".time().")";
+		$sql = "INSERT INTO userInfo(countryNo,mobileNo,userPass,nickName,createTime)VALUES(86,'".$mobileNo."','".$passwd."','".$nickName."',".time().")";
 		$id = $db->execFetchId($sql);
 		if($id>0){
 			//注册成功
 			C_CurrUser::setCurrUser($id);
 			$userInfo = new stdclass;
 			$userInfo->userId = $id;
-			$userInfo->userName = $userName;
+			$userInfo->mobileNo = $mobileNo;
 			$userInfo->nickName = $nickName;
 			return $userInfo;
 		}
@@ -78,7 +81,7 @@ class C_CurrUser
 	*用户登录
 	**/
 	public static function userLogin($userName,$userPass){
-		$sql = "SELECT userId,userName,userPass,nickName FROM souhu_userInfo WHERE userName = '".$userName."'";
+		$sql = "SELECT userId,userName,userPass,nickName FROM userInfo WHERE userName = '".$userName."'";
 		$db = DB::connect("DB_USR");
 		$userInfo = $db->fetch($sql);
 		if(empty($userInfo)){
@@ -103,7 +106,7 @@ class C_CurrUser
 			C_Com::apiResponse(C_Com::apiResult(-3));
 			return;
 		}
-		$sql = "SELECT userId,userName,userPass,nickName FROM souhu_userInfo WHERE userId =".self::$userId;
+		$sql = "SELECT userId,userName,userPass,nickName FROM userInfo WHERE userId =".self::$userId;
 		$db = DB::connect("DB_USR");
 		$userInfo = $db->fetch($sql);
 		if(empty($userInfo)){
@@ -130,6 +133,21 @@ class C_CurrUser
 		self::userLogout();
 		return true;
 	}
-
+	public static function sendRegSms($mobileNo){
+		/****/
+		$rnd = mt_rand(100000,999999);
+		$singleSender = new SmsSingleSender(SmsAppId, SmsAppKey);
+		$params = array((string)$rnd, "5");
+		$result = $singleSender->sendWithParam("86", $mobileNo, SmsRegTempId, $params, SmsSign,'','');
+		$rsp = json_decode($result);
+		$code = $rsp->result;
+		if($code == 0){
+			getRedisMain()->set('Sys/Sms/'.$mobileNo,$rnd);
+			getRedisMain()->EXPIRE('Sys/Sms/'.$mobileNo,300);
+			return true;
+		}
+		else
+			return false;
+	}
 }
 ?>
