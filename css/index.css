@@ -91,7 +91,7 @@ header .nav_span .log{
     margin-left: 8%;
     color: #161616;
     border: 1px solid black;
-    display: none;
+   /* display: none;*/
 }
 header .reg{
     margin-left: 10px;
