@@ -72,7 +72,7 @@ class C_Com
 			//登录验证错误
 			case -1001:$errorMsg = '用户名为空';break;
 			case -1002:$errorMsg = '用户密码为空';break;
-			case -1003:$errorMsg ='用户名存在';break;
+			case -1003:$errorMsg ='该手机号码已注册';break;
 			case -1004:$errorMsg= '密码错误';break;
 			case -1005:$errorMsg= '账号已禁用';break;
 			case -1006:$errorMsg= '未找到用户信息';break;

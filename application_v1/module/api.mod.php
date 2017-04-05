@@ -56,6 +56,11 @@ class API
     }
     public static function sendRegSms($param){
         if(!isset($param->mobileNo))  return C_Com::apiResult(-2);
+        //判断手机号码是否注册
+        $isExist = C_CurrUser::isExistsMobile($param->mobileNo);
+        if($isExist){
+            return C_Com::apiResult(-1003);
+        }
         $result = C_CurrUser::sendRegSms($param->mobileNo);
         return C_Com::apiResult(0,$result);
     }
