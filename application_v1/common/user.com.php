@@ -45,7 +45,8 @@ class C_CurrUser
 	public static function userLogout(){
 		header('P3P: CP="CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR"'); 
 		setcookie(COOKIE_PREFIX.'userId','');
-		//setcookie(COOKIE_PREFIX.'userId','',time()-86400,"/","www.".DOMAIN);
+		#setcookie(COOKIE_PREFIX.'userId','',time()-86400,"/","www.".DOMAIN);
+		#setcookie(COOKIE_PREFIX.'userId','',time()-86400,"/",DOMAIN);
 		setcookie(COOKIE_PREFIX.'sstr','');
 		//setcookie(COOKIE_PREFIX.'sstr','',time()-86400,"/","www.".DOMAIN);
 		self::$userId = 0;

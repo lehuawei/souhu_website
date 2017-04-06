@@ -36,6 +36,12 @@ select{
 option{
     vertical-align: middle;
 }
+ .red{
+    margin-left: 20px;
+    color:red;
+    font-size: 14px;
+    display: none;
+}
 /*固定头部*/
 header .head{
     width: 100%;

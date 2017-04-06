@@ -16,9 +16,17 @@ $(function () {
        });
        //点击选框改变图片
        $(".check_img").click(function () {
-           var flag=(this.getAttribute("src")=="images/register_Page/checkbox_no.png");
-           this.src=flag?"images/register_Page/icon-dagou.png":"images/register_Page/checkbox_no.png";
+           var flag=(this.getAttribute("src")=="images/register_Page/icon-dagou.png");
+           if(flag){
+               $(".che_if").prop("checked",false);
+
+           }else{
+               $(".che_if").prop("checked",true);
+           }
+           this.src=flag?"images/register_Page/checkbox_no.png":"images/register_Page/icon-dagou.png";
+
        });
+
        //点击注册
      $(".cli_zhuce").click(function () {
         $(".div_rl ").eq(1).css("display","block").siblings(".div_rl").css("display","none");

@@ -247,7 +247,8 @@
 }
 .btn_se{
     float: right;
-    margin: 3% 15% 100px auto;
+    /*margin: 3% 15% 100px auto;*/
+    margin: 20px auto 100px;
 }
 .btn_se button{
     display: inline-block;
