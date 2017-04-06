@@ -82,7 +82,7 @@ class C_CurrUser
 	*用户登录
 	**/
 	public static function userLogin($userName,$userPass){
-		$sql = "SELECT userId,userName,userPass,nickName FROM userInfo WHERE userName = '".$userName."'";
+		$sql = "SELECT userId,mobileNo,userPass,nickName FROM userInfo WHERE mobileNo = '".$userName."'";
 		$db = DB::connect("DB_USR");
 		$userInfo = $db->fetch($sql);
 		if(empty($userInfo)){
@@ -99,6 +99,12 @@ class C_CurrUser
 		return $userInfo;
 	}
 
+	public static function isExistsMobile($mobileNo){
+		$sql = "SELECT userId FROM userInfo WHERE mobileNo = '".$mobileNo."'";
+		$db = DB::connect("DB_USR");
+		$userInfo = $db->fetch($sql);
+		return empty($userInfo)?false:true;
+	}
 	/**
 	*获取用户资料
 	**/
