@@ -17,7 +17,7 @@ class API
         $userPass = $param->userPass;
         if(empty($smsCode) || empty($mobileNo) || empty($nickName) || empty($userPass)) return C_Com::apiResult(-2);
         //验证验证码是否正确
-        $code = getRedisMain()->getet('Sys/Sms/'.$mobileNo);
+        $code = getRedisMain()->get('Sys/Sms/'.$mobileNo);
         if($code != $smsCode){
             return C_Com::apiResult(-1008);
         }

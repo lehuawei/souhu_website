@@ -38,34 +38,66 @@ $(function(){
             });
         }
     });
-    //注册
+
     //获取验证码
-    $(".btn_fu").click(function () {
+    $(".btn_fu").click(function (e) {
+        var countdown=5;
         var data={};
         //判断手机号是否为空
-        var phone_n=$(".div_reg .phonenumber").val().length;
+        var number_v=$(".phonenumber").val();
+        var phone_n=number_v.length;
+        var reg_num=/^1\d{10}$/.test(number_v);
         if(phone_n==0){
             $(".red").html("请输入手机号！");
             $(".red").css("display","inline-block");
         }
+        else if(!reg_num){
+            $(".red").html("请输入正确的电话号码格式！");
+            $(".red").css("display",'inline-block');
+        }
         else{
+            $(".red").html("");
+            $(".red").css("display","none");
             data.action = "sendRegSms";
             data.mobileNo = $(".phonenumber").val();
             $.post(url,data,function (result) {
-                if(){
-
+                console.log(result);
+               // var returnData = JSON.parse(result);
+                //console.log(returnData);
+                var code = parseInt(result.code);
+                if(code == 0){
+                    var status = result.DATA.RESULT;
+                    if(!status){
+                       //获取验证码失败
+                        alert("失败");
+                        return;
+                    }else{
+                        //获取验证码成功，按钮变不可点击
+                        this.setAttribute("disabled", true);
+                        this.value="重新发送(" + countdown + ")";
+                        var that=this;
+                        var timer=setInterval(function (){
+                            that.value="重新发送(" + --countdown + ")";
+                            if(countdown==0){
+                                clearInterval(timer);
+                                that.value="获取验证码";
+                                that.removeAttribute("disabled");
+                            }
+                        },1000);
+                    }
                 }
+
             })
         }
 
     });
+    //注册
      $(".form_two").submit(function(event){
         var name_l=$(".div_reg .name").val().length;
         var email_l=$(".div_reg .phonenumber").val().length;
         var pass_ll=$(".div_reg .password").val().length;
         var reg=/^1\d{10}$/.test($(".phonenumber").val());
         var reg1=/(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^.{6,16}$/.test($(".div_reg .password").val());
-        var flag=false;
         if(name_l==0||email_l==0||pass_ll==0){
             $(".red").html("输入不能为空！");
             $(".red").css("display","inline-block");
@@ -76,7 +108,6 @@ $(function(){
              $(".red").css("display",'inline-block');
          }
          else if(!reg1){
-
             $(".red").html("请输入正确的密码格式！");
             $(".red").css("display",'inline-block');
         }
@@ -88,9 +119,9 @@ $(function(){
             $(".red").html("请阅读并同意用户协议和版权声明！");
             $(".red").css("display",'inline-block');
         }
-
         else {
-            console.log($(".che_if").is(":checked"));
+            $(".red").html("");
+            $(".red").css("display","none");
             var data = {};
             data.action = "createUser";
             data.mobileNo = $(".phonenumber").val();
@@ -98,16 +129,17 @@ $(function(){
             data.nickName=$(".name").val();
             data.userPass =$(".div_reg .password").val();
             console.log(data);
-            $(".red").html("");
-            $(".red").css("display","none");
-            $.post(url,data,function(result){
+            var xhr=$.post(url,data,function(result){
+                console.log(result)
                 var obj = JSON.parse(result);
+                console.log(obj);
                 var code =parseInt(obj.CODE);
                 if(code != 0){
                     //失败
                     alert(obj.DATA.ERRMSG);
                 }
                 else{
+                    alert("注册成功");
                     var data = obj.DATA.RESULT;
                     //注册成功
                     //进入个人登录页面
@@ -120,6 +152,7 @@ $(function(){
                     $(".form_three")[0].reset();
                 }
             });
+            console.log(xhr)
         }
     });
 //修改密码
