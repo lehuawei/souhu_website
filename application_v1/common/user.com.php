@@ -150,12 +150,13 @@ class C_CurrUser
 		self::userLogout();
 		return true;
 	}
-	public static function sendRegSms($mobileNo){
+	public static function sendRegSms($mobileNo,$smsType){
 		/****/
 		$rnd = mt_rand(100000,999999);
 		$singleSender = new SmsSingleSender(SmsAppId, SmsAppKey);
 		$params = array((string)$rnd, "5");
-		$result = $singleSender->sendWithParam("86", $mobileNo, SmsRegTempId, $params, SmsSign,'','');
+		$tempId = $smsType == 1?SmsRegTempId:SmsModTempId;
+		$result = $singleSender->sendWithParam("86", $mobileNo, $tempId, $params, SmsSign,'','');
 		$rsp = json_decode($result);
 		//var_dump($result);die;
 		$code = $rsp->result;

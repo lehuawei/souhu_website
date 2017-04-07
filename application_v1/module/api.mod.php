@@ -23,7 +23,7 @@ class API
         }
         $userInfo = C_CurrUser::createUser($mobileNo,$userPass,$nickName);
         return C_Com::apiResult(0,$userInfo);
-        
+
     }
     public static function userLogin($param){
         $userName = $param->userName;
@@ -55,16 +55,36 @@ class API
         $result = $currUser->userGold()->addGold($addCnt);
         return C_Com::apiResult(0,$result);
     }
-    public static function sendRegSms($param){
+    /**
+    *smsType:短信类型
+    *1:注册
+    *2:找回密码
+    */
+    public static function sendSms($param){
         if(!isset($param->mobileNo))  return C_Com::apiResult(-2);
+        if(!isset($param->smsType)) return C_Com::apiResult(-2);
+        $mobileNo = $param->mobileNo;
+        $smsType = $param->smsType;
         //判断手机号码是否注册
         $isExist = C_CurrUser::isExistsMobile($param->mobileNo);
-        if($isExist){
-            return C_Com::apiResult(-1003);
+        if($smsType == 1){
+            if($isExist){
+                return C_Com::apiResult(-1003);
+            }
         }
-        $result = C_CurrUser::sendRegSms($param->mobileNo);
+        else if($smsType == 2){
+            if(!$isExist){
+                return C_Com::apiResult(-1009);
+            }   
+        }
+        else{
+            return C_Com::apiResult(-2);
+        }
+        $result = C_CurrUser::sendRegSms($param->mobileNo,$smsType);
         return C_Com::apiResult(0,$result);
     }
+
+
 }
 
 ?>

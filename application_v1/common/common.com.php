@@ -80,6 +80,7 @@ class C_Com
 			case -1006:$errorMsg= '未找到用户信息';break;
 			case -1007:$errorMsg= '两次密码输入不一致';break;
 			case -1008:$errorMsg= '验证码错误';break;
+			case -1009:$errorMsg= '该手机号码未注册';break;
 			case -1022:$errorMsg = '业务短信日下发条数超过设定的上限';break;
 			case -1023:$errorMsg = '单个手机号30秒内下发短信条数超过设定的上限';break;
 			case -1025:$errorMsg='单个手机号日下发短信条数超过设定的上限';break;

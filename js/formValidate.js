@@ -56,8 +56,9 @@ $(function(){
         else{
             $(".red").html("");
             $(".red").css("display","none");
-            data.action = "sendRegSms";
+            data.action = "sendSms";
             data.mobileNo = $(".phonenumber").val();
+            data.smsType = 1;
            $.post(url,data,function (result) {
                 //console.log(JSON.parse(result));
                 console.log(result);
@@ -196,6 +197,10 @@ $(function(){
                 }
             })
         }
+    });
+    //忘记密码
+    $(".form_fgtpass").submit(function () {
+
     });
     //添加账号
     $(".form_four").submit(function(event){
