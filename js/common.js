@@ -1,3 +1,4 @@
+var url = "index.php?mpd=api";
 $(function () {
         //点击logo进入首页
        $(".logo").click(function(){
@@ -389,18 +390,18 @@ $(function () {
     var data = {};
     data.action = "getUserInfo";
     $.post(url,data,function(result){
+        console.log(result);
         var obj = JSON.parse(result);
         var code =parseInt(obj.CODE);
         if(code != 0){
             //失败
-            //alert(obj.DATA.ERRMSG);
+            alert(obj.DATA.ERRMSG);
 
         }
         else{
             //成功
             var data = obj.DATA.RESULT;
             $(".yhm").html(data.nickName);
-            $(".reg").css("display","none");
             $(".log").css("display","none");
             $("header .add_icon").css("display","inline");
 
@@ -417,11 +418,9 @@ $(function () {
             if(code!=0){
                 //失败
             }else{
-                 $(".reg").css("display","inline-block").removeClass("org");
-                 $(".log").css("display","inline-block").removeClass("org");
+                 $(".log").css("display","inline-block");
                  $("header .add_icon").css("display","none");
                  $(".angle").css("display","none");
-                 $(".change_pass").css("display","none");
             }
         });
     });

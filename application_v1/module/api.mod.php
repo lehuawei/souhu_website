@@ -21,8 +21,9 @@ class API
         if($code != $smsCode){
             return C_Com::apiResult(-1008);
         }
-        $userInfo = C_CurrUser::createUser($userName,$userPass,$nickName);
+        $userInfo = C_CurrUser::createUser($mobileNo,$userPass,$nickName);
         return C_Com::apiResult(0,$userInfo);
+        
     }
     public static function userLogin($param){
         $userName = $param->userName;

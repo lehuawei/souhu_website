@@ -196,7 +196,7 @@ class SmsSingleSender {
         $data->time = $curTime;
         $data->extend = $extend;
         $data->ext = $ext;
-        var_dump($data);
+        //var_dump($data);
         return $this->util->sendCurlPost($wholeUrl, $data);
     }
 }

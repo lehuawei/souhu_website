@@ -130,8 +130,8 @@ header .nav_span .angle{
     height:90px;
     display: none;
     position: absolute;
-    top:46px;
-    right: -28px;
+    top:20px;
+    right: -22px;
     background: url("../images/login_reg/drop_down_box.png");
     z-index:400;
 }

@@ -61,8 +61,11 @@ class C_CurrUser
 			return;
 		}
 		$passwd = strtolower(md5($userPass.PwdSecret));
-		$sql = "INSERT INTO userInfo(countryNo,mobileNo,userPass,nickName,createTime)VALUES(86,'".$mobileNo."','".$passwd."','".$nickName."',".time().")";
+		$sql = "INSERT INTO userInfo(countryNo,mobileNo,userPass,nickName,createTime,modifyTime)VALUES(86,'".$mobileNo."','".$passwd."','".$nickName."',".time().",".time().")";
+		//var_dump($sql);die;
 		$id = $db->execFetchId($sql);
+		//echo $id;
+		//echo '<br>';
 		if($id>0){
 			//注册成功
 			C_CurrUser::setCurrUser($id);
@@ -113,9 +116,16 @@ class C_CurrUser
 			C_Com::apiResponse(C_Com::apiResult(-3));
 			return;
 		}
-		$sql = "SELECT userId,userName,userPass,nickName FROM userInfo WHERE userId =".self::$userId;
+		$sql = "SELECT userId,userPass,nickName FROM userInfo WHERE userId =".self::$userId;
+		//var_dump($sql);
 		$db = DB::connect("DB_USR");
 		$userInfo = $db->fetch($sql);
+		//var_dump($userInfo);
+		/*
+		$userInfo->userId = $id;
+		$userInfo->mobileNo = $mobileNo;
+		$userInfo->nickName = $nickName;*/
+		
 		if(empty($userInfo)){
 			C_Com::apiResponse(C_Com::apiResult(-1006));
 			return;
@@ -149,7 +159,6 @@ class C_CurrUser
 		$rsp = json_decode($result);
 		//var_dump($result);die;
 		$code = $rsp->result;
-
 		if($code == 0){
 			$redisKey = 'Sys/Sms/'.$mobileNo;
 
@@ -157,8 +166,9 @@ class C_CurrUser
 			getRedisMain()->EXPIRE($redisKey,300);
 			return true;
 		}
-		else
-			return false;
+		else{
+			C_Com::apiResponse(C_Com::apiResult(-$code));
+		}
 	}
 }
 ?>

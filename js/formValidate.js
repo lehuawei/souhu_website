@@ -14,7 +14,7 @@ $(function(){
             $(".red").css("display","none");
             var data = {};
             data.action = "userLogin";
-            data.userName = $(".account").val();
+            data.userName = $(".number").val();
             data.userPass =$(".password").val();
             $.post(url,data,function(result){
                 var obj = JSON.parse(result);
@@ -27,13 +27,10 @@ $(function(){
                     //alert("登录成功");
                     var data = obj.DATA.RESULT;
                     //进入个人登录页面
-                    $(".login").css("display","none");
                     $(".yhm").html(data.nickName);
                     $(".log").css("display","none");
-                    $(".reg").css("display","none");
-                    $(".register").css("display","none");
                     $("header .add_icon").css("display","inline");
-                    $(".form_three")[0].reset();
+                    $(".form_one")[0].reset();
                 }
             });
         }
@@ -41,6 +38,7 @@ $(function(){
 
     //获取验证码
     $(".btn_fu").click(function (e) {
+        var that = this;
         var countdown=5;
         var data={};
         //判断手机号是否为空
@@ -60,37 +58,33 @@ $(function(){
             $(".red").css("display","none");
             data.action = "sendRegSms";
             data.mobileNo = $(".phonenumber").val();
-            $.post(url,data,function (result) {
+           $.post(url,data,function (result) {
+                //console.log(JSON.parse(result));
                 console.log(result);
-               // var returnData = JSON.parse(result);
-                //console.log(returnData);
-                var code = parseInt(result.code);
+                var jsonData = JSON.parse(result);
+                var code = parseInt(jsonData.CODE);
+                //console.log(code);
                 if(code == 0){
-                    var status = result.DATA.RESULT;
-                    if(!status){
-                       //获取验证码失败
-                        alert("失败");
-                        return;
-                    }else{
-                        //获取验证码成功，按钮变不可点击
-                        this.setAttribute("disabled", true);
-                        this.value="重新发送(" + countdown + ")";
-                        var that=this;
-                        var timer=setInterval(function (){
-                            that.value="重新发送(" + --countdown + ")";
-                            if(countdown==0){
-                                clearInterval(timer);
-                                that.value="获取验证码";
-                                that.removeAttribute("disabled");
-                            }
-                        },1000);
-                    }
+                    that.setAttribute("disabled", true);
+                    that.value="重新发送(" + countdown + ")";
+                    var timer=setInterval(function (){
+                        that.value="重新发送(" + --countdown + ")";
+                        if(countdown==0){
+                            clearInterval(timer);
+                            that.value="获取验证码";
+                            that.removeAttribute("disabled");
+                        }
+                    },1000);
+                }else{
+                    //获取验证码失败
+                    alert(jsonData.DATA.ERRMSG);
                 }
+            });
 
-            })
         }
 
     });
+
     //注册
      $(".form_two").submit(function(event){
         var name_l=$(".div_reg .name").val().length;
@@ -129,8 +123,9 @@ $(function(){
             data.nickName=$(".name").val();
             data.userPass =$(".div_reg .password").val();
             console.log(data);
-            var xhr=$.post(url,data,function(result){
-                console.log(result)
+            var xhr_reg=$.post(url,data,function(result){
+                console.log(result);
+                console.log("注册");
                 var obj = JSON.parse(result);
                 console.log(obj);
                 var code =parseInt(obj.CODE);
@@ -145,14 +140,10 @@ $(function(){
                     //进入个人登录页面
                     $(".yhm").html(data.nickName);
                     $(".log").css("display","none");
-                    $(".reg").css("display","none");
-                    $(".register").css("display","none");
                     $("header .add_icon").css("display","inline");
                     $(".form_two")[0].reset();
-                    $(".form_three")[0].reset();
                 }
             });
-            console.log(xhr)
         }
     });
 //修改密码
