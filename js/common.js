@@ -390,12 +390,13 @@ $(function () {
     var data = {};
     data.action = "getUserInfo";
     $.post(url,data,function(result){
-        console.log(result);
         var obj = JSON.parse(result);
         var code =parseInt(obj.CODE);
         if(code != 0){
             //失败
-            alert(obj.DATA.ERRMSG);
+           // alert(obj.DATA.ERRMSG);
+            $(".recharge_bg").css("display","none");
+            $(".chk_log").css("display","block");
 
         }
         else{
@@ -404,6 +405,8 @@ $(function () {
             $(".yhm").html(data.nickName);
             $(".log").css("display","none");
             $("header .add_icon").css("display","inline");
+            $(".recharge_bg").css("display","block");
+            $(".chk_log").css("display","none");
 
         }
     });
@@ -421,6 +424,7 @@ $(function () {
                  $(".log").css("display","inline-block");
                  $("header .add_icon").css("display","none");
                  $(".angle").css("display","none");
+                 location.replace("index.html");
             }
         });
     });

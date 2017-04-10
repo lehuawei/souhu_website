@@ -117,7 +117,6 @@ class C_CurrUser
 			return;
 		}
 		$sql = "SELECT userId,userPass,nickName FROM userInfo WHERE userId =".self::$userId;
-		//var_dump($sql);
 		$db = DB::connect("DB_USR");
 		$userInfo = $db->fetch($sql);
 		//var_dump($userInfo);
@@ -125,7 +124,6 @@ class C_CurrUser
 		$userInfo->userId = $id;
 		$userInfo->mobileNo = $mobileNo;
 		$userInfo->nickName = $nickName;*/
-		
 		if(empty($userInfo)){
 			C_Com::apiResponse(C_Com::apiResult(-1006));
 			return;
@@ -143,13 +141,29 @@ class C_CurrUser
 			return;
 		}
 		$passwd = strtolower(md5($newPass.PwdSecret));
-		$sql = "UPDATE souhu_userInfo SET userPass = '".$passwd."' WHERE userId =".self::$userId;
+		$sql = "UPDATE userInfo  SET userPass = '".$passwd."' WHERE userId =".self::$userId;
+		
 		$db = DB::connect("DB_USR");
 		$db->exec($sql);
 		//注销用户
 		self::userLogout();
 		return true;
 	}
+	public static function findUserPass($newPass,$newPasTwo,$mobileNo){
+		if($newPass != $newPasTwo){
+			C_Com::apiResponse(C_Com::apiResult(-1007));
+			return;
+		}
+		$passwd = strtolower(md5($newPass.PwdSecret));
+		$sql = "UPDATE userInfo  SET userPass = '$passwd' WHERE mobileNo ='$mobileNo'";
+		$db = DB::connect("DB_USR");
+		$db->exec($sql);
+		//注销用户
+		self::userLogout();
+		return true;
+	}
+
+
 	public static function sendRegSms($mobileNo,$smsType){
 		/****/
 		$rnd = mt_rand(100000,999999);
@@ -158,7 +172,7 @@ class C_CurrUser
 		$tempId = $smsType == 1?SmsRegTempId:SmsModTempId;
 		$result = $singleSender->sendWithParam("86", $mobileNo, $tempId, $params, SmsSign,'','');
 		$rsp = json_decode($result);
-		//var_dump($result);die;
+		//var_dump($result);die; 
 		$code = $rsp->result;
 		if($code == 0){
 			$redisKey = 'Sys/Sms/'.$mobileNo;
@@ -170,6 +184,10 @@ class C_CurrUser
 		else{
 			C_Com::apiResponse(C_Com::apiResult(-$code));
 		}
+	}
+	//修改资料
+	public static function modifyInfo($trueName,$sex,$provinceId,$cityId,$address){
+		
 	}
 }
 ?>

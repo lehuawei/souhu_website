@@ -252,7 +252,7 @@
 }
 .btn_se button{
     display: inline-block;
-    margin: 40px auto;
+    margin: 30px auto;
     width: 100px;
     height: 40px;
     border-radius: 5px;
@@ -267,6 +267,11 @@
     border: 1px solid white;
     background-color: #f5a517;
     color: white;
+}
+.log_a{
+    display: none;
+    float: right;
+    color: #f5a517;
 }
 /*付款方式*/
 .payway_ul{

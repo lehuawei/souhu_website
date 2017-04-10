@@ -24,7 +24,7 @@ $(function(){
                     alert(obj.DATA.ERRMSG);
                 }
                 else{
-                    //alert("登录成功");
+                    alert("登录成功");
                     var data = obj.DATA.RESULT;
                     //进入个人登录页面
                     $(".yhm").html(data.nickName);
@@ -38,29 +38,41 @@ $(function(){
 
     //获取验证码
     $(".btn_fu").click(function (e) {
+        $(".id_code,.code").val('');
+        var red=$(".red");
         var that = this;
-        var countdown=5;
+        var countdown=10;
         var data={};
+        data.action = "sendSms";
         //判断手机号是否为空
-        var number_v=$(".phonenumber").val();
-        var phone_n=number_v.length;
-        var reg_num=/^1\d{10}$/.test(number_v);
-        if(phone_n==0){
-            $(".red").html("请输入手机号！");
-            $(".red").css("display","inline-block");
-        }
-        else if(!reg_num){
-            $(".red").html("请输入正确的电话号码格式！");
-            $(".red").css("display",'inline-block');
-        }
-        else{
-            $(".red").html("");
-            $(".red").css("display","none");
-            data.action = "sendSms";
-            data.mobileNo = $(".phonenumber").val();
+        var num_reg=$(".phone").val();
+        var num_fgt=$(".phone_num").val();
+        var reg_num=/^1[3|4|5|7|8][0-9]{9}$/.test(num_reg);
+        var reg_fgt=/^1[3|4|5|7|8][0-9]{9}$/.test(num_fgt);
+        if($(this).attr('name')=='reg_code'){ //注册获取验证码
             data.smsType = 1;
+            data.mobileNo = $(".phone").val();
+            if(!reg_num){
+                red.html("请输入正确的电话号码格式！");
+                red.css("display","inline-block");
+            }
+            else {
+                red.html("");
+                red.css("display","none");
+            }
+        }else { //找回密码获取验证码
+            data.smsType = 2;
+            data.mobileNo = $(".phone_num").val();
+            if(!reg_fgt){
+                red.html("请输入正确的电话号码格式！");
+                red.css("display","inline-block");
+            }
+            else {
+                red.html("");
+                red.css("display","none");
+            }
+        }
            $.post(url,data,function (result) {
-                //console.log(JSON.parse(result));
                 console.log(result);
                 var jsonData = JSON.parse(result);
                 var code = parseInt(jsonData.CODE);
@@ -81,35 +93,32 @@ $(function(){
                     alert(jsonData.DATA.ERRMSG);
                 }
             });
-
-        }
-
     });
 
     //注册
      $(".form_two").submit(function(event){
         var name_l=$(".div_reg .name").val().length;
-        var email_l=$(".div_reg .phonenumber").val().length;
+        var email_l=$(".div_reg .phone").val().length;
         var pass_ll=$(".div_reg .password").val().length;
-        var reg=/^1\d{10}$/.test($(".phonenumber").val());
+        var reg=/^1\d{10}$/.test($(".phone").val());
         var reg1=/(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^.{6,16}$/.test($(".div_reg .password").val());
         if(name_l==0||email_l==0||pass_ll==0){
             $(".red").html("输入不能为空！");
             $(".red").css("display","inline-block");
              return;
         }
-         else if(!reg){
+        /* else if(!reg){
              $(".red").html("请输入正确的电话号码格式！");
              $(".red").css("display",'inline-block');
-         }
+         }*/
          else if(!reg1){
             $(".red").html("请输入正确的密码格式！");
             $(".red").css("display",'inline-block');
         }
-        else if((!reg)&&(!reg1)){
+      /*  else if((!reg)&&(!reg1)){
             $(".red").html("请输入正确的电话号码和密码格式！");
             $(".red").css("display",'inline-block');
-        }
+        }*/
         else if(!$(".che_if").is(":checked")){
             $(".red").html("请阅读并同意用户协议和版权声明！");
             $(".red").css("display",'inline-block');
@@ -119,7 +128,7 @@ $(function(){
             $(".red").css("display","none");
             var data = {};
             data.action = "createUser";
-            data.mobileNo = $(".phonenumber").val();
+            data.mobileNo = $(".phone").val();
             data.smsCode=$(".id_code").val();
             data.nickName=$(".name").val();
             data.userPass =$(".div_reg .password").val();
@@ -147,23 +156,60 @@ $(function(){
             });
         }
     });
+    //找回密码
+    $(".form_fgtpass ").submit(function () {
+        var phone_f=$(".form_fgtpass .phone_num").val();
+        var new_pass=$(".form_fgtpass .new_pass").val();
+        var sure_newPass=$(".form_fgtpass .sure_newPass").val();
+        var reg=/^1\d{10}$/.test(phone_f);
+         if(new_pass!=sure_newPass){
+            $(".red").html("两次密码不一致请重新输入！");
+            $(".red").css("display",'block');
+        }
+        else{
+            $(".red").html("");
+            $(".red").css("display","none");
+            var data = {};
+            data.action = "findUserPass";
+            data.mobileNo = phone_f;
+            data.smsCode=$(".fgt_code").val();
+            data.newPass =new_pass;
+            data.newPassTwo=sure_newPass;
+            console.log(data);
+            var xhr_reg=$.post(url,data,function(result){
+                console.log(result);
+                console.log("找回密码");
+                var obj = JSON.parse(result);
+                console.log(obj);
+                var code =parseInt(obj.CODE);
+                if(code != 0){
+                    //失败
+                    alert('fail');
+                    alert(obj.DATA.ERRMSG);
+                }
+                else{
+                    alert("找回成功");
+                    var data = obj.DATA.RESULT;
+                    //注册成功
+                    //进入个人登录页面
+                    /*$(".yhm").html(data.nickName);
+                    $(".log").css("display","none");
+                    $("header .add_icon").css("display","inline");
+                    $(".form_two")[0].reset();*/
+                }
+            });
+        }
+    });
 //修改密码
     $(".form_three").submit(function(event){
         var new_pass_l=$(".form_three .new_pass").val().length;
         var sure_pass_l=$(".form_three .sure_pass").val().length;
-        var num_l=$(".form_three .phone").val().length;
         var reg2=/(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^.{6,16}$/.test($(".form_three .sure_pass").val());
-        var reg=/^1\d{10}$/.test($(".form_three .phone").val());
         var new_pass=$(".form_three .new_pass").val();
         var sure_pass=$(".form_three .sure_pass").val();
-
-        if(new_pass_l==0||sure_pass_l==0||num_l==0){
+        if(new_pass_l==0||sure_pass_l==0){
             $(".red").html("输入不能为空！");
             $(".red").css("display","block");
-        }
-        else if(!reg){
-            $(".red").html("请输入正确的电话号码！");
-            $(".red").css("display",'block');
         }
         else if(!reg2){
             $(".red").html("请输入正确的密码格式！");
@@ -189,18 +235,32 @@ $(function(){
                     alert("fail")
                 }
                 else{
-                    //alert("修改成功");
-                    $(".change_pass").css("display","none");
-                    window.location.reload();//刷新当前页面.
-                    $(".form_one")[0].reset();
+                    alert("修改成功");
+                    $(".log_a").css("display","inline");
                     $(".form_three")[0].reset();
+
                 }
             })
         }
     });
-    //忘记密码
-    $(".form_fgtpass").submit(function () {
+   //修改用户资料
+    $(".user_info .save").click(function () {
+        var data = {};
+        var user_name=$(".userName").val();
+        var user_gender=$(".userGender").val();
+        var user_id=$(".userId").val();
+        var user_prov=$(".prov").val();
+        var user_city=$(".city").val();
+        var user_address=$('.userAddress').val();
+        data.action='modifyInfo';
+        data.userName=user_name;
+        data.userSex=user_gender;
+        data.userProv=user_prov;
+        data.userCity=user_city;
+        data.userAddress=user_address;
+        $.post(url,data,function(result){
 
+        });
     });
     //添加账号
     $(".form_four").submit(function(event){
@@ -214,6 +274,6 @@ $(function(){
             $(".red").html("");
             $(".red").css("display","none");
         }
-    })
+    });
 });
 

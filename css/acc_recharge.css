@@ -360,3 +360,19 @@ select::-ms-expand { display: none; }
     background-color: #f5a517;
     margin-right: 20px;
 }
+/*检测用户是否登录的用户框*/
+.chk_log{
+    margin: 400px;
+    text-align: center;
+    color: #b6b6b6;
+}
+.chk_log img{
+    vertical-align:text-top;
+}
+.chk_log a{
+    color: #b6b6b6;
+}
+.chk_log  a:hover{
+    color: #f5a517;
+    text-decoration: underline #f5a517;
+}

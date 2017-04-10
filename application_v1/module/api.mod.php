@@ -18,6 +18,7 @@ class API
         if(empty($smsCode) || empty($mobileNo) || empty($nickName) || empty($userPass)) return C_Com::apiResult(-2);
         //验证验证码是否正确
         $code = getRedisMain()->get('Sys/Sms/'.$mobileNo);
+
         if($code != $smsCode){
             return C_Com::apiResult(-1008);
         }
@@ -39,12 +40,36 @@ class API
         return C_Com::apiResult(0,C_CurrUser::getUserInfo());
     }
     public static function modifyUserPass($param){
+        if(!C_CurrUser::isLogin()) return C_Com::apiResult(-3);
+        $mobileNo = $param->mobileNo;
+        $smsCode = $param->smsCode;
         $newPass = $param->newPass;
         $newPassTwo = $param->newPassTwo;
         if(empty($newPass) || empty($newPassTwo)) return C_Com::apiResult(-2);
         if($newPass != $newPassTwo) return C_Com::apiResult(-1007);
+         $code = getRedisMain()->get('Sys/Sms/'.$mobileNo);
+       /* var_dump($code);
+        var_dump($smsCode);*/
+          if($code != $smsCode){
+            return C_Com::apiResult(-1008);
+        }
         return C_Com::apiResult(0,C_CurrUser::modifyUserPass($newPass,$newPassTwo));
     }
+    public static function findUserPass($param){
+        $mobileNo = $param->mobileNo;
+        $smsCode = $param->smsCode;
+        $newPass = $param->newPass;
+        $newPassTwo = $param->newPassTwo;
+        if(empty($newPass) || empty($newPassTwo)) return C_Com::apiResult(-2);
+        if($newPass != $newPassTwo) return C_Com::apiResult(-1007);
+         $code = getRedisMain()->get('Sys/Sms/'.$mobileNo);
+          if($code != $smsCode){
+            return C_Com::apiResult(-1008);
+        }
+        return C_Com::apiResult(0,C_CurrUser::findUserPass($newPass,$newPassTwo,$mobileNo));
+    }
+   
+
     public static function logout(){
         return C_Com::apiResult(0,C_CurrUser::userLogout());
     }
@@ -55,7 +80,7 @@ class API
         $result = $currUser->userGold()->addGold($addCnt);
         return C_Com::apiResult(0,$result);
     }
-    /**
+    /*
     *smsType:短信类型
     *1:注册
     *2:找回密码
@@ -84,7 +109,14 @@ class API
         return C_Com::apiResult(0,$result);
     }
 
-
+//修改资料
+    public static function modifyInfo($param){
+        $trueName = $param->userName;
+        $sex =$param->userSex;
+        $provinceId = $param->userProv;
+        $cityId = $param->userCity;
+        $address = $param->userAddress;
+    }
 }
 
 ?>

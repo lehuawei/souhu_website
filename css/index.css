@@ -105,7 +105,7 @@ header .reg{
     border: 1px solid black;
 }
 header .add_icon{
-    display: inline-block;
+    display: none;
     position: relative;
     clear: both;
     z-index: 300;
@@ -120,6 +120,8 @@ header .nav_span .org{
 }
 .yhm{
     cursor: pointer;
+    color: #f5a517;
+    border-bottom: 2px solid #f5a517;
 }
 .set_icon{
     cursor: pointer;
