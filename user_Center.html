@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/acc_recharge.css">
     <link rel="stylesheet" href="css/user_Center.css">
     <link rel="stylesheet" href="css/index.css">
+
     <script src="js/jquery-1.9.1.js"></script>
     <script src="js/placeholderfriend.js"></script>
     <script type="text/javascript" src="js/jquery.cityselect.js"></script>
@@ -78,22 +79,27 @@
                 <table cellspacing="0" cellpadding="0"  class="table_two">
                     <tr>
                         <td class="td_one">真实姓名: <input type="text" value="乐花薇" disabled class="userName"> </td>
-                        <td class="td_two">性别: <input type="text" value="保密" disabled class="userGender">  </td>
+                        <td class="td_two">性别:
+                            <select name="" id=""  class="userGender"  disabled="disabled" >
+                                <option value="0">女</option>
+                                <option value="1">男</option>
+                            </select>
+                        </td>
                         <td class="td_three">身份证号:<input type="text" value="200122455941235561" disabled class="userId"></td>
                     </tr>
                     <tr>
                         <td class="td_one" id="city">所在地区:
-                            <!--<input type="text" value="深圳" disabled><em></em>-->
-                            <select class="prov" disabled></select>
-                            <select class="city" disabled="disabled"></select>
+                            <select class="prov" disabled ></select>
+                            <select class="city" disabled ></select>
                         </td>
                         <td class="td_two">地址:<input type="text" value="深圳宝安区智恒产业园" disabled class="userAddress"></td>
                         <td class="td_three"><input type="text" value="" disabled></td>
                     </tr>
                 </table>
             </div>
-            <div style="text-align: center;margin-bottom: 200px" class="btn_div"><button type="submit" class="cancel">取消</button>
-            <button type="submit" class="save">保存</button>
+            <div style="text-align: center;margin-bottom: 200px;  visibility: hidden" class="btn_div" >
+                <button type="submit" class="cancel" >取消</button>
+                <button type="submit" class="save">保存</button>
             </div>
         </div>
 
@@ -150,7 +156,7 @@
         <div class="acc_save user_ul_div"  style="display:none">
              <!--安全指数-->
             <div class="reliable_index">
-                <p>安全指数: <span class="orange_span"></span> <span class="orange_span"></span> <span class="grey_span"></span>
+                <p>安全指数: <span class="orange_span"></span> <span class="orange_span"></span> <span class="grey_span" id="chgCol_span"></span>
                     <a href="modify_pass.html" target="_blank"><i>修改密码</i></a>
                 </p>
             </div>
@@ -377,7 +383,76 @@
         </div>
     </div>
 </footer>
-<script src="js/common.js"></script>
-<script src="js/formValidate.js"></script>
 </body>
+<script src="js/formValidate.js"></script>
+<script src="js/common.js"></script>
+<script language="javascript">
+    $(function(){
+        var ifStrong=localStorage.ifStrong;
+        if(ifStrong==true){
+            $("#chgCol_span").addClass('orange_span').removeClass('grey_span');
+        }
+        //console.log(ifStrong);
+        var modify_ifStrong=localStorage.modify_ifStrong;
+        console.log(modify_ifStrong);
+        switch(modify_ifStrong)
+        {
+            case "true":
+                $('#chgCol_span').addClass('orange_span').removeClass('grey_span');
+                break;
+            case "false":
+                $("#chgCol_span").addClass('grey_span').removeClass('orange_span');
+                break;
+            default:
+        }
+        var data = {};
+        data.action = "getUserInfo";
+        $.post(url,data,function(result){
+            var obj = JSON.parse(result);
+            var code =parseInt(obj.CODE);
+            if(code != 0){
+                //失败
+            }
+            else{
+                //成功
+                 data = obj.DATA.RESULT;
+                $(".userName").val(data.trueName);
+                $(".userGender").val(data.sex);
+                $(".userId").val(data.idCardNo);
+                $(".prov").val(data.provinceId);
+                $(".city").val(data.cityId);
+                $('.userAddress').val(data.address);
+                var settings=$.extend({
+                    url:"js/city.min.js",
+                    prov:data.provinceId,
+                    city:data.cityId,
+                    dist:null,
+                    nodata:null,
+                    disNum:0,
+                    required:true
+                },settings);
+                $("#city").citySelect(settings);
+            }
+        });
+        //点击取消
+        $(".cancel").click(function (){
+            $(".userName").val(data.trueName);
+            $(".userGender").val(data.sex);
+            $(".userId").val(data.idCardNo);
+            $(".prov").val(data.provinceId);
+            $(".city").val(data.cityId);
+            $('.userAddress').val(data.address);
+            var settings=$.extend({
+                url:"js/city.min.js",
+                prov:data.provinceId,
+                city:data.cityId,
+                dist:null,
+                nodata:null,
+                disNum:0,
+                required:true
+            },settings);
+            $("#city").citySelect(settings);
+        });
+    });
+</script>
 </html>

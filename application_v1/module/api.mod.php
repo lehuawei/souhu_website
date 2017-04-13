@@ -48,8 +48,6 @@ class API
         if(empty($newPass) || empty($newPassTwo)) return C_Com::apiResult(-2);
         if($newPass != $newPassTwo) return C_Com::apiResult(-1007);
          $code = getRedisMain()->get('Sys/Sms/'.$mobileNo);
-       /* var_dump($code);
-        var_dump($smsCode);*/
           if($code != $smsCode){
             return C_Com::apiResult(-1008);
         }
@@ -110,13 +108,14 @@ class API
     }
 
 //修改资料
-    public static function modifyInfo($param){
+    public static function modifyUserInfo($param){
         $trueName = $param->userName;
         $sex =$param->userSex;
+        $cardId=$param->userId;
         $provinceId = $param->userProv;
         $cityId = $param->userCity;
         $address = $param->userAddress;
+        return C_Com::apiResult(0,C_CurrUser::modifyUserInfo($trueName,$sex,$cardId,$provinceId,$cityId,$address));
     }
 }
-
 ?>

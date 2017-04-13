@@ -21,7 +21,6 @@ header .head{
     position: fixed;
     top: 0;
     left: 0;
-  /*  overflow: hidden;*/
     background-color: black;
     z-index: 2;
 }
@@ -45,15 +44,12 @@ header span {
     color: #161616;
     font-size:16px;
     line-height: 70px;
-    margin-left: 10%;
+    margin-left: 5%;
 }
-/*header .orange{
-    color: #ffa21c;
-}*/
+
 header .nav_span div{
     display: inline-block;
-    /*display: none;*/
-    width: 50px;
+    width: 100px;
     height: 24px;
     border-radius:4px;
     text-align: center;

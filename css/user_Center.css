@@ -76,7 +76,8 @@
 }
 .user_info .info_two table td input{
     height:20px;
-    color: #181818;
+   /* color: #181818;*/
+    color: #646464;
     font-size: 16px;
     border: none;
     -moz-user-select: none;

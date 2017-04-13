@@ -52,8 +52,8 @@
             <div class="acc_bg acc_save"  style="display:block">
                 <!--安全指数-->
                 <div class="reliable_index">
-                    <p style="font-size: 18px">安全指数: <span class="orange_span"></span> <span class="orange_span"></span> <span class="grey_span"></span>
-                        <em style="font-style: normal;color: #f5a517;font-size: 20px">中</em>
+                    <p style="font-size: 18px">安全指数: <span class="orange_span"></span> <span class="orange_span"></span> <span class="grey_span" id="chg_span"></span>
+                        <em style="font-style: normal;color: #f5a517;font-size: 20px" id="chg_strong">中</em>
                     </p>
                 </div>
                 <div class="acc_con">
@@ -61,7 +61,7 @@
                     <div class="div_rl div_fgt" style="display: block; margin-top: 20px;">
                         <form action="javascript:void(0)" class="reg_form form_three">
                            <!-- <input placeholder="手机号码" type="text" class="phone">-->
-                            <input placeholder="输入新密码" type="password" class="new_pass">
+                            <input placeholder="输入新密码(6-16位字符和数字)" type="password" class="new_pass">
                             <input placeholder="再次输入新密码" style="float: left" type="password" class="sure_pass"><br>
 
                             <span class="red" style="margin: 0 auto;text-align: center;height: 20px">123</span>
@@ -112,5 +112,29 @@
 </footer>
 <script src="js/common.js"></script>
 <script src="js/formValidate.js"></script>
+<script>
+    $(function () {
+        var ifStrong=localStorage.ifStrong;
+        if(ifStrong){
+            $("#chg_span").addClass('orange_span').removeClass('grey_span');
+            $("#chg_strong").html("强");
+        }
+        console.log(ifStrong);
+        var modifyifStrong=localStorage.modify_ifStrong;
+        console.log(modifyifStrong);
+        switch(modifyifStrong)
+        {
+            case "true":
+                $('#chg_span').addClass('orange_span').removeClass('grey_span');
+                $('#chg_strong').html('强');
+                break;
+            case "false":
+                $("#chg_span").addClass('grey_span').removeClass('orange_span');
+                $("#chg_strong").html('中');
+                break;
+            default:
+        }
+    });
+</script>
 </body>
 </html>

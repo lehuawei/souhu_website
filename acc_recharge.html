@@ -74,8 +74,8 @@
             <!--充值中心标题-->
             <p class="tit_rc">
               <span> <strong> 充值中心</strong></span> &nbsp;&nbsp;
-              当前账号:&nbsp; <b>123456</b>
-                &nbsp;&nbsp;账户余额:&nbsp;<b> <tt>100</tt> 搜币</b>
+              当前账号:&nbsp; <b class="name">123456</b>
+                &nbsp;&nbsp;账户余额:&nbsp;<b class="sb"> <tt>100</tt> 搜币</b>
             </p>
             <div class="full_gl"></div>
             <!--账号部分-->
@@ -180,5 +180,23 @@
 </footer>
 <script src="js/common.js"></script>
 <script src="js/formValidate.js"></script>
+<script language="javascript">
+    $(function(){
+        var data = {};
+        data.action = "getUserInfo";
+        $.post(url,data,function(result){
+            var obj = JSON.parse(result);
+            var code =parseInt(obj.CODE);
+            if(code != 0){
+                //失败
+            }
+            else{
+                //成功
+                data = obj.DATA.RESULT;
+                $('article .recharge_wh .tit_rc b.name').html(data.nickName);
+            }
+        });
+    });
+</script>
 </body>
 </html>

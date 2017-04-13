@@ -1,5 +1,6 @@
 //定义全局变量
 var url = "index.php?mpd=api";
+
 $(function(){
     //登录
   $(".form_one").submit(function(event){
@@ -24,13 +25,15 @@ $(function(){
                     alert(obj.DATA.ERRMSG);
                 }
                 else{
-                    alert("登录成功");
+                   // alert("登录成功");
                     var data = obj.DATA.RESULT;
                     //进入个人登录页面
                     $(".yhm").html(data.nickName);
                     $(".log").css("display","none");
                     $("header .add_icon").css("display","inline");
                     $(".form_one")[0].reset();
+                    location.replace('acc_recharge.html');
+
                 }
             });
         }
@@ -102,7 +105,10 @@ $(function(){
         var pass_ll=$(".div_reg .password").val().length;
         var reg=/^1\d{10}$/.test($(".phone").val());
         var reg1=/(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^.{6,16}$/.test($(".div_reg .password").val());
-        if(name_l==0||email_l==0||pass_ll==0){
+        var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+        var ifStrong= strongRegex.test($(".div_reg .password").val());
+        localStorage.ifStrong=ifStrong;
+         if(name_l==0||email_l==0||pass_ll==0){
             $(".red").html("输入不能为空！");
             $(".red").css("display","inline-block");
              return;
@@ -132,7 +138,8 @@ $(function(){
             data.smsCode=$(".id_code").val();
             data.nickName=$(".name").val();
             data.userPass =$(".div_reg .password").val();
-            console.log(data);
+           // data.ifStrong=ifStrong;
+            //console.log(data);
             var xhr_reg=$.post(url,data,function(result){
                 console.log(result);
                 console.log("注册");
@@ -200,6 +207,26 @@ $(function(){
             });
         }
     });
+    //修改密码强度
+    $(".form_three .new_pass").blur(function () {
+        var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+        var modify_ifStrong= strongRegex.test($(".form_three .new_pass").val());
+        localStorage.modify_ifStrong=modify_ifStrong;
+        var modifyifStrong=localStorage.modify_ifStrong;
+        console.log(modifyifStrong);
+        switch(modifyifStrong)
+        {
+            case "true":
+                $('#chg_span').addClass('orange_span').removeClass('grey_span');
+                $('#chg_strong').html('强');
+                break;
+            case "false":
+                $("#chg_span").addClass('grey_span').removeClass('orange_span');
+                $("#chg_strong").html('中');
+                break;
+            default:
+        }
+    });
 //修改密码
     $(".form_three").submit(function(event){
         var new_pass_l=$(".form_three .new_pass").val().length;
@@ -207,6 +234,10 @@ $(function(){
         var reg2=/(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^.{6,16}$/.test($(".form_three .sure_pass").val());
         var new_pass=$(".form_three .new_pass").val();
         var sure_pass=$(".form_three .sure_pass").val();
+        var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+
+
+
         if(new_pass_l==0||sure_pass_l==0){
             $(".red").html("输入不能为空！");
             $(".red").css("display","block");
@@ -226,7 +257,6 @@ $(function(){
             data.action = "modifyUserPass";
             data.newPass = $(".new_pass").val();
             data.newPassTwo=$(".sure_pass").val();
-            console.log(data);
             $.post(url,data,function(result){
                 var obj=JSON.parse(result);
                 var code=parseInt(obj.CODE);
@@ -244,24 +274,28 @@ $(function(){
         }
     });
    //修改用户资料
+
     $(".user_info .save").click(function () {
         var data = {};
         var user_name=$(".userName").val();
-        var user_gender=$(".userGender").val();
+        var user_gender=$(".userGender option:selected").val();
         var user_id=$(".userId").val();
         var user_prov=$(".prov").val();
         var user_city=$(".city").val();
         var user_address=$('.userAddress').val();
-        data.action='modifyInfo';
+        data.action='modifyUserInfo';
         data.userName=user_name;
         data.userSex=user_gender;
+        data.userId=user_id;
         data.userProv=user_prov;
         data.userCity=user_city;
+        data.address=user_address;
+        console.log(data);
         data.userAddress=user_address;
         $.post(url,data,function(result){
-
         });
     });
+
     //添加账号
     $(".form_four").submit(function(event){
         var f_phone_l=$(".form_four .phonenumber").val().length;

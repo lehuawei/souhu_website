@@ -13,7 +13,6 @@ define('FC_VER',16101901);
 header("Content-type: text/html; charset=utf-8");
 //加载配置文件
 require(APP_PATH.'common/config.com.php');
-
 //加载过滤输入参数
 require(APP_PATH.'common/inputFilter.com.php');
 //加载PDO类
@@ -22,6 +21,8 @@ require(APP_PATH.'common/database.com.php');
 require(APP_PATH.'common/user.com.php');
 //日志系统
 require(APP_PATH.'common/log.com.php');
+//加载城市函数文件
+require(APP_PATH.'common/city.com.php');
 //加载公共函数文件
 require(APP_PATH.'common/common.com.php');
 //应用开始时间

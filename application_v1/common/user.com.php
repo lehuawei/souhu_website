@@ -116,7 +116,7 @@ class C_CurrUser
 			C_Com::apiResponse(C_Com::apiResult(-3));
 			return;
 		}
-		$sql = "SELECT userId,userPass,nickName FROM userInfo WHERE userId =".self::$userId;
+		$sql = "SELECT userId,userPass,nickName,trueName,sex,idCardNo,provinceId,cityId,address FROM userInfo WHERE userId =".self::$userId;
 		$db = DB::connect("DB_USR");
 		$userInfo = $db->fetch($sql);
 		//var_dump($userInfo);
@@ -142,7 +142,6 @@ class C_CurrUser
 		}
 		$passwd = strtolower(md5($newPass.PwdSecret));
 		$sql = "UPDATE userInfo  SET userPass = '".$passwd."' WHERE userId =".self::$userId;
-		
 		$db = DB::connect("DB_USR");
 		$db->exec($sql);
 		//注销用户
@@ -176,7 +175,6 @@ class C_CurrUser
 		$code = $rsp->result;
 		if($code == 0){
 			$redisKey = 'Sys/Sms/'.$mobileNo;
-
 			getRedisMain()->set($redisKey,$rnd);
 			getRedisMain()->EXPIRE($redisKey,300);
 			return true;
@@ -185,9 +183,18 @@ class C_CurrUser
 			C_Com::apiResponse(C_Com::apiResult(-$code));
 		}
 	}
-	//修改资料
-	public static function modifyInfo($trueName,$sex,$provinceId,$cityId,$address){
-		
+
+	/*用户修改信息*/
+	public static function modifyUserInfo($trueName,$sex, $cardId,$provinceId,$cityId,$address){
+        if(!self::isLogin()){
+			C_Com::apiResponse(C_Com::apiResult(-3));
+			return;
+		 }
+        $sql = "UPDATE userInfo SET trueName = '$trueName',sex='$sex',idCardNo = '$cardId',provinceId = '$provinceId',cityId = '$cityId',address = '$address' WHERE userId = ".self::$userId;
+        $db = DB::connect("DB_USR");
+		$db->exec($sql);
+		return true;
 	}
+	
 }
 ?>

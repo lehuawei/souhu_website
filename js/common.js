@@ -1,5 +1,6 @@
 var url = "index.php?mpd=api";
 $(function () {
+ //   alert(ifStrong);
         //点击logo进入首页
        $(".logo").click(function(){
            window.location.replace("index.html");
@@ -87,19 +88,17 @@ $(function () {
         $(this).select();
     });
     $(".edit_datum").click(function(){
-        //省级城市联动调用
-        $("#city").citySelect();
+        $(".btn_div").css('visibility','visible');
+        $('.user_info .info_two table td input').css('color','#181818');
+        $(".userGender").removeAttr("disabled");
         input_edit.removeAttr("disabled");
         $("#city select").removeAttr("disabled");
     });
-    //点击个人中心保存
-    $(".user_info button.save").click(function () {
-        //console.log($(input_edit).attr("disabled"));
-        input_edit.attr("disabled",'disabled');
-        $("#city select").attr("disabled",'disabled');
-    });
     //按钮 取消和保存样式
     $(".btn_div button").click(function () {
+        $(".btn_div").css('visibility','hidden');
+        $('.user_info .info_two table td input').css('color','#646464');
+        $(".userGender").attr("disabled",'disabled');
         input_edit.attr("disabled",'disabled');
         $("#city select").attr("disabled",'disabled');
         if(!$(this).hasClass("save")){
@@ -311,9 +310,8 @@ $(function () {
     $(".cont5_one .pic_in").children().hide();
 
     $(" .pic_in").mouseenter(function(){
-
         /*遮罩方法二*/
-        $(this).css({"opacity":"0.9"});
+        $(this).css({"opacity":"0.8"});
         $(this).children().fadeIn("slow");
     });
     $(".pic_in").mouseleave(function(){
@@ -363,15 +361,6 @@ $(function () {
         }
     });
     //点击设置图标会显示对应的弹出框div
-   /* $(".set_icon").click(function (e) {
-        //e.stopPropagation();//阻止冒泡
-        if ($(".angle").is(":hidden")) {
-            $(".angle").show();
-        } else if($(".angle").is(":visible")){
-            $(".angle").hide();
-
-        }
-    });*/
     $(".set_icon").click(function (e) {
            e.stopPropagation();//阻止冒泡
             $(".angle").show();
@@ -390,14 +379,16 @@ $(function () {
     var data = {};
     data.action = "getUserInfo";
     $.post(url,data,function(result){
+       // console.log(result);
         var obj = JSON.parse(result);
         var code =parseInt(obj.CODE);
         if(code != 0){
             //失败
            // alert(obj.DATA.ERRMSG);
-            $(".recharge_bg").css("display","none");
             $(".chk_log").css("display","block");
+            $(".recharge_bg").css("display","none");
 
+           // alert();
         }
         else{
             //成功
@@ -412,7 +403,7 @@ $(function () {
     });
 
     //弹出框 退出
-    $(".back").click(function(){
+    $(".exit").click(function(){
         var data={};
         data.action="logout";
         $.post(url,data,function(result){
@@ -430,6 +421,7 @@ $(function () {
     });
 
     /*充值管理部分*/
+    $('article .recharge_wh .tit_rc b.name').html(name);
     //点击添加账户
     $(".add_img").click(function () {
         $(".pop_cho").css("display","block");
@@ -445,13 +437,10 @@ $(function () {
     //点击选择账户部分
     $(".person_ul li").click(function () {
         var add_img=$('<img class="che_img" src="images/recharge_Manage/has_che.png" alt="" value="1" >');
-        var has_img=$(this).find(".che_img").length;
-        var img_li_index=$(this).index();
-        if(has_img==1){
-            $(".person_ul li").eq(img_li_index).children('.che_img').remove();
-        }
-        if(has_img==0){
+        var has_img=$(this).children('img').is('.che_img');
+        if(!has_img){
             $(this).append(add_img);
+            $(this).siblings().children('img').remove('.che_img');
         }
     });
     //点击不同充值金额
