@@ -2,13 +2,16 @@
 if(!defined('ACCESS_KEY')){header("HTTP/1.1 404 Not Found");die;}
 class_exists('C_User') or require(APP_PATH.'class/user.class.php');
 $class = "";
-$mod = $_REQUEST['api'];
-if(empty($mod)) $mod = 'index';
+$mod = $_REQUEST['mod'];
+if(empty($mod)) {
+    $mod = 'index';
+}
 $userInfo = null;
 if(C_CurrUser::isLogin()){
     //已登录
     $currUser = new C_User(C_CurrUser::$userId);
     $userInfo = $currUser->getUserInfo();
+   // print_r($userInfo);
 }
 else{
     //未登录
@@ -23,15 +26,15 @@ else{
             <span class="nav_a"><a href="#" class="<?php if($mod == 'case'){echo "orange";}?> case" title="<?php echo CDN_SERVER;?>?mod=case">案例</a></span>
             <span class="nav_a"><a href="#" class="<?php if($mod == 'about'){echo "orange";}?> about" title="<?php echo CDN_SERVER;?>?mod=about">关于我们</a></span>
             <span class="nav_a"><a href="#" class="<?php if($mod == 'join'){echo "orange";}?> join" title="<?php echo CDN_SERVER;?>?mod=join">加入我们</a></span>
-            <?php 
-                if(empty($userInfo)){
-            ?>
-            <div class="log"><a href="javascript:void(0)" title="<?php echo CDN_SERVER;?>?mod=reg_log">登录/注册</a></div>
-            <?
-                }
-                else{
-            ?>
-            <span class="add_icon">
+            <?php
+            if(empty($userInfo)){
+                ?>
+                <div class="log "><a href="javascript:void(0)" title="<?php echo CDN_SERVER;?>?mod=reg_log">登录/注册</a></div>
+                <?
+            }
+            else{
+                ?>
+                <span class="add_icon" style="display: inline">
                 <img src="<?php echo CDN_SERVER;?>images/login_reg/person_icon1.png" alt="" class="user_icon ">&nbsp;&nbsp;
                 <a href="<?php echo CDN_SERVER;?>?mod=user_Center" target="_blank" class="yhm"><?php echo $userInfo->nickName;?></a>
                 &nbsp;&nbsp;&nbsp;&nbsp;

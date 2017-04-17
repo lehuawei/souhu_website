@@ -1,46 +1,32 @@
+<?php
+//鉴权
+if(!defined('ACCESS_KEY')){header("HTTP/1.1 404 Not Found");die;}
+//公用类
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>登录注册</title>
-    <link rel="stylesheet" href="css/reg_log.css">
-    <link rel="stylesheet" href="css/index.css">
-    <script src="js/jquery-1.9.1.js"></script>
-    <script src="js/placeholderfriend.js"></script>
+    <link rel="stylesheet" href="<?php echo CDN_SERVER;?>css/reg_log.css">
+    <link rel="stylesheet" href="<?php echo CDN_SERVER;?>css/index.css">
+    <script src="<?php echo CDN_SERVER;?>js/jquery-1.9.1.js"></script>
+    <script src="<?php echo CDN_SERVER;?>js/placeholderfriend.js"></script>
     <!--if it IE 8--><!--兼容h5-->
-    <script src="js/respond.min.js"></script>
-    <script src="js/html5shiv.min.js"></script>
+    <script src="<?php echo CDN_SERVER;?>js/respond.min.js"></script>
+    <script src="<?php echo CDN_SERVER;?>js/html5shiv.min.js"></script>
     <!--end if -->
 </head>
 <body>
 <!--顶部导航-->
-<header>
-    <div class="head bs">
-        <div class="logo"><img src="images/common/logo.png" alt="" class="logo"></div>
-        <div class="nav_span">
-            <span class="nav_a"><a href="#"  class="first" title="index.html">首页</a></span>
-            <span class="nav_a"><a href="#" class="accountRecharge" title="acc_recharge.html">账户充值</a></span>
-            <span class="nav_a"><a href="#" class="case" title="case.html">案例</a></span>
-            <span class="nav_a"><a href="#" class="about" title="about.html">关于我们</a></span>
-            <span class="nav_a"><a href="#" class="join" title="join.html">加入我们</a></span>
-            <div class="log org"><a href="javascript:void(0)" title="reg_log.html" style="color: white">登录/注册</a></div>
-            <span class="add_icon" >
-                <img src="images/login_reg/person_icon1.png" alt="" class="user_icon">&nbsp;&nbsp;<a href="user_Center.html"  class="yhm">用户名</a>
-                &nbsp;&nbsp;&nbsp;&nbsp;<img src="images/login_reg/setup_icon.png" alt=""  class="set_icon">
-                <div class="angle">
-                    <p class="safe"><a class="person_safe" href="#jump">账户安全</a></p>
-                    <div  class="grey_line_short"></div>
-                    <p class="exit"><a class="back">退出</a></p>
-                </div>
-            </span>
-        </div>
-    </div>
-</header>
+<?php
+require(APP_PATH.'common/header.com.php');
+?>
 <!--center-->
 <article>
     <div class="acc_bg">
         <div class="acc_pic">
-            <img src="images/login_reg/acc_bg.jpg" alt="">
+            <img src="<?php echo CDN_SERVER;?>images/login_reg/acc_bg.jpg" alt="">
         </div>
         <div class="acc_reg_log">
             <div class="acc_con">
@@ -70,8 +56,8 @@
                     <input type="password" placeholder="密码(6-16位字符和数字)" style="float: left" class="password">
                     <button type="submit" class="btn_sub">注册</button>
                         <p class="btm_txt">
-                            <img class="check_img no_check" style="float: left;margin-top: 0.8%" src="images/register_Page/icon-dagou.png" alt="1" >
-                            <span class="color_a"><a href="protocol.html" target="_blank">同意用户协议</a><a>和</a><a href="copyright.html" target="_blank">版权声明</a></span>
+                            <img class="check_img no_check" style="float: left;margin-top: 0.8%" src="<?php echo CDN_SERVER;?>images/register_Page/icon-dagou.png" alt="1" >
+                            <span class="color_a"><a href="<?php echo CDN_SERVER;?>?mod=protocol" target="_blank">同意用户协议</a><a>和</a><a href="<?php echo CDN_SERVER;?>?mod=copyright" target="_blank">版权声明</a></span>
                             <span class="has_a"><a class="has_log">已有账号？前往登录</a> </span>
                             <input type="checkbox" style="display: none" class="che_if" checked>
                         </p>
@@ -99,7 +85,7 @@
         <div class="foot1">
             <div class="contact">
                 <div class="con_left">
-                    <span><img src="images/common/image_wechat.png" alt="" style="width: 120px;height: 120px"></span>
+                    <span><img src="<?php echo CDN_SERVER;?>images/common/image_wechat.png" alt="" style="width: 120px;height: 120px"></span>
                     <ul style="display: inline-block">
                         <li>扫一扫</li>
                         <li>关注搜虎微信平台</li>
@@ -108,21 +94,21 @@
                 <div class="con_right">
                     <div>
                         <p style="font-size: 16px" >联系方式:</p>
-                        <p><img src="images/common/footer_icon1.png" alt="" style="width: 14px;height: 14px"><span>&nbsp;&nbsp;0755-26651181</span></p>
-                        <p><img src="images/common/footer_icon2.png" alt="" style="width: 14px;height: 14px"><span>&nbsp;&nbsp;深圳市南山区南头检查站智恒产业园22栋3楼</span></p>
+                        <p><img src="<?php echo CDN_SERVER;?>images/common/footer_icon1.png" alt="" style="width: 14px;height: 14px"><span>&nbsp;&nbsp;0755-26651181</span></p>
+                        <p><img src="<?php echo CDN_SERVER;?>images/common/footer_icon2.png" alt="" style="width: 14px;height: 14px"><span>&nbsp;&nbsp;深圳市南山区南头检查站智恒产业园22栋3楼</span></p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="foot2">
             <p>Copyright &nbsp; @ &nbsp; 搜虎网络   &nbsp;&nbsp;   &nbsp;&nbsp;备案号：粤ICP备16109808号-1&nbsp;&nbsp;   &nbsp;&nbsp;
-                <img src="images/common/wenhuajingying.png" alt="" style="width: 28px;height: 28px">&nbsp;&nbsp;
+                <img src="<?php echo CDN_SERVER;?>images/common/wenhuajingying.png" alt="" style="width: 28px;height: 28px">&nbsp;&nbsp;
                 <a  href="http://sq.ccm.gov.cn/ccnt/sczr/service/business/emark/toDetail/3c3a59aa6a6740c3b47e88290db02c3b" target="_ blank">粤网文〔2017〕1079-007号</a>
             </p>
         </div>
     </div>
 </footer>
-<script src="js/common.js"  type="text/javascript"></script>
-<script src="js/formValidate.js" type="text/javascript"></script>
+<script src="<?php echo CDN_SERVER;?>js/common.js" type="text/javascript"></script>
+<script src="<?php echo CDN_SERVER;?>js/formValidate.js" type="text/javascript"></script>
 </body>
 </html>

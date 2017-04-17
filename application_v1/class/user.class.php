@@ -12,12 +12,12 @@ class C_User
 		unset($this->cache);
 		
 	}
-
 	/***
 	*获取用户的基本信息
 	**/
 	public function getUserInfo(){
-		$sql = "SELECT userId,countryNo,mobileNo,nickName,passwd,trueName,sex,idCardNo,provinceId,cityId,address,createTime,modifyTime FROM userInfo WHERE userId = ".$this->userId;
+		$sql = "SELECT userId,countryNo,mobileNo,nickName,userPass,trueName,sex,idCardNo,provinceId,cityId,address,createTime,modifyTime FROM userInfo WHERE userId = ".$this->userId;
+		//var_dump($sql);
 		$info = $this->userDB()->fetch($sql);
 		return $info;
 	}

@@ -2,7 +2,6 @@
 //鉴权
     if(!defined('ACCESS_KEY')){header("HTTP/1.1 404 Not Found");die;}
 //公用类
-   
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,7 +73,7 @@
                 <input type="submit" value="注册"  class="notchk"> <br>
                 <p style="width: 78%; margin:2% auto auto 10%;">
                     <input type="checkbox" class="agree" id="chk">&nbsp;
-                    <span  class="protocol1" style="float: left"><a href="protocol.html" target="_blank">同意用户协议</a>和<a href="copyright.html" target="_blank">版权声明</a> </span>
+                    <span  class="protocol1" style="float: left"><a href="protocol.mod.php" target="_blank">同意用户协议</a>和<a href="copyright.mod.php" target="_blank">版权声明</a> </span>
                     <span class="rit_reg" style="float: right"><a href="#" class="has_acc">已有账号?登录</a></span>
                 </p>
                 <p class="red">输入不能为空!</p>

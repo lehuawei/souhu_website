@@ -3,44 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>用户中心</title>
-    <link rel="stylesheet" href="css/reg_log.css">
-    <link rel="stylesheet" href="css/acc_recharge.css">
-    <link rel="stylesheet" href="css/user_Center.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="<?php echo CDN_SERVER;?>css/reg_log.css">
+    <link rel="stylesheet" href="<?php echo CDN_SERVER;?>css/acc_recharge.css">
+    <link rel="stylesheet" href="<?php echo CDN_SERVER;?>css/user_Center.css">
+    <link rel="stylesheet" href="<?php echo CDN_SERVER;?>css/index.css">
 
-    <script src="js/jquery-1.9.1.js"></script>
-    <script src="js/placeholderfriend.js"></script>
-    <script type="text/javascript" src="js/jquery.cityselect.js"></script>
+    <script src="<?php echo CDN_SERVER;?>js/jquery-1.9.1.js"></script>
+    <script src="<?php echo CDN_SERVER;?>js/placeholderfriend.js"></script>
+    <script type="text/javascript" src="<?php echo CDN_SERVER;?>js/jquery.cityselect.js"></script>
     <!--if it IE 8--><!--兼容h5-->
-    <script src="js/respond.min.js"></script>
-    <script src="js/html5shiv.min.js"></script>
+    <script src="<?php echo CDN_SERVER;?>js/respond.min.js"></script>
+    <script src="<?php echo CDN_SERVER;?>js/html5shiv.min.js"></script>
     <!--end if -->
 </head>
 <body>
 <!--顶部导航-->
-<header>
-    <div class="head bs">
-        <div class="logo"><img src="images/common/logo.png" alt="" class="logo"></div>
-        <div class="nav_span">
-            <span class="nav_a"><a href="#"  class="first" title="index.html">首页</a></span>
-            <span class="nav_a"><a href="#" class="accountRecharge" title="acc_recharge.html">账户充值</a></span>
-            <span class="nav_a"><a href="#" class="case" title="case.html">案例</a></span>
-            <span class="nav_a"><a href="#" class="about" title="about.html">关于我们</a></span>
-            <span class="nav_a"><a href="#" class="join" title="join.html">加入我们</a></span>
-            <div class="log org"><a href="javascript:void(0)" title="reg_log.html" style="color: white">登录/注册</a></div>
-            <span class="add_icon" >
-                <img src="images/login_reg/person_icon1.png" alt="" class="user_icon">&nbsp;&nbsp;
-                <a href="user_Center.html" target="_blank" class="yhm">用户名</a>
-                &nbsp;&nbsp;&nbsp;&nbsp;<img src="images/login_reg/setup_icon.png" alt=""  class="set_icon">
-                <div class="angle">
-                    <p class="safe"><a class="person_safe" href="modify_pass.html" target="_blank">账户安全</a></p>
-                    <div  class="grey_line_short"></div>
-                    <p class="exit"><a class="back">退出</a></p>
-                </div>
-            </span>
-        </div>
-    </div>
-</header>
+<?php
+require(APP_PATH.'common/header.com.php');
+?>
+
 <!--充值中心-->
 <article>
 <div class="recharge_bg">
@@ -57,7 +38,7 @@
         <!--1 个人信息-->
         <div class="user_info user_ul_div"  style="display:block">
             <div class="info_one">
-                <img class="tx_img" src="images/recharge_Manage/girl.jpg" alt="" width="132px" height="132px" >
+                <img class="tx_img" src="<?php echo CDN_SERVER;?>images/recharge_Manage/girl.jpg" alt="" width="132px" height="132px" >
                 <table>
                     <tr>
                         <td style="font-size: 20px">Muse</td>
@@ -66,13 +47,13 @@
                         <td>飞虎账号</td>
                     </tr>
                     <tr>
-                        <td>账户余额: <em>10</em>元 <a href="acc_recharge.php"><img src="images/person_Info/icon-top-up.png" alt=""> </a></td>
+                        <td>账户余额: <em>10</em>元 <a href="acc_recharge.php"><img src="<?php echo CDN_SERVER;?>images/person_Info/icon-top-up.png" alt=""> </a></td>
                     </tr>
                     <tr>
                         <td>今天天气好晴朗</td>
                     </tr>
                 </table>
-                <span class="edit_datum"><img src="images/person_Info/icon-modification.png" alt="">编辑资料</span>
+                <span class="edit_datum"><img src="<?php echo CDN_SERVER;?>images/person_Info/icon-modification.png" alt="">编辑资料</span>
             </div>
             <div class="info_two">
                 <h4>个人资料</h4>
@@ -113,7 +94,7 @@
             </ul>
         <div class="game_one game">
             <div class="live_game">
-                <img src="images/product_Manage/live_girl.jpg" alt=""  class="live_girl">
+                <img src="<?php echo CDN_SERVER;?>images/product_Manage/live_girl.jpg" alt="" class="live_girl">
                 <table>
                     <tr>
                         <td> <h3>快来聊天吧</h3></td>
@@ -122,15 +103,15 @@
                         <td><h3> Romantic</h3></td>
                     </tr>
                     <tr>
-                        <td><img src="images/product_Manage/icon-time.png" alt="">已开播120分钟 <img src="images/product_Manage/icon-audience.png" alt="">1248934 </td>
+                        <td><img src="<?php echo CDN_SERVER;?>images/product_Manage/icon-time.png" alt="">已开播120分钟 <img src="<?php echo CDN_SERVER;?>images/product_Manage/icon-audience.png" alt="">1248934 </td>
                     </tr>
                     <tr>
-                        <td><a href=""><img src="images/product_Manage/icon-watch.png" alt=""></a></td>
+                        <td><a href=""><img src="<?php echo CDN_SERVER;?>images/product_Manage/icon-watch.png" alt=""></a></td>
                     </tr>
                 </table>
             </div>
             <div class="live_game" >
-                <img src="images/product_Manage/live_girl.jpg" alt="" class="live_girl">
+                <img src="<?php echo CDN_SERVER;?>images/product_Manage/live_girl.jpg" alt="" class="live_girl">
                 <table>
                     <tr>
                         <td> <h3>快来聊天吧</h3></td>
@@ -139,10 +120,10 @@
                         <td><h3>Eric</h3></td>
                     </tr>
                     <tr>
-                        <td><img src="images/product_Manage/icon-time.png" alt="">已开播120分钟 <img src="images/product_Manage/icon-audience.png" alt="">322553 </td>
+                        <td><img src="<?php echo CDN_SERVER;?>images/product_Manage/icon-time.png" alt="">已开播120分钟 <img src="<?php echo CDN_SERVER;?>images/product_Manage/icon-audience.png" alt="">322553 </td>
                     </tr>
                     <tr>
-                        <td><a href=""><img src="images/product_Manage/icon-watch.png" alt=""></a></td>
+                        <td><a href=""><img src="<?php echo CDN_SERVER;?>images/product_Manage/icon-watch.png" alt=""></a></td>
                     </tr>
                 </table>
             </div>
@@ -157,7 +138,7 @@
              <!--安全指数-->
             <div class="reliable_index">
                 <p>安全指数: <span class="orange_span"></span> <span class="orange_span"></span> <span class="grey_span" id="chgCol_span"></span>
-                    <a href="modify_pass.html" target="_blank"><i>修改密码</i></a>
+                    <a href="<?php echo CDN_SERVER;?>modify_pass.html" target="_blank"><i>修改密码</i></a>
                 </p>
             </div>
             <!--设置隐私-->
@@ -165,9 +146,9 @@
                 <h3>设置隐私</h3>
             </div>
             <ul class="secret_ul">
-                <li><img src="images/account_Safe/icon-weixin.png" alt=""><h4>绑定微信账号</h4></li>
-                <li><img src="images/account_Safe/icon-weibo.png" alt=""><h4>绑定微博账号</h4></li>
-                <li><img src="images/account_Safe/icon-qq-selected.png" alt=""><h4><em>Muse </em>[解绑]</h4></li>
+                <li><img src="<?php echo CDN_SERVER;?>images/account_Safe/icon-weixin.png" alt=""><h4>绑定微信账号</h4></li>
+                <li><img src="<?php echo CDN_SERVER;?>images/account_Safe/icon-weibo.png" alt=""><h4>绑定微博账号</h4></li>
+                <li><img src="<?php echo CDN_SERVER;?>images/account_Safe/icon-qq-selected.png" alt=""><h4><em>Muse </em>[解绑]</h4></li>
             </ul>
             <!--付款方式-->
             <div class="reliable_index pay_way">
@@ -198,9 +179,9 @@
             <h3 class="sh_b">
                 <span style="margin-left: 10px">搜币</span>
                 <span class="coin_cz">
-                        <a href="application_v1/module/acc_recharge.mod.php" class=""><button>搜虎币充值</button></a>
-                        <a href="application_v1/module/acc_recharge.mod.php"><button>飞虎币充值</button></a>
-                        <a href="application_v1/module/acc_recharge.mod.php"><button>游戏充值</button></a>
+                        <a href="acc_recharge.mod.php" class=""><button>搜虎币充值</button></a>
+                        <a href="acc_recharge.mod.php"><button>飞虎币充值</button></a>
+                        <a href="acc_recharge.mod.php"><button>游戏充值</button></a>
                 </span>
             </h3>
             <!--交易明细-->
@@ -217,7 +198,7 @@
                 <select name="" id="mouth">
                     <option value="1">1</option>
                 </select> 月
-                <button class="seek"> <img src="images/souhu_Coin/icon-seek.png" alt="" style="margin-right: 10px">查询</button>
+                <button class="seek"> <img src="<?php echo CDN_SERVER;?>images/souhu_Coin/icon-seek.png" alt="" style="margin-right: 10px">查询</button>
                 <button class="del">批量管理</button>
             </h3>
             <table class="detail" cellpadding="0" cellspacing="0">
@@ -342,7 +323,7 @@
             <!--消息详情-->
             <div class="mess_detail">
                  <div class="mess">
-                     <p class="fh_tit"><img src="images/case_detail/case_detail_pic1.png" alt="" width="68px" height="68px">
+                     <p class="fh_tit"><img src="<?php echo CDN_SERVER;?>images/case_detail/case_detail_pic1.png" alt="" width="68px" height="68px">
                         <span>飞虎直播</span> <em class="time">3-16   12:01</em>
                      </p>
                      <p class="main">
@@ -360,7 +341,7 @@
         <div class="foot1">
             <div class="contact">
                 <div class="con_left">
-                    <span><img src="images/common/image_wechat.png" alt="" style="width: 120px;height: 120px"></span>
+                    <span><img src="<?php echo CDN_SERVER;?>images/common/image_wechat.png" alt="" style="width: 120px;height: 120px"></span>
                     <ul style="display: inline-block">
                         <li>扫一扫</li>
                         <li>关注搜虎微信平台</li>
@@ -369,23 +350,23 @@
                 <div class="con_right">
                     <div>
                         <p style="font-size: 16px" >联系方式:</p>
-                        <p><img src="images/common/footer_icon1.png" alt="" style="width: 14px;height: 14px"><span>&nbsp;&nbsp;0755-26651181</span></p>
-                        <p><img src="images/common/footer_icon2.png" alt="" style="width: 14px;height: 14px"><span>&nbsp;&nbsp;深圳市南山区南头检查站智恒产业园22栋3楼</span></p>
+                        <p><img src="<?php echo CDN_SERVER;?>images/common/footer_icon1.png" alt="" style="width: 14px;height: 14px"><span>&nbsp;&nbsp;0755-26651181</span></p>
+                        <p><img src="<?php echo CDN_SERVER;?>images/common/footer_icon2.png" alt="" style="width: 14px;height: 14px"><span>&nbsp;&nbsp;深圳市南山区南头检查站智恒产业园22栋3楼</span></p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="foot2">
             <p>Copyright &nbsp; @ &nbsp; 搜虎网络   &nbsp;&nbsp;   &nbsp;&nbsp;备案号：粤ICP备16109808号-1&nbsp;&nbsp;   &nbsp;&nbsp;
-                <img src="images/common/wenhuajingying.png" alt="" style="width: 28px;height: 28px">&nbsp;&nbsp;
+                <img src="<?php echo CDN_SERVER;?>images/common/wenhuajingying.png" alt="" style="width: 28px;height: 28px">&nbsp;&nbsp;
                 <a  href="http://sq.ccm.gov.cn/ccnt/sczr/service/business/emark/toDetail/3c3a59aa6a6740c3b47e88290db02c3b" target="_ blank">粤网文〔2017〕1079-007号</a>
             </p>
         </div>
     </div>
 </footer>
 </body>
-<script src="js/formValidate.js"></script>
-<script src="js/common.js"></script>
+<script src="<?php echo CDN_SERVER;?>js/formValidate.js"></script>
+<script src="<?php echo CDN_SERVER;?>js/common.js"></script>
 <script language="javascript">
     $(function(){
         var ifStrong=localStorage.ifStrong;

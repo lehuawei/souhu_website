@@ -415,7 +415,7 @@ $(function () {
                  $(".log").css("display","inline-block");
                  $("header .add_icon").css("display","none");
                  $(".angle").css("display","none");
-                 location.replace("index.html");
+                 location.replace("<?php echo CDN_SERVER;?>?mod=index");
             }
         });
     });

@@ -10,7 +10,7 @@ class DB
 			if(!isset(Config::$mysql[$key])){
 					die('Database connect error');
 			}
-			$$dsn = '';
+			$dsn = '';
 			if(!isset(self::$dbLink[$key.$time])){
 					try{
 							$dbServer = Config::$mysql[$key];
