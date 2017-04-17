@@ -6,7 +6,7 @@ ini_set('display_errors', 'on');
 date_default_timezone_set('Etc/GMT-8');
 define("DOMAIN","chinasouhu.net");
 define("PwdSecret","asdfds!@#*1234@!#*ASDFasdfQ@#4345asDF");
-define("CDN_SERVER","https://imgs.chinasouhu.net/");
+define("CDN_SERVER","https://dev.feihutv.cn/company/");
 define("WEBNAME","搜虎网络科技");
 define('SmsAppId',"1400027910");
 define('SmsAppKey','9ea2cf4f4f80a668b51142f170ef0db0');

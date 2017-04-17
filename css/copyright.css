@@ -101,7 +101,7 @@ header .nav_span .angle{
     position: absolute;
     top:25px;
     right: -22px;
-    background: url("../images/login_reg/drop_down_box.png");
+    background: url("https://img.chinasouhu.net/images/login_reg/drop_down_box.png");
     z-index:199;
 }
 header .angle p{

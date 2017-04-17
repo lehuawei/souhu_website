@@ -101,7 +101,7 @@ header .nav_span .angle{
     position: absolute;
     top:25px;
     right: -22px;
-    background: url("../images/login_reg/drop_down_box.png");
+    background: url("https://img.chinasouhu.net/images//login_reg/drop_down_box.png");
     z-index:199;
 }
 header .angle p{
@@ -146,7 +146,7 @@ header .angle img{
     position: absolute;
     top: 30%;
     left: 38%;
-    background: url(../images/login_reg/Popup.png) no-repeat;
+    background: url(https://img.chinasouhu.net/images//login_reg/Popup.png) no-repeat;
 }
 .slider input{
     vertical-align: middle;
@@ -170,7 +170,7 @@ header .angle img{
     /*text-align: center;*/
 }
 .slider  input[type='submit']{
-    background: url(../images/login_reg/submit_btn.png) no-repeat;
+    background: url(https://img.chinasouhu.net/images//login_reg/submit_btn.png) no-repeat;
     border: none;
     color: white;
     text-align: center;
@@ -230,7 +230,7 @@ header .angle img{
     margin-left: 2%;
     width: 10px;
     height: 10px;
-    background: url(../images/login_reg/choose.png) no-repeat 32px 7px;
+    background: url(https://img.chinasouhu.net/images//login_reg/choose.png) no-repeat 32px 7px;
     z-index: 1;
 }
 .slider .register p a{
