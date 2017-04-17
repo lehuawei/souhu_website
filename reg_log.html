@@ -48,11 +48,11 @@
                     <li class="txt_sty"><span>登录</span></li>
                     <li class=""><span>注册</span></li>
                 </ul>
-                <div class="div_rl div_log_none" >
-                    <span class="phone_txt">账号登录</span><br>
-                    <form action="" class="reg_form">
-                        <input type="text" placeholder="手机号码">
-                        <input type="text" placeholder="密码">
+                <div class="div_rl div_log_none div_log" >
+                    <span class="phone_txt">账号登录</span><span class="red">123</span><br>
+                    <form action="javascript:void(0)" class="reg_form form_one">
+                        <input type="text" placeholder="手机号码" class="number">
+                        <input type="text" placeholder="密码" class="password">
                         <button type="submit" class="btn_sub">登录</button>
                         <p class="btm_txt log_txt">
                             <span class="fgt_pass"> <a href="JavaScript:void(0)">忘记密码?</a></span>
@@ -61,18 +61,19 @@
                     </form>
                 </div>
                 <div class="div_rl div_reg " >
-                    <span  class="phone_txt" >手机号注册</span><br>
-                    <form action="" class="reg_form">
-                    <input type="text" placeholder="手机号码">
-                    <input type="text" placeholder="验证码" style="float: left;clear:both;">
-                    <p class="p_btn"> <button class="btn_fu">获取验证码</button></p>
-                    <input type="text" placeholder="昵称">
-                    <input type="text" placeholder="密码" style="float: left">
+                    <span  class="phone_txt" >手机号注册</span><span class="red">123</span><br>
+                    <form action="javascript:void(0)" class="reg_form form_two" >
+                    <input type="text" placeholder="手机号码" class="phonenumber">
+                    <input type="text" placeholder="验证码" style="float: left;clear:both;" class="id_code">
+                    <p class="p_btn"> <input class="btn_fu" type="button" value="获取验证码" ></p>
+                    <input type="text" placeholder="昵称" class="name">
+                    <input type="password" placeholder="密码(6-16位字符或数字)" style="float: left" class="password">
                     <button type="submit" class="btn_sub">注册</button>
                         <p class="btm_txt">
-                            <img class="check_img no_check" style="float: left;margin-top: 0.8%" src="images/register_Page/checkbox_no.png" alt="1" >
+                            <img class="check_img no_check" style="float: left;margin-top: 0.8%" src="images/register_Page/icon-dagou.png" alt="1" >
                             <span class="color_a"><a href="protocol.html" target="_blank">同意用户协议</a><a>和</a><a href="copyright.html" target="_blank">版权声明</a></span>
                             <span class="has_a"><a class="has_log">已有账号？前往登录</a> </span>
+                            <input type="checkbox" style="display: none" class="che_if" checked>
                         </p>
                     </form>
                 </div>

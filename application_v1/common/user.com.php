@@ -45,7 +45,8 @@ class C_CurrUser
 	public static function userLogout(){
 		header('P3P: CP="CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR"'); 
 		setcookie(COOKIE_PREFIX.'userId','');
-		//setcookie(COOKIE_PREFIX.'userId','',time()-86400,"/","www.".DOMAIN);
+		#setcookie(COOKIE_PREFIX.'userId','',time()-86400,"/","www.".DOMAIN);
+		#setcookie(COOKIE_PREFIX.'userId','',time()-86400,"/",DOMAIN);
 		setcookie(COOKIE_PREFIX.'sstr','');
 		//setcookie(COOKIE_PREFIX.'sstr','',time()-86400,"/","www.".DOMAIN);
 		self::$userId = 0;
@@ -146,10 +147,14 @@ class C_CurrUser
 		$params = array((string)$rnd, "5");
 		$result = $singleSender->sendWithParam("86", $mobileNo, SmsRegTempId, $params, SmsSign,'','');
 		$rsp = json_decode($result);
+		//var_dump($result);die;
 		$code = $rsp->result;
+
 		if($code == 0){
-			getRedisMain()->set('Sys/Sms/'.$mobileNo,$rnd);
-			getRedisMain()->EXPIRE('Sys/Sms/'.$mobileNo,300);
+			$redisKey = 'Sys/Sms/'.$mobileNo;
+
+			getRedisMain()->set($redisKey,$rnd);
+			getRedisMain()->EXPIRE($redisKey,300);
 			return true;
 		}
 		else
