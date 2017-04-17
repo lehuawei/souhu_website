@@ -488,7 +488,7 @@ $(function () {
          $(".sys_mess input").css("display",'none');
          //搜虎币充值button处理
          $(".coin_cz ").empty();
-         var a_nob=$("<a href='acc_recharge.html' class='cz_a'>搜虎币充值</a> <a href='acc_recharge.html' class='cz_a'>飞虎币充值</a> <a href='acc_recharge.html' class='cz_a'>游戏充值</a>")
+         var a_nob=$("<a href='acc_recharge.mod.php' class='cz_a'>搜虎币充值</a> <a href='acc_recharge.mod.php' class='cz_a'>飞虎币充值</a> <a href='acc_recharge.mod.php' class='cz_a'>游戏充值</a>")
          $('.coin_cz').append(a_nob);
     }
 });

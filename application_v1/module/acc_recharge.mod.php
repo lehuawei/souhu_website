@@ -1,36 +1,40 @@
+<?php
+if(!defined('ACCESS_KEY')){header("HTTP/1.1 404 Not Found");die;}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>账户充值</title>
-    <link rel="stylesheet" href="css/acc_recharge.css">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/reg_log.css">
-    <script src="js/jquery-1.9.1.js"></script>
-    <script src="js/placeholderfriend.js"></script>
+    <link rel="stylesheet" href="<?php echo CDN_SERVER;?>css/acc_recharge.css">
+    <link rel="stylesheet" href="<?php echo CDN_SERVER;?>css/index.css">
+    <link rel="stylesheet" href="<?php echo CDN_SERVER;?>css/reg_log.css">
+    <script src="<?php echo CDN_SERVER;?>js/jquery-1.9.1.js"></script>
+    <script src="<?php echo CDN_SERVER;?>js/placeholderfriend.js"></script>
     <!--if it IE 8--><!--兼容h5-->
-    <script src="js/respond.min.js"></script>
-    <script src="js/html5shiv.min.js"></script>
+    <script src="<?php echo CDN_SERVER;?>js/respond.min.js"></script>
+    <script src="<?php echo CDN_SERVER;?>js/html5shiv.min.js"></script>
     <!--end if -->
 </head>
 <body>
 <!--顶部导航-->
 <header>
     <div class="head bs">
-        <div class="logo"><img src="images/common/logo.png" alt="" class="logo"></div>
+        <div class="logo"><img src="<?php echo CDN_SERVER;?>images/common/logo.png" alt="" class="logo"></div>
         <div class="nav_span">
-            <span class="nav_a"><a href="#" class="first" title="index.html" >首页</a></span>
-            <span class="nav_a"><a href="#" class="orange accountRecharge" title="acc_recharge.html">账户充值</a></span>
-            <span class="nav_a"><a href="#" class="case" title="case.html">案例</a></span>
-            <span class="nav_a"><a href="#" class="about" title="about.html">关于我们</a></span>
-            <span class="nav_a"><a href="#" class="join" title="join.html">加入我们</a></span>
+            <span class="nav_a"><a href="#"  class="first" title="<?php echo CDN_SERVER;?>?mod=index">首页</a></span>
+            <span class="nav_a"><a href="#" class="accountRecharge orange" title="<?php echo CDN_SERVER;?>?mod=acc_recharge">账户充值</a></span>
+            <span class="nav_a"><a href="#" class="case" title="<?php echo CDN_SERVER;?>?mod=case">案例</a></span>
+            <span class="nav_a"><a href="#" class="about  " title="<?php echo CDN_SERVER;?>?mod=about">关于我们</a></span>
+            <span class="nav_a"><a href="#" class="join" title="<?php echo CDN_SERVER;?>?mod=join">加入我们</a></span>
             <div class="log"><a href="javascript:void(0)" title="reg_log.html">登录/注册</a></div>
             <span class="add_icon" >
-             <img src="images/login_reg/person_icon1.png" alt="" class="user_icon">&nbsp;&nbsp;
-                <a href="user_Center.html" target="_blank" class="yhm">用户名</a>
-                &nbsp;&nbsp;&nbsp;&nbsp;<img src="images/login_reg/setup_icon.png" alt=""  class="set_icon">
-            <div class="angle">
-                 <p class="safe"><a class="person_safe" href="modify_pass.html">账户安全</a></p>
+                <img src="<?php echo CDN_SERVER;?>images/login_reg/person_icon1.png" alt="" class="user_icon ">&nbsp;&nbsp;
+                <a href="<?php echo CDN_SERVER;?>?mod=user_Center" target="_blank" class="yhm">用户名</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <img src="<?php echo CDN_SERVER;?>images/login_reg/setup_icon.png" alt="" class="set_icon">
+                <div class="angle">
+                 <p class="safe"><a class="person_safe" href="<?php echo CDN_SERVER;?>?mod=modify_pass">账户安全</a></p>
                     <div class="grey_line_short"></div>
                  <p class="exit"><a class="back">退出</a></p>
             </div>
@@ -42,7 +46,7 @@
 <div class="opacity_color"></div>
 <!--选择账号弹出框-->
 <div class="pop_cho">
-    <div class="close"><img src="images/recharge_Manage/icon-close.png" alt=""></div>
+    <div class="close"><img src="<?php echo CDN_SERVER;?>images/recharge_Manage/icon-close.png" alt=""></div>
     <ul>
         <li class=" txt_sty"><span>添加账号</span></li>
     </ul>
@@ -60,9 +64,9 @@
         </form>
         <div class="another_log">
             <span>使用第三方登录
-                <a href="#"><img src="images/recharge_Manage/icon_weChat.png" alt=""></a>
-                <a href="#"><img src="images/recharge_Manage/icon-weibo.png" alt=""></a>
-                <a href="#"><img src="images/recharge_Manage/icon-qq.png" alt=""></a>
+                <a href="#"><img src="<?php echo CDN_SERVER;?>images/recharge_Manage/icon_weChat.png" alt=""></a>
+                <a href="#"><img src="<?php echo CDN_SERVER;?>images/recharge_Manage/icon-weibo.png" alt=""></a>
+                <a href="#"><img src="<?php echo CDN_SERVER;?>images/recharge_Manage/icon-qq.png" alt=""></a>
             </span>
         </div>
     </div>
@@ -82,17 +86,17 @@
             <div class="acc_head">
                 <ul class="person_ul">
                     <li>
-                        <span class="hp_span"><img src="images/recharge_Manage/girl.jpg" alt=""></span>
-                        <span class="pro_span"><h3>Muse<img src="images/recharge_Manage/girl.png" alt=""> </h3>搜虎账号:123456</span>
-                        <img class="che_img" src="images/recharge_Manage/has_che.png" alt="" value="1" >
+                        <span class="hp_span"><img src="<?php echo CDN_SERVER;?>images/recharge_Manage/girl.jpg" alt=""></span>
+                        <span class="pro_span"><h3>Muse<img src="<?php echo CDN_SERVER;?>images/recharge_Manage/girl.png" alt=""> </h3>搜虎账号:123456</span>
+                        <img class="che_img" src="<?php echo CDN_SERVER;?>images/recharge_Manage/has_che.png" alt="" value="1" >
                     </li>
                     <li>
-                        <span class="hp_span"><img src="images/recharge_Manage/girl.jpg" alt=""></span>
-                        <span class="pro_span"><h3>Muse<img src="images/recharge_Manage/girl.png" alt=""> </h3>搜虎账号:123456</span>
+                        <span class="hp_span"><img src="<?php echo CDN_SERVER;?>images/recharge_Manage/girl.jpg" alt=""></span>
+                        <span class="pro_span"><h3>Muse<img src="<?php echo CDN_SERVER;?>images/recharge_Manage/girl.png" alt=""> </h3>搜虎账号:123456</span>
                     </li>
 
                 </ul>
-               <span class="add_img"><img src="images/recharge_Manage/icon-and.png" alt="" > 添加账号</span>
+               <span class="add_img"><img src="<?php echo CDN_SERVER;?>images/recharge_Manage/icon-and.png" alt="" > 添加账号</span>
             </div>
             <!--充值金额-->
             <div class="recharge_money">
@@ -146,8 +150,8 @@
     </div>
 <!--隐藏的验证登录框-->
     <div class="chk_log" style="display: none">
-        <p><img src="images/common/green_reminder_03.png" alt="">&nbsp;&nbsp;您好，您需要先登录才能继续本操作</p><br>
-        <p><a href="reg_log.html">请点此链接进行登录或注册</a></p>
+        <p><img src="<?php echo CDN_SERVER;?>images/common/green_reminder_03.png" alt="">&nbsp;&nbsp;您好，您需要先登录才能继续本操作</p><br>
+        <p><a href="<?php echo CDN_SERVER;?>reg_log.html">请点此链接进行登录或注册</a></p>
     </div>
 </article>
 <footer>
@@ -155,7 +159,7 @@
         <div class="foot1">
             <div class="contact">
                 <div class="con_left">
-                    <span><img src="images/common/image_wechat.png" alt="" style="width: 120px;height: 120px"></span>
+                    <span><img src="<?php echo CDN_SERVER;?>images/common/image_wechat.png" alt="" style="width: 120px;height: 120px"></span>
                     <ul style="display: inline-block">
                         <li>扫一扫</li>
                         <li>关注搜虎微信平台</li>
@@ -164,22 +168,22 @@
                 <div class="con_right">
                     <div>
                         <p style="font-size: 16px" >联系方式:</p>
-                        <p><img src="images/common/footer_icon1.png" alt="" style="width: 14px;height: 14px"><span>&nbsp;&nbsp;0755-26651181</span></p>
-                        <p><img src="images/common/footer_icon2.png" alt="" style="width: 14px;height: 14px"><span>&nbsp;&nbsp;深圳市南山区南头检查站智恒产业园22栋3楼</span></p>
+                        <p><img src="<?php echo CDN_SERVER;?>images/common/footer_icon1.png" alt="" style="width: 14px;height: 14px"><span>&nbsp;&nbsp;0755-26651181</span></p>
+                        <p><img src="<?php echo CDN_SERVER;?>images/common/footer_icon2.png" alt="" style="width: 14px;height: 14px"><span>&nbsp;&nbsp;深圳市南山区南头检查站智恒产业园22栋3楼</span></p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="foot2">
             <p>Copyright &nbsp; @ &nbsp; 搜虎网络   &nbsp;&nbsp;   &nbsp;&nbsp;备案号：粤ICP备16109808号-1&nbsp;&nbsp;   &nbsp;&nbsp;
-                <img src="images/common/wenhuajingying.png" alt="" style="width: 28px;height: 28px">&nbsp;&nbsp;
+                <img src="<?php echo CDN_SERVER;?>images/common/wenhuajingying.png" alt="" style="width: 28px;height: 28px">&nbsp;&nbsp;
                 <a  href="http://sq.ccm.gov.cn/ccnt/sczr/service/business/emark/toDetail/3c3a59aa6a6740c3b47e88290db02c3b" target="_ blank">粤网文〔2017〕1079-007号</a>
             </p>
         </div>
     </div>
 </footer>
-<script src="js/common.js"></script>
-<script src="js/formValidate.js"></script>
+<script src="<?php echo CDN_SERVER;?>js/common.js"></script>
+<script src="<?php echo CDN_SERVER;?>js/formValidate.js"></script>
 <script language="javascript">
     $(function(){
         var data = {};

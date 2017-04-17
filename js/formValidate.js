@@ -1,5 +1,5 @@
 //定义全局变量
-var url = "index.php?mpd=api";
+var url = "index.php?mod=api";
 
 $(function(){
     //登录
@@ -32,7 +32,7 @@ $(function(){
                     $(".log").css("display","none");
                     $("header .add_icon").css("display","inline");
                     $(".form_one")[0].reset();
-                    location.replace('acc_recharge.html');
+                    location.replace('acc_recharge.mod.php');
 
                 }
             });
