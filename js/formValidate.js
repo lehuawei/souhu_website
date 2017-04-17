@@ -1,5 +1,5 @@
 //定义全局变量
-var url = "index.php?mpd=api";
+var url = "index.php?mod=api";
 $(function(){
     //登录
   $(".form_one").submit(function(event){

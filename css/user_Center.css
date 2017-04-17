@@ -306,37 +306,37 @@ img.pay_img{
     display: inline-block;
     width: 20px;
     height: 20px;
-    background-image: url(../images/account_Safe/icon.png);
+    background-image: url(https://img.chinasouhu.net/images//account_Safe/icon.png);
     margin-right: 15px;
 }
 .payway_ul .alipay{
     display: inline-block;
     width:142px;
     height: 48px;
-    background-image: url(../images/account_Safe/icon-zhifubao.png);
+    background-image: url(https://img.chinasouhu.net/images//account_Safe/icon-zhifubao.png);
 }
 .payway_ul .weixin{
     display: inline-block;
     width:142px;
     height: 48px;
-    background-image: url(../images/recharge_Manage/icon-weixin.png);
+    background-image: url(https://img.chinasouhu.net/images//recharge_Manage/icon-weixin.png);
 }
 .payway_ul .yinlian{
     display: inline-block;
     width:142px;
     height: 48px;
-    background-image: url(../images/recharge_Manage/icon-yinlian.png);
+    background-image: url(https://img.chinasouhu.net/images//recharge_Manage/icon-yinlian.png);
 }
 .payway_ul .active_p .icon{
-    background-image: url(../images/account_Safe/icon-selected.png);
+    background-image: url(https://img.chinasouhu.net/images//account_Safe/icon-selected.png);
 }
 .payway_ul .active_p .alipay{
-    background-image: url(../images/account_Safe/icon-zhifubao--selected.png);
+    background-image: url(https://img.chinasouhu.net/images//account_Safe/icon-zhifubao--selected.png);
 }
 .payway_ul .active_p .weixin{
-    background-image: url(../images/recharge_Manage/icon-weixin-selected.png);
+    background-image: url(https://img.chinasouhu.net/images//recharge_Manage/icon-weixin-selected.png);
 }.payway_ul .active_p .yinlian{
-     background-image: url(../images/recharge_Manage/icon-yinlian_select.png);
+     background-image: url(https://img.chinasouhu.net/images//recharge_Manage/icon-yinlian_select.png);
  }
  /*搜虎币*/
 .coin h1{
@@ -478,14 +478,14 @@ span.che_a{
     overflow:hidden;
 }
 .che_a {
-    background:url(../images/my_Message/icon-kuang.png) no-repeat;
+    background:url(https://img.chinasouhu.net/images//my_Message/icon-kuang.png) no-repeat;
     vertical-align: middle;
 }
 .active_a {
-    background:url(../images/my_Message/icon-checked.png) no-repeat;
+    background:url(https://img.chinasouhu.net/images//my_Message/icon-checked.png) no-repeat;
 }
 .active_a_a {
-    background:url(../images/my_Message/icon-checked.png) no-repeat;
+    background:url(https://img.chinasouhu.net/images//my_Message/icon-checked.png) no-repeat;
 }
 .mess_ul{
     margin-top: 20px;
