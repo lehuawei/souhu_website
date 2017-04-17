@@ -1,5 +1,7 @@
 <?php
+//鉴权
     if(!defined('ACCESS_KEY')){header("HTTP/1.1 404 Not Found");die;}
+//公用类
    
 ?>
 <!DOCTYPE html>
@@ -24,30 +26,9 @@
 
 <body>
 <!--顶部导航-->
-<header>
-    <div class="head bs">
-        <div class="logo"><img src="<?php echo CDN_SERVER;?>images/common/logo.png" alt="" class="logo"></div>
-        <div class="nav_span">
-            <span class="nav_a"><a href="#" class="orange first" title="<?php echo CDN_SERVER;?>?mod=index" >首页</a></span>
-            <span class="nav_a"><a href="#" class="accountRecharge" title="<?php echo CDN_SERVER;?>?mod=acc_recharge">账户充值</a></span>
-            <span class="nav_a"><a href="#" class="case" title="<?php echo CDN_SERVER;?>?mod=case">案例</a></span>
-            <span class="nav_a"><a href="#" class="about" title="<?php echo CDN_SERVER;?>?mod=about">关于我们</a></span>
-            <span class="nav_a"><a href="#" class="join" title="<?php echo CDN_SERVER;?>?mod=join">加入我们</a></span>
-            <div class="log"><a href="javascript:void(0)" title="<?php echo CDN_SERVER;?>?mod=reg_log">登录/注册</a></div>
-            <span class="add_icon" >
-                <img src="<?php echo CDN_SERVER;?>images/login_reg/person_icon1.png" alt="" class="user_icon ">&nbsp;&nbsp;
-                <a href="<?php echo CDN_SERVER;?>?mod=user_Center" target="_blank" class="yhm">用户名</a>
-                &nbsp;&nbsp;&nbsp;&nbsp;
-                <img src="<?php echo CDN_SERVER;?>images/login_reg/setup_icon.png" alt=""  class="set_icon">
-                <div class="angle">
-                 <p class="safe"><a class="person_safe" href="<?php echo CDN_SERVER;?>?mod=modify_pass">账户安全</a></p>
-                    <div class="grey_line_short"></div>
-                 <p class="exit"><a class="back">退出</a></p>
-            </div>
-            </span>
-        </div>
-    </div>
-</header>
+<?php
+    require(APP_PATH.'common/header.com.php');
+?>
 
 <!--左侧导航文字设置-->
 <div style="display:none" id="#leftdata">
