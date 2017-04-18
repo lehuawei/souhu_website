@@ -53,19 +53,19 @@ require(APP_PATH.'common/header.com.php');
                                 <button class="edit">取消</button>
                                 <button class="sure" type="submit">确定</button>
                                 <br>
-                                <a href="reg_log.mod.php" class="log_a">前往登录</a>
+                                <a href="<?php echo CDN_SERVER;?>?mod=reg_log" class="log_a">前往登录</a>
                             </div>
                         </form>
-
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>
 </article>
-
+<div class="chk_log" style="display: none">
+    <p><img src="<?php echo CDN_SERVER;?>images/common/green_reminder_03.png" alt="">&nbsp;&nbsp;您好，您需要先登录才能继续本操作</p><br>
+    <p><a href="<?php echo CDN_SERVER;?>?mod=reg_log">请点此链接进行登录或注册</a></p>
+</div>
 <!--底部导航-->
 <?php
 require(APP_PATH.'common/footer.com.php');

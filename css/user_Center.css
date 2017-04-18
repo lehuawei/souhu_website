@@ -463,11 +463,12 @@ table.detail tr td.five{
     clear: both;
 }
 .sys_mess{
-    width: 30%;
-    height: auto;
-    margin: 20px auto auto 0px;
+    width: 20%;
+    height:800px;
+    margin: 0px auto auto 0px;
     display: inline-block;
     float: left;
+    background-color: #f8f8f8;
 }
 /*中间竖线*/
 .ver_line{
@@ -494,11 +495,10 @@ span.che_a{
     background:url(https://img.chinasouhu.net/images//my_Message/icon-checked.png) no-repeat;
 }
 .mess_ul{
-    margin-top: 20px;
     color: #646464;
 }
 .mess_ul .active_x{
-    background-color: #f7f7f7;
+    background-color: #ffffff;
 }
 .mess_ul li{
     cursor: pointer;
@@ -516,13 +516,13 @@ span.che_a{
 }
 .mess_ul li p{
     margin:20px 20px auto auto;
-    font-size: 14px;
+    font-size: 20px;
 }
 .mess_detail{
     width: 68%;
     float:left;
     color: #646464;
-    background-color: #f7f7f7;
+    background-color: #ffffff;
 }
 .mess{
     margin: 26px auto auto 48px;

@@ -9,6 +9,7 @@ if(!defined('ACCESS_KEY')){header("HTTP/1.1 404 Not Found");die;}
     <link rel="stylesheet" href="<?php echo CDN_SERVER;?>css/acc_recharge.css">
     <link rel="stylesheet" href="<?php echo CDN_SERVER;?>css/index.css">
     <link rel="stylesheet" href="<?php echo CDN_SERVER;?>css/reg_log.css">
+    <link rel="stylesheet" href="<?php echo CDN_SERVER;?>css/user_Center.css">
     <script src="<?php echo CDN_SERVER;?>js/jquery-1.9.1.js"></script>
     <script src="<?php echo CDN_SERVER;?>js/placeholderfriend.js"></script>
     <!--if it IE 8--><!--兼容h5-->
@@ -21,31 +22,7 @@ if(!defined('ACCESS_KEY')){header("HTTP/1.1 404 Not Found");die;}
 <?php
 require(APP_PATH.'common/header.com.php');
 ?>
-<!--弹出框的背景-->
-<div class="opacity_color"></div>
-<!--选择账号弹出框-->
-<div class="pop_cho">
-    <div class="close"><img src="<?php echo CDN_SERVER;?>images/recharge_Manage/icon-close.png" alt=""></div>
-    <ul>
-        <li class=" txt_sty"><span>添加账号</span></li>
-    </ul>
-    <div class="cho_user">
-        <form action="javascript:void(0)" class="reg_form form_four">
-            <span  class="phone_txt" >选择账号类型</span><span class="red">123</span><br>
-            <select>
-                <option value="1">直播账号</option>
-                <option value="2">游戏账号</option>
-            </select>
-            <span  class="phone_txt" >账号登录</span><br>
-            <input type="text" placeholder="手机号码" class="phonenumber">
-            <input type="text" placeholder="密码" class="password">
-            <button type="submit" class="btn_sub">登录</button>
-        </form>
-        <div class="another_log">
-            <!--第三方登录-->
-        </div>
-    </div>
-</div>
+
 <!--中间内容-->
 <article>
     <!--充值中心-->
@@ -58,70 +35,40 @@ require(APP_PATH.'common/header.com.php');
                 &nbsp;&nbsp;账户余额:&nbsp;<b class="sb"> <tt>100</tt> 搜币</b>
             </p>
             <div class="full_gl"></div>
-            <!--账号部分-->
-            <div class="acc_head">
-                <ul class="person_ul">
-                    <li>
-                        <span class="hp_span"><img src="<?php echo CDN_SERVER;?>images/recharge_Manage/girl.jpg" alt=""></span>
-                        <span class="pro_span"><h3>Muse<img src="<?php echo CDN_SERVER;?>images/recharge_Manage/girl.png" alt=""> </h3>飞虎账号:123456</span>
-
+            <!--账号充值部分-->
+            <div class="sys_mess one">
+                <ul class="mess_ul">
+                    <li class="active_x">
+                        <p>
+                            <img src="../../images/recharge_Manage/icon_weixin.png" alt="">
+                            <span class="user_n">微信支付</span>
+                        </p>
                     </li>
                     <li>
-                        <span class="hp_span"><img src="<?php echo CDN_SERVER;?>images/recharge_Manage/girl.jpg" alt=""></span>
-                        <span class="pro_span"><h3>Muse<img src="<?php echo CDN_SERVER;?>images/recharge_Manage/girl.png" alt=""> </h3>游戏账号:123456</span>
+                        <p>
+                            <img src="../../images/recharge_Manage/icon_zhifubao.png" alt="">
+                            <span class="user_n">支付宝支付</span>
+                        </p>
                     </li>
-
-                </ul>
-               <span class="add_img"><img src="<?php echo CDN_SERVER;?>images/recharge_Manage/icon-and.png" alt="" > 添加账号</span>
-            </div>
-            <!--充值金额-->
-            <div class="recharge_money">
-                <h4>请选择充值金额</h4>
-            </div>
-            <div class="no_full_line"></div>
-            <ul class="clearfix_ul">
-                <li class="active_li active_m">
-                    <p class="sou_coin" value="1000">1000币</p>
-                    <p class="money" value="10">¥10元</p>
-                </li>
-                <li class="active_li">
-                    <p class="sou_coin">2000搜币</p>
-                    <p class="money"  value="20">¥20元</p>
-                </li>
-                <li class="active_li">
-                    <p class="sou_coin">5000搜币</p>
-                    <p class="money"  value="50">¥50元</p>
-                </li>
-                <li class="active_li">
-                    <p class="sou_coin">20000搜币</p>
-                    <p class="money"  value="200">¥200元</p>
-                </li>
-                <li class="active_li">
-                    <p class="sou_coin">100000搜币</p>
-                    <p class="money"  value="1000">¥1000元</p>
-                </li>
-                <li class="user_sel">
-                    <input type="text" class="sou_coin_input" placeholder="输入币数">
-                    <input type="text" class="money_input">
-                </li>
-            </ul>
-            <!--请选择支付方式-->
-            <div class="pay_way">
-                <h4>请选择支付方式</h4>
-            </div>
-            <div class="no_full_line"></div>
-            <div class="pay_img">
-                <ul>
-                    <li class="active"><span class="aliPay"></span></li>
-                    <li><span class="weChatpay"></span></li>
-                    <!--<li><span class="unionPay"></span></li>-->
+                    <li>
+                        <p>
+                            <img src="../../images/recharge_Manage/icon_hubi.png" alt="">
+                            <span class="user_n">搜币支付</span>
+                        </p>
+                    </li>
                 </ul>
             </div>
-            <!--支付金额与支付-->
-             <div class="pay_money">
-                   <h4>支付金额 : <em>10</em> 元 </h4>
-                   <span class="surePay">确认支付</span>
-             </div>
+            <div class="mess_detail">
+                <div class="mess">
+                    <p class="fh_tit"><img src="<?php echo CDN_SERVER;?>images/case_detail/case_detail_pic1.png" alt="" width="68px" height="68px">
+                        <span>飞虎直播</span> <em class="time">3-16   12:01</em>
+                    </p>
+                    <p class="main">
+                        <strong>尊敬的用户Muse:</strong> <br>
+                        <span>欢迎您来到飞虎直播平台，您已获得由系统送出的10搜虎币（前往领取），希望您生活愉快!</span>
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 <!--隐藏的验证登录框-->

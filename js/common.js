@@ -376,15 +376,11 @@ $(function () {
            // alert(obj.DATA.ERRMSG);
             $(".chk_log").css("display","block");
             $(".recharge_bg").css("display","none");
-
-           // alert();
         }
         else{
             //成功
             var data = obj.DATA.RESULT;
             $(".yhm").html(data.nickName);
-            $(".log").css("display","none");
-            $("header .add_icon").css("display","inline");
             $(".recharge_bg").css("display","block");
             $(".chk_log").css("display","none");
 
