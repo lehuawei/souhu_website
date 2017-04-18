@@ -21,31 +21,7 @@ if(!defined('ACCESS_KEY')){header("HTTP/1.1 404 Not Found");die;}
 <?php
 require(APP_PATH.'common/header.com.php');
 ?>
-<!--弹出框的背景-->
-<div class="opacity_color"></div>
-<!--选择账号弹出框-->
-<div class="pop_cho">
-    <div class="close"><img src="<?php echo CDN_SERVER;?>images/recharge_Manage/icon-close.png" alt=""></div>
-    <ul>
-        <li class=" txt_sty"><span>添加账号</span></li>
-    </ul>
-    <div class="cho_user">
-        <form action="javascript:void(0)" class="reg_form form_four">
-            <span  class="phone_txt" >选择账号类型</span><span class="red">123</span><br>
-            <select>
-                <option value="1">直播账号</option>
-                <option value="2">游戏账号</option>
-            </select>
-            <span  class="phone_txt" >账号登录</span><br>
-            <input type="text" placeholder="手机号码" class="phonenumber">
-            <input type="text" placeholder="密码" class="password">
-            <button type="submit" class="btn_sub">登录</button>
-        </form>
-        <div class="another_log">
-            <!--第三方登录-->
-        </div>
-    </div>
-</div>
+
 <!--中间内容-->
 <article>
     <!--充值中心-->
@@ -59,21 +35,7 @@ require(APP_PATH.'common/header.com.php');
             </p>
             <div class="full_gl"></div>
             <!--账号部分-->
-            <div class="acc_head">
-                <ul class="person_ul">
-                    <li>
-                        <span class="hp_span"><img src="<?php echo CDN_SERVER;?>images/recharge_Manage/girl.jpg" alt=""></span>
-                        <span class="pro_span"><h3>Muse<img src="<?php echo CDN_SERVER;?>images/recharge_Manage/girl.png" alt=""> </h3>飞虎账号:123456</span>
 
-                    </li>
-                    <li>
-                        <span class="hp_span"><img src="<?php echo CDN_SERVER;?>images/recharge_Manage/girl.jpg" alt=""></span>
-                        <span class="pro_span"><h3>Muse<img src="<?php echo CDN_SERVER;?>images/recharge_Manage/girl.png" alt=""> </h3>游戏账号:123456</span>
-                    </li>
-
-                </ul>
-               <span class="add_img"><img src="<?php echo CDN_SERVER;?>images/recharge_Manage/icon-and.png" alt="" > 添加账号</span>
-            </div>
             <!--充值金额-->
             <div class="recharge_money">
                 <h4>请选择充值金额</h4>
@@ -145,6 +107,7 @@ require(APP_PATH.'common/footer.com.php');
             var code =parseInt(obj.CODE);
             if(code != 0){
                 //失败
+
             }
             else{
                 //成功

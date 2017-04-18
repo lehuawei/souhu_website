@@ -235,9 +235,6 @@ $(function(){
         var new_pass=$(".form_three .new_pass").val();
         var sure_pass=$(".form_three .sure_pass").val();
         var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
-
-
-
         if(new_pass_l==0||sure_pass_l==0){
             $(".red").html("输入不能为空！");
             $(".red").css("display","block");
@@ -268,7 +265,7 @@ $(function(){
                     alert("修改成功");
                     $(".log_a").css("display","inline");
                     $(".form_three")[0].reset();
-
+                    window.location.reload('?mod=acc_recharge');
                 }
             })
         }

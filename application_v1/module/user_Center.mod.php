@@ -56,7 +56,7 @@ require(APP_PATH.'common/header.com.php');
             </select>
             <span  class="phone_txt" >账号登录</span><br>
             <input type="text" placeholder="账号" class="phonenumber">
-            <input type="text" placeholder="密码" class="password">
+            <input type="password" placeholder="密码" class="password">
             <button type="submit" class="btn_sub">添加账号</button>
         </form>
         <div class="another_log">
@@ -89,7 +89,7 @@ require(APP_PATH.'common/header.com.php');
                         <td>飞虎账号</td>
                     </tr>
                     <tr>
-                        <td>账户余额: <em>10</em>元 <a href="acc_recharge.php"><img src="<?php echo CDN_SERVER;?>images/person_Info/icon-top-up.png" alt=""> </a></td>
+                        <td>账户余额: <em>10</em>元 <a href="<?php echo CDN_SERVER;?>?mod=acc_recharge"><img src="<?php echo CDN_SERVER;?>images/person_Info/icon-top-up.png" alt=""> </a></td>
                     </tr>
                     <tr>
                         <td>今天天气好晴朗</td>
@@ -125,8 +125,6 @@ require(APP_PATH.'common/header.com.php');
                 <button type="submit" class="save">保存</button>
             </div>
         </div>
-
-      
         <!--2产品管理-->
         <div class="pro_Man user_ul_div" style="display: none">
             <ul class="game_ul">
@@ -157,7 +155,7 @@ require(APP_PATH.'common/header.com.php');
                 </ul>
                 <span class="add_img"><img src="https://dev.feihutv.cn/company/images/recharge_Manage/icon-and.png" alt=""> 添加账号</span>
             </div>
-<!--            
+           <!--
         <div class="game" style="display: none"><span>游戏2</span></div>
         <div class="game" style="display: none"><span>游戏3</span></div>
         <div class="game" style="display: none"><span>游戏4</span></div>-->
@@ -168,7 +166,7 @@ require(APP_PATH.'common/header.com.php');
              <!--安全指数-->
             <div class="reliable_index">
                 <p>安全指数: <span class="orange_span"></span> <span class="orange_span"></span> <span class="grey_span" id="chgCol_span"></span>
-                    <a href="<?php echo CDN_SERVER;?>?modify_pass" target="_blank"><i>修改密码</i></a>
+                    <a href="<?php echo CDN_SERVER;?>?mod=modify_pass" target="_blank"><i>修改密码</i></a>
                 </p>
             </div>
             <!--设置隐私-->
@@ -209,9 +207,9 @@ require(APP_PATH.'common/header.com.php');
             <h3 class="sh_b">
                 <span style="margin-left: 10px">搜币</span>
                 <span class="coin_cz">
-                        <a href="acc_recharge.mod.php" class=""><button>搜虎币充值</button></a>
-                        <a href="acc_recharge.mod.php"><button>飞虎币充值</button></a>
-                        <a href="acc_recharge.mod.php"><button>游戏充值</button></a>
+                        <a href="<?php echo CDN_SERVER;?>?mod=acc_recharge" class=""><button>搜虎币充值</button></a>
+                        <a href="<?php echo CDN_SERVER;?>?mod=acc_recharge"><button>飞虎币充值</button></a>
+                        <a href="<?php echo CDN_SERVER;?>?mod=acc_recharge"><button>游戏充值</button></a>
                 </span>
             </h3>
             <!--交易明细-->
