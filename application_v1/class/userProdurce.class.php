@@ -37,14 +37,16 @@ class C_Produrce
         $requestData = array('accountNo'=>$bindAccountNo,'passWd'=>$bindPwd,'t'=>$time);
         $sigparams = array('accountNo','passWd','t');
         sort($sigparams);
-        $sigStr = '';
+        $sigStr = 'getUserInfo';
         foreach($sigparams as $param){
             $sigStr .= $param.'='.$requestData[$param];
         }
         $sigStr .= $souhuSecret;
+       // var_dump($sigStr);
         $sig = md5($sigStr);
+        //var_dump($sig);
         $requestData['sig'] = $sig;
-
+        //var_dump($requestData);
         $ch = curl_init();
 		$queryList = http_build_query($requestData, null, '&');
 		//print_r($queryList);
@@ -59,6 +61,7 @@ class C_Produrce
 		curl_setopt_array($ch, $opts);
 		
 		$result = curl_exec($ch);
+      // var_dump($result);die;
 		//print_r($result);
 		if (false === $result)
 		{
@@ -82,21 +85,23 @@ class C_Produrce
             return C_Com::apiResult(-2001);
 		}
         else{
-            $code =  $result_array->Code;
-            if($code == "0"){
-                $userInfo =  $result_array->Data;
+            //var_dump($result_array);
+            $code =  $result_array["Code"];
+            //var_dump($code);die;
+            if($code == 0){
+                $userInfo =  $result_array["Data"];
                 //userId:用户id,avatar:头像地址,nickname:昵称,gender:性别}}
-                $avatar = $userInfo->avatar;
-                $nickname = $userInfo->nickname;
-                $gender = $userInfo->gender;
-                $sql = "INSERT INTO userProdurce(userId,pId,puserId,gender,pHeadUrl,pnickName)VALUES(".$this->userId.",".$pId.",".$userInfo->userId.",".$gender.",'".$avatar."','".$nickname."')";
+                $avatar = $userInfo["avatar"];
+                $nickname = $userInfo["Nickname"];
+                $gender = $userInfo["Gender"];
+                $sql = "INSERT INTO userProdurce(userId,pId,puserId,gender,pHeadUrl,pnickName)VALUES(".$this->userId.",".$pId.",".$userInfo["UserId"].",".$gender.",'".$avatar."','".$nickname."')";
                 $id = $this->objUser->userDB()->execFetchId($sql);
                 if($id >0){
                     $data = new stdclass;
                     $data->id = $id;
                     $data->pId = $pId;
                     $data->userId = $this->userId;
-                    $data->puserId = $userInfo->userId;
+                    $data->puserId = $userInfo["UserId"];
                     $data->gender = $gender;
                     $data->pHeadUrl = $avatar;
                     $data->nickName = $nickname;
@@ -109,7 +114,7 @@ class C_Produrce
                 return C_Com::apiResult(-2002);
             }
         }
-		return $result_array;
+	//	return $result_array;
     }
 
 }

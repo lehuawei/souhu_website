@@ -74,7 +74,7 @@ class API
     public static function addGold($param){
         if(!isset($param->addCnt)) return C_Com::apiResult(-2);
         $addCnt = $param->addCnt;
-        $currUser = new C_User(C_CurrUser::userId);
+        $currUser = new C_User(C_CurrUser::$userId);
         $result = $currUser->userGold()->addGold($addCnt);
         return C_Com::apiResult(0,$result);
     }
@@ -117,5 +117,19 @@ class API
         $address = $param->userAddress;
         return C_Com::apiResult(0,C_CurrUser::modifyUserInfo($trueName,$sex,$cardId,$provinceId,$cityId,$address));
     }
+//绑定直播账号
+ public static function bindProdurce($param){
+     if(!C_CurrUser::isLogin()){
+          return C_Com::apiResult(-3);
+     }
+      if(!isset($param->pId))  return C_Com::apiResult(-2);
+      if(!isset($param->bindAccountNo)) return C_Com::apiResult(-2);
+      if(!isset($param->bindPwd)) return C_Com::apiResult(-2);
+      class_exists('C_User') or require(APP_PATH.'class/user.class.php');
+      //var_dump(C_CurrUser::$userId);die;
+      $currUser = new C_User(C_CurrUser::$userId);
+      $info = $currUser->userProdurce()->bindProdurceInfo($param->pId,$param->bindAccountNo,$param->bindPwd);
+      return C_Com::apiResult(0,$info);
+ }
 }
 ?>

@@ -7,6 +7,7 @@ if(empty($mod)) {
     $mod = 'index';
 }
 $userInfo = null;
+$currUser = null;
 if(C_CurrUser::isLogin()){
     //已登录
     $currUser = new C_User(C_CurrUser::$userId);

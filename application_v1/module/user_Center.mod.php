@@ -1,3 +1,9 @@
+<?php
+//鉴权
+if(!defined('ACCESS_KEY')){header("HTTP/1.1 404 Not Found");die;}
+class_exists('C_User') or require(APP_PATH.'class/user.class.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,16 +36,28 @@ require(APP_PATH.'common/header.com.php');
         <li class=" txt_sty"><span>添加账号</span></li>
     </ul>
     <div class="cho_user">
+        <?php
+            //获取系统产品列表
+            class_exists('C_Sys') or require(APP_PATH.'class/sys.class.php');
+            $sysProdurceList = C_Sys::getSysProdurceList();
+        ?>
         <form action="javascript:void(0)" class="reg_form form_four">
             <span  class="phone_txt" >选择账号类型</span><span class="red">123</span><br>
-            <select>
-                <option value="1">直播账号</option>
-                <option value="2">游戏账号</option>
+            <select id="st_produrce">
+                <?php
+                    if(!empty($sysProdurceList)){
+                        foreach($sysProdurceList as $row){
+                ?>
+                    <option value="<?php echo $row->pId;?>"><?php echo $row->pName;?></option>
+                <?
+                        }
+                    }
+                ?>
             </select>
             <span  class="phone_txt" >账号登录</span><br>
-            <input type="text" placeholder="手机号码" class="phonenumber">
+            <input type="text" placeholder="账号" class="phonenumber">
             <input type="text" placeholder="密码" class="password">
-            <button type="submit" class="btn_sub">登录</button>
+            <button type="submit" class="btn_sub">添加账号</button>
         </form>
         <div class="another_log">
             <!--第三方登录-->
@@ -108,6 +126,7 @@ require(APP_PATH.'common/header.com.php');
             </div>
         </div>
 
+      
         <!--2产品管理-->
         <div class="pro_Man user_ul_div" style="display: none">
             <ul class="game_ul">
@@ -116,24 +135,32 @@ require(APP_PATH.'common/header.com.php');
                 <li>游戏三</li>
                 <li>游戏四</li>-->
             </ul>
+              <?php
+            //获取用户的产品列表
+                $userProdurceList = $currUser->userProdurce()->getUserProdurceList();
+              ?>
             <div class="acc_head">
                 <ul class="person_ul">
-                    <li>
-                        <span class="hp_span"><img src="https://dev.feihutv.cn/company/images/recharge_Manage/girl.jpg" alt=""></span>
-                        <span class="pro_span"><h3>Muse<img src="https://dev.feihutv.cn/company/images/recharge_Manage/girl.png" alt=""> </h3>飞虎账号:123456</span>
+                    <?php
+                        if(!empty($userProdurceList)){
+                            foreach($userProdurceList as $row){
+                    ?>
+                         <li>
+                        <span class="hp_span"><img src="<?php echo $row->pHeadUrl;?>" alt=""></span>
+                            <span class="pro_span"><h3><?php echo $row->pnickName;?><img src="https://dev.feihutv.cn/company/images/recharge_Manage/<?php if($row->gender == 0){echo "girl";}else{ echo "boy";}?>.png" alt=""> </h3>飞虎账号:123456</span>
+                        </li>
+                    <?
 
-                    </li>
-                    <li>
-                        <span class="hp_span"><img src="https://dev.feihutv.cn/company/images/recharge_Manage/girl.jpg" alt=""></span>
-                        <span class="pro_span"><h3>Muse<img src="https://dev.feihutv.cn/company/images/recharge_Manage/girl.png" alt=""> </h3>游戏账号:123456</span>
-                    </li>
-
+                           }
+                        }
+                    ?>
                 </ul>
                 <span class="add_img"><img src="https://dev.feihutv.cn/company/images/recharge_Manage/icon-and.png" alt=""> 添加账号</span>
             </div>
+<!--            
         <div class="game" style="display: none"><span>游戏2</span></div>
         <div class="game" style="display: none"><span>游戏3</span></div>
-        <div class="game" style="display: none"><span>游戏4</span></div>
+        <div class="game" style="display: none"><span>游戏4</span></div>-->
         </div>
 
     <!--3账号安全-->
@@ -326,6 +353,9 @@ require(APP_PATH.'common/footer.com.php');
             },settings);
             $("#city").citySelect(settings);
         });
+        // $(".form_four").submit(function(){
+
+        // });
     });
 </script>
 </html>

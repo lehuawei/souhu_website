@@ -308,6 +308,14 @@ $(function(){
             $(".red").html("");
             $(".red").css("display","none");
         }
+        var data = {};
+        data.pId = $('#st_produrce').val();
+        data.bindAccountNo =$(".form_four .phonenumber").val();
+        data.bindPwd = $(".form_four .password").val();
+        data.action ="bindProdurce";
+        $.post(url,data,function(result){
+            
+        });
     });
 });
 
