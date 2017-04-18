@@ -1,4 +1,4 @@
-var url = "index.php?mpd=api";
+var url = "index.php?mod=api";
 $(function () {
  //   alert(ifStrong);
         //点击logo进入首页
@@ -66,11 +66,6 @@ $(function () {
     });
     //前往登录
     $(".go_log").click(function () {
-       /* $(".acc_con ul").empty();
-        var rl_li=$("<li class='txt_sty'><span>登录</span></li> <li><span>注册</span></li>");
-        $(".acc_con ul").append(rl_li);
-        $(".div_log_none").css("display","block");
-        $(".div_fgt").css("display","none");*/
        location.reload();
     });
     /*个人中心*/
@@ -206,7 +201,6 @@ $(function () {
             }
         }
     });
-
     //我的消息
       $(".sys_mess .all_sel").click(function ()  {
           var chk_if= $(".mess_ul li .che_a");
@@ -234,9 +228,6 @@ $(function () {
         $(this).toggleClass('active_a');
         var check=$(this).is(".active_a");
         $(this).children(".che_ipt").attr("checked",check);
-        /*var bol_chk=$(this).hasClass('active_a');
-        !bol_chk?$(this).addClass("active_a"):$(this).removeClass("active_a");*/
-        // $(".all").html("反选");
     });
     $("table.detail tr td .che_a").click(function (){
         $(this).toggleClass('active_a');
@@ -250,8 +241,6 @@ $(function () {
         }
         var name=$(this).children("p").children('.user_n').text();
         $(".mess .main strong").text(name+":");
-       /* var txt=$(this).children("p").children(".welcome").text();
-        $(".mess .main span").text(txt);*/
     });
 
     //首页 图片轮播
@@ -412,10 +401,9 @@ $(function () {
             if(code!=0){
                 //失败
             }else{
-                 $(".log").css("display","inline-block");
-                 $("header .add_icon").css("display","none");
                  $(".angle").css("display","none");
-                 location.replace("<?php echo CDN_SERVER;?>?mod=index");
+                 location.replace('?mod=index');
+               //  location.replace("https://dev.feihutv.cn/company/?mod=index");
             }
         });
     });

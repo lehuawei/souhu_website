@@ -21,7 +21,31 @@
 <?php
 require(APP_PATH.'common/header.com.php');
 ?>
-
+<!--弹出框的背景-->
+<div class="opacity_color"></div>
+<!--选择账号弹出框-->
+<div class="pop_cho">
+    <div class="close"><img src="<?php echo CDN_SERVER;?>images/recharge_Manage/icon-close.png" alt=""></div>
+    <ul>
+        <li class=" txt_sty"><span>添加账号</span></li>
+    </ul>
+    <div class="cho_user">
+        <form action="javascript:void(0)" class="reg_form form_four">
+            <span  class="phone_txt" >选择账号类型</span><span class="red">123</span><br>
+            <select>
+                <option value="1">直播账号</option>
+                <option value="2">游戏账号</option>
+            </select>
+            <span  class="phone_txt" >账号登录</span><br>
+            <input type="text" placeholder="手机号码" class="phonenumber">
+            <input type="text" placeholder="密码" class="password">
+            <button type="submit" class="btn_sub">登录</button>
+        </form>
+        <div class="another_log">
+            <!--第三方登录-->
+        </div>
+    </div>
+</div>
 <!--充值中心-->
 <article>
 <div class="recharge_bg">
@@ -32,7 +56,7 @@ require(APP_PATH.'common/header.com.php');
             <li><span>产品管理</span></li>
             <li><span>账号安全</span></li>
             <li><span>搜虎币</span></li>
-            <li><span>我的消息</span></li>
+           <!-- <li><span>我的消息</span></li>-->
         </ul>
         <!--导航内容-->
         <!--1 个人信息-->
@@ -88,46 +112,25 @@ require(APP_PATH.'common/header.com.php');
         <div class="pro_Man user_ul_div" style="display: none">
             <ul class="game_ul">
                 <li class="active_g">飞虎直播</li>
-                <li>游戏二</li>
+               <!-- <li>游戏二</li>
                 <li>游戏三</li>
-                <li>游戏四</li>
+                <li>游戏四</li>-->
             </ul>
-        <div class="game_one game">
-            <div class="live_game">
-                <img src="<?php echo CDN_SERVER;?>images/product_Manage/live_girl.jpg" alt="" class="live_girl">
-                <table>
-                    <tr>
-                        <td> <h3>快来聊天吧</h3></td>
-                    </tr>
-                    <tr>
-                        <td><h3> Romantic</h3></td>
-                    </tr>
-                    <tr>
-                        <td><img src="<?php echo CDN_SERVER;?>images/product_Manage/icon-time.png" alt="">已开播120分钟 <img src="<?php echo CDN_SERVER;?>images/product_Manage/icon-audience.png" alt="">1248934 </td>
-                    </tr>
-                    <tr>
-                        <td><a href=""><img src="<?php echo CDN_SERVER;?>images/product_Manage/icon-watch.png" alt=""></a></td>
-                    </tr>
-                </table>
+            <div class="acc_head">
+                <ul class="person_ul">
+                    <li>
+                        <span class="hp_span"><img src="https://dev.feihutv.cn/company/images/recharge_Manage/girl.jpg" alt=""></span>
+                        <span class="pro_span"><h3>Muse<img src="https://dev.feihutv.cn/company/images/recharge_Manage/girl.png" alt=""> </h3>飞虎账号:123456</span>
+
+                    </li>
+                    <li>
+                        <span class="hp_span"><img src="https://dev.feihutv.cn/company/images/recharge_Manage/girl.jpg" alt=""></span>
+                        <span class="pro_span"><h3>Muse<img src="https://dev.feihutv.cn/company/images/recharge_Manage/girl.png" alt=""> </h3>游戏账号:123456</span>
+                    </li>
+
+                </ul>
+                <span class="add_img"><img src="https://dev.feihutv.cn/company/images/recharge_Manage/icon-and.png" alt=""> 添加账号</span>
             </div>
-            <div class="live_game" >
-                <img src="<?php echo CDN_SERVER;?>images/product_Manage/live_girl.jpg" alt="" class="live_girl">
-                <table>
-                    <tr>
-                        <td> <h3>快来聊天吧</h3></td>
-                    </tr>
-                    <tr>
-                        <td><h3>Eric</h3></td>
-                    </tr>
-                    <tr>
-                        <td><img src="<?php echo CDN_SERVER;?>images/product_Manage/icon-time.png" alt="">已开播120分钟 <img src="<?php echo CDN_SERVER;?>images/product_Manage/icon-audience.png" alt="">322553 </td>
-                    </tr>
-                    <tr>
-                        <td><a href=""><img src="<?php echo CDN_SERVER;?>images/product_Manage/icon-watch.png" alt=""></a></td>
-                    </tr>
-                </table>
-            </div>
-        </div>
         <div class="game" style="display: none"><span>游戏2</span></div>
         <div class="game" style="display: none"><span>游戏3</span></div>
         <div class="game" style="display: none"><span>游戏4</span></div>
@@ -138,18 +141,18 @@ require(APP_PATH.'common/header.com.php');
              <!--安全指数-->
             <div class="reliable_index">
                 <p>安全指数: <span class="orange_span"></span> <span class="orange_span"></span> <span class="grey_span" id="chgCol_span"></span>
-                    <a href="<?php echo CDN_SERVER;?>modify_pass.html" target="_blank"><i>修改密码</i></a>
+                    <a href="<?php echo CDN_SERVER;?>?modify_pass" target="_blank"><i>修改密码</i></a>
                 </p>
             </div>
             <!--设置隐私-->
-            <div class="reliable_index set_secret">
+           <!-- <div class="reliable_index set_secret">
                 <h3>设置隐私</h3>
             </div>
             <ul class="secret_ul">
-                <li><img src="<?php echo CDN_SERVER;?>images/account_Safe/icon-weixin.png" alt=""><h4>绑定微信账号</h4></li>
-                <li><img src="<?php echo CDN_SERVER;?>images/account_Safe/icon-weibo.png" alt=""><h4>绑定微博账号</h4></li>
-                <li><img src="<?php echo CDN_SERVER;?>images/account_Safe/icon-qq-selected.png" alt=""><h4><em>Muse </em>[解绑]</h4></li>
-            </ul>
+                <li><img src="<?php /*echo CDN_SERVER;*/?>images/account_Safe/icon-weixin.png" alt=""><h4>绑定微信账号</h4></li>
+                <li><img src="<?php /*echo CDN_SERVER;*/?>images/account_Safe/icon-weibo.png" alt=""><h4>绑定微博账号</h4></li>
+                <li><img src="<?php /*echo CDN_SERVER;*/?>images/account_Safe/icon-qq-selected.png" alt=""><h4><em>Muse </em>[解绑]</h4></li>
+            </ul>-->
             <!--付款方式-->
             <div class="reliable_index pay_way">
                 <h3>付款方式</h3>
@@ -163,10 +166,10 @@ require(APP_PATH.'common/header.com.php');
                     <span class="icon"></span>
                     <span class="weixin"></span>
                 </li>
-                <li>
+              <!--  <li>
                     <span class="icon"></span>
                     <span class="yinlian"></span>
-                </li>
+                </li>-->
                 <h3>设置默认方式</h3>
             </ul>
         </div>
@@ -245,125 +248,14 @@ require(APP_PATH.'common/header.com.php');
             </table>
         </div>
         <!--5我的消息-->
-        <div class="my_Mess user_ul_div clearfix"  style="display: none">
-            <ul class="game_ul">
-                <li class="active_g">系统消息</li>
-                <li>私信</li>
-            </ul>
-            <!--系统消息-->
-            <div class="sys_mess one">
-                <div style="margin-left: 30px;height: 26px">
-                <span  class="che_a all_sel"><input hidden type="checkbox"  class="che_ipt" style="" checked/></span>
-                <span style="color: #b6b6b6;font-size: 14px" class="all">全选</span>
-                <button class="del">批量管理</button>
-                </div>
-                <ul class="mess_ul">
-                    <li class="active_x">
-                        <span  class="che_a"><input hidden type="checkbox"  class="che_ipt" style="" checked/></span>
-                        <h4 style="">飞虎直播</h4> <em>3-16   12:01</em>
-                        <p>
-                            <span class="user_n">尊敬的用户muse</span>，
-                            <span class="welcome">欢迎您来到飞虎直播平台，您已获得由系统送出的10搜虎币（前往领取），希望您...</span>
-                        </p>
-                    </li>
-                    <li>
-                        <span  class="che_a"><input hidden type="checkbox"  class="che_ipt" style="" checked/></span>
-                        <h4 style="">飞虎直播</h4> <em>3-16   12:01</em>
-                        <p>
-                            <span class="user_n">尊敬的用户Lisa</span>，
-                            <span class="welcome">欢迎您来到飞虎直播平台，您已获得由系统送出的20搜虎币（前往领取），希望您...</span>
-                        </p>
-                    </li>
-                    <li>
-                        <span  class="che_a"><input hidden type="checkbox"  class="che_ipt" style="" checked/></span>
-                        <h4 style="">飞虎直播</h4> <em>3-16   12:01</em>
-                        <p>
-                            <span class="user_n">尊敬的用户Romantic</span>，
-                            <span class="welcome">欢迎您来到飞虎直播平台，您已获得由系统送出的30搜虎币（前往领取），希望您...</span>
-                        </p>
-                    </li>
-                </ul>
-            </div>
-            <!--私信-->
-            <div class="sys_mess pri_letter" style="display: none">
-                <div style="margin-left: 30px;height: 26px">
-                    <span  class="che_a all_sel"><input hidden type="checkbox"  class="che_ipt" style="" checked/></span>
-                    <span style="color: #b6b6b6;font-size: 14px" class="all">全选</span>
-                    <button class="del">批量管理</button>
-                </div>
-                <ul class="mess_ul">
-                    <li class="active_x">
-                        <span  class="che_a"><input hidden type="checkbox"  class="che_ipt" style="" checked/></span>
-                        <h4 style="">飞虎直播</h4> <em>3-16   12:01</em>
-                        <p>
-                            <span class="user_n">尊敬的用户muse</span>，
-                            <span class="welcome">快来看呀~！</span>
-                        </p>
-                    </li>
-                    <li>
-                        <span  class="che_a"><input hidden type="checkbox"  class="che_ipt" style="" checked/></span>
-                        <h4 style="">飞虎直播</h4> <em>3-16   12:01</em>
-                        <p>
-                            <span class="user_n">尊敬的用户Lisa</span>，
-                            <span class="welcome">欢迎您来到飞虎直播平台，您已获得由系统送出的20搜虎币（前往领取），希望您...</span>
-                        </p>
-                    </li>
-                    <li>
-                        <span  class="che_a"><input hidden type="checkbox"  class="che_ipt" style="" checked/></span>
-                        <h4 style="">飞虎直播</h4> <em>3-16   12:01</em>
-                        <p>
-                            <span class="user_n">尊敬的用户Romantic</span>，
-                            <span class="welcome">欢迎您来到飞虎直播平台，您已获得由系统送出的30搜虎币（前往领取），希望您...</span>
-                        </p>
-                    </li>
-                </ul>
-            </div>
-            <!--竖线-->
-            <div class="ver_line"></div>
-            <!--消息详情-->
-            <div class="mess_detail">
-                 <div class="mess">
-                     <p class="fh_tit"><img src="<?php echo CDN_SERVER;?>images/case_detail/case_detail_pic1.png" alt="" width="68px" height="68px">
-                        <span>飞虎直播</span> <em class="time">3-16   12:01</em>
-                     </p>
-                     <p class="main">
-                         <strong>尊敬的用户Muse:</strong> <br>
-                         <span>欢迎您来到飞虎直播平台，您已获得由系统送出的10搜虎币（前往领取），希望您生活愉快!</span>
-                     </p>
-                 </div>
-            </div>
-        </div>
+        <!--去掉-->
     </div>
 </div>
 </article>
-<footer>
-    <div class="foot">
-        <div class="foot1">
-            <div class="contact">
-                <div class="con_left">
-                    <span><img src="<?php echo CDN_SERVER;?>images/common/image_wechat.png" alt="" style="width: 120px;height: 120px"></span>
-                    <ul style="display: inline-block">
-                        <li>扫一扫</li>
-                        <li>关注搜虎微信平台</li>
-                    </ul>
-                </div>
-                <div class="con_right">
-                    <div>
-                        <p style="font-size: 16px" >联系方式:</p>
-                        <p><img src="<?php echo CDN_SERVER;?>images/common/footer_icon1.png" alt="" style="width: 14px;height: 14px"><span>&nbsp;&nbsp;0755-26651181</span></p>
-                        <p><img src="<?php echo CDN_SERVER;?>images/common/footer_icon2.png" alt="" style="width: 14px;height: 14px"><span>&nbsp;&nbsp;深圳市南山区南头检查站智恒产业园22栋3楼</span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="foot2">
-            <p>Copyright &nbsp; @ &nbsp; 搜虎网络   &nbsp;&nbsp;   &nbsp;&nbsp;备案号：粤ICP备16109808号-1&nbsp;&nbsp;   &nbsp;&nbsp;
-                <img src="<?php echo CDN_SERVER;?>images/common/wenhuajingying.png" alt="" style="width: 28px;height: 28px">&nbsp;&nbsp;
-                <a  href="http://sq.ccm.gov.cn/ccnt/sczr/service/business/emark/toDetail/3c3a59aa6a6740c3b47e88290db02c3b" target="_ blank">粤网文〔2017〕1079-007号</a>
-            </p>
-        </div>
-    </div>
-</footer>
+<!--底部导航-->
+<?php
+require(APP_PATH.'common/footer.com.php');
+?>
 </body>
 <script src="<?php echo CDN_SERVER;?>js/formValidate.js"></script>
 <script src="<?php echo CDN_SERVER;?>js/common.js"></script>

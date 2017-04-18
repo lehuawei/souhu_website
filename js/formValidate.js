@@ -32,7 +32,7 @@ $(function(){
                     $(".log").css("display","none");
                     $("header .add_icon").css("display","inline");
                     $(".form_one")[0].reset();
-                    location.replace('acc_recharge.mod.php');
+                    location.replace('?mod=acc_recharge');
 
                 }
             });
