@@ -34,7 +34,7 @@ class C_Sys
 
     public static function getSysShopListByPid($pid,$payType){
         try{
-			$sql = "SELECT shopId,pId,shopName,addValue,price,truePrice FROM sysShop WHERE pId = ".$pid." AND payType = ".$payType." ORDER BY pId";
+			$sql = "SELECT shopId,pId,shopName,addValue,price,truePrice FROM sysShop WHERE pId = ".$pid." AND payType = ".$payType." ORDER BY orderId";
 			$dbSys = DB::connect('DB_USR');
 			$result = $dbSys->fetchAll($sql);
 			return $result;

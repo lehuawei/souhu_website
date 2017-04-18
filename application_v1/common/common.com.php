@@ -88,6 +88,9 @@ class C_Com
 
 			case -2001:$errorMsg='绑定用户返回的数据格式错误';break;
 			case -2002:$errorMsg='绑定用户验证错误，请输入正确的账号和密码';break;
+
+			case -3001:$errorMsg='没有商品信息';break;
+			case -3002:$errorMsg='创建订单出错';break;
 		
 		}
 		return $errorMsg;
