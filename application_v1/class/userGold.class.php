@@ -3,14 +3,15 @@ class C_UserGold
 {
 	public $userId = 0;
 	private $userObj;
-	function __construct($userId)
+	function __construct($userObj)
 	{
-		if(empty($userId)) die('Error: Missing userId');
-		$this->userId = $userId;
+		$this->userObj = $userObj;
+		$this->userId = $userObj->userId;
 	}
 	function __destruct()
 	{
         unset($this->userObj);
+        unset($this->userId);
 	}
     
     public function userOrder($payType){
