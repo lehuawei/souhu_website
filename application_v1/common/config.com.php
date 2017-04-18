@@ -13,6 +13,7 @@ define('SmsAppKey','9ea2cf4f4f80a668b51142f170ef0db0');
 define('SmsRegTempId',"15049");
 define('SmsModTempId',"15050");
 define('SmsSign',"搜虎网络");
+define('');
 class Config {
 public static $mysql = array(
 			'DB_USR'	=> array('user'=>'root', 'pass'=>'souhu2011', 'host'=>'127.0.0.1', 'name'=>'souhu_usr','port'=>'3306')

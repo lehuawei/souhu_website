@@ -71,6 +71,7 @@ class C_Com
 			case -20: $errorMsg = '创建用户出错';break;
 			case -21: $errorMsg = '此ID数据不存在';break;
 			case -22: $errorMsg = '数据操作失败';break;
+			case -23:$errorMsg='网络错误';break;
 			//登录验证错误
 			case -1001:$errorMsg = '用户名为空';break;
 			case -1002:$errorMsg = '用户密码为空';break;
@@ -84,6 +85,9 @@ class C_Com
 			case -1022:$errorMsg = '业务短信日下发条数超过设定的上限';break;
 			case -1023:$errorMsg = '单个手机号30秒内下发短信条数超过设定的上限';break;
 			case -1025:$errorMsg='单个手机号日下发短信条数超过设定的上限';break;
+
+			case -2001:$errorMsg='绑定用户返回的数据格式错误';break;
+			case -2002:$errorMsg='绑定用户验证错误，请输入正确的账号和密码';break;
 		
 		}
 		return $errorMsg;

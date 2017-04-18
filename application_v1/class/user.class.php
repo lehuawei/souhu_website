@@ -42,5 +42,12 @@ class C_User
 		}
 		return $this->_userGold;
 	}
+	public function userProdurce(){
+		if(!isset($this->_useProdurce)){
+			class_exists("C_Produrce") or require(APP_PATH."class/userProdurce.class.php");
+			$this->_useProdurce = new C_Produrce($this);
+		}
+		return $this->_useProdurce;
+	}
 }
 ?>

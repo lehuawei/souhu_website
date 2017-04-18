@@ -1,6 +1,7 @@
 <?php
-class C_UserGold
+class C_Order
 {
+    /**订单***/
 	public $userId = 0;
 	private $userObj;
 	function __construct($userObj)
@@ -14,7 +15,10 @@ class C_UserGold
         unset($this->userId);
 	}
     
-    public function userOrder($payType){
+    /***
+    *payType:支付方式 
+    **/
+    public function userOrder($payType,$shopId){
         //
         $billNo = md5(time().mt_rand(10000,99999));
         /***
