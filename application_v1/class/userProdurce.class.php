@@ -19,10 +19,11 @@ class C_Produrce
     *获取用户的产品列表
     **/
     public function getUserProdurceList(){
-        $sql = "SELECT id,userId,pId,puserId,pAccountNo,pHeadUrl,pnickName FROM userProdurce ORDER BY id";
+        $sql = "SELECT id,userId,pId,puserId,gender,pHeadUrl,pnickName FROM userProdurce ORDER BY id";
         $list = $this->objUser->userDB()->fetchAll($sql);
         return $list;
     }
+
 
 
     /****
