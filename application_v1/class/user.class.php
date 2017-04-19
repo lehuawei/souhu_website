@@ -49,5 +49,12 @@ class C_User
 		}
 		return $this->_useProdurce;
 	}
+	public function userOrder(){
+		if(!isset($this->_userOrder)){
+			class_exists("C_UserOrder") or require(APP_PATH."class/userOrder.class.php");
+			$this->_userOrder = new C_UserOrder($this);
+		}
+		return $this->_userOrder;
+	}
 }
 ?>

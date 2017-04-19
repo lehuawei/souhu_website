@@ -131,5 +131,51 @@ class API
       $info = $currUser->userProdurce()->bindProdurceInfo($param->pId,$param->bindAccountNo,$param->bindPwd);
       return C_Com::apiResult(0,$info);
  }
+ //支付
+ public static function userOrder($param){
+     if(!C_CurrUser::isLogin()){
+          return C_Com::apiResult(-3);
+     }
+     if(!isset($param->shopId) && empty($param->shopId) && $param->shopId<1)  return C_Com::apiResult(-2);
+     if(!isset($param->payType) && empty($param->payType) && $param->payType<1)  return C_Com::apiResult(-2);
+     if(!isset($param->num) && empty($param->num) && $param->num<1)  return C_Com::apiResult(-2);
+     if(!isset($param->userPId) && empty($param->userPId) && $param->userPId<1)  return C_Com::apiResult(-2);
+    
+     $payType = $param->payType;
+     $shopId = $param->shopId;
+     $num = $param->num;
+     $userPId = $param->userPId;
+     class_exists('C_User') or require(APP_PATH.'class/user.class.php');
+     $currUser = new C_User(C_CurrUser::$userId);
+     $info = $currUser->userOrder()->userOrder($payType,$shopId,$num);
+     if($payType == 1){
+         return C_Com::apiResult(0,$info);
+     }
+     else if($payType == 2){
+        require_once(ROOT_PATH."alipay.config.php");
+        require_once(ROOT_PATH."lib/alipay_submit.class.php");
+        $parameter = array(
+            "service"       => $alipay_config['service'],
+            "partner"       => $alipay_config['partner'],
+            "seller_id"  => $alipay_config['seller_id'],
+            "payment_type"	=> $alipay_config['payment_type'],
+            "notify_url"	=> $alipay_config['notify_url'],
+            "return_url"	=> $alipay_config['return_url'],
+            "anti_phishing_key"=>$alipay_config['anti_phishing_key'],
+            "exter_invoke_ip"=>$alipay_config['exter_invoke_ip'],
+            "out_trade_no"	=> $info->billNo,
+            "subject"	=> $info->shopName,
+            "total_fee"	=> $info->price,
+            "body"	=> $body,
+            "_input_charset"	=> trim(strtolower($alipay_config['input_charset']))
+        );
+        $alipaySubmit = new AlipaySubmit($alipay_config);
+        $html_text = $alipaySubmit->buildRequestForm($parameter,"get", "确认");
+        echo $html_text;
+     }else if($payType == 3){
+        //微信
+        
+     }
+ }
 }
 ?>

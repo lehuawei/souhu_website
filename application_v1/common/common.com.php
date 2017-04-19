@@ -91,6 +91,8 @@ class C_Com
 
 			case -3001:$errorMsg='没有商品信息';break;
 			case -3002:$errorMsg='创建订单出错';break;
+			case -3003:$errorMsg='没找到产品信息';break;
+			case -3004:$errorMsg='充值失败';break;
 		
 		}
 		return $errorMsg;
