@@ -40,19 +40,19 @@ require(APP_PATH.'common/header.com.php');
                 <ul class="mess_ul">
                     <li class="active_x">
                         <p>
-                            <img src="../../images/recharge_Manage/icon_weixin.png" alt="">
+                            <img src="<?php echo CDN_SERVER;?>images/recharge_Manage/icon_weixin.png" alt="">
                             <span class="user_n">微信支付</span>
                         </p>
                     </li>
                     <li>
                         <p>
-                            <img src="../../images/recharge_Manage/icon_zhifubao.png" alt="">
+                            <img src="<?php echo CDN_SERVER;?>images/recharge_Manage/icon_zhifubao.png" alt="">
                             <span class="user_n">支付宝支付</span>
                         </p>
                     </li>
                     <li>
                         <p>
-                            <img src="../../images/recharge_Manage/icon_hubi.png" alt="">
+                            <img src="<?php echo CDN_SERVER;?>images/recharge_Manage/icon_hubi.png" alt="">
                             <span class="user_n">搜币支付</span>
                         </p>
                     </li>

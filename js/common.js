@@ -201,28 +201,7 @@ $(function () {
             }
         }
     });
-    //我的消息
-      $(".sys_mess .all_sel").click(function ()  {
-          var chk_if= $(".mess_ul li .che_a");
-          var bol_chk=chk_if.hasClass('active_a');
-          $(this).children(".che_ipt").attr("checked",true);
-          var self_if=$(this).hasClass('active_a');
-          !self_if?$(this).addClass("active_a"):$(this).removeClass("active_a");//全选框打钩
-          var bol_arr=[];
-          for(var i=0;i<chk_if.length;i++){
-              bol_arr[i]=($(chk_if[i]).hasClass('active_a'));
-          }
-          for(var j=0;j<bol_arr.length;j++){
-              if(!bol_arr[j]){
-                  $(chk_if[j]).addClass('active_a');
-                  chk_if.children(".che_ipt").attr("checked",true);
-              }
-              else {
-                      $(chk_if[j]).removeClass('active_a');
-                     chk_if.children(".che_ipt").attr("checked",false);
-              }
-          }
-      });
+    
     //自行选择
     $(".mess_ul li .che_a").click(function (){
         $(this).toggleClass('active_a');

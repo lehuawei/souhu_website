@@ -29,8 +29,6 @@ $(function(){
                     var data = obj.DATA.RESULT;
                     //进入个人登录页面
                     $(".yhm").html(data.nickName);
-                    $(".log").css("display","none");
-                    $("header .add_icon").css("display","inline");
                     $(".form_one")[0].reset();
                     location.replace('?mod=acc_recharge');
 
@@ -151,14 +149,14 @@ $(function(){
                     alert(obj.DATA.ERRMSG);
                 }
                 else{
+                    //注册成功
                     alert("注册成功");
                     var data = obj.DATA.RESULT;
-                    //注册成功
-                    //进入个人登录页面
                     $(".yhm").html(data.nickName);
-                    $(".log").css("display","none");
-                    $("header .add_icon").css("display","inline");
+                   /* $(".log").css("display","none");
+                    $("header .add_icon").css("display","inline");*/
                     $(".form_two")[0].reset();
+                    location.replace('?mod=acc_recharge');
                 }
             });
         }

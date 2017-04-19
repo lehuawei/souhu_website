@@ -520,6 +520,7 @@ span.che_a{
 }
 .mess_detail{
     width: 68%;
+    height: auto;
     float:left;
     color: #646464;
     background-color: #ffffff;
