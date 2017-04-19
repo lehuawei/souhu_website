@@ -13,6 +13,8 @@ define('SmsAppKey','9ea2cf4f4f80a668b51142f170ef0db0');
 define('SmsRegTempId',"15049");
 define('SmsModTempId',"15050");
 define('SmsSign',"搜虎网络");
+define('feihuUrl','https://dev.feihutv.cn/platform/');
+define('feihuSecret','hEbiRk+8@kRCMJ@aN3UfW[bKk#xiJ01I');
 
 class Config {
 public static $mysql = array(

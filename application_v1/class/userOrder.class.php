@@ -1,5 +1,5 @@
 <?php
-class C_Order
+class C_UserOrder
 {
     /**订单***/
 	public $userId = 0;
@@ -16,47 +16,41 @@ class C_Order
 	}
     
     /***
-    *payType:支付方式 
+    *payType:支付方式 1-搜币 2-支付宝 3-微信
     **/
-    public function userOrder($payType,$shopId){
+    public function userOrder($payType,$shopId,$num=1,$userPId=1){
         //
-        $billNo = md5(time().mt_rand(10000,99999));
-        /***
-        *第三方接口
-        **/
-        switch($payType){
-            case 1:
-            //支付宝
-            aliPay();
-            break;
-            case 2:
-            weixinPay();
-            //微信
-            break;
-            case 3:
-            //银联
-            bankPay();
-            break;
+        class_exists('C_Sys') or require(APP_PATH.'class/sys.class.php');
+        $shopInfo = C_Sys::getSysShopInfoById($shopId);
+        if(empty($shopInfo)){
+             return C_Com::apiResult(-3001);
         }
-        return $billNo;
+        $billNo = md5(time().mt_rand(10000,99999));
+        
+        $amount = $shopInfo->truePrice*$num;
+        $goldNum = $shopInfo->addValue*$num;
+        $shopName = $goldNum.$shopInfo->shopName;
+        $pId = $shopInfo->pId;
+        //搜币支付，给产品充值
+        if($payType == 1){
+            $this->objUser->userProdurce()->userPay($userPId,$goldNum,$amount);
+        }else{
+             $sql = "INSERT INTO userOrder(userId,orderId,amount,goldNum,pId,shopId,payType,payStatus,orderTime)VALUES(".$this->userId.",'".$billNo."',".$amount.",".$goldNum.",".$shopInfo->pId.",".$shopId.",".$payType.",0,".time().")";
+            $id = $this->objUser->userDB()->execFetchId($sql);
+            if($id > 0){
+                unset($shopInfo);
+                return C_Com::apiResult(-3002);
+            }
+            else{
+            $data = new stdclass;
+            $data->shopName = $shopName;
+            $data->billNo = $billNo;
+            $data->price = $amount;
+            $data->body = '';
+            unset($shopInfo);
+            return $data;
+            }
+        }
     }
-
-    private function aliPay(){
-        //完成接入，得到回应值
-        $sql = "UPDATE ";
-    }
-    private function weixinPay(){
-
-    }
-    private function bankPay(){
-
-    }
-
-	public function addGold($addCnt){
-		
-	}
-	public function subGold($subCnt){
-
-	}
 }
 ?>

@@ -67,6 +67,9 @@ class C_CurrUser
 		//echo $id;
 		//echo '<br>';
 		if($id>0){
+			//添加用户的搜币记录
+			$sql = "INSERT INTO userGold(userId,userGold)VALUES(".$id.",0)";
+			$db->exec($sql);
 			//注册成功
 			C_CurrUser::setCurrUser($id);
 			$userInfo = new stdclass;

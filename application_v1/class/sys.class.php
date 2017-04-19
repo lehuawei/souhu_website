@@ -32,11 +32,32 @@ class C_Sys
     }
 
 
+
+    /***
+    *按照支付方式和产品ID获取商品列表
+    **/
+    public static function getSysShopListById($payType,$pId){
+        $shopInfo = self::getSysShopListByPid($pId,($payType==2 || $payType == 3)?2:$payType);
+        $numList = array(1000,2000,5000,20000,100000,0);
+        $list = array();
+        foreach($numList as $num){
+            $data = new stdclass;
+            $data->shopId = $shopInfo->shopId;
+            $data->pId = $pId;
+            $data->payType = $payType;
+            $data->num = $num;
+            $data->price = $shopInfo->truePrice;
+            $list[] = $data;
+        }
+        unset($shopInfo);
+        return $list;
+    }
+
     public static function getSysShopListByPid($pid,$payType){
         try{
-			$sql = "SELECT shopId,pId,shopName,addValue,price,truePrice FROM sysShop WHERE pId = ".$pid." AND payType = ".$payType." ORDER BY pId";
+			$sql = "SELECT shopId,pId,shopName,addValue,price,truePrice FROM sysShop WHERE pId = ".$pid." AND payType = ".$payType." ORDER BY shopId";
 			$dbSys = DB::connect('DB_USR');
-			$result = $dbSys->fetchAll($sql);
+			$result = $dbSys->fetch($sql);
 			return $result;
 		}catch(PDOException $e){
 			C_Com::debugLog('dbError.log',$e->getMessage());
