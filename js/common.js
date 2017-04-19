@@ -161,7 +161,7 @@ $(function () {
             coin_all.css("display",'inline-block');
         }
     });
-    // 我的消息
+    // 批量管理
     var sys_chk_a= $('.sys_mess .che_a');
     var sys_all= $('.sys_mess .all');
     sys_chk_a.css("display",'none');
@@ -201,25 +201,18 @@ $(function () {
             }
         }
     });
-    
-    //自行选择
-    $(".mess_ul li .che_a").click(function (){
-        $(this).toggleClass('active_a');
-        var check=$(this).is(".active_a");
-        $(this).children(".che_ipt").attr("checked",check);
-    });
     $("table.detail tr td .che_a").click(function (){
         $(this).toggleClass('active_a');
         var check=$(this).is(".active_a");
         $(this).children(".che_ipt").attr("checked",check);
     });
-    //选项卡效果
+    //支付方式选项卡效果
     $(".mess_ul li").click(function () {
         if(!$(this).hasClass("active_x")){
             $(this).addClass("active_x").siblings("li").removeClass("active_x");
         }
-        var name=$(this).children("p").children('.user_n').text();
-        $(".mess .main strong").text(name+":");
+        var index_z=$(this).index();
+        $(".mess_detail").eq(index_z).css("display","block").siblings().css("display","none");
     });
 
     //首页 图片轮播
@@ -378,19 +371,33 @@ $(function () {
             }else{
                  $(".angle").css("display","none");
                  location.replace('?mod=index');
-               //  location.replace("https://dev.feihutv.cn/company/?mod=index");
             }
         });
     });
 
     /*充值管理部分*/
+    $(".know").click(function () {
+        $(".selAcc_pop").css("display",'none');
+        $(".opacity_color").css("display",'none');
+    });
     $('article .recharge_wh .tit_rc b.name').html(name);
+    //点击微信支付
+    $('.weiPay').click(function () {
+        $(".account").html(mr_money+'元');
+        //确认用户是否选择账户
+        var is_vi=$('.person_ul li img').is(":visible");
+        if(!is_vi){
+            $(".selAcc_pop").css("display",'block');
+            $(".opacity_color").css("display",'block');
+        }else{
+            $(".wePay_pop").css("display","block");
+            $(".opacity_color").css("display",'block');
+        }
+    });
     //点击添加账户
     $(".add_img").click(function () {
         $(".pop_cho").css("display","block");
         $(".opacity_color").css("display",'block');
-       /* var h=$(document.body).height()+"px";
-        $(".opacity_color").css("height",'h');*/
     });
     //点击关闭
     $(".close").click(function(){
@@ -399,14 +406,19 @@ $(function () {
     });
     //点击选择账户部分
     $(".person_ul li").click(function () {
-        var add_img=$('<img class="che_img" src="images/recharge_Manage/has_che.png" alt="" value="1" >');
-        var has_img=$(this).children('img').is('.che_img');
-        if(!has_img){
-            $(this).append(add_img);
-            $(this).siblings().children('img').remove('.che_img');
+        var if_see=$(this).children('img').is(':visible');
+        if(!if_see){
+            $(this).children('img').css("display","inline");
+            if( $(this).siblings().children('img').is(':visible')){
+                $(this).siblings().children('img').css("display","none");
+            }
+
+        }else{
+            $(this).children('img').css("display","none");
         }
     });
     //点击不同充值金额
+     mr_money= $(".pay_money em").html();
     $(".clearfix_ul .active_li").click(function () {
         if(!$(this).hasClass("active_m")){
             $(this).addClass("active_m").siblings().removeClass("active_m");
@@ -414,25 +426,26 @@ $(function () {
         $(".user_sel").removeClass("active_sel");
         var rmb=$(this).children(".money").attr("value");
         $(".pay_money em").html(rmb);
+        mr_money= $(".pay_money em").html();
+       // $(".account").html(rmb);
     });
     //点击自行输入充值金额
-    $(".user_sel .sou_coin_input").focus(function () {
+    var $coinIn=$(".user_sel .sou_coin_input")
+    $coinIn.focus(function () {
         $(".sou_coin_input").val("");
         $(".user_sel").addClass("active_sel");
         $(".clearfix_ul li").removeClass("active_m");
     });
-    $(".user_sel .sou_coin_input").blur(function () {
-        var user_coin=$(".sou_coin_input").val();
-        $(".sou_coin_input").val(user_coin+'搜币');
+    $coinIn.blur(function () {
+        var user_coin=$coinIn.val();
+        $coinIn.val(user_coin+'搜币');
         result_money=user_coin*0.01;
         $(".user_sel .money_input").val(result_money+'元');
         $(".pay_money em").html(result_money);
+        mr_money= $(".pay_money em").html();
     });
     //点击选择不同的支付方式
-    $(".pay_img ul li").on("click",function () {
-        $(this).addClass('active');
-        $(this).siblings().removeClass("active");
-    });
+
      //获取屏幕宽度
     var screenWidth=$(document.body).outerWidth(true);
     if(screenWidth<1280){
@@ -453,5 +466,7 @@ $(function () {
          $(".coin_cz ").empty();
          var a_nob=$("<a href='acc_recharge.mod.php' class='cz_a'>搜虎币充值</a> <a href='acc_recharge.mod.php' class='cz_a'>飞虎币充值</a> <a href='acc_recharge.mod.php' class='cz_a'>游戏充值</a>")
          $('.coin_cz').append(a_nob);
+         //隐藏账户选择图片
+         $('.che_img').css('display','none');
     }
 });

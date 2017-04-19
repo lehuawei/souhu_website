@@ -1,11 +1,12 @@
 //定义全局变量
 var url = "index.php?mod=api";
-
 $(function(){
     //登录
   $(".form_one").submit(function(event){
         var acc_l=$(".div_log .number").val().length;
         var pass_l=$(" .div_log .password").val().length;
+        var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+        var ifStrong= strongRegex.test($(".div_log .password").val());
         if(acc_l==0||pass_l==0){
             $(".div_log .red").html("输入不能为空！");
             $(".acc_con .div_log .red").css("display","inline-block");
@@ -30,19 +31,19 @@ $(function(){
                     //进入个人登录页面
                     $(".yhm").html(data.nickName);
                     $(".form_one")[0].reset();
+                    localStorage.ifStrong=ifStrong;
+                    console.log(localStorage.ifStrong);
                     location.replace('?mod=acc_recharge');
-
                 }
             });
         }
     });
-
     //获取验证码
     $(".btn_fu").click(function (e) {
         $(".id_code,.code").val('');
         var red=$(".red");
         var that = this;
-        var countdown=10;
+        var countdown=30;
         var data={};
         data.action = "sendSms";
         //判断手机号是否为空
@@ -77,7 +78,6 @@ $(function(){
                 console.log(result);
                 var jsonData = JSON.parse(result);
                 var code = parseInt(jsonData.CODE);
-                //console.log(code);
                 if(code == 0){
                     that.setAttribute("disabled", true);
                     that.value="重新发送(" + countdown + ")";
@@ -87,7 +87,7 @@ $(function(){
                             clearInterval(timer);
                             that.value="获取验证码";
                             that.removeAttribute("disabled");
-                        }
+                           }
                     },1000);
                 }else{
                     //获取验证码失败
@@ -95,7 +95,6 @@ $(function(){
                 }
             });
     });
-
     //注册
      $(".form_two").submit(function(event){
         var name_l=$(".div_reg .name").val().length;
@@ -111,18 +110,10 @@ $(function(){
             $(".red").css("display","inline-block");
              return;
         }
-        /* else if(!reg){
-             $(".red").html("请输入正确的电话号码格式！");
-             $(".red").css("display",'inline-block');
-         }*/
          else if(!reg1){
             $(".red").html("请输入正确的密码格式！");
             $(".red").css("display",'inline-block');
         }
-      /*  else if((!reg)&&(!reg1)){
-            $(".red").html("请输入正确的电话号码和密码格式！");
-            $(".red").css("display",'inline-block');
-        }*/
         else if(!$(".che_if").is(":checked")){
             $(".red").html("请阅读并同意用户协议和版权声明！");
             $(".red").css("display",'inline-block');
@@ -136,11 +127,7 @@ $(function(){
             data.smsCode=$(".id_code").val();
             data.nickName=$(".name").val();
             data.userPass =$(".div_reg .password").val();
-           // data.ifStrong=ifStrong;
-            //console.log(data);
             var xhr_reg=$.post(url,data,function(result){
-                console.log(result);
-                console.log("注册");
                 var obj = JSON.parse(result);
                 console.log(obj);
                 var code =parseInt(obj.CODE);
@@ -153,8 +140,6 @@ $(function(){
                     alert("注册成功");
                     var data = obj.DATA.RESULT;
                     $(".yhm").html(data.nickName);
-                   /* $(".log").css("display","none");
-                    $("header .add_icon").css("display","inline");*/
                     $(".form_two")[0].reset();
                     location.replace('?mod=acc_recharge');
                 }
@@ -169,7 +154,7 @@ $(function(){
         var reg=/^1\d{10}$/.test(phone_f);
          if(new_pass!=sure_newPass){
             $(".red").html("两次密码不一致请重新输入！");
-            $(".red").css("display",'block');
+            $(".red").css("display",'inline-block');
         }
         else{
             $(".red").html("");
@@ -180,27 +165,18 @@ $(function(){
             data.smsCode=$(".fgt_code").val();
             data.newPass =new_pass;
             data.newPassTwo=sure_newPass;
-            console.log(data);
             var xhr_reg=$.post(url,data,function(result){
-                console.log(result);
-                console.log("找回密码");
                 var obj = JSON.parse(result);
-                console.log(obj);
                 var code =parseInt(obj.CODE);
                 if(code != 0){
                     //失败
-                    alert('fail');
+                    //alert('fail');
                     alert(obj.DATA.ERRMSG);
                 }
                 else{
                     alert("找回成功");
                     var data = obj.DATA.RESULT;
-                    //注册成功
-                    //进入个人登录页面
-                    /*$(".yhm").html(data.nickName);
-                    $(".log").css("display","none");
-                    $("header .add_icon").css("display","inline");
-                    $(".form_two")[0].reset();*/
+                    $(".form_fgtpass")[0].reset();
                 }
             });
         }
@@ -211,7 +187,7 @@ $(function(){
         var modify_ifStrong= strongRegex.test($(".form_three .new_pass").val());
         localStorage.modify_ifStrong=modify_ifStrong;
         var modifyifStrong=localStorage.modify_ifStrong;
-        console.log(modifyifStrong);
+       // console.log('修改密码后密码强度测试'+modifyifStrong);
         switch(modifyifStrong)
         {
             case "true":
@@ -269,7 +245,6 @@ $(function(){
         }
     });
    //修改用户资料
-
     $(".user_info .save").click(function () {
         var data = {};
         var user_name=$(".userName").val();

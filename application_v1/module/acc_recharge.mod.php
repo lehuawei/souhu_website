@@ -22,7 +22,23 @@ if(!defined('ACCESS_KEY')){header("HTTP/1.1 404 Not Found");die;}
 <?php
 require(APP_PATH.'common/header.com.php');
 ?>
-
+<!--弹出框的背景-->
+<div class="opacity_color"></div>
+<!--微信支付弹出框-->
+<div class="wePay_pop">
+    <div class="close"><img src="<?php echo CDN_SERVER;?>images/recharge_Manage/icon-close.png" alt=""></div>
+    <h2>微信扫一扫支付马上完成</h2>
+    <p >交易金额 : <span class="account"> 100.00元</span></p>
+    <p>交易号 : <span class="acc_num"> XZ201704191458401798</span></p>
+    <img src="<?php echo CDN_SERVER;?>images/common/wePay.png" alt="">
+    <h3>请使用微信扫描二维码以完成支付</h3>
+</div>
+<!--未选择账户提示框-->
+<div class="selAcc_pop">
+    <div class="close"><img src="<?php echo CDN_SERVER;?>images/recharge_Manage/icon-close.png" alt=""></div>
+    <h3><strong>请选择所要充值的账号!</strong></h3>
+    <span class="know">我知道了</span>
+</div>
 <!--中间内容-->
 <article>
     <!--充值中心-->
@@ -33,6 +49,7 @@ require(APP_PATH.'common/header.com.php');
               <span> <strong> 充值中心</strong></span> &nbsp;&nbsp;
               当前账号:&nbsp; <b class="name">123456</b>
                 &nbsp;&nbsp;账户余额:&nbsp;<b class="sb"> <tt>100</tt> 搜币</b>
+                <span class="no_add">（还未添加账号？<a href="<?php echo CDN_SERVER;?>?mod=user_Center">点此马上前往产品管理添加</a>）</span>
             </p>
             <div class="full_gl"></div>
             <!--账号充值部分-->
@@ -58,16 +75,160 @@ require(APP_PATH.'common/header.com.php');
                     </li>
                 </ul>
             </div>
+            <!--支付方式-->
+            <div>
+            <!--微信支付-->
             <div class="mess_detail">
                 <div class="mess">
-                    <p class="fh_tit"><img src="<?php echo CDN_SERVER;?>images/case_detail/case_detail_pic1.png" alt="" width="68px" height="68px">
-                        <span>飞虎直播</span> <em class="time">3-16   12:01</em>
+                    <p class="fh_tit">
+                        <span>微信支付</span>
                     </p>
-                    <p class="main">
-                        <strong>尊敬的用户Muse:</strong> <br>
-                        <span>欢迎您来到飞虎直播平台，您已获得由系统送出的10搜虎币（前往领取），希望您生活愉快!</span>
-                    </p>
+                    <p class="main">充值账号:<b style="font-size: 22px;font-style: normal;margin-left: 10px">Esther</b></p>
+                    <span class="main">选择账号:</span>
+                    <ul class="person_ul">
+                        <li>
+                            <span class="pro_span">官网账号:123456</span>
+                            <img class="che_img" src="images/recharge_Manage/has_che.png" alt="" value="1" hidden>
+                        </li>
+                        <li class="mg_lt">
+                            <span class="pro_span">飞虎账号:123456</span>
+                            <img class="che_img" src="images/recharge_Manage/has_che.png" alt="" value="1" hidden>
+                        </li>
+                    </ul>
+                    <br>
+                    <span class="main">选择金额:</span>
+                    <ul class="clearfix_ul">
+                        <li class="active_li active_m">
+                            <p class="sou_coin" value="1000">1000搜币</p>
+                            <p class="money" value="10">¥10元</p>
+                        </li>
+                        <li class="active_li">
+                            <p class="sou_coin">2000搜币</p>
+                            <p class="money"  value="20">¥20元</p>
+                        </li>
+                        <li class="active_li">
+                            <p class="sou_coin">5000搜币</p>
+                            <p class="money"  value="50">¥50元</p>
+                        </li>
+                        <li class="active_li">
+                            <p class="sou_coin">20000搜币</p>
+                            <p class="money"  value="200">¥200元</p>
+                        </li>
+                        <li class="active_li">
+                            <p class="sou_coin">100000搜币</p>
+                            <p class="money"  value="1000">¥1000元</p>
+                        </li>
+                        <li class="user_sel">
+                            <input type="text" class="sou_coin_input" placeholder="输入币数">
+                            <input type="text" class="money_input">
+                        </li>
+                    </ul>
+                    <div class="pay_money">
+                        <h4>支付金额 : <em>10</em> 元 </h4>
+                        <span class="surePay weiPay">确认支付</span>
+                    </div>
                 </div>
+            </div>
+            <!--支付宝支付-->
+            <div class="mess_detail" style="display: none">
+                <div class="mess">
+                    <p class="fh_tit">
+                        <span>支付宝支付</span>
+                    </p>
+                    <p class="main">充值账号:<b style="font-size: 22px;font-style: normal;margin-left: 10px">Esther</b></p>
+                    <span class="main">选择账号:</span>
+                    <ul class="person_ul">
+                        <li>
+                            <span class="pro_span">官网账号:123456</span>
+                            <img class="che_img" src="images/recharge_Manage/has_che.png" alt="" value="1" hidden>
+                        </li>
+                        <li class="mg_lt">
+                            <span class="pro_span">飞虎账号:123456</span>
+                            <img class="che_img" src="images/recharge_Manage/has_che.png" alt="" value="1" hidden>
+                        </li>
+                    </ul>
+                    <br>
+                    <span class="main">选择金额:</span>
+                    <ul class="clearfix_ul">
+                        <li class="active_li active_m">
+                            <p class="sou_coin" value="1000">1000搜币</p>
+                            <p class="money" value="10">¥10元</p>
+                        </li>
+                        <li class="active_li">
+                            <p class="sou_coin">2000搜币</p>
+                            <p class="money"  value="20">¥20元</p>
+                        </li>
+                        <li class="active_li">
+                            <p class="sou_coin">5000搜币</p>
+                            <p class="money"  value="50">¥50元</p>
+                        </li>
+                        <li class="active_li">
+                            <p class="sou_coin">20000搜币</p>
+                            <p class="money"  value="200">¥200元</p>
+                        </li>
+                        <li class="active_li">
+                            <p class="sou_coin">100000搜币</p>
+                            <p class="money"  value="1000">¥1000元</p>
+                        </li>
+                        <li class="user_sel">
+                            <input type="text" class="sou_coin_input" placeholder="输入币数">
+                            <input type="text" class="money_input">
+                        </li>
+                    </ul>
+                    <div class="pay_money">
+                        <h4>支付金额 : <em>10</em> 元 </h4>
+                        <span class="surePay">确认支付</span>
+                    </div>
+                </div>
+            </div>
+            <!--搜币支付-->
+            <div class="mess_detail" style="display: none">
+                <div class="mess">
+                    <p class="fh_tit">
+                        <span>搜币支付</span>
+                    </p>
+                    <p class="main">充值账号:<b style="font-size: 22px;font-style: normal;margin-left: 10px">Esther</b></p>
+                    <span class="main">选择账号:</span>
+                    <ul class="person_ul">
+                        <li>
+                            <span class="pro_span">官网账号:123456</span>
+                            <img class="che_img" src="images/recharge_Manage/has_che.png" alt="" value="1" hidden>
+                        </li>
+                    </ul>
+                    <br>
+                    <span class="main">选择金额:</span>
+                    <ul class="clearfix_ul">
+                        <li class="active_li active_m">
+                            <p class="sou_coin" value="1000">1000搜币</p>
+                            <p class="money" value="10">¥10元</p>
+                        </li>
+                        <li class="active_li">
+                            <p class="sou_coin">2000搜币</p>
+                            <p class="money"  value="20">¥20元</p>
+                        </li>
+                        <li class="active_li">
+                            <p class="sou_coin">5000搜币</p>
+                            <p class="money"  value="50">¥50元</p>
+                        </li>
+                        <li class="active_li">
+                            <p class="sou_coin">20000搜币</p>
+                            <p class="money"  value="200">¥200元</p>
+                        </li>
+                        <li class="active_li">
+                            <p class="sou_coin">100000搜币</p>
+                            <p class="money"  value="1000">¥1000元</p>
+                        </li>
+                        <li class="user_sel">
+                            <input type="text" class="sou_coin_input" placeholder="输入币数">
+                            <input type="text" class="money_input">
+                        </li>
+                    </ul>
+                    <div class="pay_money">
+                        <h4>支付金额 : <em>10</em> 元 </h4>
+                        <span class="surePay">确认支付</span>
+                    </div>
+                </div>
+            </div>
             </div>
         </div>
     </div>

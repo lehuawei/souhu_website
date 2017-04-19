@@ -56,6 +56,10 @@ article .recharge_wh .acc_head .person_ul li span{
     display: inline-block;
     float: left;
 }
+article .recharge_wh .acc_head .person_ul li span img{
+    width: 88px;
+    height: 88px;
+}
 article .recharge_wh .acc_head .person_ul li .pro_span img{
     margin-left:5px;
 }
@@ -78,6 +82,15 @@ article .recharge_wh .acc_head  .add_img{
 article .recharge_wh .acc_head  .add_img  img{
     vertical-align:text-top;
 }
+/*未添加账号链接*/
+.no_add{
+    display: inline-block;
+    margin-left: 30px;
+}
+.no_add a:hover{
+    color: #f5a517;
+    text-decoration: underline #f5a517;
+}
 /*弹出框的背景*/
 .opacity_color{
     position: fixed;
@@ -99,7 +112,7 @@ article .recharge_wh .acc_head  .add_img  img{
     border: 1px solid #d6d7dc;
     border-radius: 10px;
     position: absolute;
-    top: 30%;
+    top: 25%;
     left: 35%;
     z-index: 102;
     transition:border linear .2s,box-shadow linear .5s;
@@ -183,6 +196,81 @@ select::-ms-expand { display: none; }
     vertical-align: middle;
     margin-left: 5px;
 }
+/*微信支付弹出框部分*/
+.wePay_pop{
+    width: 400px;
+    height: 510px;
+    background-color: white;
+    border: 1px solid #d6d7dc;
+    border-radius: 10px;
+    position: absolute;
+    top: 30%;
+    left: 38%;
+    z-index: 102;
+    transition:border linear .2s,box-shadow linear .5s;
+    -moz-transition:border linear .2s,-moz-box-shadow linear .5s;
+    -webkit-transition:border linear .2s,-webkit-box-shadow linear .5s;
+    outline:none;border-color: rgba(208, 208, 210, 0.75);
+    box-shadow:0 0 10px rgba(208, 208, 210, 0.5);
+    -moz-box-shadow:0 0 10px rgba(208, 208, 210, 0.5);
+    -webkit-box-shadow:0 0 10px rgba(208, 208, 210,1);
+    text-align: center;
+    display: none;
+}
+.wePay_pop h2{
+    margin: 36px auto;
+}
+.wePay_pop p{
+    font-size: 14px;
+    color: #999;
+}
+.wePay_pop .account{
+    color: #f90;
+    font-size: 24px;
+}
+.wePay_pop .acc_num{
+    color: #000;
+    font-size: 14px;
+}
+/*提示选择充值的账号*/
+.selAcc_pop{
+    width: 400px;
+    height: 200px;
+    background-color: white;
+    border: 1px solid #d6d7dc;
+    border-radius: 10px;
+    position: absolute;
+    top: 40%;
+    left: 38%;
+    z-index: 102;
+    transition:border linear .2s,box-shadow linear .5s;
+    -moz-transition:border linear .2s,-moz-box-shadow linear .5s;
+    -webkit-transition:border linear .2s,-webkit-box-shadow linear .5s;
+    outline:none;border-color: rgba(208, 208, 210, 0.75);
+    box-shadow:0 0 10px rgba(208, 208, 210, 0.5);
+    -moz-box-shadow:0 0 10px rgba(208, 208, 210, 0.5);
+    -webkit-box-shadow:0 0 10px rgba(208, 208, 210,1);
+    text-align: center;
+    display: none;
+}
+.selAcc_pop h3{
+    margin: 50px auto;
+    text-align: center;
+}
+.selAcc_pop .know{
+    display: inline-block;
+    margin: 10px auto;
+    width: 100px;
+    height: 38px;
+    line-height: 38px;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #f5a517;
+    margin-right: 20px;
+}
 /*充值金额*/
 .recharge_money{
     width: 100%;
@@ -201,9 +289,13 @@ select::-ms-expand { display: none; }
     margin: 20px auto 10px auto;
 }
 .clearfix_ul{
-    width:800px;
+    width:80%;
     height: auto;
     overflow: hidden;
+    display: inline-block;
+    vertical-align: text-top;
+    margin-bottom: 20px;
+    margin-left: -20px;
 }
 .clearfix_ul::after{
     content: "";
@@ -218,7 +310,7 @@ select::-ms-expand { display: none; }
     float: left;
     background-image: url("../images/recharge_Manage/white.jpg");
     text-align: center;
-    margin: 20px 30px 10px 30px;
+    margin: 0 30px 30px 30px;
     cursor: pointer;
     color: #f3a80f;
     font-size: 22px;
@@ -335,7 +427,8 @@ select::-ms-expand { display: none; }
     width: 350px;
     float: right;
     height: auto;
-    margin: 100px 0 80px auto;
+    display: inline-block;
+    margin-right: 10%;
 }
 .pay_money h4{
     display: inline-block;

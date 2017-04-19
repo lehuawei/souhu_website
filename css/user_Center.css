@@ -463,8 +463,8 @@ table.detail tr td.five{
     clear: both;
 }
 .sys_mess{
-    width: 20%;
-    height:800px;
+    width: 23%;
+    min-height:800px;
     margin: 0px auto auto 0px;
     display: inline-block;
     float: left;
@@ -502,7 +502,7 @@ span.che_a{
 }
 .mess_ul li{
     cursor: pointer;
-   padding: 10px 0 20px 30px;
+   padding: 10px 0 20px 20px;
 
 }
 .mess_ul li h4{
@@ -516,11 +516,14 @@ span.che_a{
 }
 .mess_ul li p{
     margin:20px 20px auto auto;
-    font-size: 20px;
+    font-size: 18px;
+}
+.mess_ul li p img{
+   vertical-align: middle;
 }
 .mess_detail{
-    width: 68%;
-    height: auto;
+    width: 75%;
+    min-height: 800px;
     float:left;
     color: #646464;
     background-color: #ffffff;
@@ -531,8 +534,12 @@ span.che_a{
 .mess img{
     vertical-align:middle;
 }
+.mess p.fh_tit{
+    margin: 40px auto;
+}
+
 .mess p.fh_tit span{
-    font-size: 18px;
+    font-size: 32px;
     color: #181818;
 }
 .mess p.fh_tit em{
@@ -544,8 +551,44 @@ span.che_a{
     margin-top: 20px;
     line-height: 24px;
     margin-bottom: 30px;
+    font-size: 21px;
+    color: #323232;
 }
-.mess p.main strong{
-    font-size: 16px;
-    font-weight: bold;
+.mess span.main{
+    width: 70%;
+    margin-top: 20px;
+    line-height: 24px;
+    margin-bottom: 30px;
+    font-size: 21px;
+    color: #323232;
+}
+/*选择账号*/
+.mess .person_ul{
+    width: 80%;
+    height: auto;
+    display: inline-block;
+    vertical-align: text-top;
+    margin-left: -10px;
+}
+.mess .person_ul li{
+    width: 200px;
+    height: 60px;
+    border: 1px solid  #d6d7dc;
+    border-radius: 5px;
+    cursor: pointer;
+    float: left;
+    margin: 0  auto  60px 20px;
+    text-align: center;
+}
+
+.mess .person_ul li .pro_span{
+    color: #323232;
+    font-size: 18px;
+    line-height: 60px;
+
+}
+.person_ul li .che_img{
+    float: right;
+    margin-top: 16.4%;
+
 }
