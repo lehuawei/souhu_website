@@ -8,15 +8,15 @@ if(empty($mod)) {
 }
 $userInfo = null;
 $currUser = null;
+$isLogin = 0;
 if(C_CurrUser::isLogin()){
     //已登录
+    $isLogin = 1;
     $currUser = new C_User(C_CurrUser::$userId);
     $userInfo = $currUser->getUserInfo();
-   // print_r($userInfo);
+
 }
-else{
-    //未登录
-}
+
 ?>
 <header>
     <div class="head bs">

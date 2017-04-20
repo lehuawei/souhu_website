@@ -171,7 +171,7 @@ class API
         );
         $alipaySubmit = new AlipaySubmit($alipay_config);
         $html_text = $alipaySubmit->buildRequestForm($parameter,"get", "确认");
-        echo $html_text;
+        echo $html_text;exit;
      }else if($payType == 3){
         //微信
         

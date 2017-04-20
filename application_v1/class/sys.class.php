@@ -38,18 +38,22 @@ class C_Sys
     **/
     public static function getSysShopListById($payType,$pId){
         $shopInfo = self::getSysShopListByPid($pId,($payType==2 || $payType == 3)?2:$payType);
+        // var_dump($shopInfo);
         $numList = array(1000,2000,5000,20000,100000,0);
         $list = array();
         foreach($numList as $num){
             $data = new stdclass;
             $data->shopId = $shopInfo->shopId;
+            $data->shopName = $shopInfo->shopName;
+            $data->addValue = $shopInfo->addValue;
             $data->pId = $pId;
             $data->payType = $payType;
+            $data->amount  = intval($num)/intval($shopInfo->addValue)*intval($shopInfo->truePrice);
             $data->num = $num;
             $data->price = $shopInfo->truePrice;
             $list[] = $data;
         }
-        unset($shopInfo);
+       // unset($shopInfo);
         return $list;
     }
 
