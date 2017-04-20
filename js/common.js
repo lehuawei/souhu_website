@@ -368,7 +368,89 @@ $(function () {
         });
     });
 
-   
+    /*充值管理部分*/
+    //充值选项卡
+    $(".mess_ul li").click(function () {
+        if(!$(this).hasClass("active_x")){
+            $(this).addClass("active_x").siblings("li").removeClass("active_x");
+        }
+        var index_z=$(this).index();
+        $(".mess_detail").eq(index_z).css("display","block").siblings().css("display","none");
+    });
+    $(".know").click(function () {
+        $(".selAcc_pop").css("display",'none');
+        $(".opacity_color").css("display",'none');
+    });
+    $('article .recharge_wh .tit_rc b.name').html(name);
+    //点击微信支付
+    $('.weiPay').click(function () {
+        $(".account").html(mr_money+'元');
+        //确认用户是否选择账户
+        var is_vi=$('.person_ul li img').is(":visible");
+        if(!is_vi){
+            $(".selAcc_pop").css("display",'block');
+            $(".opacity_color").css("display",'block');
+        }else{
+            $(".wePay_pop").css("display","block");
+            $(".opacity_color").css("display",'block');
+        }
+    });
+    //点击添加账户
+    $(".add_img").click(function () {
+        $(".pop_cho").css("display","block");
+        $(".opacity_color").css("display",'block');
+    });
+    //点击关闭
+    $(".close").click(function(){
+        $(this).parent().css("display","none");
+        $(".opacity_color").css("display",'none');
+    });
+    //点击选择账户部分
+    $(".person_ul li").click(function () {
+        var index_c=$(this).index();
+        if(index_c==0){
+             $('.get_sb').html("充值成功后，您将获得1000搜币");
+        }
+        else if(index_c==1){
+            $('.get_sb').html("充值成功后，您将获得1000飞虎币");
+        }
+        var if_see=$(this).children('img').is(':visible');
+        if(!if_see){
+            $(this).children('img').css("display","inline");
+            if( $(this).siblings().children('img').is(':visible')){
+                $(this).siblings().children('img').css("display","none");
+            }
+        }else{
+            $(this).children('img').css("display","none");
+        }
+    });
+    //点击不同充值金额
+    mr_money= $(".pay_money em").html();
+    $(".clearfix_ul .active_li").click(function () {
+        if(!$(this).hasClass("active_m")){
+            $(this).addClass("active_m").siblings().removeClass("active_m");
+        }
+        $(".user_sel").removeClass("active_sel");
+        var rmb=$(this).children(".money").attr("value");
+        $(".pay_money em").html(rmb);
+        mr_money= $(".pay_money em").html();
+        // $(".account").html(rmb);
+    });
+    //点击自行输入充值金额
+    var $coinIn=$(".user_sel .sou_coin_input")
+    $coinIn.focus(function () {
+        $(".sou_coin_input").val("");
+        $(".user_sel").addClass("active_sel");
+        $(".clearfix_ul li").removeClass("active_m");
+    });
+    $coinIn.blur(function () {
+        var user_coin=$coinIn.val();
+        $coinIn.val(user_coin+'搜币');
+        result_money=user_coin*0.01;
+        $(".user_sel .money_input").val(result_money+'元');
+        $(".pay_money em").html(result_money);
+        mr_money= $(".pay_money em").html();
+    });
     //点击选择不同的支付方式
 
      //获取屏幕宽度

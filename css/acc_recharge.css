@@ -306,9 +306,9 @@ select::-ms-expand { display: none; }
     position: relative;
     display: inline-block;
     width: 152px;
-    height: 90px;
+    height: 50px;
     float: left;
-    background-image: url("https://img.chinasouhu.net/images/recharge_Manage/white.jpg");
+    background-image: url("../images/recharge_Manage/white.jpg");
     text-align: center;
     margin: 0 30px 30px 30px;
     cursor: pointer;
@@ -320,18 +320,18 @@ select::-ms-expand { display: none; }
     line-height: 52px;
 }
 .clearfix_ul li .money{
-    height:40px;
-    line-height:40px;
+    height:50px;
+    line-height:50px;
 }
 .clearfix_ul .active_m{
-    background-image: url("https://img.chinasouhu.net/images/recharge_Manage/orange.jpg");
+    background-image: url("../images/recharge_Manage/orange.jpg");
     color: white;
     font-size: 22px;
 }
 .clearfix_ul li .sou_coin_input{
     width: 150px;
-    height: 40px;
-    line-height:40px;
+    height: 50px;
+    line-height:50px;
     border: none;
     margin-top: 5px;
     color: #f3a80f;
@@ -452,6 +452,12 @@ select::-ms-expand { display: none; }
     cursor: pointer;
     background-color: #f5a517;
     margin-right: 20px;
+    border: none;
+}
+/*充值比例字体*/
+.bl{
+    color: red;
+    margin-left:100px ;
 }
 /*检测用户是否登录的用户框*/
 .chk_log{

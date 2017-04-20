@@ -80,6 +80,7 @@ require(APP_PATH.'common/header.com.php');
             <!--微信支付-->
             <div class="mess_detail">
                 <div class="mess">
+                    <form action="javascript:void(0)" class="weiPayForm">
                     <p class="fh_tit">
                         <span>微信支付</span>
                     </p>
@@ -88,11 +89,11 @@ require(APP_PATH.'common/header.com.php');
                     <ul class="person_ul">
                         <li>
                             <span class="pro_span">官网账号:123456</span>
-                            <img class="che_img" src="<?php echo CDN_SERVER;?>images/recharge_Manage/has_che.png" alt="" value="1" hidden>
+                            <img class="che_img" src="<?php echo CDN_SERVER;?>images/recharge_Manage/has_che.png"  >
                         </li>
                         <li class="mg_lt">
                             <span class="pro_span">飞虎账号:123456</span>
-                            <img class="che_img" src="<?php echo CDN_SERVER;?>images/recharge_Manage/has_che.png" alt="" value="1" hidden>
+                            <img class="che_img" src="<?php echo CDN_SERVER;?>images/recharge_Manage/has_che.png" hidden>
                         </li>
                     </ul>
                     <br>
@@ -117,15 +118,19 @@ require(APP_PATH.'common/header.com.php');
                             <input type="text" class="money_input" placeholder="请输入金额">
                         </li>
                     </ul>
+                        <p class="bl scale">充值比例 1:100</p>
+                        <p class="bl get_sb">充值成功后，您将获得1000搜币</p>
                     <div class="pay_money">
                         <h4>支付金额 : <em>10</em> 元 </h4>
-                        <span class="surePay weiPay">确认支付</span>
+                        <button type="submit" class="surePay weiPay">确认支付</button>
                     </div>
+                    </form>
                 </div>
             </div>
             <!--支付宝支付-->
             <div class="mess_detail" style="display: none">
                 <div class="mess">
+                    <form action="" class="payForm">
                     <p class="fh_tit">
                         <span>支付宝支付</span>
                     </p>
@@ -143,41 +148,39 @@ require(APP_PATH.'common/header.com.php');
                     </ul>
                     <br>
                     <span class="main">选择金额:</span>
-                    <ul class="clearfix_ul">
-                        <li class="active_li active_m">
-                            <p class="sou_coin" value="1000">1000搜币</p>
-                            <p class="money" value="10">¥10元</p>
-                        </li>
-                        <li class="active_li">
-                            <p class="sou_coin">2000搜币</p>
-                            <p class="money"  value="20">¥20元</p>
-                        </li>
-                        <li class="active_li">
-                            <p class="sou_coin">5000搜币</p>
-                            <p class="money"  value="50">¥50元</p>
-                        </li>
-                        <li class="active_li">
-                            <p class="sou_coin">20000搜币</p>
-                            <p class="money"  value="200">¥200元</p>
-                        </li>
-                        <li class="active_li">
-                            <p class="sou_coin">100000搜币</p>
-                            <p class="money"  value="1000">¥1000元</p>
-                        </li>
-                        <li class="user_sel">
-                            <input type="text" class="sou_coin_input" placeholder="输入币数">
-                            <input type="text" class="money_input">
-                        </li>
-                    </ul>
-                    <div class="pay_money">
-                        <h4>支付金额 : <em>10</em> 元 </h4>
-                        <span class="surePay">确认支付</span>
+                        <ul class="clearfix_ul">
+                            <li class="active_li active_m">
+                                <p class="money" value="10">¥10元</p>
+                            </li>
+                            <li class="active_li">
+                                <p class="money"  value="20">¥20元</p>
+                            </li>
+                            <li class="active_li">
+                                <p class="money"  value="50">¥50元</p>
+                            </li>
+                            <li class="active_li">
+                                <p class="money"  value="200">¥200元</p>
+                            </li>
+                            <li class="active_li">
+                                <p class="money"  value="1000">¥1000元</p>
+                            </li>
+                            <li class="user_sel">
+                                <input type="text" class="money_input" placeholder="请输入金额">
+                            </li>
+                        </ul>
+                        <p class="bl scale">充值比例 1:100</p>
+                        <p class="bl get_sb">充值成功后，您将获得1000搜币</p>
+                        <div class="pay_money">
+                            <h4>支付金额 : <em>10</em> 元 </h4>
+                            <button type="submit" class="surePay ">确认支付</button>
                     </div>
+                    </form>
                 </div>
             </div>
             <!--搜币支付-->
             <div class="mess_detail" style="display: none">
                 <div class="mess">
+                    <form action="javascript:void(0)">
                     <p class="fh_tit">
                         <span>搜币支付</span>
                     </p>
@@ -193,34 +196,31 @@ require(APP_PATH.'common/header.com.php');
                     <span class="main">选择金额:</span>
                     <ul class="clearfix_ul">
                         <li class="active_li active_m">
-                            <p class="sou_coin" value="1000">1000搜币</p>
                             <p class="money" value="10">¥10元</p>
                         </li>
                         <li class="active_li">
-                            <p class="sou_coin">2000搜币</p>
                             <p class="money"  value="20">¥20元</p>
                         </li>
                         <li class="active_li">
-                            <p class="sou_coin">5000搜币</p>
                             <p class="money"  value="50">¥50元</p>
                         </li>
                         <li class="active_li">
-                            <p class="sou_coin">20000搜币</p>
                             <p class="money"  value="200">¥200元</p>
                         </li>
                         <li class="active_li">
-                            <p class="sou_coin">100000搜币</p>
                             <p class="money"  value="1000">¥1000元</p>
                         </li>
                         <li class="user_sel">
-                            <input type="text" class="sou_coin_input" placeholder="输入币数">
-                            <input type="text" class="money_input">
+                            <input type="text" class="money_input" placeholder="请输入金额">
                         </li>
                     </ul>
+                    <p class="bl">充值比例 1:1</p>
+                    <p class="bl">充值成功后，您将获得1000飞虎币</p>
                     <div class="pay_money">
                         <h4>支付金额 : <em>10</em> 元 </h4>
-                        <span class="surePay">确认支付</span>
+                        <button type="submit" class="surePay ">确认支付</button>
                     </div>
+                    </form>
                 </div>
             </div>
             </div>
@@ -240,82 +240,82 @@ require(APP_PATH.'common/footer.com.php');
 <script src="<?php echo CDN_SERVER;?>js/formValidate.js"></script>
 <script language="javascript">
     $(function(){
-        /*充值管理部分*/
-        $(".mess_ul li").click(function () {
-            if(!$(this).hasClass("active_x")){
-                $(this).addClass("active_x").siblings("li").removeClass("active_x");
-            }
-            var index_z=$(this).index();
-            $(".mess_detail").eq(index_z).css("display","block").siblings().css("display","none");
-        });
-        $(".know").click(function () {
-            $(".selAcc_pop").css("display",'none');
-            $(".opacity_color").css("display",'none');
-        });
-        $('article .recharge_wh .tit_rc b.name').html(name);
-        //点击微信支付
-        $('.weiPay').click(function () {
-            $(".account").html(mr_money+'元');
-            //确认用户是否选择账户
-            var is_vi=$('.person_ul li img').is(":visible");
-            if(!is_vi){
-                $(".selAcc_pop").css("display",'block');
-                $(".opacity_color").css("display",'block');
-            }else{
-                $(".wePay_pop").css("display","block");
-                $(".opacity_color").css("display",'block');
-            }
-        });
-        //点击添加账户
-        $(".add_img").click(function () {
-            $(".pop_cho").css("display","block");
-            $(".opacity_color").css("display",'block');
-        });
-        //点击关闭
-        $(".close").click(function(){
-            $(this).parent().css("display","none");
-            $(".opacity_color").css("display",'none');
-        });
-        //点击选择账户部分
-        $(".person_ul li").click(function () {
-            var if_see=$(this).children('img').is(':visible');
-            if(!if_see){
-                $(this).children('img').css("display","inline");
-                if( $(this).siblings().children('img').is(':visible')){
-                    $(this).siblings().children('img').css("display","none");
-                }
-
-            }else{
-                $(this).children('img').css("display","none");
-            }
-        });
-        //点击不同充值金额
-        mr_money= $(".pay_money em").html();
-        $(".clearfix_ul .active_li").click(function () {
-            if(!$(this).hasClass("active_m")){
-                $(this).addClass("active_m").siblings().removeClass("active_m");
-            }
-            $(".user_sel").removeClass("active_sel");
-            var rmb=$(this).children(".money").attr("value");
-            $(".pay_money em").html(rmb);
-            mr_money= $(".pay_money em").html();
-            // $(".account").html(rmb);
-        });
-        //点击自行输入充值金额
-        var $coinIn=$(".user_sel .sou_coin_input")
-        $coinIn.focus(function () {
-            $(".sou_coin_input").val("");
-            $(".user_sel").addClass("active_sel");
-            $(".clearfix_ul li").removeClass("active_m");
-        });
-        $coinIn.blur(function () {
-            var user_coin=$coinIn.val();
-            $coinIn.val(user_coin+'搜币');
-            result_money=user_coin*0.01;
-            $(".user_sel .money_input").val(result_money+'元');
-            $(".pay_money em").html(result_money);
-            mr_money= $(".pay_money em").html();
-        });
+//        /*充值管理部分*/
+//        $(".mess_ul li").click(function () {
+//            if(!$(this).hasClass("active_x")){
+//                $(this).addClass("active_x").siblings("li").removeClass("active_x");
+//            }
+//            var index_z=$(this).index();
+//            $(".mess_detail").eq(index_z).css("display","block").siblings().css("display","none");
+//        });
+//        $(".know").click(function () {
+//            $(".selAcc_pop").css("display",'none');
+//            $(".opacity_color").css("display",'none');
+//        });
+//        $('article .recharge_wh .tit_rc b.name').html(name);
+//        //点击微信支付
+//        $('.weiPay').click(function () {
+//            $(".account").html(mr_money+'元');
+//            //确认用户是否选择账户
+//            var is_vi=$('.person_ul li img').is(":visible");
+//            if(!is_vi){
+//                $(".selAcc_pop").css("display",'block');
+//                $(".opacity_color").css("display",'block');
+//            }else{
+//                $(".wePay_pop").css("display","block");
+//                $(".opacity_color").css("display",'block');
+//            }
+//        });
+//        //点击添加账户
+//        $(".add_img").click(function () {
+//            $(".pop_cho").css("display","block");
+//            $(".opacity_color").css("display",'block');
+//        });
+//        //点击关闭
+//        $(".close").click(function(){
+//            $(this).parent().css("display","none");
+//            $(".opacity_color").css("display",'none');
+//        });
+//        //点击选择账户部分
+//        $(".person_ul li").click(function () {
+//            var if_see=$(this).children('img').is(':visible');
+//            if(!if_see){
+//                $(this).children('img').css("display","inline");
+//                if( $(this).siblings().children('img').is(':visible')){
+//                    $(this).siblings().children('img').css("display","none");
+//                }
+//
+//            }else{
+//                $(this).children('img').css("display","none");
+//            }
+//        });
+//        //点击不同充值金额
+//        mr_money= $(".pay_money em").html();
+//        $(".clearfix_ul .active_li").click(function () {
+//            if(!$(this).hasClass("active_m")){
+//                $(this).addClass("active_m").siblings().removeClass("active_m");
+//            }
+//            $(".user_sel").removeClass("active_sel");
+//            var rmb=$(this).children(".money").attr("value");
+//            $(".pay_money em").html(rmb);
+//            mr_money= $(".pay_money em").html();
+//            // $(".account").html(rmb);
+//        });
+//        //点击自行输入充值金额
+//        var $coinIn=$(".user_sel .sou_coin_input")
+//        $coinIn.focus(function () {
+//            $(".sou_coin_input").val("");
+//            $(".user_sel").addClass("active_sel");
+//            $(".clearfix_ul li").removeClass("active_m");
+//        });
+//        $coinIn.blur(function () {
+//            var user_coin=$coinIn.val();
+//            $coinIn.val(user_coin+'搜币');
+//            result_money=user_coin*0.01;
+//            $(".user_sel .money_input").val(result_money+'元');
+//            $(".pay_money em").html(result_money);
+//            mr_money= $(".pay_money em").html();
+//        });
 //        var data = {};
 //        data.action = "getUserInfo";
 //        $.post(url,data,function(result){

@@ -142,7 +142,7 @@ require(APP_PATH.'common/header.com.php');
              <!--安全指数-->
             <div class="reliable_index">
                 <p>安全指数: <span class="orange_span"></span> <span class="orange_span"></span> <span class="grey_span" id="chgCol_span"></span>
-                    <a href="<?php echo CDN_SERVER;?>?mod=modify_pass" target="_blank"><i>修改密码</i></a>
+                    <a href="<?php echo API_URL;?>?mod=modify_pass" target="_blank"><i>修改密码</i></a>
                 </p>
             </div>
             <!--付款方式-->
@@ -170,9 +170,9 @@ require(APP_PATH.'common/header.com.php');
             <h3 class="sh_b">
                 <span style="margin-left: 10px">搜币</span>
                 <span class="coin_cz">
-                        <a href="<?php echo CDN_SERVER;?>?mod=acc_recharge" class=""><button>搜虎币充值</button></a>
-                        <a href="<?php echo CDN_SERVER;?>?mod=acc_recharge"><button>飞虎币充值</button></a>
-                        <a href="<?php echo CDN_SERVER;?>?mod=acc_recharge"><button>游戏充值</button></a>
+                        <a href="<?php echo API_URL;?>?mod=acc_recharge" class=""><button>搜虎币充值</button></a>
+                        <a href="<?php echo API_URL;?>?mod=acc_recharge"><button>飞虎币充值</button></a>
+                        <a href="<?php echo API_URL;?>?mod=acc_recharge"><button>游戏充值</button></a>
                 </span>
             </h3>
             <!--交易明细-->
