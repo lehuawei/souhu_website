@@ -21,8 +21,6 @@ require(APP_PATH.'common/database.com.php');
 require(APP_PATH.'common/user.com.php');
 //日志系统
 require(APP_PATH.'common/log.com.php');
-//加载城市函数文件
-require(APP_PATH.'common/city.com.php');
 //加载公共函数文件
 require(APP_PATH.'common/common.com.php');
 //应用开始时间

@@ -6,7 +6,8 @@ ini_set('display_errors', 'on');
 date_default_timezone_set('Etc/GMT-8');
 define("DOMAIN","chinasouhu.net");
 define("PwdSecret","asdfds!@#*1234@!#*ASDFasdfQ@#4345asDF");
-define("CDN_SERVER","https://dev.feihutv.cn/company/");
+define("CDN_SERVER","https://img.chinasouhu.net/");
+define("API_URL","https://www.chinasouhu.net/");
 define("WEBNAME","搜虎网络科技");
 define('SmsAppId',"1400027910");
 define('SmsAppKey','9ea2cf4f4f80a668b51142f170ef0db0');
@@ -18,7 +19,7 @@ define('feihuSecret','hEbiRk+8@kRCMJ@aN3UfW[bKk#xiJ01I');
 
 class Config {
 public static $mysql = array(
-			'DB_USR'	=> array('user'=>'root', 'pass'=>'souhu2011', 'host'=>'127.0.0.1', 'name'=>'souhu_usr','port'=>'3306')
+			'DB_USR'	=> array('user'=>'chinasouhu', 'pass'=>'htYhUxqS8%$I', 'host'=>'127.0.0.1', 'name'=>'souhu_usr','port'=>'3306')
 	);
 public static  $redisServers = array(
                 'SYS'=>array(
