@@ -333,7 +333,7 @@
                         <p>移动广告精准投放服务</p>
                     </div>
                 </div>
-                <div class="pic live" title="<?php echo CDN_SERVER;?>?mod=live"   style="background: url(<?php echo CDN_SERVER;?>images/homepage/case_pic6.jpg);cursor: pointer">
+                <div class="pic live" title="<?php echo API_URL;?>?mod=live"   style="background: url(<?php echo CDN_SERVER;?>images/homepage/case_pic6.jpg);cursor: pointer">
                     <div class="pic_in" style="background-color: #f5a517;opacity: 0">
                     <h2>飞虎直播</h2>
                     <p>是一个娱乐化直播演艺社区旨为用</p>

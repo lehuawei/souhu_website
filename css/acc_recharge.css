@@ -308,7 +308,7 @@ select::-ms-expand { display: none; }
     width: 152px;
     height: 90px;
     float: left;
-    background-image: url("../images/recharge_Manage/white.jpg");
+    background-image: url("https://img.chinasouhu.net/images/recharge_Manage/white.jpg");
     text-align: center;
     margin: 0 30px 30px 30px;
     cursor: pointer;
@@ -324,7 +324,7 @@ select::-ms-expand { display: none; }
     line-height:40px;
 }
 .clearfix_ul .active_m{
-    background-image: url("../images/recharge_Manage/orange.jpg");
+    background-image: url("https://img.chinasouhu.net/images/recharge_Manage/orange.jpg");
     color: white;
     font-size: 22px;
 }
@@ -369,7 +369,7 @@ select::-ms-expand { display: none; }
     color:#f3a80f;
 }
 .clearfix_ul .active_sel{
-    background-image: url("../images/recharge_Manage/orange.jpg");
+    background-image: url("https://img.chinasouhu.net/images/recharge_Manage/orange.jpg");
     color: white;
 }
 .clearfix_ul .active_sel input{
@@ -405,22 +405,22 @@ select::-ms-expand { display: none; }
     cursor: pointer;
 }
 .pay_img ul li .aliPay{
-    background-image: url(../images/recharge_Manage/icon-zhifubao.png);
+    background-image: url(https://img.chinasouhu.net/images/recharge_Manage/icon-zhifubao.png);
 }
 .pay_img ul li .weChatpay{
-    background-image: url(../images/recharge_Manage/icon-weixin.png);
+    background-image: url(https://img.chinasouhu.net/images/recharge_Manage/icon-weixin.png);
 }
 .pay_img ul li .unionPay{
-    background-image: url(../images/recharge_Manage/icon-yinlian.png);
+    background-image: url(https://img.chinasouhu.net/images/recharge_Manage/icon-yinlian.png);
 }
 .pay_img ul li.active .aliPay{
-    background-image: url(../images/recharge_Manage/icon-zhifubao-selected.png);
+    background-image: url(https://img.chinasouhu.net/images/recharge_Manage/icon-zhifubao-selected.png);
 }
 .pay_img ul li.active .weChatpay{
-    background-image: url(../images/recharge_Manage/icon-weixin-selected.png);
+    background-image: url(https://img.chinasouhu.net/images/recharge_Manage/icon-weixin-selected.png);
 }
 .pay_img ul li.active .unionPay{
-    background-image: url(../images/recharge_Manage/icon-yinlian_select.png);
+    background-image: url(https://img.chinasouhu.net/images/recharge_Manage/icon-yinlian_select.png);
 }
 /*支付金额与确认支付*/
 .pay_money{

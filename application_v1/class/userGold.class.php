@@ -22,8 +22,8 @@ class C_UserGold
     }
 
     private function getUserGold(){
-        $sql = "SELECT userGold FROM userGold WHERE userId =".$userId;
-        $info = $this->userObj->fetch($sql);
+        $sql = "SELECT userGold FROM userGold WHERE userId =".$this->userId;
+        $info = $this->userObj->userDB()->fetch($sql);
         if(!empty($info))
             $this->userGold = $info->userGold;
     }
@@ -32,7 +32,7 @@ class C_UserGold
         if($addCnt <=0) return false;
         $this->userGold += $addCnt;
         $sql = "UPDATE userGold SET userGold =".$this->userGold." WHERE userId =".$this->userId;
-        $this->userDB()->exec($sql);
+        $this->userObj->userDB()->exec($sql);
         C_Log::insertAddGoldLog($this->userId,$addCnt,$this->userGold,$payType);
         return true;
 	}
@@ -41,7 +41,7 @@ class C_UserGold
          if($this->userGold<$subCnt) return false;
          $this->userGold -= $subCnt;
          $sql = "UPDATE userGold SET userGold =".$this->userGold." WHERE userId =".$this->userId;
-         $this->userDB()->exec($sql);
+         $this->userObj->userDB()->exec($sql);
          C_Log::insertSubGoldLog($this->userId,$subCnt,$this->userGold,$pId);
         return $true;
 	}
