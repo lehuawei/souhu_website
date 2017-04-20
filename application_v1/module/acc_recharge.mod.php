@@ -47,9 +47,9 @@ require(APP_PATH.'common/header.com.php');
             <!--充值中心标题-->
             <p class="tit_rc">
               <span> <strong> 充值中心</strong></span> &nbsp;&nbsp;
-              当前账号:&nbsp; <b class="name">123456</b>
-                &nbsp;&nbsp;账户余额:&nbsp;<b class="sb"> <tt>100</tt> 搜币</b>
-                <span class="no_add">（还未添加账号？<a href="<?php echo CDN_SERVER;?>?mod=user_Center">点此马上前往产品管理添加</a>）</span>
+              当前账号:&nbsp; <b class="name"><?php echo $userInfo->nickName;?></b>
+                &nbsp;&nbsp;账户余额:&nbsp;<b class="sb"> <tt><?php echo $currUser->userGold()->userGold();?></tt> 搜币</b>
+                <span class="no_add">（还未添加账号？<a href="<?php echo API_URL;?>?mod=user_Center">点此马上前往产品管理添加</a>）</span>
             </p>
             <div class="full_gl"></div>
             <!--账号充值部分-->
