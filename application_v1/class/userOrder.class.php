@@ -3,15 +3,15 @@ class C_UserOrder
 {
     /**订单***/
 	public $userId = 0;
-	private $userObj;
+	private $objUser;
 	function __construct($userObj)
 	{
-		$this->userObj = $userObj;
+		$this->objUser = $userObj;
 		$this->userId = $userObj->userId;
 	}
 	function __destruct()
 	{
-        unset($this->userObj);
+        unset($this->objUser);
         unset($this->userId);
 	}
     
@@ -35,7 +35,8 @@ class C_UserOrder
         if($payType == 1){
             $this->objUser->userProdurce()->userPay($userPId,$goldNum,$amount);
         }else{
-             $sql = "INSERT INTO userOrder(userId,orderId,amount,goldNum,pId,shopId,payType,payStatus,orderTime)VALUES(".$this->userId.",'".$billNo."',".$amount.",".$goldNum.",".$shopInfo->pId.",".$shopId.",".$payType.",0,".time().")";
+            $sql = "INSERT INTO userOrder(userId,orderId,amount,goldNum,pId,shopId,payType,payStatus,orderTime)VALUES(".$this->userId.",'".$billNo."',".$amount.",".$goldNum.",".$shopInfo->pId.",".$shopId.",".$payType.",0,".time().")";
+           // var_dump($sql);die;
             $id = $this->objUser->userDB()->execFetchId($sql);
             if($id > 0){
                 unset($shopInfo);
