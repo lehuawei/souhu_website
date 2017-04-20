@@ -40,11 +40,11 @@ class C_Produrce
         $requestData = array('accountNo'=>$bindAccountNo,'passWd'=>$bindPwd,'t'=>$time);
         $sigparams = array('accountNo','passWd','t');
         $info = $this->httpRequest($sigparams,$requestData,'getUserInfo');
-       // var_dump($info);die;
+        //var_dump($info);die;
         $code =  $info["Code"];
         if($code == 0){
             $userInfo =  $info["Data"];
-            $avatar = $userInfo["avatar"];
+            $avatar = $userInfo["Avatar"];
             $nickname = $userInfo["Nickname"];
             $gender = $userInfo["Gender"];
             $sql = "INSERT INTO userProdurce(userId,pId,puserId,gender,pHeadUrl,pnickName)VALUES(".$this->userId.",".$pId.",".$userInfo["UserId"].",".$gender.",'".$avatar."','".$nickname."')";
