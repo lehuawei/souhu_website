@@ -74,7 +74,6 @@ require(APP_PATH.'common/header.com.php');
             <li><span>产品管理</span></li>
             <li><span>账号安全</span></li>
             <li><span>搜虎币</span></li>
-           <!-- <li><span>我的消息</span></li>-->
         </ul>
         <!--导航内容-->
         <!--1 个人信息-->
@@ -129,9 +128,6 @@ require(APP_PATH.'common/header.com.php');
         <div class="pro_Man user_ul_div" style="display: none">
             <ul class="game_ul">
                 <li class="active_g">飞虎直播</li>
-               <!-- <li>游戏二</li>
-                <li>游戏三</li>
-                <li>游戏四</li>-->
             </ul>
               <?php
             //获取用户的产品列表
@@ -155,10 +151,6 @@ require(APP_PATH.'common/header.com.php');
                 </ul>
                 <span class="add_img"><img src="https://dev.feihutv.cn/company/images/recharge_Manage/icon-and.png" alt=""> 添加账号</span>
             </div>
-           <!--
-        <div class="game" style="display: none"><span>游戏2</span></div>
-        <div class="game" style="display: none"><span>游戏3</span></div>
-        <div class="game" style="display: none"><span>游戏4</span></div>-->
         </div>
 
     <!--3账号安全-->
@@ -169,32 +161,19 @@ require(APP_PATH.'common/header.com.php');
                     <a href="<?php echo CDN_SERVER;?>?mod=modify_pass" target="_blank"><i>修改密码</i></a>
                 </p>
             </div>
-            <!--设置隐私-->
-           <!-- <div class="reliable_index set_secret">
-                <h3>设置隐私</h3>
-            </div>
-            <ul class="secret_ul">
-                <li><img src="<?php /*echo CDN_SERVER;*/?>images/account_Safe/icon-weixin.png" alt=""><h4>绑定微信账号</h4></li>
-                <li><img src="<?php /*echo CDN_SERVER;*/?>images/account_Safe/icon-weibo.png" alt=""><h4>绑定微博账号</h4></li>
-                <li><img src="<?php /*echo CDN_SERVER;*/?>images/account_Safe/icon-qq-selected.png" alt=""><h4><em>Muse </em>[解绑]</h4></li>
-            </ul>-->
             <!--付款方式-->
             <div class="reliable_index pay_way">
                 <h3>付款方式</h3>
             </div>
             <ul class="payway_ul">
                 <li class="active_p">
-                    <span class="icon"></span><!--<img src="images/account_Safe/icon-selected.png" alt="" class="icon_img">-->
-                    <span class="alipay"></span><!--<img class="pay_img"src="images/account_Safe/icon-zhifubao.png" alt="">-->
+                    <span class="icon"></span>
+                    <span class="alipay"></span>
                 </li>
                 <li>
                     <span class="icon"></span>
                     <span class="weixin"></span>
                 </li>
-              <!--  <li>
-                    <span class="icon"></span>
-                    <span class="yinlian"></span>
-                </li>-->
                 <h3>设置默认方式</h3>
             </ul>
         </div>
@@ -272,8 +251,6 @@ require(APP_PATH.'common/header.com.php');
                 </tr>
             </table>
         </div>
-        <!--5我的消息-->
-        <!--去掉-->
     </div>
 </div>
 </article>
@@ -281,18 +258,19 @@ require(APP_PATH.'common/header.com.php');
 <?php
 require(APP_PATH.'common/footer.com.php');
 ?>
-</body>
+<!--引入js-->
 <script src="<?php echo CDN_SERVER;?>js/formValidate.js"></script>
 <script src="<?php echo CDN_SERVER;?>js/common.js"></script>
 <script language="javascript">
     $(function(){
-        var ifStrong=localStorage.ifStrong;
-        if(ifStrong==true){
+        //验证密码强度
+
+        if(localStorage.ifStrong==true){
             $("#chgCol_span").addClass('orange_span').removeClass('grey_span');
         }
-        //console.log(ifStrong);
+        console.log('登录密码是否强'+localStorage.ifStrong);
         var modify_ifStrong=localStorage.modify_ifStrong;
-        console.log(modify_ifStrong);
+        console.log('修改密码是否强'+modify_ifStrong);
         switch(modify_ifStrong)
         {
             case "true":
@@ -303,6 +281,7 @@ require(APP_PATH.'common/footer.com.php');
                 break;
             default:
         }
+        //拉取用户信息（获得城市列表）
         var data = {};
         data.action = "getUserInfo";
         $.post(url,data,function(result){
@@ -351,9 +330,7 @@ require(APP_PATH.'common/footer.com.php');
             },settings);
             $("#city").citySelect(settings);
         });
-        // $(".form_four").submit(function(){
-
-        // });
     });
 </script>
+</body>
 </html>

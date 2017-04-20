@@ -18,7 +18,7 @@ else{
 }
 ?>
 <header>
-    <div class="head bs">
+    <div class="head ">
         <div class="logo"><img src="<?php echo CDN_SERVER;?>images/common/logo_w.png" alt="" class="logo"></div>
         <div class="nav_span">
             <span class="nav_a"><a href="#" class="<?php if($mod == 'index'){echo "orange";}?> first" title="<?php echo CDN_SERVER;?>?mod=index" >首页</a></span>

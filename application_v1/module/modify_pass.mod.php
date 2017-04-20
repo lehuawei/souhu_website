@@ -63,8 +63,8 @@ require(APP_PATH.'common/header.com.php');
     </div>
 </article>
 <div class="chk_log" style="display: none">
-    <p><img src="<?php echo CDN_SERVER;?>images/common/green_reminder_03.png" alt="">&nbsp;&nbsp;您好，您需要先登录才能继续本操作</p><br>
-    <p><a href="<?php echo CDN_SERVER;?>?mod=reg_log">请点此链接进行登录或注册</a></p>
+    <p><img src="<?php echo CDN_SERVER;?>images/common/green_reminder_03.png" alt="">&nbsp;&nbsp;您好，您已经成功修改密码</p><br>
+    <p><a href="<?php echo CDN_SERVER;?>?mod=reg_log">请点此链接进行重新登录</a></p>
 </div>
 <!--底部导航-->
 <?php
