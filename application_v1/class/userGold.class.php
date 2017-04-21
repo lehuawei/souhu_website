@@ -47,7 +47,7 @@ class C_UserGold
 	}
     public function prePay($value)
 	{
-		return ($this->userGold >= $value);
+        return $this->userGold>=$value;
 	}
 }
 ?>
