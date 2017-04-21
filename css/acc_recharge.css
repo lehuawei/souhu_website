@@ -424,15 +424,17 @@ select::-ms-expand { display: none; }
 }
 /*支付金额与确认支付*/
 .pay_money{
-    width: 350px;
-    float: right;
+    width: 100%;
     height: auto;
     display: inline-block;
-    margin-right: 10%;
+    margin-top: 2%;
 }
 .pay_money h4{
-    display: inline-block;
+    float: right;
+    clear: both;
+    margin-right: 25%;
 }
+
 .pay_money h4 em{
     color: #f5a517;
     font-size: 22px;
@@ -440,7 +442,7 @@ select::-ms-expand { display: none; }
     line-height: 48px;
 }
 .pay_money .surePay{
-    display: inline-block;
+    display: block;
     float: right;
     width: 152px;
     height: 48px;
@@ -451,13 +453,14 @@ select::-ms-expand { display: none; }
     border-radius: 6px;
     cursor: pointer;
     background-color: #f5a517;
-    margin-right: 20px;
+    margin-right: 25%;
     border: none;
+    clear: both;
 }
 /*充值比例字体*/
 .bl{
     color: red;
-    margin-left:100px ;
+    margin-left:130px ;
 }
 /*检测用户是否登录的用户框*/
 .chk_log{

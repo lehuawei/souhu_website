@@ -19,7 +19,7 @@ if(C_CurrUser::isLogin()){
 ?>
 <header>
     <div class="head ">
-        <div class="logo"><img src="<?php echo CDN_SERVER;?>images/common/logo_w.png" alt="" class="logo"></div>
+        <div class="logo"><a href="<?php echo API_URL;?>?mod=index"> <img src="<?php echo CDN_SERVER;?>images/common/logo_w.png" alt="" class="logo"></a></div>
         <div class="nav_span">
             <span class="nav_a"><a href="#" class="<?php if($mod == 'index'){echo "orange";}?> first" title="<?php echo API_URL;?>?mod=index" >首页</a></span>
             <span class="nav_a"><a href="#" class="<?php if($mod == 'acc_recharge'){echo "orange";}?> accountRecharge" title="<?php echo API_URL;?>?mod=acc_recharge">账户充值</a></span>

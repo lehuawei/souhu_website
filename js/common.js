@@ -3,7 +3,7 @@ $(function () {
  //   alert(ifStrong);
         //点击logo进入首页
        $(".logo").click(function(){
-           window.location.replace("index.html");
+           window.location.replace("?mod=index.html");
        });
        //顶部导航点击效果
         $("header .nav_span .nav_a a").bind("click",function(event){

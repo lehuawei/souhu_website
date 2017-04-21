@@ -247,6 +247,16 @@ require(APP_PATH.'common/footer.com.php');
 <script src="<?php echo CDN_SERVER;?>js/common.js"></script>
 <script language="javascript">
     $(function(){
+        //点击添加账户
+        $(".add_img").click(function () {
+            $(".pop_cho").css("display","block");
+            $(".opacity_color").css("display",'block');
+        });
+        //点击关闭
+        $(".close").click(function(){
+            $(this).parent().css("display","none");
+            $(".opacity_color").css("display",'none');
+        });
         //验证密码强度
         if(localStorage.ifStrong==true){
             $("#chgCol_span").addClass('orange_span').removeClass('grey_span');
