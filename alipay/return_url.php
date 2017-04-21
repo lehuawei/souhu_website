@@ -1,4 +1,5 @@
 <?php
+require_once("../inc.php");
 /* * 
  * 功能：支付宝页面跳转同步通知页面
  * 版本：3.3
@@ -31,27 +32,41 @@ if($verify_result) {//验证成功
 	//——请根据您的业务逻辑来编写程序（以下代码仅作参考）——
     //获取支付宝的通知返回参数，可参考技术文档中页面跳转同步通知参数列表
 
-	//商户订单号
+	//商户订单号
+
 	$out_trade_no = $_GET['out_trade_no'];
-
-	//支付宝交易号
+	//支付宝交易号
 	$trade_no = $_GET['trade_no'];
-
 	//交易状态
 	$trade_status = $_GET['trade_status'];
-
-
-    if($_GET['trade_status'] == 'TRADE_FINISHED' || $_GET['trade_status'] == 'TRADE_SUCCESS') {
+	$trade_status = $_GET['trade_status'];
+	$db = DB::connect('DB_USR');
+	$sql = "SELECT * FROM userorder WHERE orderId = '".$out_trade_no."'";
+	$info = $db->fetch($sql);
+	if(empty($info)){
+		echo "没找到订单信息";die;
+	}
+	$userId = $info->userId;
+	$goldNum = $info->goldNum;
+	$id = $info->id;
+	$payStatus = $info->payStatus;
+    if($trade_status == 'TRADE_FINISHED' || $trade_status == 'TRADE_SUCCESS') {
 		//判断该笔订单是否在商户网站中已经做过处理
-			//如果没有做过处理，根据订单号（out_trade_no）在商户网站的订单系统中查到该笔订单的详细，并执行商户的业务程序
-			//如果有做过处理，不执行商户的业务程序
+		//如果没有做过处理，根据订单号（out_trade_no）在商户网站的订单系统中查到该笔订单的详细，并执行商户的业务程序
+		//如果有做过处理，不执行商户的业务程序
+		//充值成功
+		if($payStatus!="1"){
+			$sql = "UPDATE userorder SET payStatus = '1',payTime = ".time()." WHERE id =".$id;
+			$db->exec($sql);
+			class_exists('C_User') or require(APP_PATH.'class/user.class.php');
+			$currUser = new C_User($userId);
+			$currUser->userGold()->addGold($goldNum,1);
+		}
     }
     else {
-      echo "trade_status=".$_GET['trade_status'];
-    }
-		
+		$sql = "UPDATE userorder SET payStatus = '".$trade_status."',payTime = ".time()."  WHERE id =".$id;
+    }	
 	echo "验证成功<br />";
-
 	//——请根据您的业务逻辑来编写程序（以上代码仅作参考）——
 	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

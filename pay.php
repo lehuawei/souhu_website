@@ -5,17 +5,17 @@
 **/
 
 require_once('inc.php');
-if(!empty($_POST)) die;
+if(empty($_POST)) die('提交数据为空');
 if(!C_CurrUser::isLogin()){
 	die('请先登录');
 }
+
 if(!isset($_POST['payType']) || !isset($_POST['price']) || !isset($_POST['userPId'])){
 	die('非法请求');
 }
 $payType = $_POST['payType'];
 $price = $_POST['price'];
 $userPId = $_POST['userPId'];
-
 if(empty($price) || $price<1){
 	die('非法请求');
 }
@@ -33,9 +33,10 @@ if($userPId<0){
 *1003:生成订单号失败
 *1004:微信订单生成失败
 */
-
+//payType=2&price=10&userPId=0
 
 class_exists('C_User') or require(APP_PATH.'class/user.class.php');
+
 $currUser = new C_User(C_CurrUser::$userId);
 if($payType == 1){
     //搜币给直播充值
@@ -62,10 +63,12 @@ else{
     }else
         $shopName = $num."飞虎币";
     $sql = "INSERT INTO userOrder(userId,orderId,amount,goldNum,pId,shopId,payType,payStatus,orderTime)VALUES(".C_CurrUser::$userId.",'".$billNo."',".$price.",".$num.",".$userPId.",".$price.",".$payType.",0,".time().")";
+    //var_dump($sql);
     $id = $db->execFetchId($sql);
     if($id>0){
         if($payType == 2){
             //支付宝
+            $price = 0.01;
             require_once(ROOT_PATH."alipay/alipay.config.php");
             require_once(ROOT_PATH."alipay/lib/alipay_submit.class.php");
             $parameter = array(
@@ -89,26 +92,37 @@ else{
             echo $html_text;
         }else{
             //微信支付
-            require_once ROOT_PATH."wxpay/lib/WxPay.Api.php";
-            require_once ROOT_PATH."wxpay/pay/WxPay.NativePay.php";
-            require_once ROOT_PATH.'wxpay/pay/log.php';
+            $price = 1;
+             
+            require_once(ROOT_PATH."wxpay/lib/WxPay.Api.php");
+            require_once(ROOT_PATH."wxpay/pay/WxPay.NativePay.php");
+            require_once(ROOT_PATH.'wxpay/pay/log.php');
+            $notify = new NativePay();
             $input = new WxPayUnifiedOrder();
-            $input->SetBody("");
-            $input->SetAttach("");
+            $input->SetBody($shopName);
+            $input->SetAttach('');
             $input->SetOut_trade_no($billNo);
             $input->SetTotal_fee($price);
             $input->SetTime_start(date("YmdHis"));
             $input->SetTime_expire(date("YmdHis", time() + 600));
-            $input->SetGoods_tag("");
+            $input->SetGoods_tag('');
             $input->SetNotify_url("https://www.chinasouhu.net/wxpay/pay/notify.php");
             $input->SetTrade_type("NATIVE");
             $input->SetProduct_id($price);
             $result = $notify->GetPayUrl($input);
+           // var_dump($result);die;
             $url = $result["code_url"];
+            $returnData = new stdclass;
             if(empty($url)){
-                echo "1004";exit;
+                $returnData->code = 1004;
+                echo json_encode($returnData);exit;
+//                echo "1004";exit;
             }
-            echo "https://www.chinasouhu.net/wxpay/pay//qrcode.php?data=".urlencode($url);exit;
+            $returnData->code = 0;
+            $returnData->billNo = $billNo;
+            $returnData->url = "https://www.chinasouhu.net/wxpay/pay//qrcode.php?data=".urlencode($url);
+            echo json_encode($returnData);exit;
+            
         }
     }
     else{

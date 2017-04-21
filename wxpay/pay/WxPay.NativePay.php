@@ -1,5 +1,5 @@
 <?php
-require_once "../lib/WxPay.Api.php";
+require_once "/data/www/chinasouhu/wxpay/lib/WxPay.Api.php";
 
 /**
  * 
