@@ -28,12 +28,13 @@ if(!empty($userInfo)){
 <!--弹出框的背景-->
 <div class="opacity_color"></div>
 <!--微信支付弹出框-->
-<div class="wePay_pop">
+<div class="wePay_pop" id="div_wxpay">
     <div class="close"><img src="<?php echo CDN_SERVER;?>images/recharge_Manage/icon-close.png" alt=""></div>
     <h2>微信扫一扫支付马上完成</h2>
+    <p id="wx_result"></p>
     <p >交易金额 : <span class="account"> 100.00元</span></p>
     <p>交易号 : <span class="acc_num" id="wx_billNo"> XZ201704191458401798</span></p>
-    <img src="<?php echo CDN_SERVER;?>images/common/wePay.png" id="wx_img" alt="">
+    <img src="<?php echo CDN_SERVER;?>images/common/wePay.png" id="wx_img" width="200px;" height="200px" alt="">
     <h3>请使用微信扫描二维码以完成支付</h3>
 </div>
 <!--未选择账户提示框-->
@@ -98,7 +99,7 @@ if(!empty($userInfo)){
                     <ul class="person_ul">
                         <li>
                             <span class="pro_span">官网账号:<?php echo $userInfo->nickName;?></span>
-                            <img class="che_img" src="<?php echo CDN_SERVER;?>images/recharge_Manage/has_che.png">
+                            <img class="che_img" src="<?php echo CDN_SERVER;?>images/recharge_Manage/has_che.png" value="0">
                         </li>
                         <?php
                             if(!empty($userProdurceList)){
@@ -106,7 +107,7 @@ if(!empty($userInfo)){
                         ?>
                              <li class="mg_lt">
                                 <span class="pro_span">飞虎账号:<?php echo $row->pnickName;?></span>
-                                <img class="che_img" src="<?php echo CDN_SERVER;?>images/recharge_Manage/has_che.png" hidden>
+                                <img class="che_img" src="<?php echo CDN_SERVER;?>images/recharge_Manage/has_che.png" value="<?php echo $row->id;?>" hidden>
                             </li>
                         <?
                                 }
@@ -219,7 +220,7 @@ if(!empty($userInfo)){
                         ?>
                              <li>
                                 <span class="pro_span">飞虎账号:<?php echo $row->pnickName;?></span>
-                                <img class="che_img" src="<?php echo CDN_SERVER;?>images/recharge_Manage/has_che.png">
+                                <img class="che_img" src="<?php echo CDN_SERVER;?>images/recharge_Manage/has_che.png" value="<?php echo $row->id;?>">
                             </li>
                         <?
                                 }
@@ -275,6 +276,7 @@ require(APP_PATH.'common/footer.com.php');
 <script src="<?php echo CDN_SERVER;?>js/common.js"></script>
 <script src="<?php echo CDN_SERVER;?>js/formValidate.js"></script>
 <script language="javascript">
+var myIntval = null;
 $(function(){
      /*充值管理部分*/
     //充值选项卡
@@ -287,12 +289,15 @@ $(function(){
         if(index_z == 0){
            $('#payType').val(3);
            $('#price').val(10);
+           $('#userPId').val(0);
         }else if(index_z == 1){
            $('#payType').val(2);
            $('#price').val(10);
+           $('#userPId').val(0);
         }else{
            $('#payType').val(1);
            $('#price').val(1000);
+           $('#userPId').val(1);
         }
 
     });
@@ -324,9 +329,10 @@ $(function(){
             if(code == "0"){
                 $(".account").html(mr_money+'元');
                 $('#wx_img').attr('src',jsonData.url);
-                $('#wx_billNo').html(jsonData.billNo);
+                $('#wx_billNo').html(jsonData.prepay_id);
                 $(".wePay_pop").css("display","block");
                 $(".opacity_color").css("display",'block');
+               myIntval = setInterval('querywxorder('+jsonData.billNo+')',3000);
             }
             else{
                 //
@@ -405,7 +411,7 @@ $(function(){
 
         }else{
             $(this).children('img').css("display","none");
-            $('#userPId').val($(this).children('img').val());
+            $('#userPId').val(0);
         }
     });
     //点击不同充值金额 金额支付
@@ -457,6 +463,40 @@ $(function(){
         });
     }
 });
+function querywxorder(billNo){
+    if(billNo == null || billNo.length == 0) return;
+    $.post('<?php echo API_URL;?>wxorderquery.php?out_trade_no='+billNo,null,function(result){
+        if(result == 'SUCCESS'){
+            $('#wx_result').html('支付成功!');
+            //关闭窗口
+            clearInterval(myIntval);
+            $('#div_wxpay').css("display","none");
+            window.location.reload();
+        }else if(result == 'REFUND'){
+             $('#wx_result').html('转入退款!');
+             clearInterval(myIntval); 
+        }
+        else if(result == 'NOTPAY'){
+             $('#wx_result').html('请扫码支付!');
+            
+        }
+        else if(result == 'CLOSED'){
+             $('#wx_result').html('已关闭!');
+             clearInterval(myIntval); 
+        }
+        else if(result == 'REVOKED'){
+             $('#wx_result').html('已撤销!');
+             clearInterval(myIntval); 
+        }
+         else if(result == 'USERPAYING'){
+             $('#wx_result').html('用户支付中!');
+        }
+         else if(result == 'PAYERROR'){
+             $('#wx_result').html('支付失败!');
+             clearInterval(myIntval); 
+        }
+    });
+}
 </script>
 </body>
 </html>

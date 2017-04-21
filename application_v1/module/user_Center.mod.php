@@ -166,7 +166,7 @@ require(APP_PATH.'common/header.com.php');
             <div class="reliable_index ">
                 <p>搜虎币</p>
             </div>
-            <h1>500</h1>
+            <h1><?php echo $currUser->userGold()->userGold();?></h1>
             <h3 class="sh_b">
                 <span style="margin-left: 10px">搜币</span>
                 <span class="coin_cz">
@@ -203,7 +203,12 @@ require(APP_PATH.'common/header.com.php');
                         <span style="color: #b6b6b6;font-size: 14px" class="all">全选</span>
                     </th>
                 </tr>
-                <tr>
+
+                <?php
+
+                ?>
+
+                <!--<tr>
                     <td class="one">234134</td>
                     <td class="two">2017/1/20 20:00:00</td>
                     <td class="three">虎币</td>
@@ -232,7 +237,7 @@ require(APP_PATH.'common/header.com.php');
                          <span  class="che_a">
                         <input hidden type="checkbox"  class="che_ipt" checked /></span>
                     </td>
-                </tr>
+                </tr>-->
             </table>
         </div>
     </div>

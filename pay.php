@@ -68,7 +68,7 @@ else{
     if($id>0){
         if($payType == 2){
             //支付宝
-            $price = 0.01;
+            //$price = 0.01;
             require_once(ROOT_PATH."alipay/alipay.config.php");
             require_once(ROOT_PATH."alipay/lib/alipay_submit.class.php");
             $parameter = array(
@@ -92,7 +92,7 @@ else{
             echo $html_text;
         }else{
             //微信支付
-            $price = 1;
+            //$price = $price*100;
              
             require_once(ROOT_PATH."wxpay/lib/WxPay.Api.php");
             require_once(ROOT_PATH."wxpay/pay/WxPay.NativePay.php");
@@ -102,7 +102,7 @@ else{
             $input->SetBody($shopName);
             $input->SetAttach('');
             $input->SetOut_trade_no($billNo);
-            $input->SetTotal_fee($price);
+            $input->SetTotal_fee($price*100);
             $input->SetTime_start(date("YmdHis"));
             $input->SetTime_expire(date("YmdHis", time() + 600));
             $input->SetGoods_tag('');
@@ -118,9 +118,12 @@ else{
                 echo json_encode($returnData);exit;
 //                echo "1004";exit;
             }
+            $prepay_id = $result['prepay_id'];
+            //wx20170421190502ffdde12c230295687298
             $returnData->code = 0;
             $returnData->billNo = $billNo;
-            $returnData->url = "https://www.chinasouhu.net/wxpay/pay//qrcode.php?data=".urlencode($url);
+            $returnData->prepay_id=$prepay_id;
+            $returnData->url = "https://www.chinasouhu.net/wxpay/pay/qrcode.php?data=".urlencode($url);
             echo json_encode($returnData);exit;
             
         }
