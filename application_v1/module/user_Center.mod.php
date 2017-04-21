@@ -2,7 +2,6 @@
 //鉴权
 if(!defined('ACCESS_KEY')){header("HTTP/1.1 404 Not Found");die;}
 class_exists('C_User') or require(APP_PATH.'class/user.class.php');
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -79,21 +78,6 @@ require(APP_PATH.'common/header.com.php');
         <!--1 个人信息-->
         <div class="user_info user_ul_div"  style="display:block">
             <div class="info_one">
-                <img class="tx_img" src="<?php echo CDN_SERVER;?>images/recharge_Manage/girl.jpg" alt="" width="132px" height="132px" >
-                <table>
-                    <tr>
-                        <td style="font-size: 20px">Muse</td>
-                    </tr>
-                    <tr>
-                        <td>飞虎账号</td>
-                    </tr>
-                    <tr>
-                        <td>账户余额: <em>10</em>元 <a href="<?php echo CDN_SERVER;?>?mod=acc_recharge"><img src="<?php echo CDN_SERVER;?>images/person_Info/icon-top-up.png" alt=""> </a></td>
-                    </tr>
-                    <tr>
-                        <td>今天天气好晴朗</td>
-                    </tr>
-                </table>
                 <span class="edit_datum"><img src="<?php echo CDN_SERVER;?>images/person_Info/icon-modification.png" alt="">编辑资料</span>
             </div>
             <div class="info_two">
@@ -158,7 +142,7 @@ require(APP_PATH.'common/header.com.php');
              <!--安全指数-->
             <div class="reliable_index">
                 <p>安全指数: <span class="orange_span"></span> <span class="orange_span"></span> <span class="grey_span" id="chgCol_span"></span>
-                    <a href="<?php echo CDN_SERVER;?>?mod=modify_pass" target="_blank"><i>修改密码</i></a>
+                    <a href="<?php echo API_URL;?>?mod=modify_pass" target="_blank"><i>修改密码</i></a>
                 </p>
             </div>
             <!--付款方式-->
@@ -186,9 +170,9 @@ require(APP_PATH.'common/header.com.php');
             <h3 class="sh_b">
                 <span style="margin-left: 10px">搜币</span>
                 <span class="coin_cz">
-                        <a href="<?php echo CDN_SERVER;?>?mod=acc_recharge" class=""><button>搜虎币充值</button></a>
-                        <a href="<?php echo CDN_SERVER;?>?mod=acc_recharge"><button>飞虎币充值</button></a>
-                        <a href="<?php echo CDN_SERVER;?>?mod=acc_recharge"><button>游戏充值</button></a>
+                        <a href="<?php echo API_URL;?>?mod=acc_recharge" class=""><button>搜虎币充值</button></a>
+                        <a href="<?php echo API_URL;?>?mod=acc_recharge"><button>飞虎币充值</button></a>
+                        <a href="<?php echo API_URL;?>?mod=acc_recharge"><button>游戏充值</button></a>
                 </span>
             </h3>
             <!--交易明细-->
@@ -264,7 +248,6 @@ require(APP_PATH.'common/footer.com.php');
 <script language="javascript">
     $(function(){
         //验证密码强度
-
         if(localStorage.ifStrong==true){
             $("#chgCol_span").addClass('orange_span').removeClass('grey_span');
         }

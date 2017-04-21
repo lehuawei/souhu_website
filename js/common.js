@@ -367,10 +367,6 @@ $(function () {
             }
         });
     });
-
-   
-    //点击选择不同的支付方式
-
      //获取屏幕宽度
     var screenWidth=$(document.body).outerWidth(true);
     if(screenWidth<1280){
