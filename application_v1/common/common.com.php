@@ -408,24 +408,26 @@ class C_Com
 		}
 		return $providerId;
 	}
-	// public static function getUserDeviceTable($userId)
-	// {
-	// 	return 'zoo_userDevice_'.(floor($userId/10)%10);
-	// }
-	/***
-	*获取当前服的详细信息
-	**/
-	// public static function  getServerInfo()
-	// {
-	// 	foreach ($GLOBALS['serverList'] as $serverInfo) {
-	// 		if($serverInfo['serverId']==$GLOBALS['server']){
-	// 			return $serverInfo;
-	// 		}
-	// 	}
-	// 	return array();
+
+	public static function encrypt($string){
+		$pu_key = file_get_contents(ROOT_PATH.'key/public.key');
+		$data = '';
+		$decrypted = '';
+		if (openssl_public_encrypt((string)$string, $encrypted, $pu_key));
+			$data = rawurlencode(base64_encode($encrypted));
+		return $data;
 		
-	// }
-	
+	}
+	public static function decrypt($string){
+		$string = rawurldecode($string);
+		$pi_key = file_get_contents(ROOT_PATH.'key/private.key');
+		$data = '';
+		$decrypted = '';
+		if (openssl_private_decrypt(base64_decode((string)$string), $decrypted, $pi_key)){
+    		$data = $decrypted;		
+		}
+		return $data;
+	}
 }
 
 ?>

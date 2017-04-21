@@ -283,13 +283,20 @@ $(function(){
         $(".selAcc_pop").css("display",'none');
         $(".opacity_color").css("display",'none');
     });
+<<<<<<< HEAD
+=======
+   // $('article .recharge_wh .tit_rc b.name').html(name);
+>>>>>>> 8f4387ba125ee9d3a57253c4843ef44ca3cf80c3
     //点击微信支付
     $('.weiPay').click(function () {
         $(".account").html(mr_money+'元');
         //确认用户是否选择账户
         var is_vi=$('.person_ul li img').is(":visible");
         if(!is_vi){
+<<<<<<< HEAD
             $('.selAcc_pop h3 strong').html('请选择所要充值的账号!');
+=======
+>>>>>>> 8f4387ba125ee9d3a57253c4843ef44ca3cf80c3
             $(".selAcc_pop").css("display",'block');
             $(".opacity_color").css("display",'block');
         }else{
@@ -297,12 +304,22 @@ $(function(){
             $(".opacity_color").css("display",'block');
         }
     });
+<<<<<<< HEAD
 
     //点击弹出框关闭按钮
+=======
+    //点击添加账户
+    $(".add_img").click(function () {
+        $(".pop_cho").css("display","block");
+        $(".opacity_color").css("display",'block');
+    });
+    //点击关闭
+>>>>>>> 8f4387ba125ee9d3a57253c4843ef44ca3cf80c3
     $(".close").click(function(){
         $(this).parent().css("display","none");
         $(".opacity_color").css("display",'none');
     });
+<<<<<<< HEAD
     //点击选择不同账户
     $(".person_ul li").click(function () {
         var index_c=$(this).index();
@@ -311,6 +328,16 @@ $(function(){
         }
         else if(index_c==1){
             $('.coin_txt').html("飞虎币");
+=======
+    //点击选择账户部分
+    $(".person_ul li").click(function () {
+        var index_c=$(this).index();
+        if(index_c==0){
+             $('.get_sb').html("充值成功后，您将获得1000搜币");
+        }
+        else if(index_c==1){
+            $('.get_sb').html("充值成功后，您将获得1000飞虎币");
+>>>>>>> 8f4387ba125ee9d3a57253c4843ef44ca3cf80c3
         }
         var if_see=$(this).children('img').is(':visible');
         if(!if_see){
@@ -322,7 +349,11 @@ $(function(){
             $(this).children('img').css("display","none");
         }
     });
+<<<<<<< HEAD
     //点击不同充值金额 金额支付
+=======
+    //点击不同充值金额
+>>>>>>> 8f4387ba125ee9d3a57253c4843ef44ca3cf80c3
     mr_money= $(".pay_money em").html();
     $(".clearfix_ul .active_li").click(function () {
         if(!$(this).hasClass("active_m")){
@@ -332,6 +363,7 @@ $(function(){
         var rmb=$(this).children(".money").attr("value");
         $(".pay_money em").html(rmb);
         mr_money= $(".pay_money em").html();
+<<<<<<< HEAD
         $(".bl .coin_num").html(rmb*100);
     });
     //搜币支付
@@ -371,6 +403,26 @@ $(function(){
             }
         });
     }
+=======
+        // $(".account").html(rmb);
+    });
+    //点击自行输入充值金额
+    var $coinIn=$(".user_sel .sou_coin_input")
+    $coinIn.focus(function () {
+        $(".sou_coin_input").val("");
+        $(".user_sel").addClass("active_sel");
+        $(".clearfix_ul li").removeClass("active_m");
+    });
+    $coinIn.blur(function () {
+        var user_coin=$coinIn.val();
+        $coinIn.val(user_coin+'搜币');
+        result_money=user_coin*0.01;
+        $(".user_sel .money_input").val(result_money+'元');
+        $(".pay_money em").html(result_money);
+        mr_money= $(".pay_money em").html();
+    });
+    //点击选择不同的支付方式
+>>>>>>> 8f4387ba125ee9d3a57253c4843ef44ca3cf80c3
 });
 </script>
 </body>

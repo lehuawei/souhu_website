@@ -14,7 +14,7 @@
  * 该页面调试工具请使用写文本函数logResult，该函数已被默认关闭，见alipay_notify_class.php中的函数verifyNotify
  * 如果没有收到该页面返回的 success 信息，支付宝会在24小时内按一定的时间策略重发通知
  */
-
+require("../inc.php");
 require_once("alipay.config.php");
 require_once("lib/alipay_notify.class.php");
 
@@ -31,10 +31,12 @@ if($verify_result) {//验证成功
 	
     //获取支付宝的通知返回参数，可参考技术文档中服务器异步通知参数列表
 	
-	//商户订单号
+	//商户订单号
+
 	$out_trade_no = $_POST['out_trade_no'];
 
-	//支付宝交易号
+	//支付宝交易号
+
 	$trade_no = $_POST['trade_no'];
 
 	//交易状态

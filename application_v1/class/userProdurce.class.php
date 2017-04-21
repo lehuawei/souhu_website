@@ -72,7 +72,7 @@ class C_Produrce
         //获取用户的产品信息
         $produceInfo = $this->getUserProdurceInfoById($userPId);
         if(empty($produceInfo)){
-             return C_Com::apiResult(-3003);
+             return false;
         }
         $pUserId = $produceInfo->puserId;
         $time = time();
@@ -86,7 +86,7 @@ class C_Produrce
             return $ret;
         }
         else{
-            return C_Com::apiResult(-3004);
+            return false;
         }
     }
 

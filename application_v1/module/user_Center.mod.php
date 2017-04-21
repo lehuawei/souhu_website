@@ -125,7 +125,7 @@ require(APP_PATH.'common/header.com.php');
                     ?>
                          <li>
                         <span class="hp_span"><img src="<?php echo $row->pHeadUrl;?>" alt=""></span>
-                            <span class="pro_span"><h3><?php echo $row->pnickName;?><img src="https://dev.feihutv.cn/company/images/recharge_Manage/<?php if($row->gender == 0){echo "girl";}else{ echo "boy";}?>.png" alt=""> </h3>飞虎账号:123456</span>
+                            <span class="pro_span"><h3><?php echo $row->pnickName;?><img src="<?php echo CDN_SERVER;?>images/recharge_Manage/<?php if($row->gender == 0){echo "girl";}else{ echo "boy";}?>.png" alt=""> </h3>飞虎账号:123456</span>
                         </li>
                     <?
 
@@ -133,7 +133,7 @@ require(APP_PATH.'common/header.com.php');
                         }
                     ?>
                 </ul>
-                <span class="add_img"><img src="https://dev.feihutv.cn/company/images/recharge_Manage/icon-and.png" alt=""> 添加账号</span>
+                <span class="add_img"><img src="<?php echo CDN_SERVER;?>images/recharge_Manage/icon-and.png" alt=""> 添加账号</span>
             </div>
         </div>
 

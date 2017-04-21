@@ -1,13 +1,37 @@
 <?php
 
-
 ini_set('date.timezone','Asia/Shanghai');
 //error_reporting(E_ERROR);
 
+require_once("../../inc.php");
 require_once "../lib/WxPay.Api.php";
 require_once "WxPay.NativePay.php";
 require_once 'log.php';
 
+if(!empty($_POST)) die;
+if(!C_CurrUser::isLogin()){
+	die('请先登录');
+}
+if(!isset($_POST['payType']) || !isset($_POST['price']) || !isset($_POST['userPId'])){
+	die('非法请求');
+}
+$payType = $_POST['payType'];
+$price = $_POST['price'];
+$userPId = $_POST['userPId'];
+
+if(empty($price) || $price<1){
+	die('非法请求');
+}
+if(empty($payType) || $payType<1){
+	die('非法请求');
+}
+if($userPId<0){
+	die('非法请求');
+}
+class_exists('C_User') or require(APP_PATH.'class/user.class.php');
+$currUser = new C_User(C_CurrUser::$userId);
+$info = $currUser->userOrder()->userOrder($payType,$price,$num);
+if(empty($info)) return false;
 /**
  * 流程：
  * 1、组装包含支付信息的url，生成二维码
@@ -17,8 +41,8 @@ require_once 'log.php';
  * 5、支付完成之后，微信服务器会通知支付成功
  * 6、在支付成功通知中需要查单确认是否真正支付成功（见：notify.php）
  */
-$notify = new NativePay();
-$url1 = $notify->GetPrePayUrl("123456789");
+// $notify = new NativePay();
+// $url1 = $notify->GetPrePayUrl("123456789");
 
 //模式二
 /**
@@ -29,22 +53,23 @@ $url1 = $notify->GetPrePayUrl("123456789");
  * 4、在支付成功通知中需要查单确认是否真正支付成功（见：notify.php）
  */
 $input = new WxPayUnifiedOrder();
-$input->SetBody("test");
-$input->SetAttach("test");
-$input->SetOut_trade_no(WxPayConfig::MCHID.date("YmdHis"));
-$input->SetTotal_fee("1");
+$input->SetBody("");
+$input->SetAttach("");
+$input->SetOut_trade_no($info->billNo);
+$input->SetTotal_fee($info->price);
 $input->SetTime_start(date("YmdHis"));
 $input->SetTime_expire(date("YmdHis", time() + 600));
-$input->SetGoods_tag("test");
+$input->SetGoods_tag("");
 $input->SetNotify_url("https://www.chinasouhu.net/wxpay/pay//notify.php");
 $input->SetTrade_type("NATIVE");
-$input->SetProduct_id("123456789");
+$input->SetProduct_id($info->price);
 $result = $notify->GetPayUrl($input);
-var_dump($result);
+//var_dump($result);
 $url2 = $result["code_url"];
+echo $url2;exit;
 ?>
 
-<html>
+<!--<html>
 <head>
     <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1" /> 
@@ -58,4 +83,4 @@ $url2 = $result["code_url"];
 	<img alt="模式二扫码支付" src="https://www.chinasouhu.net/wxpay/pay//qrcode.php?data=<?php echo urlencode($url2);?>" style="width:150px;height:150px;"/>
 	
 </body>
-</html>
+</html>-->

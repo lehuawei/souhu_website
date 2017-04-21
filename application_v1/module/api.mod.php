@@ -139,7 +139,7 @@ class API
      if(!isset($param->shopId) && empty($param->shopId) && $param->shopId<1)  return C_Com::apiResult(-2);
      if(!isset($param->payType) && empty($param->payType) && $param->payType<1)  return C_Com::apiResult(-2);
      if(!isset($param->num) && empty($param->num) && $param->num<1)  return C_Com::apiResult(-2);
-     if(!isset($param->userPId) && empty($param->userPId) && $param->userPId<1)  return C_Com::apiResult(-2);
+     if(!isset($param->userPId) && empty($param->userPId) && $param->userPId<0)  return C_Com::apiResult(-2);
     
      $payType = $param->payType;
      $shopId = $param->shopId;
@@ -152,8 +152,8 @@ class API
          return C_Com::apiResult(0,$info);
      }
      else if($payType == 2){
-        require_once(ROOT_PATH."alipay.config.php");
-        require_once(ROOT_PATH."lib/alipay_submit.class.php");
+        require_once(ROOT_PATH."alipay/alipay.config.php");
+        require_once(ROOT_PATH."alipay/lib/alipay_submit.class.php");
         $parameter = array(
             "service"       => $alipay_config['service'],
             "partner"       => $alipay_config['partner'],

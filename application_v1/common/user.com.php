@@ -14,23 +14,34 @@ class C_CurrUser
 	public static function setCurrUser($userId){
 		self::$userId = $userId;
 		header('P3P: CP="CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR"'); 
-		setcookie(COOKIE_PREFIX.'userId',$userId);
+		$encryptUserId = C_Com::encrypt($userId);
+		setcookie(COOKIE_PREFIX.'userId',$encryptUserId);
+		//var_dump(C_Com::encrypt($userId));die;
+		//$encryptUserId = C_Com::encrypt($userId);
 		//setcookie(COOKIE_PREFIX.'userId',$userId,time()+86400,"/","www.".DOMAIN);
+		//setcookie(COOKIE_PREFIX.'userId',$userId,time()+86400,"/",DOMAIN);
 		setcookie(COOKIE_PREFIX.'sstr',md5($userId.PwdSecret));
 		//setcookie(COOKIE_PREFIX.'sstr',md5($userId.PwdSecret),$userId,time()+86400,"/","www.".DOMAIN);
+		//setcookie(COOKIE_PREFIX.'sstr',md5($userId.PwdSecret),$userId,time()+86400,"/",DOMAIN);
 	}
 
 	
 	public static function isLogin()
 	{
+		
 		//var_dump($_COOKIE[COOKIE_PREFIX.'userId']);
 		if(empty($_COOKIE[COOKIE_PREFIX.'userId'])){
 			return false;
 		}
-		if($_COOKIE[COOKIE_PREFIX.'sstr'] != md5($_COOKIE[COOKIE_PREFIX.'userId'].PwdSecret)){
+		//var_dump($_COOKIE[COOKIE_PREFIX.'userId']);
+
+		$_userId = C_Com::decrypt($_COOKIE[COOKIE_PREFIX.'userId']);
+		//var_dump($_userId);
+		//var_dump($_COOKIE[COOKIE_PREFIX.'userId']);exit;
+		if($_COOKIE[COOKIE_PREFIX.'sstr'] != md5($_userId.PwdSecret)){
 			return false;
 		}
-		self::$userId = $_COOKIE[COOKIE_PREFIX.'userId'];
+		self::$userId = $_userId;
 		return true;
 	}
 	
@@ -45,10 +56,11 @@ class C_CurrUser
 	public static function userLogout(){
 		header('P3P: CP="CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR"'); 
 		setcookie(COOKIE_PREFIX.'userId','');
-		#setcookie(COOKIE_PREFIX.'userId','',time()-86400,"/","www.".DOMAIN);
-		#setcookie(COOKIE_PREFIX.'userId','',time()-86400,"/",DOMAIN);
+	//	setcookie(COOKIE_PREFIX.'userId','',time()-86400,"/","www.".DOMAIN);
+	//	setcookie(COOKIE_PREFIX.'userId','',time()-86400,"/",DOMAIN);
 		setcookie(COOKIE_PREFIX.'sstr','');
 		//setcookie(COOKIE_PREFIX.'sstr','',time()-86400,"/","www.".DOMAIN);
+		//setcookie(COOKIE_PREFIX.'sstr','',time()-86400,"/",DOMAIN);
 		self::$userId = 0;
 		return true;
 	}

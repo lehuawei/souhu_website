@@ -308,7 +308,7 @@ select::-ms-expand { display: none; }
     width: 152px;
     height: 50px;
     float: left;
-    background-image: url("../images/recharge_Manage/white.jpg");
+    background-image: url("https://img.chinasouhu.net/images/recharge_Manage/white.jpg");
     text-align: center;
     margin: 0 30px 30px 30px;
     cursor: pointer;
@@ -324,7 +324,7 @@ select::-ms-expand { display: none; }
     line-height:50px;
 }
 .clearfix_ul .active_m{
-    background-image: url("../images/recharge_Manage/orange.jpg");
+    background-image: url("https://img.chinasouhu.net/images/recharge_Manage/orange.jpg");
     color: white;
     font-size: 22px;
 }
