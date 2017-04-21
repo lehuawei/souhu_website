@@ -12,20 +12,17 @@ if(!empty($_POST)) die;
 if(!C_CurrUser::isLogin()){
 	die('请先登录');
 }
-if(!isset($_POST['shopId']) || !isset($_POST['payType']) || !isset($_POST['num']) || !isset($_POST['userPId'])){
+if(!isset($_POST['payType']) || !isset($_POST['price']) || !isset($_POST['userPId'])){
 	die('非法请求');
 }
-$shopId  = $_POST['shopId'];
 $payType = $_POST['payType'];
-$num = $_POST['num'];
-$userPId = $_POST['num'];
-if(empty($shopId) || $shopId<1){
+$price = $_POST['price'];
+$userPId = $_POST['userPId'];
+
+if(empty($price) || $price<1){
 	die('非法请求');
 }
 if(empty($payType) || $payType<1){
-	die('非法请求');
-}
-if(empty($num) || $num<1){
 	die('非法请求');
 }
 if($userPId<0){
@@ -33,7 +30,7 @@ if($userPId<0){
 }
 class_exists('C_User') or require(APP_PATH.'class/user.class.php');
 $currUser = new C_User(C_CurrUser::$userId);
-$info = $currUser->userOrder()->userOrder($payType,$shopId,$num);
+$info = $currUser->userOrder()->userOrder($payType,$price,$num);
 
 
 // /**************************请求参数**************************/

@@ -45,5 +45,9 @@ class C_UserGold
          C_Log::insertSubGoldLog($this->userId,$subCnt,$this->userGold,$pId);
         return $true;
 	}
+    public function prePay($value)
+	{
+		return ($this->userGold >= $value);
+	}
 }
 ?>
