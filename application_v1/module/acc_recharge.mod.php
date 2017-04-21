@@ -141,7 +141,7 @@ if(!empty($userInfo)){
             <!--支付宝支付-->
             <div class="mess_detail" style="display: none">
                 <div class="mess">
-                    <form action="" class="payForm">
+                    <form method="post" action="<?php echo API_URL;?>pay.php" target="_blank" class="payForm">
                     <p class="fh_tit">
                         <span>支付宝支付</span>
                     </p>
@@ -297,7 +297,10 @@ $(function(){
             $(".opacity_color").css("display",'block');
         }
     });
+    //支付宝支付
+    $('.payForm').submit(function () {
 
+    });
     //点击弹出框关闭按钮
     $(".close").click(function(){
         $(this).parent().css("display","none");
@@ -350,12 +353,10 @@ $(function(){
     });
     //用户输入充值
     for(var i=0;i<3;i++){
-         console.log( $($coinIn[i]));
          $($coinIn[i]).blur(function () {
             var user_coin=$(this).val();
             //判断输入是否正确
             var reg_n= /^\+?[1-9]\d*$/;
-            console.log(user_coin);
             if(!reg_n.test(user_coin)){
                  $('.selAcc_pop h3 strong').html('请输入大于0的整数金额!');
                  $('.selAcc_pop').css("display",'block');
