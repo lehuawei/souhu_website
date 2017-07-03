@@ -324,10 +324,7 @@ $(function () {
             $(".angle").hide();
     });
     //进入直播页面
-    $(" .live").click(function(){
-        var detail_url=$(this).attr("title");
-        window.open(detail_url);
-    });
+    
 
     //请求用户的登录信息
     // var data = {};
