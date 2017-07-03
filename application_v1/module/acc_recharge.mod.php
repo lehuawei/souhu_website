@@ -367,17 +367,7 @@ $(function(){
             $(".opacity_color").css("display",'block');
             return;
         }
-        $('#zfb_form').submit(); 
-        // var is_vi=$('.person_ul li img').is(":visible");
-        // if(!is_vi){
-        //     $('.selAcc_pop h3 strong').html('请选择所要充值的账号!');
-        //     $(".selAcc_pop").css("display",'block');
-        //     $(".opacity_color").css("display",'block');
-        //     return;
-        // }
-        // $userPId = $('.person_ul li img').val();
-        // alert($userPId);
-      // $('.payForm').form(); 
+        $('#zfb_form').submit();
     });
     //点击弹出框关闭按钮
     $(".close").click(function(){
