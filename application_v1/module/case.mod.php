@@ -51,7 +51,7 @@ require(APP_PATH.'common/header.com.php');
             <p>直播平台</p>
             <div style="width: 60px;height: 2px;background-color: #575757;margin-top: 24px;"></div>
             <div class="line_one first">
-                <div><a href="?mod=live"><img class="live" src="<?php echo CDN_SERVER;?>images/case/case_zhibo.jpg" alt="" title="live.html"></a><p>飞虎直播</p></div>
+                <div><a href="?mod=live"><img class="live" src="<?php echo CDN_SERVER;?>images/case/case_zhibo.jpg" alt="" title=""></a><p>飞虎直播</p></div>
             </div>
         </div>
     </section>
