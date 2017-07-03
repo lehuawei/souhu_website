@@ -4,10 +4,6 @@
     <list default="true" id="32f8e2dc-438b-499c-85b8-2ba06604b0de" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/header_response.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application_v1/common/header.com.php" afterPath="$PROJECT_DIR$/application_v1/common/header.com.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application_v1/module/index.mod.php" afterPath="$PROJECT_DIR$/application_v1/module/index.mod.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/common_response.css" afterPath="$PROJECT_DIR$/css/common_response.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
     </list>
     <ignored path="company_web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -471,12 +467,12 @@
       <workItem from="1492563867075" duration="27911000" />
       <workItem from="1492652043753" duration="17396000" />
       <workItem from="1492737854662" duration="16338000" />
-      <workItem from="1499063799309" duration="4000000" />
+      <workItem from="1499063799309" duration="4016000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="348290000" />
+    <option name="totallyTimeSpent" value="348306000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1916" height="1040" extended-state="0" />
