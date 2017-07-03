@@ -24,7 +24,7 @@ class PayNotifyCallBack extends WxPayNotify
 			&& $result["return_code"] == "SUCCESS"
 			&& $result["result_code"] == "SUCCESS")
 		{
-			
+
 			return true;
 		}
 		return false;
@@ -49,6 +49,39 @@ class PayNotifyCallBack extends WxPayNotify
 	}
 }
 
-Log::DEBUG("begin notify");
+Log::DEBUG("begin notify:".json_encode(file_get_contents("php://input")));
+
+$postStr = file_get_contents("php://input");
+if(empty($postStr)) die;
+libxml_disable_entity_loader(true);
+$xmlstring = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
+$val = json_decode(json_encode($xmlstring),true);
+$out_trade_no = $val['out_trade_no'];
+Log::DEBUG("begin notify:".$val["transaction_id"]);
 $notify = new PayNotifyCallBack();
-$notify->Handle(false);
+$r = $notify->Queryorder($val["transaction_id"]);
+if($r){
+	//发货
+	require('../../inc.php');
+	$db = DB::connect('DB_USR');
+	$sql = "SELECT * FROM userorder WHERE orderId = '".$out_trade_no."'";
+	$info = $db->fetch($sql);
+	if(empty($info)){
+		die;
+	}
+	$userId = $info->userId;
+	$goldNum = $info->goldNum;
+	$id = $info->id;
+	$payStatus = $info->payStatus;
+	if($payStatus!="1"){
+		$sql = "UPDATE userorder SET payStatus = '1',payTime = ".time()." WHERE id =".$id;
+		$db->exec($sql);
+		class_exists('C_User') or require(APP_PATH.'class/user.class.php');
+		$currUser = new C_User($userId);
+		$currUser->userGold()->addGold($goldNum,3);
+	}
+}
+
+
+//$notify->Handle(false);
+?>

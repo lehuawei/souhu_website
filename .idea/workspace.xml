@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32f8e2dc-438b-499c-85b8-2ba06604b0de" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app_path.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application_v1/module/test.mod.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/paycomplete.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wxorderquery.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application_v1/common/log.com.php" afterPath="$PROJECT_DIR$/application_v1/common/log.com.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application_v1/module/acc_recharge.mod.php" afterPath="$PROJECT_DIR$/application_v1/module/acc_recharge.mod.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/case.css" afterPath="$PROJECT_DIR$/css/case.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application_v1/module/case.mod.php" afterPath="$PROJECT_DIR$/application_v1/module/case.mod.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application_v1/module/modify_pass.mod.php" afterPath="$PROJECT_DIR$/application_v1/module/modify_pass.mod.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application_v1/module/reg_log.mod.php" afterPath="$PROJECT_DIR$/application_v1/module/reg_log.mod.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application_v1/module/user_Center.mod.php" afterPath="$PROJECT_DIR$/application_v1/module/user_Center.mod.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pay.php" afterPath="$PROJECT_DIR$/pay.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wxpay/pay/notify.php" afterPath="$PROJECT_DIR$/wxpay/pay/notify.php" />
     </list>
     <ignored path="company_web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,17 +34,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="acc_recharge.mod.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="acc_recharge.mod.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application_v1/module/acc_recharge.mod.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="369" column="32" lean-forward="false" selection-start-line="369" selection-start-column="32" selection-end-line="369" selection-end-column="32" />
+            <state relative-caret-position="397">
+              <caret line="368" column="9" lean-forward="true" selection-start-line="368" selection-start-column="9" selection-end-line="368" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="case.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="case.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/case.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="133">
@@ -49,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/application_v1/module/index.mod.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="264">
-              <caret line="8" column="26" lean-forward="true" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+              <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -79,8 +88,25 @@
         <entry file="file://$PROJECT_DIR$/application_v1/module/user_Center.mod.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="8514">
-              <caret line="258" column="11" lean-forward="false" selection-start-line="258" selection-start-column="11" selection-end-line="258" selection-end-column="11" />
-              <folding />
+              <caret line="263" column="11" lean-forward="false" selection-start-line="263" selection-start-column="11" selection-end-line="263" selection-end-column="11" />
+              <folding>
+                <marker date="1499064400167" expanded="true" signature="10189:10210" ph="..." />
+                <marker date="1499064400167" expanded="true" signature="10273:10317" ph="..." />
+                <marker date="1499064400167" expanded="true" signature="10350:10367" ph="..." />
+                <marker date="1499064400167" expanded="true" signature="10417:10434" ph="..." />
+                <marker date="1499064400167" expanded="true" signature="10489:13228" ph="..." />
+                <marker date="1499064400167" expanded="true" signature="10566:10683" ph="{...}" />
+                <marker date="1499064400167" expanded="true" signature="10737:10855" ph="{...}" />
+                <marker date="1499064400167" expanded="true" signature="10914:11005" ph="{...}" />
+                <marker date="1499064400167" expanded="true" signature="11206:11503" ph="{...}" />
+                <marker date="1499064400167" expanded="true" signature="11232:11339" ph="..." />
+                <marker date="1499064400167" expanded="true" signature="11365:11472" ph="..." />
+                <marker date="1499064400167" expanded="true" signature="11629:12543" ph="{...}" />
+                <marker date="1499064400167" expanded="true" signature="11740:11776" ph="{...}" />
+                <marker date="1499064400167" expanded="true" signature="11793:12533" ph="{...}" />
+                <marker date="1499064400167" expanded="true" signature="12190:12459" ph="{&quot;url&quot;: &quot;js/city.min.js&quot;...}" />
+                <marker date="1499064400167" expanded="true" signature="12906:13143" ph="{&quot;url&quot;: &quot;js/city.min.js&quot;...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -484,18 +510,18 @@
       <workItem from="1492563867075" duration="27911000" />
       <workItem from="1492652043753" duration="17396000" />
       <workItem from="1492737854662" duration="16338000" />
-      <workItem from="1499063799309" duration="568000" />
+      <workItem from="1499063799309" duration="696000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="344858000" />
+    <option name="totallyTimeSpent" value="344986000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1916" height="1040" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12526315" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18157895" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -596,7 +622,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8514">
           <caret line="258" column="11" lean-forward="false" selection-start-line="258" selection-start-column="11" selection-end-line="258" selection-end-column="11" />
-          <folding />
+          <folding>
+            <marker date="1499064400167" expanded="true" signature="10189:10210" ph="..." />
+            <marker date="1499064400167" expanded="true" signature="10273:10317" ph="..." />
+            <marker date="1499064400167" expanded="true" signature="10350:10367" ph="..." />
+            <marker date="1499064400167" expanded="true" signature="10417:10434" ph="..." />
+            <marker date="1499064400167" expanded="true" signature="10489:13228" ph="..." />
+            <marker date="1499064400167" expanded="true" signature="10566:10683" ph="{...}" />
+            <marker date="1499064400167" expanded="true" signature="10737:10855" ph="{...}" />
+            <marker date="1499064400167" expanded="true" signature="10914:11005" ph="{...}" />
+            <marker date="1499064400167" expanded="true" signature="11206:11503" ph="{...}" />
+            <marker date="1499064400167" expanded="true" signature="11232:11339" ph="..." />
+            <marker date="1499064400167" expanded="true" signature="11365:11472" ph="..." />
+            <marker date="1499064400167" expanded="true" signature="11629:12543" ph="{...}" />
+            <marker date="1499064400167" expanded="true" signature="11740:11776" ph="{...}" />
+            <marker date="1499064400167" expanded="true" signature="11793:12533" ph="{...}" />
+            <marker date="1499064400167" expanded="true" signature="12190:12459" ph="{&quot;url&quot;: &quot;js/city.min.js&quot;...}" />
+            <marker date="1499064400167" expanded="true" signature="12906:13143" ph="{&quot;url&quot;: &quot;js/city.min.js&quot;...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -626,14 +669,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application_v1/module/acc_recharge.mod.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="369" column="32" lean-forward="false" selection-start-line="369" selection-start-column="32" selection-end-line="369" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application_v1/common/header2.com.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="693">
@@ -653,8 +688,25 @@
     <entry file="file://$PROJECT_DIR$/application_v1/module/user_Center.mod.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8514">
-          <caret line="258" column="11" lean-forward="false" selection-start-line="258" selection-start-column="11" selection-end-line="258" selection-end-column="11" />
-          <folding />
+          <caret line="263" column="11" lean-forward="false" selection-start-line="263" selection-start-column="11" selection-end-line="263" selection-end-column="11" />
+          <folding>
+            <marker date="1499064400167" expanded="true" signature="10189:10210" ph="..." />
+            <marker date="1499064400167" expanded="true" signature="10273:10317" ph="..." />
+            <marker date="1499064400167" expanded="true" signature="10350:10367" ph="..." />
+            <marker date="1499064400167" expanded="true" signature="10417:10434" ph="..." />
+            <marker date="1499064400167" expanded="true" signature="10489:13228" ph="..." />
+            <marker date="1499064400167" expanded="true" signature="10566:10683" ph="{...}" />
+            <marker date="1499064400167" expanded="true" signature="10737:10855" ph="{...}" />
+            <marker date="1499064400167" expanded="true" signature="10914:11005" ph="{...}" />
+            <marker date="1499064400167" expanded="true" signature="11206:11503" ph="{...}" />
+            <marker date="1499064400167" expanded="true" signature="11232:11339" ph="..." />
+            <marker date="1499064400167" expanded="true" signature="11365:11472" ph="..." />
+            <marker date="1499064400167" expanded="true" signature="11629:12543" ph="{...}" />
+            <marker date="1499064400167" expanded="true" signature="11740:11776" ph="{...}" />
+            <marker date="1499064400167" expanded="true" signature="11793:12533" ph="{...}" />
+            <marker date="1499064400167" expanded="true" signature="12190:12459" ph="{&quot;url&quot;: &quot;js/city.min.js&quot;...}" />
+            <marker date="1499064400167" expanded="true" signature="12906:13143" ph="{&quot;url&quot;: &quot;js/city.min.js&quot;...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -687,7 +739,7 @@
     <entry file="file://$PROJECT_DIR$/application_v1/module/index.mod.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
-          <caret line="8" column="26" lean-forward="true" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+          <caret line="8" column="26" lean-forward="false" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -696,6 +748,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application_v1/module/acc_recharge.mod.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="368" column="9" lean-forward="true" selection-start-line="368" selection-start-column="9" selection-end-line="368" selection-end-column="9" />
           <folding />
         </state>
       </provider>

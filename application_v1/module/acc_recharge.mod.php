@@ -212,7 +212,7 @@ if(!empty($userInfo)){
                     <p class="main">充值账号:<b style="font-size: 22px;font-style: normal;margin-left: 10px"><?php echo $userInfo->nickName;?></b></p>
                     <span class="main">选择账号:</span>
                     <ul class="person_ul">
-                       
+
                          <?php
                             if(!empty($userProdurceList)){
                                 foreach($userProdurceList as $row){
@@ -320,7 +320,7 @@ $(function(){
             }
             var jsonData = JSON.parse(result);
             var code = jsonData.code;
-           
+
             if(code == "0"){
                 $(".account").html(mr_money+'元');
                 $('#wx_img').attr('src',jsonData.url);
@@ -330,7 +330,7 @@ $(function(){
             }
             else{
                 //
-               
+
             }
         });
         /*
@@ -342,7 +342,7 @@ $(function(){
             $(".selAcc_pop").css("display",'block');
             $(".opacity_color").css("display",'block');
         }else{
-            
+
             $(".wePay_pop").css("display","block");
             $(".opacity_color").css("display",'block');
         }*/
@@ -368,6 +368,16 @@ $(function(){
             return;
         }
         $('#zfb_form').submit();
+        // var is_vi=$('.person_ul li img').is(":visible");
+        // if(!is_vi){
+        //     $('.selAcc_pop h3 strong').html('请选择所要充值的账号!');
+        //     $(".selAcc_pop").css("display",'block');
+        //     $(".opacity_color").css("display",'block');
+        //     return;
+        // }
+        // $userPId = $('.person_ul li img').val();
+        // alert($userPId);
+      // $('.payForm').form();
     });
     //点击弹出框关闭按钮
     $(".close").click(function(){

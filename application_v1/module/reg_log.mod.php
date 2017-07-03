@@ -57,7 +57,7 @@ require(APP_PATH.'common/header.com.php');
                     <button type="submit" class="btn_sub">注册</button>
                         <p class="btm_txt">
                             <img class="check_img no_check" style="float: left;margin-top: 0.8%" src="<?php echo CDN_SERVER;?>images/register_Page/icon-dagou.png" alt="1" >
-                            <span class="color_a"><a href="<?php echo CDN_SERVER;?>?mod=protocol" target="_blank">同意用户协议</a><a>和</a><a href="<?php echo CDN_SERVER;?>?mod=copyright" target="_blank">版权声明</a></span>
+                            <span class="color_a"><a href="<?php echo API_URL;?>?mod=protocol" target="_blank">同意用户协议</a><a>和</a><a href="<?php echo API_URL;?>?mod=copyright" target="_blank">版权声明</a></span>
                             <span class="has_a"><a class="has_log">已有账号？前往登录</a> </span>
                             <input type="checkbox" style="display: none" class="che_if" checked>
                         </p>
