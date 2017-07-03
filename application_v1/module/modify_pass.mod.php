@@ -53,7 +53,7 @@ require(APP_PATH.'common/header.com.php');
                                 <button class="edit">取消</button>
                                 <button class="sure" type="submit">确定</button>
                                 <br>
-                                <a href="<?php echo CDN_SERVER;?>?mod=reg_log" class="log_a">前往登录</a>
+                                <a href="<?php echo API_URL;?>?mod=reg_log" class="log_a">前往登录</a>
                             </div>
                         </form>
                     </div>

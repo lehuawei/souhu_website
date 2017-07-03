@@ -456,8 +456,10 @@ $(function(){
                 mr_money= $(".pay_money em").html();
                 if(!$(this).hasClass('sb_input')){
                     $(".bl .coin_num").html(user_coin*100);
+                     $('#price').val(user_coin);
                 }else{
                     $(".bl .coin_num").html(user_coin);
+                     $('#price').val(user_coin);
                 }
             }
         });
