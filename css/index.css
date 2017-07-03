@@ -892,6 +892,7 @@ header .angle img{
     margin-top:30px;
     vertical-align: middle;
     text-align: left;
+    display: inline-block;
 }
 .section6 .foot .foot1 .contact .con_left li{
     padding: 5px 0;

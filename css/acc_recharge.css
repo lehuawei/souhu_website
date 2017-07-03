@@ -464,7 +464,7 @@ select::-ms-expand { display: none; }
 }
 /*检测用户是否登录的用户框*/
 .chk_log{
-    margin: 400px;
+    margin: 400px auto;
     text-align: center;
     color: #b6b6b6;
 }

@@ -19,68 +19,9 @@
     article .yd_ad .line_one div {
         height: 28%;
     }
-
-}
-/*1880-1920*/
-@media (min-width: 1880px) and (max-width: 1920px){
-    /*加入我们 福利文字*/
-    article .yd_ad .welfare .like .low p{
-        line-height:84px;
-    }
-    article .yd_ad .welfare .work_day p{
-        line-height:40px;
-
-    }
-
-}
-@media (min-width: 1680px) and (max-width: 1879px){
-
-    /*加入我们 福利文字*/
-    article .yd_ad .welfare .like .low p{
-        line-height:74px;
-    }
-    article .yd_ad .welfare .work_day p{
-        line-height: 42px;
-    }
-}
-@media (min-width: 1440px) and (max-width: 1679px){
-
-    /*加入我们 福利文字*/
-    article .yd_ad .welfare .like .low p{
-        line-height:68px;
-    }
-    article .yd_ad .welfare .work_day p{
-        line-height: 32px;
-    }
-
-}
-
-@media (min-width: 1280px) and (max-width: 1439px){
-
-    /*加入我们 福利文字*/
-    article .yd_ad .welfare .like .low p{
-        line-height:30px;
-    }
-    article .yd_ad .welfare .like .sgz p{
-        line-height:60px;
-    }
-    article .yd_ad .welfare .work_day p{
-        line-height: 26px;
-    }
 }
 @media screen and (max-width: 1279px) {
-
-    /*加入我们 福利文字*/
-    article .yd_ad .welfare .like .low p{
-        line-height:50px;
-    }
-    article .yd_ad .welfare .like .sgz p{
-        line-height:50px;
-    }
-    article .yd_ad .welfare .work_day p{
-        line-height: 26px;
-    }
-    .scan_code{
+    footer .foot .foot1 .contact .con_left ul.scan_code{
         display: none;
     }
 }

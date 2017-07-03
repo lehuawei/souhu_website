@@ -407,7 +407,7 @@
                  <div class="contact">
                      <div class="con_left">
                          <span><img src="<?php echo CDN_SERVER;?>images/common/image_wechat.png" alt="" style="width: 126px;height: 126px"></span>
-                         <ul style="display: inline-block" class="scan_code">
+                         <ul  class="scan_code">
                              <li>扫一扫</li>
                              <li>关注搜虎微信平台</li>
                          </ul>

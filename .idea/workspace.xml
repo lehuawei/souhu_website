@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32f8e2dc-438b-499c-85b8-2ba06604b0de" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/header_response.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application_v1/common/footer.com.php" afterPath="$PROJECT_DIR$/application_v1/common/footer.com.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application_v1/module/index.mod.php" afterPath="$PROJECT_DIR$/application_v1/module/index.mod.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application_v1/module/join.mod.php" afterPath="$PROJECT_DIR$/application_v1/module/join.mod.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/acc_recharge.css" afterPath="$PROJECT_DIR$/css/acc_recharge.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/case.css" afterPath="$PROJECT_DIR$/css/case.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/common_response.css" afterPath="$PROJECT_DIR$/css/common_response.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/join.css" afterPath="$PROJECT_DIR$/css/join.css" />
     </list>
     <ignored path="company_web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,24 +31,54 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="acc_recharge.mod.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application_v1/module/acc_recharge.mod.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="269" column="10" lean-forward="true" selection-start-line="269" selection-start-column="10" selection-end-line="269" selection-end-column="10" />
+              <folding>
+                <element signature="e#12639#12645#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="case.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/case.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+            <state relative-caret-position="408">
+              <caret line="124" column="26" lean-forward="false" selection-start-line="124" selection-start-column="26" selection-end-line="124" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.mod.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="about.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/about.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-722">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="about_response.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/about_response.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-29">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.mod.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application_v1/module/index.mod.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8019">
-              <caret line="336" column="85" lean-forward="true" selection-start-line="336" selection-start-column="85" selection-end-line="336" selection-end-column="85" />
-              <folding>
-                <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="231">
+              <caret line="409" column="35" lean-forward="false" selection-start-line="409" selection-start-column="35" selection-end-line="409" selection-end-column="35" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -49,29 +86,21 @@
       <file leaf-file-name="common_response.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/common_response.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="698">
-              <caret line="81" column="5" lean-forward="true" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
+            <state relative-caret-position="533">
+              <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.com.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application_v1/common/header.com.php">
+      <file leaf-file-name="footer.com.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application_v1/common/footer.com.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-310">
-              <caret line="23" column="16" lean-forward="false" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header_response.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/header_response.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="9" column="49" lean-forward="true" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
-              <folding />
+            <state relative-caret-position="165">
+              <caret line="11" column="35" lean-forward="false" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+              <folding>
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#footer#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -79,8 +108,8 @@
       <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="52" column="18" lean-forward="true" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
+            <state relative-caret-position="408">
+              <caret line="894" column="26" lean-forward="false" selection-start-line="894" selection-start-column="26" selection-end-line="894" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -89,30 +118,25 @@
       <file leaf-file-name="acc_recharge.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/acc_recharge.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="14619">
-              <caret line="443" column="20" lean-forward="false" selection-start-line="443" selection-start-column="20" selection-end-line="443" selection-end-column="20" />
+            <state relative-caret-position="269">
+              <caret line="466" column="22" lean-forward="false" selection-start-line="466" selection-start-column="22" selection-end-line="466" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/common.js">
+      <file leaf-file-name="join.mod.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application_v1/module/join.mod.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="5" column="41" lean-forward="false" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="common-db4cf95.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/common-db4cf95.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7161">
-              <caret line="217" column="13" lean-forward="false" selection-start-line="217" selection-start-column="13" selection-end-line="217" selection-end-column="13" />
+            <state relative-caret-position="672">
+              <caret line="211" column="0" lean-forward="false" selection-start-line="211" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
               <folding>
-                <marker date="1492681502385" expanded="true" signature="2389:2403" ph="..." />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#section#1;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#1;n#section#1;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#div#1;n#div#1;n#section#1;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#div#1;n#section#1;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#3;n#div#1;n#section#1;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#4;n#div#1;n#section#1;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -129,18 +153,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>main</find>
-      <find>per</find>
-      <find>clearfix_ul</find>
-      <find>clea</find>
-      <find>pay_money</find>
       <find>sys_mess</find>
       <find>mg_lt</find>
       <find>弹出框</find>
       <find>pop</find>
       <find>che_img</find>
       <find>bs</find>
-      <find>chk_log</find>
       <find>登录</find>
       <find>bootstrap.css</find>
       <find>修改密码</find>
@@ -159,6 +177,12 @@
       <find>400</find>
       <find>pay_mo</find>
       <find>@midia</find>
+      <find>7.5</find>
+      <find>happy</find>
+      <find>chk_log</find>
+      <find>.section6 .foot .foot1 .contact .con_left ul</find>
+      <find>您好</find>
+      <find>footer .foot .foot1 .contact .con_left ul</find>
     </findStrings>
     <replaceStrings>
       <replace>&lt;?php echo CDN_SERVER?&gt;</replace>
@@ -177,8 +201,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/css/copyright.css" />
-        <option value="$PROJECT_DIR$/about.html" />
         <option value="$PROJECT_DIR$/case.html" />
         <option value="$PROJECT_DIR$/copyright.html" />
         <option value="$PROJECT_DIR$/join.html" />
@@ -204,7 +226,6 @@
         <option value="$PROJECT_DIR$/application_v1/class/user.class.php" />
         <option value="$PROJECT_DIR$/application_v1/module/modify_passmod.php" />
         <option value="$PROJECT_DIR$/application_v1/module/copyright.mod.php" />
-        <option value="$PROJECT_DIR$/application_v1/common/footer.com.php" />
         <option value="$PROJECT_DIR$/application_v1/module/reg_log.mod.php" />
         <option value="$PROJECT_DIR$/application_v1/common/config.com.php" />
         <option value="$PROJECT_DIR$/application_v1/class/userGold.class.php" />
@@ -212,22 +233,25 @@
         <option value="$PROJECT_DIR$/js/jquery.cityselect.js" />
         <option value="$PROJECT_DIR$/application_v1/module/case.mod.php" />
         <option value="$PROJECT_DIR$/application_v1/module/about.mod.php" />
-        <option value="$PROJECT_DIR$/application_v1/module/join.mod.php" />
         <option value="$PROJECT_DIR$/application_v1/module/live.mod.php" />
         <option value="$PROJECT_DIR$/application_v1/module/protocol.mod.php" />
         <option value="$PROJECT_DIR$/application_v1/module/qwkd.html" />
         <option value="$PROJECT_DIR$/application_v1/module/modify_pass.mod.php" />
         <option value="$PROJECT_DIR$/js/formValidate.js" />
         <option value="$PROJECT_DIR$/application_v1/module/user_Center.mod.php" />
-        <option value="$PROJECT_DIR$/css/acc_recharge.css" />
         <option value="$PROJECT_DIR$/js/common.js" />
         <option value="$PROJECT_DIR$/application_v1/module/acc_recharge.mod.php" />
-        <option value="$PROJECT_DIR$/application_v1/module/index.mod.php" />
         <option value="$PROJECT_DIR$/header_response.html" />
         <option value="$PROJECT_DIR$/application_v1/common/header2.com.php" />
         <option value="$PROJECT_DIR$/application_v1/common/header.com.php" />
+        <option value="$PROJECT_DIR$/css/join.css" />
+        <option value="$PROJECT_DIR$/application_v1/module/join.mod.php" />
+        <option value="$PROJECT_DIR$/application_v1/common/footer.com.php" />
+        <option value="$PROJECT_DIR$/application_v1/module/index.mod.php" />
         <option value="$PROJECT_DIR$/css/index.css" />
+        <option value="$PROJECT_DIR$/css/case.css" />
         <option value="$PROJECT_DIR$/css/common_response.css" />
+        <option value="$PROJECT_DIR$/css/acc_recharge.css" />
       </list>
     </option>
   </component>
@@ -467,16 +491,15 @@
       <workItem from="1492563867075" duration="27911000" />
       <workItem from="1492652043753" duration="17396000" />
       <workItem from="1492737854662" duration="16338000" />
-      <workItem from="1499063799309" duration="4016000" />
+      <workItem from="1499063799309" duration="11536000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="348306000" />
+    <option name="totallyTimeSpent" value="355826000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1916" height="1040" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16210526" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -651,22 +674,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/acc_recharge.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14619">
-          <caret line="443" column="20" lean-forward="false" selection-start-line="443" selection-start-column="20" selection-end-line="443" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="5" column="41" lean-forward="false" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/common-db4cf95.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7161">
@@ -674,22 +681,6 @@
           <folding>
             <marker date="1492681502385" expanded="true" signature="2389:2403" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application_v1/module/acc_recharge.mod.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="368" column="9" lean-forward="true" selection-start-line="368" selection-start-column="9" selection-end-line="368" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/case.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -709,22 +700,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="52" column="18" lean-forward="true" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/common_response.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="698">
-          <caret line="81" column="5" lean-forward="true" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application_v1/common/header.com.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-310">
@@ -733,12 +708,109 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="5" column="41" lean-forward="false" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/join.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="463">
+          <caret line="136" column="14" lean-forward="true" selection-start-line="136" selection-start-column="14" selection-end-line="136" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application_v1/module/join.mod.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="211" column="0" lean-forward="false" selection-start-line="211" selection-start-column="0" selection-end-line="212" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#section#1;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#1;n#section#1;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#1;n#div#1;n#section#1;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#1;n#section#1;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#1;n#section#1;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#4;n#div#1;n#section#1;n#article#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/about.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-722">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="894" column="26" lean-forward="false" selection-start-line="894" selection-start-column="26" selection-end-line="894" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application_v1/module/acc_recharge.mod.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="269" column="10" lean-forward="true" selection-start-line="269" selection-start-column="10" selection-end-line="269" selection-end-column="10" />
+          <folding>
+            <element signature="e#12639#12645#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/case.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="124" column="26" lean-forward="false" selection-start-line="124" selection-start-column="26" selection-end-line="124" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/about_response.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-29">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/acc_recharge.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="466" column="22" lean-forward="false" selection-start-line="466" selection-start-column="22" selection-end-line="466" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/common_response.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application_v1/module/index.mod.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8019">
-          <caret line="336" column="85" lean-forward="true" selection-start-line="336" selection-start-column="85" selection-end-line="336" selection-end-column="85" />
+        <state relative-caret-position="231">
+          <caret line="409" column="35" lean-forward="false" selection-start-line="409" selection-start-column="35" selection-end-line="409" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application_v1/common/footer.com.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="35" lean-forward="false" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
           <folding>
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#footer#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

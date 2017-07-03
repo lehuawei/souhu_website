@@ -127,19 +127,19 @@ article .yd_ad .welfare .like img{
 
 }
 article .yd_ad .welfare .like div{
-    width:30%;
-    height:24%;
+    height:50px;
     background-color: #030303;
     opacity: 0.8;
     filter: progid:DXImageTransform.Microsoft.Alpha(opacity=80);
     text-align: center;
-   /* line-height: 80px;*/
     position: absolute;
     top:36%;
-    left: 36%;
+    left: 50%;
+    line-height: 50px;
+    margin-left: -50px;
 }
 article .yd_ad .welfare .like div p{
-    font-size: 20px;
+    font-size:18px;
     color: #ffffff;
     padding-left: 0;
 }

@@ -9,7 +9,7 @@ class_exists('C_User') or require(APP_PATH.'class/user.class.php');
             <div class="contact">
                 <div class="con_left">
                     <span><img src="<?php echo CDN_SERVER;?>images/common/image_wechat.png" alt="" style="width: 120px;height: 120px"></span>
-                    <ul style="display: inline-block">
+                    <ul class="scan_code">
                         <li>扫一扫</li>
                         <li>关注搜虎微信平台</li>
                     </ul>
