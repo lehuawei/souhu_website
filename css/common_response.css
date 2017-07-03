@@ -80,6 +80,9 @@
     article .yd_ad .welfare .work_day p{
         line-height: 26px;
     }
+    .scan_code{
+        display: none;
+    }
 }
 @media (min-width: 1280px) and (max-width: 1680px){
     /*案例*/
