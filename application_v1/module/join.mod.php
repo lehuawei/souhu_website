@@ -189,27 +189,27 @@ require(APP_PATH.'common/header.com.php');
             <div class="welfare">
                 <div class="happy like">
                     <img src="<?php echo CDN_SERVER;?>images/join_us/welfare/welfare_pic1.png" alt="">
-                    <div class="low sgz" style="width: 100px"><p>室内娱乐</p></div>
+                    <div class="low sgz" style="width: 80px"><p>室内娱乐</p></div>
                 </div>
                 <div class="tea like even">
                     <img src="<?php echo CDN_SERVER;?>images/join_us/welfare/welfare_pic2.png" alt="">
-                    <div class="low" style="width: 120px;margin-left: -60px"><p>下午茶时光</p></div>
+                    <div class="low" style="width: 100px;margin-left: -50px"><p>下午茶时光</p></div>
                 </div>
                 <div class="party like"">
                     <img src="<?php echo CDN_SERVER;?>images/join_us/welfare/welfare_pic3.png" alt="">
-                    <div class="low sgz" style="width: 100px"><p>员工聚餐</p></div>
+                    <div class="low sgz" style="width: 80px"><p>员工聚餐</p></div>
                 </div>
                 <div class="work like even" >
                     <img src="<?php echo CDN_SERVER;?>images/join_us/welfare/welfare_pic4.png" alt="">
-                    <div class="work_day"style="width: 180px;margin-left: -90px"><p>7.5小时工作日双休</p></div>
+                    <div class="work_day"style="width: 160px;margin-left: -80px"><p>7.5小时工作日双休</p></div>
                 </div>
                 <div class="birthday like" >
                     <img src="<?php echo CDN_SERVER;?>images/join_us/welfare/welfare_pic5.png" alt="">
-                    <div class="low sgz" style="width: 100px"><p>员工生日</p></div>
+                    <div class="low sgz" style="width: 80px"><p>员工生日</p></div>
                 </div>
                 <div class="tour like even">
                     <img src="<?php echo CDN_SERVER;?>images/join_us/welfare/welfare_pic6.png" alt="">
-                    <div class="low sgz"  style="width: 100px"><p>年度旅游</p></div>
+                    <div class="low sgz"  style="width: 80px"><p>年度旅游</p></div>
                 </div>
             </div>
         </div>
