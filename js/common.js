@@ -386,5 +386,7 @@ $(function () {
          $('.coin_cz').append(a_nob);
          //隐藏账户选择图片
          $('.che_img').css('display','none');
+         //顶部导航登录注册设置display
+         $('.head .log').css("display",'inline');
     }
 });
