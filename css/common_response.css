@@ -1,12 +1,9 @@
-/*1280-1680*/
 @media (min-width: 1280px) and (max-width: 1680px){
     /*案例*/
     article .yd_ad .line_one div {
         height: 28%;
     }
-
 }
-/*1681-1920*/
 @media (min-width: 1681px) and (max-width: 1920px){
     /*案例*/
     article .yd_ad .line_one{
@@ -20,11 +17,6 @@
         height: 28%;
     }
 }
-@media screen and (max-width: 1279px) {
-    footer .foot .foot1 .contact .con_left ul.scan_code{
-        display: none;
-    }
-}
 @media (min-width: 1280px) and (max-width: 1680px){
     /*案例*/
     article .yd_ad .line_one{
@@ -34,3 +26,19 @@
         margin-top: 3.5%;
     }
 }
+@media screen and (max-width: 1279px) {
+    /*底部扫一扫*/
+    footer .foot .foot1 .contact .con_left ul{
+        display: none;
+    }
+    .section6 .foot .foot1 .contact .con_left ul{
+        display: none;
+    }
+}
+@media screen and (max-width: 500px) {
+    /*底部扫一扫*/
+    footer .con_right{
+        display: none;
+    }
+}
+

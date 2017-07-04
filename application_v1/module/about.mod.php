@@ -10,6 +10,7 @@ if(!defined('ACCESS_KEY')){header("HTTP/1.1 404 Not Found");die;}
     <link rel="stylesheet" href="<?php echo CDN_SERVER;?>css/case.css">
     <link rel="stylesheet" href="<?php echo CDN_SERVER;?>css/about.css">
     <link rel="stylesheet" href="<?php echo CDN_SERVER;?>css/about_response.css">
+    <link rel="stylesheet" href="<?php echo CDN_SERVER;?>css/common_response.css">
     <script src="<?php echo CDN_SERVER;?>js/jquery-1.9.1.js"></script>
     <script src="<?php echo CDN_SERVER;?>js/placeholderfriend.js"></script>
     <!--if it IE 8--><!--兼容h5-->

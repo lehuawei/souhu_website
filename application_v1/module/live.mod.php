@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>飞虎直播</title>
     <link rel="stylesheet" href="<?php echo CDN_SERVER;?>css/live.css">
+    <link rel="stylesheet" href="<?php echo CDN_SERVER;?>css/common_response.css">
     <script src="<?php echo CDN_SERVER;?>js/jquery-1.9.1.js"></script>
     <script src="<?php echo CDN_SERVER;?>js/placeholderfriend.js"></script>
     <!--if it IE 8--><!--兼容h5-->
@@ -30,7 +31,6 @@ require(APP_PATH.'common/header2.com.php');
             <div class="img_q">
                 <div style="text-align: center;width: 100%;margin-top: 40px"><img src="<?php echo CDN_SERVER;?>images/case_detail/case_detail_pic1.png" alt=""></div>
                 <div style="text-align: center;width: 100%;"><img src="<?php echo CDN_SERVER;?>images/case_detail/case_detail_pic2.png" alt=""></div>
-
             </div>
         </div>
     </div>

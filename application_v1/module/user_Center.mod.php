@@ -12,7 +12,7 @@ class_exists('C_User') or require(APP_PATH.'class/user.class.php');
     <link rel="stylesheet" href="<?php echo CDN_SERVER;?>css/acc_recharge.css">
     <link rel="stylesheet" href="<?php echo CDN_SERVER;?>css/user_Center.css">
     <link rel="stylesheet" href="<?php echo CDN_SERVER;?>css/index.css">
-
+    <link rel="stylesheet" href="<?php echo CDN_SERVER;?>css/common_response.css">
     <script src="<?php echo CDN_SERVER;?>js/jquery-1.9.1.js"></script>
     <script src="<?php echo CDN_SERVER;?>js/placeholderfriend.js"></script>
     <script type="text/javascript" src="<?php echo CDN_SERVER;?>js/jquery.cityselect.js"></script>

@@ -15,17 +15,21 @@ article .join{
     padding-left: 2%;
 }
 /*固定头部*/
-header .head{
+header{
     width: 100%;
-    height: 70px;
     position: fixed;
     top: 0;
     left: 0;
-    /*overflow: hidden;*/
+    z-index: 100;
+    height: 70px;
     background-color: black;
-    z-index: 2;
 }
-
+header .head{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+}
 header .logo{
     float: left;
     margin-top: 4px;
@@ -126,7 +130,6 @@ header .angle .grey_line_short{
     top: -10px;
 }
 header .angle  .exit{
-    /* padding-top: 10px;*/
     cursor: pointer;
     position: relative;
     top: -5px;
@@ -139,149 +142,6 @@ header .angle img{
     width: 100%;
     height: 100%;
 }
-/*登录 注册 修改密码 公共部分*/
-.slider .add{
-    width: 400px;
-    height: 330px;
-    position: absolute;
-    top: 30%;
-    left: 38%;
-    background: url(https://img.chinasouhu.net/images/login_reg/Popup.png) no-repeat;
-}
-.slider input{
-    vertical-align: middle;
-    line-height: 28px;
-}
-.slider  .close{
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    top:14px;
-    left: 10px;
-    text-align: center;
-}
-.slider form{
-    height: 100%;
-}
-.slider p{
-    font-size: 20px;
-    color: #161616;
-    margin-top: 16px;
-    text-align: center;
-}
-.slider  input[type='submit']{
-    background: url(https://img.chinasouhu.net/images/login_reg/submit_btn.png) no-repeat;
-    border: none;
-    color: white;
-    text-align: center;
-}
-/*登录*/
-.login .red{
-    color: red;
-    font-size: 12px;
-    text-align: center;
-    margin: 0 auto;
-    display: none;
-}
-.slider .login  input{
-    width: 78%;
-    height: 10%;
-    border-radius: 4px;
-    margin: 8% auto auto 10%;
-    border: 1px solid #d6d6d6;
-    color: #161616;
-    font-family: "微软雅黑";
-    text-indent: 3%;
-}
-.slider .login p a{
-    font-size: 12px;
-    color: #161616;
-    display: inline-block;
-    float: right;
-    margin-right: 12%;
-}
-/*注册*/
-.slider .register .red{
-    color: red;
-    font-size: 12px;
-    text-align: center;
-    margin:-0.5% auto auto auto;
-    display: none;
-}
-.slider .register .notchk{
-    width: 78%;
-    height: 10%;
-    border-radius: 4px;
-    margin: 4.6% auto auto 10%;
-    border: 1px solid #d6d6d6;
-    color: #161616;
-    font-family: "微软雅黑";
-    text-indent: 3%;
-}
-.slider .register input[type='checkbox']{
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin:auto auto auto 10% ;
-    z-index: 200;
-}
-.slider .register.chk{
-    margin-left: 2%;
-    width: 10px;
-    height: 10px;
-    background: url(https://img.chinasouhu.net/images/login_reg/choose.png) no-repeat 32px 7px;
-    z-index: 1;
-}
-.slider .register p a{
-    font-size: 12px;
-    color: #161616;
-    display: inline-block;
-    float: right;
-    margin-right: 12%;
-}
-.slider .register span{
-    display: inline-block;
-    font-size: 12px;
-    color: #161616;
-    margin: 2% auto;
-}
-.slider .register span a{
-    color: #161616;
-}
-.slider .register .protocol1 a:hover{
-    text-decoration: underline;
-    color: deepskyblue;
-}
-.slider .register .rit_reg a:hover{
-    text-decoration: underline;
-}
-/*修改密码*/
-.slider .change_pass input{
-    width: 78%;
-    height: 10%;
-    border-radius: 4px;
-    margin: 8% auto auto 10%;
-    border: 1px solid #d6d6d6;
-    color: #161616;
-    font-family: "微软雅黑";
-    text-indent: 3%;
-}
-.slider .change_pass .red{
-    display: block;
-    color: red;
-    font-size: 12px;
-    text-align: center;
-    margin:2% auto auto auto;
-    /* display: none;*/
-}
-.slider .change_pass .again{
-    display: block;
-    color: red;
-    font-size: 12px;
-    text-align: center;
-    margin:2% auto auto auto;
-    display: none;
-}
 article .bg{
     width: 100%;
     height: 1260px;
@@ -289,7 +149,7 @@ article .bg{
     padding-top: 70px;
 }
 article .bg .white_bg{
-    width: 1200px;
+    max-width: 1200px;
     height: 300px;
     margin:60px auto 140px auto;
     background-color: white;
@@ -364,6 +224,7 @@ footer .foot .foot1 .contact .con_left ul{
     margin-top:30px;
     vertical-align: middle;
     text-align: left;
+    display: inline-block;
 }
 footer .foot .foot1 .contact .con_left li{
     padding: 5px 0;

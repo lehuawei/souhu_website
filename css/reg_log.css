@@ -192,6 +192,7 @@ footer .foot .foot1 .contact .con_left ul{
     margin-top:30px;
     vertical-align: middle;
     text-align: left;
+    display: inline-block;
 }
 footer .foot .foot1 .contact .con_left li{
     padding: 5px 0;
